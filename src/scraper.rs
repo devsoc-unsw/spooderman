@@ -61,7 +61,7 @@ struct Class {
     course_enrolment: Enrolment,
     term_date: DateBlock,
     mode: String,
-    times: Vec<Box<ClassTimeBlock>>
+    times: Vec<ClassTimeBlock>
 }
 
 #[derive(Debug)]
@@ -73,9 +73,9 @@ struct Course {
     name: String,
     campus: Career,
     career: String,
-    terms: Vec<Box<Term>>,
-    census_dates: Vec<Box<String>>,
-    classes: Vec<Box<Class>>,
+    terms: Vec<Term>,
+    census_dates: Vec<String>,
+    classes: Vec<Class>,
     notes: String,
 }
 
@@ -85,7 +85,7 @@ struct Page {
   subject_area_course_code: String,
   subject_area_course_name: String,
   school: String,
-  courses: Vec<Box<Course>>,
+  courses: Vec<Course>,
 }
 
 
@@ -124,12 +124,15 @@ impl Scraper {
       Ok(body)
     }
 
-  pub async fn scrape_website(&mut self) -> Result<Html, Box<dyn std::error::Error>> {
+  pub async fn run_scraper(&mut self) -> Result<Html, Box<dyn std::error::Error>> {
       match &self.url { 
         Some(url) => {
           let html = self.fetch_url(url).await?;
           println!("{}", html);
+          let html_course_selector = scraper::Selector::parse("tr.rowLowlight td.data").unwrap();
           let doc = scraper::Html::parse_document(&html);
+          let res: Vec<_> = doc.select(&html_course_selector).flat_map(|el| el.text()).collect();
+          println!("{:?}", res);
           Ok(doc)
         }
         None => {
