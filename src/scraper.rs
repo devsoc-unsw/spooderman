@@ -65,7 +65,7 @@ struct Class {
 }
 
 #[derive(Debug)]
-enum Career { UG, PG }
+enum Career { UG, PG, RESEARCH }
 
 #[derive(Debug)]
 struct Course {
