@@ -1,5 +1,10 @@
 use std::ops::Add;
 use chrono::{DateTime, Utc};
+use reqwest::ClientBuilder;
+use scraper::Html;
+
+use crate::UrlInvalidError;
+
 
 #[derive(Debug)]
 enum Term {
@@ -85,10 +90,58 @@ struct Page {
 
 
 #[derive(Debug)]
-struct Scraper {
-  url: String,
-  pages: Vec<Box<Page>>,
+pub struct Scraper {
+    url: Option<String>,
+    pages: Option<Vec<Page>>,
 }
 
 
+impl Scraper {
+    pub fn new() -> Self {
+        Scraper {
+            url: None,
+            pages: None,
+        }
+    }
 
+    pub fn set_url(mut self, url: String) -> Self {
+        self.url = Some(url);
+        self
+    }
+
+    pub fn add_page(mut self, page: Page) -> Self {
+        let mut new_pages = self.pages.take().unwrap_or_default();
+        new_pages.push(page);
+        self.pages = Some(new_pages);
+        self
+    }
+
+
+  async fn fetch_url(&self, url: &str) -> Result<String, Box<dyn std::error::Error>> {
+      let client = ClientBuilder::new().danger_accept_invalid_certs(true).build()?;
+      let response = client.get(url).send().await?;
+      let body = response.text().await?;
+      Ok(body)
+    }
+
+  pub async fn scrape_website(&mut self) -> Result<Html, Box<dyn std::error::Error>> {
+      match &self.url { 
+        Some(url) => {
+          let html = self.fetch_url(url).await?;
+          println!("{}", html);
+          let doc = scraper::Html::parse_document(&html);
+          Ok(doc)
+        }
+        None => {
+          Err(Box::new(UrlInvalidError))
+        }
+      }
+      
+  }
+}
+
+impl Scraper {
+    pub fn view_scraper(&self) {
+        println!("{:?}", self);
+    }
+}
