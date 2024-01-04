@@ -1,39 +1,24 @@
-name: Rust CI
+name: Cargo Build & Test
 
 on:
   push:
-    branches:
-      - main
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  build_and_test:
+    name: Rust project - latest
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+          - beta
+          - nightly
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Rust
-        uses: actions/setup-rust@v1
-        with:
-          toolchain: stable
-
-      - name: Build and Test
-        run: |
-          cargo build --verbose
-          cargo test --verbose
-
-  format:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Rust
-        uses: actions/setup-rust@v1
-        with:
-          toolchain: stable
-
-      - name: Format code
-        run: cargo fmt -- --check
+      - uses: actions/checkout@v3
+      - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+      - run: cargo build --verbose
+      - run: cargo test --verbose
