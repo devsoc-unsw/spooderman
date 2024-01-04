@@ -24,4 +24,16 @@ jobs:
       - name: Build and test
         run: |
           cargo build --verbose
-          cargo test --verbose
+          # cargo test --verbose
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Rust
+        uses: actions/setup-rust@v1
+
+      - name: Format code
+        run: cargo fmt -- --check

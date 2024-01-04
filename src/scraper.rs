@@ -135,11 +135,10 @@ impl Scraper {
         self
     }
 
-    pub fn add_page(mut self, page: Page) -> Self {
+    pub fn add_page(&mut self, page: Page) {
         let mut new_pages = self.pages.take().unwrap_or_default();
         new_pages.push(page);
         self.pages = Some(new_pages);
-        self
     }
 
     async fn fetch_url(&self, url: &str) -> Result<String, Box<dyn std::error::Error>> {
@@ -183,15 +182,9 @@ impl Scraper {
                         school,
                         courses: Vec::new(),
                     };
-
-                    match &mut self.pages {
-                        Some(curr_pages) => {
-                            curr_pages.push(page);
-                        }
-                        None => {
-                            self.pages = Some(vec![page]);
-                        }
-                    }
+                    
+                    self.add_page(page);
+                    
                 }
 
                 println!("{:?}", self.pages);
