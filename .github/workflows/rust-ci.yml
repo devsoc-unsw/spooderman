@@ -4,27 +4,25 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Rust
-        uses: actions/setup-rust@v1
-        with:
-          rust-version: stable
-
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and test
+      - name: Setup Rust
+        uses: actions/setup-rust@v1
+        with:
+          toolchain: stable
+
+      - name: Build and Test
         run: |
           cargo build --verbose
-          # cargo test --verbose
+          cargo test --verbose
+
   format:
     runs-on: ubuntu-latest
 
@@ -34,6 +32,8 @@ jobs:
 
       - name: Setup Rust
         uses: actions/setup-rust@v1
+        with:
+          toolchain: stable
 
       - name: Format code
         run: cargo fmt -- --check
