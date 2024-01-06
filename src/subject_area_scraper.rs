@@ -1,7 +1,7 @@
 use scraper::Selector;
 
 use crate::{
-    scraper::{Course, Page},
+    scraper::{Course, Page, fetch_url},
     text_manipulators::{extract_text, get_html_link_to_page},
     Scraper, UrlInvalidError,
 };
@@ -37,12 +37,11 @@ impl std::fmt::Debug for dyn Page {
     }
 }
 
-
-impl Scraper for SubjectAreaScraper {
-    async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+impl SubjectAreaScraper {
+    pub async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match &self.url {
             Some(url) => {
-                let html = self.fetch_url(url).await?;
+                let html = fetch_url(url).await?;
                 println!("{}", html);
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
@@ -81,7 +80,8 @@ impl Scraper for SubjectAreaScraper {
             None => Err(Box::new(UrlInvalidError)),
         }
     }
-
+}
+impl Scraper for SubjectAreaScraper {
     fn new() -> Self {
         SubjectAreaScraper {
             url: None,

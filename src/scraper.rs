@@ -115,19 +115,16 @@ pub trait Scraper {
     fn new() -> Self;
     fn set_url(&mut self, url: String) -> Self;
     fn add_page(&mut self, page: Box::<dyn Page>);
-    
-    async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>>;
-    
-    async fn fetch_url(&self, url: &str) -> Result<String, Box<dyn std::error::Error>> {
-        let client = ClientBuilder::new()
-            .danger_accept_invalid_certs(true)
-            .build()?;
-        let response = client.get(url).send().await?;
-        let body = response.text().await?;
-        Ok(body)
-    }
 }
 
+pub async fn fetch_url(url: &str) -> Result<String, Box<dyn std::error::Error>> {
+    let client = ClientBuilder::new()
+        .danger_accept_invalid_certs(true)
+        .build()?;
+    let response = client.get(url).send().await?;
+    let body = response.text().await?;
+    Ok(body)
+}
 // impl Scraper {
     
 
