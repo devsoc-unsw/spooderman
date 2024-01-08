@@ -1,13 +1,13 @@
 use scraper::Selector;
 
 use crate::{
-    scraper::{fetch_url, Course, Page, Term, Status, Enrolment, DateBlock, ClassTimeBlock},
+    scraper::{Course, Page, fetch_url},
     text_manipulators::{extract_text, get_html_link_to_page},
     Scraper, UrlInvalidError,
 };
 
 #[derive(Debug)]
-pub struct ClassPage {
+pub struct CourseAreaPage {
     url: String,
     subject_area_course_code: String,
     subject_area_course_name: String,
@@ -16,31 +16,17 @@ pub struct ClassPage {
 }
 
 
-
-#[derive(Debug)]
-pub struct Class {
-    class_id: u32,
-    section: String,
-    term: Term,
-    activity: String,
-    status: Status,
-    course_enrolment: Enrolment,
-    term_date: DateBlock,
-    mode: String,
-    times: Vec<ClassTimeBlock>,
-}
-
-
-
-impl Page for ClassPage {
+impl Page for CourseAreaPage {
     fn view_page_details(&self) {
         println!("{:?}", self)
     }
 }
 
+
+
 #[derive(Debug)]
 
-pub struct SubjectAreaScraper {
+pub struct CourseScraper {
     pub url: Option<String>,
     pub pages: Vec<Box<dyn Page>>,
 }
@@ -51,19 +37,64 @@ impl std::fmt::Debug for dyn Page {
     }
 }
 
-impl SubjectAreaScraper {
+impl CourseScraper {
     pub async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match &self.url {
             Some(url) => {
                 let html = fetch_url(url).await?;
-                // println!("{}", html);
-                let form_body_selector = Selector::parse("td.formBody tbody tr td.formBody").unwrap();
-                let code_selector = Selector::parse("tr.label").unwrap();
+                println!("{}", html);
+                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
+                let code_selector = Selector::parse("td.data").unwrap();
                 let name_selector = Selector::parse("td.data a").unwrap();
                 let link_selector = Selector::parse("td.data a").unwrap();
                 let school_selector = Selector::parse("td.data:nth-child(3)").unwrap();
                 let document = scraper::Html::parse_document(&html);
-                // for row_node in document.select(&row_selector) {
+                for row_node in document.select(&row_selector) {
+                    // Extract data from each row
+                    let subject_area_course_code =
+                        extract_text(row_node.select(&code_selector).next().unwrap());
+                    let subject_area_course_name =
+                        extract_text(row_node.select(&name_selector).next().unwrap());
+                    let url = get_html_link_to_page(
+                        row_node
+                            .select(&link_selector)
+                            .next()
+                            .map_or("", |node| node.value().attr("href").unwrap_or("")),
+                    );
+                    let school = extract_text(row_node.select(&school_selector).next().unwrap());
+                    // Create a Course struct and push it to the vector
+                    let page = SubjectAreaPage {
+                        subject_area_course_code,
+                        subject_area_course_name,
+                        url,
+                        school,
+                        courses: Vec::new(),
+                    };
+
+                    self.add_page(Box::new(page));
+                }
+
+                println!("{:?}", self.pages);
+                Ok(())
+            }
+            None => Err(Box::new(UrlInvalidError)),
+        }
+    }
+
+    pub async fn run_course_scraper(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+      
+        match &self.url {
+            Some(url) => {
+                let html = fetch_url(url).await?;
+                println!("{}", html);
+                
+                let row_selector = Selector::parse("tr.rowLowlight td.data").unwrap();
+                let code_selector = Selector::parse("td.data").unwrap();
+                let name_selector = Selector::parse("td.data a").unwrap();
+                let link_selector = Selector::parse("td.data a").unwrap();
+                let uoc_selector = Selector::parse("td.data:nth-child(3)").unwrap();
+                let document = scraper::Html::parse_document(&html);
+                for row_node in document.select(&row_selector) {
                 //     // Extract data from each row
                 //     let subject_area_course_code =
                 //         extract_text(row_node.select(&code_selector).next().unwrap());
@@ -85,8 +116,8 @@ impl SubjectAreaScraper {
                 //         courses: Vec::new(),
                 //     };
 
-                //     self.add_page(Box::new(page));
-                // }
+                    self.add_page(Box::new(page));
+                }
 
                 println!("{:?}", self.pages);
                 Ok(())
@@ -94,7 +125,10 @@ impl SubjectAreaScraper {
             None => Err(Box::new(UrlInvalidError)),
         }
     }
+    }
+
 }
+
 impl Scraper for SubjectAreaScraper {
     fn new() -> Self {
         SubjectAreaScraper {
@@ -110,7 +144,7 @@ impl Scraper for SubjectAreaScraper {
         }
     }
 
-    fn add_page(&mut self, page: Box<dyn Page>) {
+    fn add_page(&mut self, page: Box::<dyn Page>) {
         self.pages.push(page);
     }
 }

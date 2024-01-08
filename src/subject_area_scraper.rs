@@ -1,7 +1,7 @@
 use scraper::Selector;
 
 use crate::{
-    scraper::{Course, Page, fetch_url},
+    scraper::{fetch_url, Course, Page},
     text_manipulators::{extract_text, get_html_link_to_page},
     Scraper, UrlInvalidError,
 };
@@ -15,14 +15,11 @@ pub struct SubjectAreaPage {
     courses: Vec<Course>,
 }
 
-
 impl Page for SubjectAreaPage {
     fn view_page_details(&self) {
         println!("{:?}", self)
     }
 }
-
-
 
 #[derive(Debug)]
 
@@ -31,18 +28,14 @@ pub struct SubjectAreaScraper {
     pub pages: Vec<Box<dyn Page>>,
 }
 
-impl std::fmt::Debug for dyn Page {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{:?}", self.view_page_details())
-    }
-}
+
 
 impl SubjectAreaScraper {
     pub async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match &self.url {
             Some(url) => {
                 let html = fetch_url(url).await?;
-                println!("{}", html);
+                // println!("{}", html);
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
                 let name_selector = Selector::parse("td.data a").unwrap();
@@ -96,7 +89,7 @@ impl Scraper for SubjectAreaScraper {
         }
     }
 
-    fn add_page(&mut self, page: Box::<dyn Page>) {
+    fn add_page(&mut self, page: Box<dyn Page>) {
         self.pages.push(page);
     }
 }
