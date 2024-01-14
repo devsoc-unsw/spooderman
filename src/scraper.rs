@@ -1,8 +1,12 @@
 use chrono::{DateTime, Utc};
 use reqwest::ClientBuilder;
+use tokio::sync::Mutex;
 use std::ops::Add;
 
 use crate::class_scraper::Class;
+
+
+// static COURSE_LIST: Mutex<HashMap<String, >>
 
 #[derive(Debug)]
 pub enum Term {
@@ -74,7 +78,6 @@ pub struct ClassTimeBlock {
     location: String,
 }
 
-
 #[derive(Debug)]
 enum Career {
     UG,
@@ -97,7 +100,6 @@ pub struct Course {
     classes: Vec<Class>,
     notes: String,
 }
-
 
 pub trait Page {
     fn view_page_details(&self);

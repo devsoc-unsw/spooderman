@@ -28,8 +28,6 @@ pub struct SubjectAreaScraper {
     pub pages: Vec<Box<dyn Page>>,
 }
 
-
-
 impl SubjectAreaScraper {
     pub async fn run_scraper_on_url(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match &self.url {
