@@ -1,4 +1,4 @@
-// use spooderman::{Scraper, SubjectAreaScraper};
+use spooderman::{Scraper, SubjectAreaScraper};
 use dotenv::dotenv;
 use regex::Regex;
 use chrono::{Datelike, Utc};
@@ -27,16 +27,12 @@ async fn main() {
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             info!("Timetable URL has been parsed from environment file: {url}!");
-            mutate_string_to_include_curr_year(&mut url.to_string());
-        
-            // let mut scraper = SubjectAreaScraper::new().set_url(base_api_url.to_string());
-            
-            // match scraper.run_scraper_on_url().await {
-            //     Ok(_) => {
-            //         println!("Scraping successful!\n");
-            //     }
-            //     Err(e) => eprintln!("Error: {}", e),
-            // }
+            let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string());
+            let mut scraper = SubjectAreaScraper::new().set_url(url_to_scrape);
+            match scraper.run_scraper_on_url().await {
+                Ok(_) => info!("Scraping successful!\n"),
+                Err(e) => error!("Error: {}", e),
+            }
         }
         Err(e) => {
             warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
