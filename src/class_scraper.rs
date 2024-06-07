@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use log::info;
 use scraper::{Html, Selector};
 use select::document;
@@ -53,16 +55,30 @@ struct Enrolment {
 
 #[derive(Debug)]
 pub struct Class {
-    class_id: u32,
+    class_id: String,
     section: String,
-    term: Term,
+    term: String,
     activity: String,
-    status: Status,
-    course_enrolment: Enrolment,
-    term_date: String,
+    status: String,
+    course_enrolment: String,
+    offering_period: String,
+    meeting_dates: String,
+    census_date: String,
+    consent: String,
     mode: String,
-    times: String,
+    times: Option<Vec<Time>>,
+    class_notes: Option<String>,
 }
+
+#[derive(Debug)]
+struct Time {
+    day: String,
+    time: String,
+    location: String,
+    weeks: String,
+    instructor: Option<String>,
+}
+
 
 #[derive(Debug)]
 pub struct ClassScraper {
@@ -144,25 +160,93 @@ impl Scraper for ClassScraper {
         let skip_count = 3 + term_count + 3 * term_count; //
         let mut class_activity_information = vec![];
         for row in document.select(&term_course_information_table).skip(skip_count) {
-            let cell_selector = Selector::parse("td.label, td.data, table").unwrap();
+            let cell_selector = Selector::parse("td.label, td.data").unwrap();
             let mut cells: Vec<_> = row
                 .select(&cell_selector)
                 .map(|cell| cell.text().collect::<String>().trim().replace("\u{a0}", ""))
                 .flat_map(|line| line.split('\n').filter(|text| !text.is_empty()).map(String::from).collect::<Vec<_>>())
                 .collect();
             cells.iter_mut().for_each(|s| *s = s.trim().to_string());
-            class_activity_information.push(cells.into_iter().filter(|s| !(s.is_empty())).collect::<Vec<_>>());
+            let cell = cells.into_iter().filter(|s| !(s.is_empty()) ).collect::<Vec<_>>();
+            if cell[0] == "Class Nbr" {
+                class_activity_information.push(cell);
+            }
         }
+        println!("{:?}", parse_class_info(class_activity_information));
+        
 
-        println!("{:?}", class_activity_information);
-        
-        
 
 
         Ok(())
     }
 }
 
+
+fn parse_class_info(data: Vec<Vec<String>>) -> Vec<Class> {
+    let mut classes = Vec::new();
+
+    for class_data in data {
+        let mut map = HashMap::new();
+
+        let mut i = 0;
+        while i < class_data.len() {
+            let key = class_data[i].clone();
+            let value = if i + 1 < class_data.len() { class_data[i + 1].clone() } else { "".to_string() };
+            map.insert(key, value);
+            i += 2;
+        }
+
+        let class_info = Class {
+            class_id: map.get("Class Nbr").unwrap_or(&"".to_string()).to_string(),
+            section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
+            term: map.get("Teaching Period").unwrap_or(&"".to_string()).to_string(),
+            activity: map.get("Activity").unwrap_or(&"".to_string()).to_string(),
+            status: map.get("Status").unwrap_or(&"".to_string()).to_string(),
+            course_enrolment: map.get("Enrols/Capacity").unwrap_or(&"".to_string()).to_string(),
+            offering_period: map.get("Offering Period").unwrap_or(&"".to_string()).to_string(),
+            meeting_dates: map.get("Meeting Dates").unwrap_or(&"".to_string()).to_string(),
+            census_date: map.get("Census Date").unwrap_or(&"".to_string()).to_string(),
+            mode: map.get("Mode of Delivery").unwrap_or(&"".to_string()).to_string(),
+            consent: map.get("Consent").unwrap_or(&"".to_string()).to_string(),
+            times: parse_meeting_info(&map),
+            class_notes: map.get("Class Notes").map(|s| s.to_string()).filter(|s| !s.is_empty()),
+        };
+
+        classes.push(class_info);
+    }
+
+    classes
+}
+
+fn parse_meeting_info(map: &HashMap<String, String>) -> Option<Vec<Time>> {
+    let mut meetings = Vec::new();
+
+    let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    for day in days.iter() {
+        if let Some(time) = map.get(*day) {
+            let location = map.get("Location").unwrap_or(&"".to_string()).to_string();
+            let weeks = map.get("Weeks").unwrap_or(&"".to_string()).to_string();
+            let instructor = map.get("Instructor");
+
+
+            let meeting = Time {
+                day: day.to_string(),
+                time: time.to_string(),
+                location,
+                weeks,
+                instructor: instructor.cloned()
+            };
+
+            meetings.push(meeting);
+        }
+    }
+
+    if meetings.is_empty() {
+        None
+    } else {
+        Some(meetings)
+    }
+}
 
 
 
