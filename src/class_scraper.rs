@@ -79,9 +79,6 @@ impl Scraper for ClassScraper {
 
         let document = scraper::Html::parse_document(&html);
 
-        // let terms_selector = Selector::parse("table td.formBody td.data tbody").unwrap(); // valid terms
-
-        // Information Body:
         let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
         let information_body = document.select(&form_bodies).skip(0).next().unwrap();
         let table_selector = Selector::parse("td.formBody > table:nth-of-type(1) > tbody > tr").unwrap();
@@ -119,8 +116,10 @@ impl Scraper for ClassScraper {
             }
 
         }
-
-        let term_course_information_table = Selector::parse("td.formBody td.formBody table:nth-of-type(3) tbody tr").unwrap();
+        
+        // let term_course_information_table = Selector::parse("td.formBody td.formBody table:nth-of-type(3) tbody tr").unwrap();
+        let term_course_information_table = Selector::parse("td.formBody td.formBody table:nth-of-type(3) tbody").unwrap();
+        
         let valid_row_data_len = 1;
         for row in document.select(&term_course_information_table) {
             let cell_selector = Selector::parse("td.data").unwrap();
@@ -136,24 +135,29 @@ impl Scraper for ClassScraper {
             let duplicate_term_removed = cells[1..].to_vec();
 
             println!("{:?}", duplicate_term_removed);
-            // Skip rows that do not have the expected number of cells
-            // if cells.len() == 6 {
-            //     let teaching_period = &cells[0];
-            //     let staff_contact = &cells[1];
-            //     let census_date = &cells[2];
-            //     let notes = &cells[3];
-                
-            //     // Print the extracted data
-            //     println!("Teaching Period: {}", teaching_period);
-            //     println!("Staff Contact: {}", staff_contact);
-            //     println!("Census Date: {}", census_date);
-            //     println!("Notes: {}", notes);
-            //     println!("-------------------------");
-            // }
         }
-        // let val = document.select(&term_course_information_table).next().map(|el| el.html()).unwrap_or_default();
-        // println!("{:?}", val);
-       
+
+        // let term_course_information_table = Selector::parse("td.formBody td.formBody table:nth-of-type(3) tbody tr").unwrap();
+        let term_course_information_table = Selector::parse("table tbody td.formBody table").unwrap();
+        
+        let valid_row_data_len = 1;
+        for row in document.select(&term_course_information_table) {
+            // let cell_selector = Selector::parse("td.data").unwrap();
+            let cell_selector = Selector::parse("td").unwrap();
+            let cells: Vec<_> = row
+                .select(&cell_selector)
+                .map(|cell| cell.text().collect::<Vec<_>>().join("").trim().replace("\u{a0}", ""))
+                .filter(|text| !text.is_empty())
+                .collect();
+            if cells.len() <= valid_row_data_len {
+                continue;
+            }
+            
+            let duplicate_term_removed = cells[1..].to_vec();
+
+            println!("{:?}", duplicate_term_removed);
+        }
+
         Ok(())
     }
 }

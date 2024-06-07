@@ -40,7 +40,7 @@ async fn main() {
                 subject_area_course_code: "COMP1511".to_string(),
                 subject_area_course_name: "COMP1511".to_string(),
                 uoc: 6,
-                url: "https://timetable.unsw.edu.au/2024/COMP2521.html".to_string(), 
+                url: "https://timetable.unsw.edu.au/2024/ACCT5999.html".to_string(), 
                 // url: "https://timetable.unsw.edu.au/2024/COMP1511.html".to_string(),
             };
             let _ = scraper.scrape().await;
