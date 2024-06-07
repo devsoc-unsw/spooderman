@@ -142,7 +142,7 @@ impl Scraper for ClassScraper {
 
         let term_count = 3;
         let skip_count = 3 + term_count + 3 * term_count; //
-
+        let mut class_activity_information = vec![];
         for row in document.select(&term_course_information_table).skip(skip_count) {
             let cell_selector = Selector::parse("*").unwrap();
             let mut cells: Vec<_> = row
@@ -151,57 +151,13 @@ impl Scraper for ClassScraper {
                 .flat_map(|line| line.split('\n').filter(|text| !text.is_empty()).map(String::from).collect::<Vec<_>>())
                 .collect();
             cells.iter_mut().for_each(|s| *s = s.trim().to_string());
-            
-            println!("{:?}", cells) ;
+            class_activity_information.push(cells.into_iter().filter(|s| !(s.is_empty())).collect::<Vec<_>>());
         }
+
+        println!("{:?}", class_activity_information);
         
-        // let label_selector = Selector::parse("td.label").unwrap();
-        // let data_selector = Selector::parse("td.data").unwrap();
-        // let font_selector = Selector::parse("font").unwrap();
-        // let row_selector = Selector::parse("tr.rowHighlight, tr.rowLowlight").unwrap();
+        
 
-        // let valid_row_data_len = 1;
-    //     let mut data = Vec::new();
-    //     let labels = document.select(&label_selector);
-    //     for label in labels {
-    //         if let Some(next_data) = label.next_sibling().and_then(|sibling| sibling.value().as_text()) {
-    //             let value = next_data.trim().replace("\u{a0}", "");
-    //             if !value.is_empty() {
-    //                 data.push(value);
-    //             }
-    //         }
-    //     }
-    //     // Handle font inside data cells
-    // for data_cell in document.select(&data_selector) {
-    //     let text = data_cell.text().collect::<Vec<_>>().concat().trim().replace("\u{a0}", "");
-    //     if !text.is_empty() {
-    //         if let Some(font) = data_cell.select(&font_selector).next() {
-    //             let font_text = font.text().collect::<Vec<_>>().concat().trim().replace("\u{a0}", "");
-    //             if !font_text.is_empty() {
-    //                 data.push(font_text);
-    //             } else {
-    //                 data.push(text);
-    //             }
-    //         } else {
-    //             data.push(text);
-    //         }
-    //     }
-    // }
-
-    // // Extracting meeting information
-    // let mut meeting_info = Vec::new();
-    // for row in document.select(&row_selector) {
-    //     let mut row_data = Vec::new();
-    //     for cell in row.select(&data_selector) {
-    //         let text = cell.text().collect::<Vec<_>>().concat().trim().replace("\u{a0}", "");
-    //         row_data.push(text);
-    //     }
-    //     meeting_info.push(row_data);
-    // }
-    //   // Printing extracted data
-    // //   println!("Extracted Data: {:?}", data);
-    //   println!("Meeting Information: {:?}", meeting_info);
-  
 
         Ok(())
     }
