@@ -144,7 +144,7 @@ impl Scraper for ClassScraper {
         let skip_count = 3 + term_count + 3 * term_count; //
         let mut class_activity_information = vec![];
         for row in document.select(&term_course_information_table).skip(skip_count) {
-            let cell_selector = Selector::parse("*").unwrap();
+            let cell_selector = Selector::parse("td.label, td.data").unwrap();
             let mut cells: Vec<_> = row
                 .select(&cell_selector)
                 .map(|cell| cell.text().collect::<String>().trim().replace("\u{a0}", ""))
