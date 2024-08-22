@@ -11,6 +11,7 @@ pub struct SubjectAreaScraper {
     pub class_scrapers: Vec<ClassScraper>
 
 }
+
 impl Scraper for SubjectAreaScraper {
     async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match &self.url {
