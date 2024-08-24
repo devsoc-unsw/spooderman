@@ -71,4 +71,5 @@ impl SchoolAreaScraper {
             pages: Vec::new(),
         }
     }
+
 }
