@@ -11,9 +11,7 @@ CREATE TABLE Courses (
     "school"                          VARCHAR(50),
     "campus"                          VARCHAR(50),
     "career"                          career_enum,
-    "notes"                           TEXT,
-    "terms"                           term_enum[],
-    "census_dates"                    TEXT[]
+    "terms"                           VARCHAR(2)[],
 );
 
 CREATE TABLE Classes (
