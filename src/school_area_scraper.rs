@@ -2,9 +2,12 @@ use log::info;
 use scraper::Selector;
 
 use crate::{
-    class_scraper::Course, scraper::fetch_url, subject_area_scraper::{self, SubjectAreaScraper}, text_manipulators::{extract_text, get_html_link_to_page}, Scraper, UrlInvalidError
+    class_scraper::Course,
+    scraper::fetch_url,
+    subject_area_scraper::{self, SubjectAreaScraper},
+    text_manipulators::{extract_text, get_html_link_to_page},
+    Scraper, UrlInvalidError,
 };
-
 
 #[derive(Debug)]
 pub struct SchoolAreaPage {
@@ -53,16 +56,13 @@ impl Scraper for SchoolAreaScraper {
 
                     self.pages.push(page);
                 }
-                
+
                 Ok(())
             }
             None => Err(Box::new(UrlInvalidError)),
         }
     }
 }
-
-
-
 
 impl SchoolAreaScraper {
     pub fn new(url: String) -> Self {
@@ -71,5 +71,4 @@ impl SchoolAreaScraper {
             pages: Vec::new(),
         }
     }
-
 }
