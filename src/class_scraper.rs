@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, iter};
 
 use log::info;
 use scraper::Selector;
@@ -113,6 +113,9 @@ impl ClassScraper {
             Selector::parse("td.formBody td.formBody table").unwrap();
         let term_count = course_info.terms.len();
         // 3 is a magical pattern number that is consistent with the way the handbook is setup.
+        // This skips stuff in the course information panel (3 being the tables that follow in the tables).
+        // It is multiplied by the term count so we can skip the summary stuff and go to the class details straight away.
+        // Then we get to the actual Class data.
         let skip_count = 3 + term_count + 3 * term_count;
         let mut class_activity_information = vec![];
         for row in document
@@ -151,7 +154,6 @@ impl ClassScraper {
 
 fn parse_class_info(data: Vec<Vec<String>>, course_id: String) -> Vec<Class> {
     let mut classes = Vec::new();
-    // println!("{:?}", data);
     for class_data in data {
         let mut map = HashMap::new();
 
@@ -160,13 +162,14 @@ fn parse_class_info(data: Vec<Vec<String>>, course_id: String) -> Vec<Class> {
         while i < class_data.len() {
             let key = class_data[i].clone();
             if key == "Meeting Information" {
+                // println!("FOUND IT");
                 let mut j = i + 1;
                 if class_data[j] != "Class Notes" {
                     while class_data[j] != "Class Notes" && j < class_data.len() {
                         j += 1;
                     }
                     // [i, j) is what we need to parse.
-                    times_parsed = parse_meeting_info(&class_data[i..j]);
+                    times_parsed = parse_meeting_info(&class_data[i + 1..j]);
                     i = j + 1;
                     continue;
                 }
@@ -180,10 +183,10 @@ fn parse_class_info(data: Vec<Vec<String>>, course_id: String) -> Vec<Class> {
             map.insert(key, value);
             i += 2;
         }
-        
+
         let class_info = Class {
             course_id: course_id.clone(),
-            class_id: map.get("Class Nbr").unwrap_or(&"".to_string()).to_string(),
+            class_id: course_id.clone() + "-" + map.get("Class Nbr").unwrap_or(&"".to_string()),
             section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
             term: map
                 .get("Teaching Period")
@@ -239,81 +242,78 @@ fn get_blank_time_struct() -> Time {
     }
 }
 
-fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
-    let mut meetings = Vec::new();
+// fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
+//     let mut meetings = Vec::new();
+//     let days = vec![
+//         "Mon".to_string(),
+//         "Tue".to_string(),
+//         "Wed".to_string(),
+//         "Thu".to_string(),
+//         "Fri".to_string(),
+//         "Sat".to_string(),
+//         "Sun".to_string(),
+//     ];
 
-    // print!("\n\n\n\n{:?} <- TEST\n", meetings);
-    let days = vec![
-        "Mon".to_string(),
-        "Tue".to_string(),
-        "Wed".to_string(),
-        "Thu".to_string(),
-        "Fri".to_string(),
-        "Sat".to_string(),
-        "Sun".to_string(),
-    ];
-    // let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    let mut first_insertion = true;
-    let mut curr_timeslot = get_blank_time_struct();
-    let mut i = 0;
-    while i < vec.len() {
-        if days.contains(&vec[i]) {
-            if first_insertion {
-                first_insertion = false;
-            } else {
-                meetings.push(curr_timeslot);
-            }
-            curr_timeslot = get_blank_time_struct();
-            curr_timeslot.day = vec[i].clone();
-            i += 1;
-            curr_timeslot.time = vec[i].clone();
-            i += 1;
-            curr_timeslot.location = vec[i].clone();
-            i += 1;
-            curr_timeslot.weeks = vec[i].clone();
-            i += 1;
-            if i >= vec.len() || days.contains(&vec[i]) {
-                curr_timeslot.instructor = None;
-                i -= 1;
-            } else { 
-                curr_timeslot.instructor = Some(vec[i].clone());
-            }
-        }
-        i += 1;
-    }
-    meetings
-
-    // if meetings.is_empty() {
-    //     None
-    // } else {
-    //     Some(meetings)
-    // }
-}
-// while j < class_data.len() {
-//     while class_data[j] != "Class Notes" && j < class_data.len() {
-// let days = vec![
-//     "Mon".to_string(),
-//     "Tue".to_string(),
-//     "Wed".to_string(),
-//     "Thu".to_string(),
-//     "Fri".to_string(),
-//     "Sat".to_string(),
-//     "Sun".to_string(),
-// ];
-//         if days.contains(&class_data[j]) {
-//             // Curr index is a day
-//             let meeting = Time {
-//                 day: class_data[j].to_string(),
-//                 time: "".to_string(),
-//                 location: "".to_string(),
-//                 weeks: "".to_string(),
-//                 instructor: None,
-//             };
-
-//             // We can have no information,
-//             // We can have missing fields
-//             j += 1;
+//     let mut curr_timeslot = get_blank_time_struct();
+//     let mut i = 0;
+//     while i < vec.len() {
+//         if days.contains(&vec[i]) {
+//             curr_timeslot = get_blank_time_struct();
+//             curr_timeslot.day = vec[i].clone();
+//             i += 1;
+//             curr_timeslot.time = vec[i].clone();
+//             i += 1;
+//             curr_timeslot.location = vec[i].clone();
+//             i += 1;
+//             curr_timeslot.weeks = vec[i].clone();
+//             i += 1;
+//             if i >= vec.len() || days.contains(&vec[i]) {
+//                 curr_timeslot.instructor = None;
+//                 i -= 1; // So we can let the caller function deal with the indexing.
+//             } else {
+//                 curr_timeslot.instructor = Some(vec[i].clone());
+//             }
+//             meetings.push(curr_timeslot);
 //         }
-//         j += 1;
+//         i += 1;
 //     }
+//     meetings
 // }
+
+fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
+    let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+    let mut meetings = Vec::new();
+    let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
+
+    while let Some(day) = iter.next() {
+        if days.contains(&day.as_str()) {
+            let mut timeslot = get_blank_time_struct();
+            timeslot.day = day.clone();
+
+            // Unwrap the time, location, and weeks safely
+            if let (Some(time), Some(location), Some(weeks)) =
+                (iter.next(), iter.next(), iter.next())
+            {
+                timeslot.time = time.clone();
+                timeslot.location = location.clone();
+                timeslot.weeks = weeks.clone();
+            } else {
+                break; // Early exit if we don't have enough data
+            }
+
+            // Check for optional instructor
+            if let Some(instructor) = iter.next() {
+                if !days.contains(&instructor.as_str()) {
+                    timeslot.instructor = Some(instructor.clone());
+                } else {
+                    iter = Box::new(std::iter::once(instructor).chain(iter));
+                }
+            }
+
+            meetings.push(timeslot);
+        }
+    }
+
+    meetings
+}

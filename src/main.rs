@@ -1,108 +1,19 @@
 use chrono::{Datelike, Utc};
 use dotenv::dotenv;
-use futures::stream::{FuturesUnordered, StreamExt};
-use regex::Regex;
-use reqwest::Client;
-use serde::{Deserialize, Serialize};
 use serde_json::{json, to_writer_pretty};
-use spooderman::{ClassScraper, Course, SchoolAreaScraper, Scraper, SubjectAreaScraper};
-use std::collections::HashMap;
+use spooderman::{mutate_string_to_include_curr_year, send_batch_data, ClassScraper, Course, SchoolAreaScraper, Scraper};
 use std::env;
 use std::error::Error;
 use std::fs::File;
 use std::io::{Read, Write};
 use std::vec;
-
 extern crate env_logger;
 extern crate log;
 
 use log::LevelFilter;
-
 use log::{error, info, warn};
 
-type CourseCode = String;
-type FacultyCode = String;
 
-#[derive(Serialize, Deserialize)]
-struct Metadata {
-    table_name: String,
-    columns: Vec<String>,
-    sql_up: String,
-    sql_down: String,
-    write_mode: Option<String>,
-    sql_before: Option<String>,
-    sql_after: Option<String>,
-    dryrun: Option<bool>,
-}
-
-#[derive(Serialize, Deserialize)]
-struct BatchInsertRequest {
-    metadata: Metadata,
-    payload: Vec<serde_json::Value>,
-}
-
-pub fn mutate_string_to_include_curr_year(curr_base_url: &mut String) -> String {
-    let pattern = Regex::new("year").unwrap();
-    pattern
-        .replace(&curr_base_url, Utc::now().year().to_string())
-        .to_string()
-}
-
-async fn send_batch_data() -> Result<(), Box<dyn Error>> {
-    dotenv::dotenv().ok();
-    let hasuragres_url = env::var("HASURAGRES_URL")?;
-    let api_key = env::var("HASURAGRES_API_KEY")?;
-    let client = Client::new();
-    let requests = vec![
-        BatchInsertRequest {
-            metadata: Metadata {
-                table_name: "courses".to_string(),
-                columns: vec!["subject_area_course_code".to_string(), "subject_area_course_name".to_string(), "uoc".to_string()],
-                sql_up: "CREATE TABLE Students(\"zId\" INT PRIMARY KEY, \"name\" TEXT);".to_string(),
-                sql_down: "DROP TABLE Students CASCADE;".to_string(),
-                write_mode: Some("overwrite".to_string()),
-                sql_before: None,
-                sql_after: None,
-                dryrun: Some(true),
-            },
-            payload: vec![
-                json!({"zId": 1, "name": "Student One"}),
-                json!({"zId": 2, "name": "Student Two"}),
-            ],
-        },
-        BatchInsertRequest {
-            metadata: Metadata {
-                table_name: "courses".to_string(),
-                columns: vec!["course_id".to_string(), "course_name".to_string()],
-                sql_up: "CREATE TABLE Courses(\"course_id\" VARCHAR(8) PRIMARY KEY, \"course_name\" TEXT);".to_string(),
-                sql_down: "DROP TABLE Courses CASCADE;".to_string(),
-                write_mode: Some("append".to_string()),
-                sql_before: None,
-                sql_after: None,
-                dryrun: Some(false),
-            },
-            payload: vec![
-                json!({"course_id": "CS101", "course_name": "Introduction to Programming"}),
-                json!({"course_id": "CS102", "course_name": "Data Structures"}),
-            ],
-        },
-    ];
-
-    let response = client
-        .post(format!("{}/batch_insert", hasuragres_url))
-        .header("X-API-Key", api_key)
-        .json(&requests)
-        .send()
-        .await?;
-
-    if response.status().is_success() {
-        println!("Batch data inserted successfully!");
-    } else {
-        eprintln!("Failed to insert batch data: {:?}", response.text().await?);
-    }
-
-    Ok(())
-}
 
 async fn run_all_school_offered_courses_scraper_job() -> Option<SchoolAreaScraper> {
     match std::env::var("TIMETABLE_API_URL") {
@@ -142,22 +53,15 @@ async fn run_course_classes_page_scraper_job(
     return courses_vec;
 }
 
-async fn test_scrape() {
+async fn _test_scrape() {
     let mut scraper = ClassScraper {
         subject_area_course_code: "COMP1511".to_string(),
         subject_area_course_name: "COMP1511".to_string(),
         uoc: 6,
         // url: "https://timetable.unsw.edu.au/2024/ACCT2101.html".to_string(),
-        url: "https://timetable.unsw.edu.au/2024/COMP1511.html".to_string(),
+        url: "https://timetable.unsw.edu.au/2024/COMP2521.html".to_string(),
     };
     let c = scraper.scrape().await;
-    println!("{:?}", c);
-    // for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-    //     for course_area_scrapers in &mut school_area_scrapers.subject_area_scraper.class_scrapers {
-    //         let courses = course_area_scrapers.scrape().await;
-    //         println!("{:?}", courses);
-    //     }
-    // }
 }
 
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
@@ -182,21 +86,20 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     let mut json_classes = Vec::new();
     for course in course_vec.iter() {
         for class in course.classes.iter() {
-            let times_json = class.times.as_ref().map(|times| {
-                let _ = times
-                    .iter()
-                    .map(|time| {
-                        json!({
-                            "day": time.day,
-                            "time": time.time,
-                            "location": time.location,
-                            "weeks": time.weeks,
-                            "instructor": time.instructor
-                        })
-                    })
-                    .collect::<serde_json::Value>();
-            });
+            let mut times_json = Vec::<serde_json::Value>::new();
+            if class.times.is_some() {
+                for time in class.times.as_ref().unwrap().into_iter() {
+                    times_json.push(json!({
+                        "day": time.day,
+                        "time": time.time,
+                        "location": time.location,
+                        "weeks": time.weeks,
+                        "instructor": time.instructor
+                    }));
+                }
+            }
             json_classes.push(json!({
+                "course_id": class.course_id,
                 "class_id": class.class_id,
                 "section": class.section,
                 "term": class.term,
@@ -217,33 +120,71 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     json_classes
 }
 
+async fn handle_scrape() ->  Result<(), Box<dyn Error>> {
+    println!("Handling scrape...");
+    let mut course_vec: Vec<Course> = vec![];
+    let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
+    if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
+        run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
+        let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+        course_vec.extend(course);
+    }
+    let json_classes = convert_classes_to_json(&mut course_vec);
+    let json_courses = convert_courses_to_json(&mut course_vec);
+    let file_classes = File::create("classes.json")?;
+    let file_courses = File::create("courses.json")?;
+    to_writer_pretty(file_classes, &json_classes)?;
+    to_writer_pretty(file_courses, &json_courses)?;
+    Ok(())
+}
+
+async fn handle_batch_insert() ->  Result<(), Box<dyn Error>> {
+    println!("Handling batch insert...");
+    let _ = send_batch_data().await;
+    Ok(())
+}
+
+async fn handle_scrape_n_batch_insert() ->  Result<(), Box<dyn Error>> {
+    println!("Handling scrape and batch insert...");
+    let _ = handle_scrape().await;
+    let _ = handle_batch_insert().await;
+    Ok(())
+}
+
+fn print_help() {
+    println!("Usage:");
+    println!("  scrape                - Perform scraping");
+    println!("  scrape_n_batch_insert - Perform scraping and batch insert");
+    println!("  batch_insert          - Perform batch insert. Note if the json files dont exist, it will be created!");
+    println!("  help                  - Show this help message");
+}
+
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
+async fn main() ->  Result<(), Box<dyn Error>> {
     dotenv().ok();
     env_logger::Builder::new()
         .filter_level(LevelFilter::Info)
         .init();
-    // let class_vec = vec![];
-    // let mut course_vec: Vec<Course> = vec![];
-    // let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
-    // if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-    //     run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-    //     let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-    //     println!("{:?}", course);
-    //     course_vec.extend(course);
-    // }
 
-    // let mut json_classes = convert_classes_to_json(&mut course_vec);
-    // let mut json_courses = convert_courses_to_json(&mut course_vec);
+    let args: Vec<String> = env::args().collect();
 
-    // // println!("Courses: {:?}, Classes: {:?}", json_courses, json_classes);
-    // // Open files for writing
-    // let file_classes = File::create("classes.json")?;
-    // let file_courses = File::create("courses.json")?;
+    if args.len() < 2 {
+        eprintln!("Usage: {} <command> [options]", args[0]);
+        std::process::exit(1);
+    }
 
-    // // Write JSON to files
-    // to_writer_pretty(file_classes, &json_classes)?;
-    // to_writer_pretty(file_courses, &json_courses)?;
-    test_scrape().await;
+    let command = &args[1];
+    match command.as_str() {
+        "scrape" => handle_scrape().await?,
+        "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
+        "batch_insert" => handle_batch_insert().await?,
+        "help" => print_help(),
+        _ => {
+            eprintln!("Unknown command: '{}'", command);
+            print_help();
+            std::process::exit(1);
+        }
+    }
+
     Ok(())
 }
