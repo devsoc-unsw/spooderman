@@ -1,7 +1,9 @@
 use reqwest::ClientBuilder;
 
 pub trait Scraper {
-    fn scrape(&mut self) -> impl std::future::Future<Output = Result<(), Box<dyn std::error::Error>>> + Send;
+    fn scrape(
+        &mut self,
+    ) -> impl std::future::Future<Output = Result<(), Box<dyn std::error::Error>>> + Send;
 }
 
 pub async fn fetch_url(url: &str) -> Result<String, Box<dyn std::error::Error>> {
@@ -12,4 +14,3 @@ pub async fn fetch_url(url: &str) -> Result<String, Box<dyn std::error::Error>> 
     let body = response.text().await?;
     Ok(body)
 }
-

@@ -1,108 +1,18 @@
-use spooderman::{ClassScraper, SchoolAreaScraper, Scraper, SubjectAreaScraper};
-use dotenv::dotenv;
-use regex::Regex;
 use chrono::{Datelike, Utc};
-use std::collections::HashMap;
-use futures::stream::{StreamExt, FuturesUnordered};
-use reqwest::Client;
-use serde::{Deserialize, Serialize};
-use serde_json::json;
+use dotenv::dotenv;
+use serde_json::{json, to_writer_pretty};
+use spooderman::{mutate_string_to_include_curr_year, send_batch_data, ClassScraper, Course, SchoolAreaScraper, Scraper};
 use std::env;
 use std::error::Error;
-
-
-extern crate log;
+use std::fs::File;
+use std::io::{Read, Write};
+use std::vec;
 extern crate env_logger;
+extern crate log;
 
 use log::LevelFilter;
+use log::{error, info, warn};
 
-use log::{info, warn, error};
-
-type CourseCode = String;
-type FacultyCode = String;
-
-
-#[derive(Serialize, Deserialize)]
-struct Metadata {
-    table_name: String,
-    columns: Vec<String>,
-    sql_up: String,
-    sql_down: String,
-    write_mode: Option<String>,
-    sql_before: Option<String>,
-    sql_after: Option<String>,
-    dryrun: Option<bool>,
-}
-
-#[derive(Serialize, Deserialize)]
-struct BatchInsertRequest {
-    metadata: Metadata,
-    payload: Vec<serde_json::Value>,
-}
-
-
-pub fn mutate_string_to_include_curr_year(curr_base_url: &mut String) -> String { 
-    let pattern = Regex::new("year").unwrap();
-    pattern.replace(&curr_base_url, Utc::now().year().to_string()).to_string()
-}
-
-async fn send_batch_data() -> Result<(), Box<dyn Error>> {
-    dotenv::dotenv().ok();
-    let hasuragres_url = env::var("HASURAGRES_URL")?;
-    let api_key = env::var("HASURAGRES_API_KEY")?;
-    let client = Client::new();
-    let requests = vec![
-        BatchInsertRequest {
-            metadata: Metadata {
-                table_name: "courses".to_string(),
-                columns: vec!["subject_area_course_code".to_string(), "subject_area_course_name".to_string(), "uoc".to_string()],
-                sql_up: "CREATE TABLE Students(\"zId\" INT PRIMARY KEY, \"name\" TEXT);".to_string(),
-                sql_down: "DROP TABLE Students CASCADE;".to_string(),
-                write_mode: Some("overwrite".to_string()),
-                sql_before: None,
-                sql_after: None,
-                dryrun: Some(true),
-            },
-            payload: vec![
-                json!({"zId": 1, "name": "Student One"}),
-                json!({"zId": 2, "name": "Student Two"}),
-            ],
-        },
-        BatchInsertRequest {
-            metadata: Metadata {
-                table_name: "courses".to_string(),
-                columns: vec!["course_id".to_string(), "course_name".to_string()],
-                sql_up: "CREATE TABLE Courses(\"course_id\" VARCHAR(8) PRIMARY KEY, \"course_name\" TEXT);".to_string(),
-                sql_down: "DROP TABLE Courses CASCADE;".to_string(),
-                write_mode: Some("append".to_string()),
-                sql_before: None,
-                sql_after: None,
-                dryrun: Some(false),
-            },
-            payload: vec![
-                json!({"course_id": "CS101", "course_name": "Introduction to Programming"}),
-                json!({"course_id": "CS102", "course_name": "Data Structures"}),
-            ],
-        },
-    ];
-
-
-    let response = client
-        .post(format!("{}/batch_insert", hasuragres_url))
-        .header("X-API-Key", api_key)
-        .json(&requests)
-        .send()
-        .await?;
-
-
-    if response.status().is_success() {
-        println!("Batch data inserted successfully!");
-    } else {
-        eprintln!("Failed to insert batch data: {:?}", response.text().await?);
-    }
-
-    Ok(())
-}
 
 
 async fn run_all_school_offered_courses_scraper_job() -> Option<SchoolAreaScraper> {
@@ -120,76 +30,161 @@ async fn run_all_school_offered_courses_scraper_job() -> Option<SchoolAreaScrape
     }
 }
 
-async fn run_school_courses_page_scraper_job() -> SchoolAreaScraper { 
-    // if let Some(school_area_scrapers) = all_school_offered_courses_scraper.as_mut() {
-    //     for school_area_page in &mut school_area_scrapers.pages {
-    //         let _ = school_area_page.subject_area_scraper.scrape().await;
-    //         println!("TEEHEE");
-    //         for mut class_scrapers in &mut school_area_page.subject_area_scraper.class_scrapers {
+async fn run_school_courses_page_scraper_job(
+    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
+) {
+    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
+        let _ = school_area_scrapers.subject_area_scraper.scrape().await;
+    }
+}
 
-    //         }
-    //         // Construct Courses from here and transfer ownership
-            
-    //     }
-    // }
+async fn run_course_classes_page_scraper_job(
+    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
+) -> Vec<Course> {
+    let mut courses_vec: Vec<Course> = vec![];
+    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
+        for course_area_scrapers in &mut school_area_scrapers.subject_area_scraper.class_scrapers {
+            let courses = course_area_scrapers.scrape().await;
+            if let Ok(course) = courses {
+                courses_vec.push(course);
+            }
+        }
+    }
+    return courses_vec;
+}
+
+async fn _test_scrape() {
+    let mut scraper = ClassScraper {
+        subject_area_course_code: "COMP1511".to_string(),
+        subject_area_course_name: "COMP1511".to_string(),
+        uoc: 6,
+        // url: "https://timetable.unsw.edu.au/2024/ACCT2101.html".to_string(),
+        url: "https://timetable.unsw.edu.au/2024/COMP2521.html".to_string(),
+    };
+    let c = scraper.scrape().await;
+}
+
+fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+    let mut json_courses = Vec::new();
+    for course in course_vec.iter() {
+        json_courses.push(json!({
+            "subject_area_course_code": course.subject_area_course_code,
+            "subject_area_course_name": course.subject_area_course_name,
+            "uoc": course.uoc,
+            "faculty": course.faculty,
+            "school": course.school,
+            "campus": course.campus,
+            "career": course.career,
+            "terms": course.terms,
+        }));
+    }
+
+    json_courses
+}
+
+fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+    let mut json_classes = Vec::new();
+    for course in course_vec.iter() {
+        for class in course.classes.iter() {
+            let mut times_json = Vec::<serde_json::Value>::new();
+            if class.times.is_some() {
+                for time in class.times.as_ref().unwrap().into_iter() {
+                    times_json.push(json!({
+                        "day": time.day,
+                        "time": time.time,
+                        "location": time.location,
+                        "weeks": time.weeks,
+                        "instructor": time.instructor
+                    }));
+                }
+            }
+            json_classes.push(json!({
+                "course_id": class.course_id,
+                "class_id": class.class_id,
+                "section": class.section,
+                "term": class.term,
+                "activity": class.activity,
+                "status": class.status,
+                "course_enrolment": class.course_enrolment,
+                "offering_period": class.offering_period,
+                "meeting_dates": class.meeting_dates,
+                "census_date": class.census_date,
+                "consent": class.consent,
+                "mode": class.mode,
+                "times": times_json,
+                "class_notes": class.class_notes,
+            }));
+        }
+    }
+
+    json_classes
+}
+
+async fn handle_scrape() ->  Result<(), Box<dyn Error>> {
+    println!("Handling scrape...");
+    let mut course_vec: Vec<Course> = vec![];
+    let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
+    if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
+        run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
+        let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+        course_vec.extend(course);
+    }
+    let json_classes = convert_classes_to_json(&mut course_vec);
+    let json_courses = convert_courses_to_json(&mut course_vec);
+    let file_classes = File::create("classes.json")?;
+    let file_courses = File::create("courses.json")?;
+    to_writer_pretty(file_classes, &json_classes)?;
+    to_writer_pretty(file_courses, &json_courses)?;
+    Ok(())
+}
+
+async fn handle_batch_insert() ->  Result<(), Box<dyn Error>> {
+    println!("Handling batch insert...");
+    let _ = send_batch_data().await;
+    Ok(())
+}
+
+async fn handle_scrape_n_batch_insert() ->  Result<(), Box<dyn Error>> {
+    println!("Handling scrape and batch insert...");
+    let _ = handle_scrape().await;
+    let _ = handle_batch_insert().await;
+    Ok(())
+}
+
+fn print_help() {
+    println!("Usage:");
+    println!("  scrape                - Perform scraping");
+    println!("  scrape_n_batch_insert - Perform scraping and batch insert");
+    println!("  batch_insert          - Perform batch insert. Note if the json files dont exist, it will be created!");
+    println!("  help                  - Show this help message");
 }
 
 #[tokio::main]
-async fn main() {
+async fn main() ->  Result<(), Box<dyn Error>> {
     dotenv().ok();
     env_logger::Builder::new()
         .filter_level(LevelFilter::Info)
         .init();
-    let class_vec = vec![];
-    let course_vec: vec![];
-    let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
-    
-    println!("{:?}", all_school_offered_courses_scraper);
 
-    
-        // let scraping_jobs = FuturesUnordered::new();
-        // let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
-        
-        // for mut scraper in all_school_offered_courses_scraper {
-        //     scraping_jobs.push(async { scraper.scrape().await });
-        // }
+    let args: Vec<String> = env::args().collect();
 
-        // scraping_jobs.for_each_concurrent(None, |scrape_future| async {
-        //     scrape_future;
-        // }).await;
-        // println!("{:?}", all_school_offered_courses_scraper);
-    // // The base API url needs the year to be replaced with "year".
-    // // ie. https://timetable.unsw.edu.au/year/subjectSearch.html
-    // match std::env::var("TIMETABLE_API_URL") {
-    //     Ok(url) => {
-    //         info!("Timetable URL has been parsed from environment file: {url}!");
-    //         let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string());
-            
-    //         let mut scraper = ClassScraper {
-    //             subject_area_course_code: "COMP1511".to_string(),
-    //             subject_area_course_name: "COMP1511".to_string(),
-    //             uoc: 6,
-    //             // url: "https://timetable.unsw.edu.au/2024/ACCT5999.html".to_string(), 
-    //             url: "https://timetable.unsw.edu.au/2024/COMP1511.html".to_string(),
-    //         };
-    //         let _ = scraper.scrape().await;
-    //         // let mut scraper = SchoolAreaScraper::new(url_to_scrape);
-            
-    //         // // let mut scraper = SubjectAreaScraper::new("https://timetable.unsw.edu.au/2024/COMPKENS.html".to_string());
-    //         // match scraper.scrape().await {
-    //         //     Ok(_) => info!("Scraping successful!\n"),
-    //         //     Err(e) => error!("Error: {}", e),
-    //         // } 
-    //         // for school_area_page in &mut scraper.pages {
-    //         //     let _ = school_area_page.subject_area_scraper.scrape().await;
-    //         // }
-    //         // println!("{:?}", scraper);
+    if args.len() < 2 {
+        eprintln!("Usage: {} <command> [options]", args[0]);
+        std::process::exit(1);
+    }
 
+    let command = &args[1];
+    match command.as_str() {
+        "scrape" => handle_scrape().await?,
+        "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
+        "batch_insert" => handle_batch_insert().await?,
+        "help" => print_help(),
+        _ => {
+            eprintln!("Unknown command: '{}'", command);
+            print_help();
+            std::process::exit(1);
+        }
+    }
 
-    //     }
-    //     Err(e) => {
-    //         warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-    //     }
-    // };
-
+    Ok(())
 }

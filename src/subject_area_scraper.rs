@@ -2,14 +2,16 @@ use log::info;
 use scraper::Selector;
 
 use crate::{
-    class_scraper::{ClassScraper, Course}, scraper::fetch_url, text_manipulators::{extract_text, get_html_link_to_page}, Scraper, UrlInvalidError
+    class_scraper::{ClassScraper, Course},
+    scraper::fetch_url,
+    text_manipulators::{extract_text, get_html_link_to_page},
+    Scraper, UrlInvalidError,
 };
 
 #[derive(Debug)]
 pub struct SubjectAreaScraper {
     pub url: Option<String>,
-    pub class_scrapers: Vec<ClassScraper>
-
+    pub class_scrapers: Vec<ClassScraper>,
 }
 
 impl Scraper for SubjectAreaScraper {
@@ -35,8 +37,15 @@ impl Scraper for SubjectAreaScraper {
                             .next()
                             .map_or("", |node| node.value().attr("href").unwrap_or("")),
                     );
-                    let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap()).parse().expect("Could not parse UOC!");
-                    self.class_scrapers.push(ClassScraper { subject_area_course_code, subject_area_course_name, uoc, url });
+                    let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
+                        .parse()
+                        .expect("Could not parse UOC!");
+                    self.class_scrapers.push(ClassScraper {
+                        subject_area_course_code,
+                        subject_area_course_name,
+                        uoc,
+                        url,
+                    });
                 }
 
                 Ok(())
