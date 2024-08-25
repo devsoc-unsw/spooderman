@@ -27,7 +27,7 @@ struct BatchInsertRequest {
 
 fn read_json_file(file_path: &str) -> Result<Vec<Value>, Box<dyn std::error::Error>> {
     let mut file = File::open(file_path)?;
-    
+
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     let data: Vec<Value> = serde_json::from_str(&contents)?;
@@ -58,7 +58,7 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                     "school".to_string(),
                     "campus".to_string(),
                     "career".to_string(),
-                    "terms".to_string()
+                    "terms".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Courses/up.sql")?,
                 sql_down: read_sql_file("sql/Courses/down.sql")?,
@@ -86,7 +86,6 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                     "consent".to_string(),
                     "mode".to_string(),
                     "class_notes".to_string(),
-                    "times".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Classes/up.sql")?,
                 sql_down: read_sql_file("sql/Classes/down.sql")?,
@@ -96,6 +95,27 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                 dryrun: Some(false),
             },
             payload: read_json_file("classes.json")?,
+        },
+        BatchInsertRequest {
+            metadata: Metadata {
+                table_name: "times".to_string(),
+                columns: vec![
+                    "class_id".to_string(),
+                    "course_id".to_string(),
+                    "day".to_string(),
+                    "instructor".to_string(),
+                    "location".to_string(),
+                    "time".to_string(),
+                    "weeks".to_string(),
+                ],
+                sql_up: read_sql_file("sql/Times/up.sql")?,
+                sql_down: read_sql_file("sql/Times/down.sql")?,
+                write_mode: Some("overwrite".to_string()),
+                sql_before: None,
+                sql_after: None,
+                dryrun: Some(false),
+            },
+            payload: read_json_file("times.json")?,
         },
     ];
 

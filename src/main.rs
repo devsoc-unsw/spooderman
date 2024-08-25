@@ -1,19 +1,17 @@
-use chrono::{Datelike, Utc};
 use dotenv::dotenv;
 use serde_json::{json, to_writer_pretty};
-use spooderman::{mutate_string_to_include_curr_year, send_batch_data, ClassScraper, Course, SchoolAreaScraper, Scraper};
+use spooderman::{
+    mutate_string_to_include_curr_year, send_batch_data, Course, SchoolAreaScraper, Scraper,
+};
 use std::env;
 use std::error::Error;
 use std::fs::File;
-use std::io::{Read, Write};
 use std::vec;
 extern crate env_logger;
 extern crate log;
 
+use log::warn;
 use log::LevelFilter;
-use log::{error, info, warn};
-
-
 
 async fn run_all_school_offered_courses_scraper_job() -> Option<SchoolAreaScraper> {
     match std::env::var("TIMETABLE_API_URL") {
@@ -53,17 +51,6 @@ async fn run_course_classes_page_scraper_job(
     return courses_vec;
 }
 
-async fn _test_scrape() {
-    let mut scraper = ClassScraper {
-        subject_area_course_code: "COMP1511".to_string(),
-        subject_area_course_name: "COMP1511".to_string(),
-        uoc: 6,
-        // url: "https://timetable.unsw.edu.au/2024/ACCT2101.html".to_string(),
-        url: "https://timetable.unsw.edu.au/2024/COMP2521.html".to_string(),
-    };
-    let c = scraper.scrape().await;
-}
-
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
     for course in course_vec.iter() {
@@ -82,22 +69,32 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     json_courses
 }
 
+fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+    let mut times_json = Vec::<serde_json::Value>::new();
+    for course in course_vec.iter() {
+        for class in course.classes.iter() {
+            if class.times.is_some() {
+                for time in class.times.as_ref().unwrap().into_iter() {
+                    times_json.push(json!({
+                        "class_id": class.class_id,
+                        "course_id": class.course_id,
+                        "day": time.day,
+                        "instructor": time.instructor,
+                        "location": time.location,
+                        "time": time.time,
+                        "weeks": time.weeks,
+                    }));
+                }
+            }
+        }
+    }
+
+    times_json
+}
 fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
     let mut json_classes = Vec::new();
     for course in course_vec.iter() {
         for class in course.classes.iter() {
-            let mut times_json = Vec::<serde_json::Value>::new();
-            if class.times.is_some() {
-                for time in class.times.as_ref().unwrap().into_iter() {
-                    times_json.push(json!({
-                        "day": time.day,
-                        "time": time.time,
-                        "location": time.location,
-                        "weeks": time.weeks,
-                        "instructor": time.instructor
-                    }));
-                }
-            }
             json_classes.push(json!({
                 "course_id": class.course_id,
                 "class_id": class.class_id,
@@ -111,7 +108,6 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
                 "census_date": class.census_date,
                 "consent": class.consent,
                 "mode": class.mode,
-                "times": times_json,
                 "class_notes": class.class_notes,
             }));
         }
@@ -120,7 +116,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     json_classes
 }
 
-async fn handle_scrape() ->  Result<(), Box<dyn Error>> {
+async fn handle_scrape() -> Result<(), Box<dyn Error>> {
     println!("Handling scrape...");
     let mut course_vec: Vec<Course> = vec![];
     let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
@@ -131,20 +127,23 @@ async fn handle_scrape() ->  Result<(), Box<dyn Error>> {
     }
     let json_classes = convert_classes_to_json(&mut course_vec);
     let json_courses = convert_courses_to_json(&mut course_vec);
+    let json_times = convert_classes_times_to_json(&mut course_vec);
     let file_classes = File::create("classes.json")?;
     let file_courses = File::create("courses.json")?;
+    let file_times = File::create("times.json")?;
     to_writer_pretty(file_classes, &json_classes)?;
     to_writer_pretty(file_courses, &json_courses)?;
+    to_writer_pretty(file_times, &json_times)?;
     Ok(())
 }
 
-async fn handle_batch_insert() ->  Result<(), Box<dyn Error>> {
+async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling batch insert...");
     let _ = send_batch_data().await;
     Ok(())
 }
 
-async fn handle_scrape_n_batch_insert() ->  Result<(), Box<dyn Error>> {
+async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling scrape and batch insert...");
     let _ = handle_scrape().await;
     let _ = handle_batch_insert().await;
@@ -160,7 +159,7 @@ fn print_help() {
 }
 
 #[tokio::main]
-async fn main() ->  Result<(), Box<dyn Error>> {
+async fn main() -> Result<(), Box<dyn Error>> {
     dotenv().ok();
     env_logger::Builder::new()
         .filter_level(LevelFilter::Info)
