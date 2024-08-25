@@ -1,4 +1,7 @@
+use std::sync::Arc;
+
 use scraper::Selector;
+use tokio::sync::Mutex;
 
 use crate::{
     class_scraper::ClassScraper,
@@ -10,14 +13,15 @@ use crate::{
 #[derive(Debug)]
 pub struct SubjectAreaScraper {
     pub url: Option<String>,
-    pub class_scrapers: Vec<ClassScraper>,
+    pub class_scrapers: Vec<Arc<Mutex<ClassScraper>>>,
 }
 
-impl Scraper for SubjectAreaScraper {
-    async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+impl SubjectAreaScraper {
+    pub async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error + Send>> {
         match &self.url {
             Some(url) => {
-                let html = fetch_url(url).await?;
+                let html = fetch_url(url).await.expect("There was something wrong with the URL");
+                println!("Scraping Subject Area for: {}", url);
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
                 let name_selector = Selector::parse("td.data a").unwrap();
@@ -39,12 +43,12 @@ impl Scraper for SubjectAreaScraper {
                     let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
                         .parse()
                         .expect("Could not parse UOC!");
-                    self.class_scrapers.push(ClassScraper {
+                    self.class_scrapers.push(Arc::new(Mutex::new(ClassScraper {
                         subject_area_course_code,
                         subject_area_course_name,
                         uoc,
                         url,
-                    });
+                    })));
                 }
 
                 Ok(())

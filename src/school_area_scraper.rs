@@ -1,5 +1,6 @@
 use scraper::Selector;
-
+use tokio::sync::Mutex;
+use std::{error::Error, sync::Arc};
 use crate::{
     scraper::fetch_url,
     subject_area_scraper::SubjectAreaScraper,
@@ -12,7 +13,7 @@ pub struct SchoolAreaPage {
     pub subject_area_course_code: String,
     pub subject_area_course_name: String,
     pub school: String,
-    pub subject_area_scraper: SubjectAreaScraper,
+    pub subject_area_scraper: Arc<Mutex<SubjectAreaScraper>>,
 }
 
 #[derive(Debug)]
@@ -21,15 +22,30 @@ pub struct SchoolAreaScraper {
     pub pages: Vec<SchoolAreaPage>,
 }
 
-impl Scraper for SchoolAreaScraper {
-    async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+#[derive(Debug)]
+pub struct ScrapeError {
+    details: String,
+}
+
+impl std::fmt::Display for ScrapeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "ScrapeError: {}", self.details)
+    }
+}
+impl Error for ScrapeError {}
+
+impl SchoolAreaScraper {
+    pub async fn scrape(&mut self) -> Result<(), Box<ScrapeError>> {
         match &self.url {
             Some(url) => {
-                let html = fetch_url(url).await?;
+                println!("School Area for: {}", url);
+                let html = fetch_url(url).await.expect("There has been something wrong with the URL.");
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
+
                 let name_selector = Selector::parse("td.data a").unwrap();
                 let link_selector = Selector::parse("td.data a").unwrap();
+
                 let school_selector = Selector::parse("td.data:nth-child(3)").unwrap();
                 let document = scraper::Html::parse_document(&html);
                 for row_node in document.select(&row_selector) {
@@ -49,7 +65,7 @@ impl Scraper for SchoolAreaScraper {
                         subject_area_course_code,
                         subject_area_course_name,
                         school,
-                        subject_area_scraper: SubjectAreaScraper::new(url),
+                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url))),
                     };
 
                     self.pages.push(page);
@@ -57,7 +73,7 @@ impl Scraper for SchoolAreaScraper {
 
                 Ok(())
             }
-            None => Err(Box::new(UrlInvalidError)),
+            None => Err(Box::new(ScrapeError { details :  "There was something wrong with scraping the class".to_string()})),
         }
     }
 }
