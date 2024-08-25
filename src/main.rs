@@ -63,8 +63,8 @@ async fn run_course_classes_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
 ) -> Vec<Course> {
     let mut tasks = vec![];
-    let semaphore = Arc::new(Semaphore::new(30)); // no of concurrent tasks
-    let rate_limit_delay = Duration::from_millis(50); // delay between tasks
+    let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
+    let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
         let subject_area_scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
