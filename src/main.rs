@@ -1,7 +1,8 @@
 use dotenv::dotenv;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, Time, Course, SchoolAreaScraper, Scraper,
+    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Scraper,
+    Time,
 };
 use std::env;
 use std::error::Error;
@@ -68,7 +69,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
 
     json_courses
 }
-fn generate_time_id (class: &Class, time: &Time) -> String {
+fn generate_time_id(class: &Class, time: &Time) -> String {
     class.class_id.to_string() + &time.day + &time.location + &time.time + &time.weeks
 }
 fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {

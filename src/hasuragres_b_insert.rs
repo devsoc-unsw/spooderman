@@ -1,10 +1,10 @@
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
-use serde_json::{json, Value};
+use serde_json::Value;
 use std::env;
 use std::error::Error;
 use std::fs::File;
-use std::io::{Read, Write};
+use std::io::Read;
 use std::vec;
 
 #[derive(Serialize, Deserialize)]

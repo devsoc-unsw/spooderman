@@ -1,10 +1,8 @@
-use log::info;
 use scraper::Selector;
 
 use crate::{
-    class_scraper::Course,
     scraper::fetch_url,
-    subject_area_scraper::{self, SubjectAreaScraper},
+    subject_area_scraper::SubjectAreaScraper,
     text_manipulators::{extract_text, get_html_link_to_page},
     Scraper, UrlInvalidError,
 };

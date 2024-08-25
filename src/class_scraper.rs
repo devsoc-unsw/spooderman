@@ -1,8 +1,6 @@
-use std::{collections::HashMap, iter};
+use std::collections::HashMap;
 
-use log::info;
 use scraper::Selector;
-use serde_json::json;
 
 use crate::{scraper::fetch_url, text_manipulators::extract_text};
 
