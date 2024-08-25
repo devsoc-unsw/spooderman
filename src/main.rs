@@ -1,4 +1,10 @@
 use dotenv::dotenv;
+use reqwest::get;
+use tokio::task::spawn;
+use tokio::sync::Mutex;
+use std::sync::Arc;
+use std::sync::RwLock; // Use RwLock if multiple read access is needed
+use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Scraper,
@@ -32,24 +38,62 @@ async fn run_all_school_offered_courses_scraper_job() -> Option<SchoolAreaScrape
 async fn run_school_courses_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
 ) {
+    let mut tasks = vec![];
+
+    // Iterate over the pages and create tasks for each scrape operation
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let _ = school_area_scrapers.subject_area_scraper.scrape().await;
+        let subject_area_scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
+        let task = tokio::spawn(async move {
+            let mut scraper = subject_area_scraper.lock().await;
+            let _ = scraper.scrape().await;
+        });
+        tasks.push(task);
+    }
+
+    // Wait for all tasks to complete
+    for task in tasks {
+        let _ = task.await;
     }
 }
 
 async fn run_course_classes_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
 ) -> Vec<Course> {
-    let mut courses_vec: Vec<Course> = vec![];
+    let mut tasks = vec![];
+
+    // Iterate over the pages and create tasks for each scraping operation
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        for course_area_scrapers in &mut school_area_scrapers.subject_area_scraper.class_scrapers {
-            let courses = course_area_scrapers.scrape().await;
-            if let Ok(course) = courses {
-                courses_vec.push(course);
-            }
+        let subject_area_scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
+
+        // Lock the mutex to access the underlying data
+        let class_scrapers = {
+            let scraper = subject_area_scraper.lock().await;
+            scraper.class_scrapers.clone()
+        };
+
+        for class_area_scraper in class_scrapers {
+            let class_area_scraper = Arc::clone(&class_area_scraper); // Clone the Arc
+
+            let task = tokio::spawn(async move {
+                class_area_scraper.lock().await.scrape().await
+                    .map_err(|e| Box::new(e) as Box<dyn Error + Send>)
+            });
+
+            tasks.push(task);
         }
     }
-    return courses_vec;
+
+    // Wait for all tasks to complete and collect results
+    let results: Vec<Result<Course, Box<dyn Error + Send>>> = join_all(tasks).await.into_iter()
+        .map(|result| result.unwrap_or_else(|e| Err(Box::new(e) as Box<dyn Error + Send>))) // Handle errors
+        .collect();
+
+    // Filter out errors and collect successful results
+    let courses_vec: Vec<Course> = results.into_iter()
+        .filter_map(Result::ok)
+        .collect();
+
+    courses_vec
 }
 
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
@@ -127,17 +171,17 @@ async fn handle_scrape() -> Result<(), Box<dyn Error>> {
     if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
         run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
         let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-        course_vec.extend(course);
+        // course_vec.extend(course);
     }
-    let json_classes = convert_classes_to_json(&mut course_vec);
-    let json_courses = convert_courses_to_json(&mut course_vec);
-    let json_times = convert_classes_times_to_json(&mut course_vec);
-    let file_classes = File::create("classes.json")?;
-    let file_courses = File::create("courses.json")?;
-    let file_times = File::create("times.json")?;
-    to_writer_pretty(file_classes, &json_classes)?;
-    to_writer_pretty(file_courses, &json_courses)?;
-    to_writer_pretty(file_times, &json_times)?;
+    // let json_classes = convert_classes_to_json(&mut course_vec);
+    // let json_courses = convert_courses_to_json(&mut course_vec);
+    // let json_times = convert_classes_times_to_json(&mut course_vec);
+    // let file_classes = File::create("classes.json")?;
+    // let file_courses = File::create("courses.json")?;
+    // let file_times = File::create("times.json")?;
+    // to_writer_pretty(file_classes, &json_classes)?;
+    // to_writer_pretty(file_courses, &json_courses)?;
+    // to_writer_pretty(file_times, &json_times)?;
     Ok(())
 }
 
