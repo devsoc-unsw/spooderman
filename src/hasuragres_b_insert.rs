@@ -100,6 +100,7 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
             metadata: Metadata {
                 table_name: "times".to_string(),
                 columns: vec![
+                    "id".to_string(),
                     "class_id".to_string(),
                     "course_id".to_string(),
                     "day".to_string(),

@@ -13,6 +13,6 @@ pub use scraper::Scraper;
 pub use text_manipulators::mutate_string_to_include_curr_year;
 pub use url_invalid_error::UrlInvalidError;
 // pub use subject_area_scraper::SubjectAreaScraper;
-pub use class_scraper::{ClassScraper, Course};
+pub use class_scraper::{ClassScraper, Course, Class, Time};
 pub use school_area_scraper::SchoolAreaScraper;
 pub use subject_area_scraper::SubjectAreaScraper;
