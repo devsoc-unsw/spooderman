@@ -4,8 +4,7 @@ use std::{error::Error, sync::Arc};
 use crate::{
     scraper::fetch_url,
     subject_area_scraper::SubjectAreaScraper,
-    text_manipulators::{extract_text, get_html_link_to_page},
-    Scraper, UrlInvalidError,
+    text_manipulators::{extract_text, get_html_link_to_page}
 };
 
 #[derive(Debug)]

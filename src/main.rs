@@ -1,13 +1,9 @@
 use dotenv::dotenv;
-use reqwest::get;
-use tokio::task::spawn;
-use tokio::sync::Mutex;
 use std::sync::Arc;
-use std::sync::RwLock; // Use RwLock if multiple read access is needed
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Scraper,
+    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper,
     Time,
 };
 use std::env;

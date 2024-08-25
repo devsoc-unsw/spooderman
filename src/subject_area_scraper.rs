@@ -7,7 +7,7 @@ use crate::{
     class_scraper::ClassScraper,
     scraper::fetch_url,
     text_manipulators::{extract_text, get_html_link_to_page},
-    Scraper, UrlInvalidError,
+    UrlInvalidError,
 };
 
 #[derive(Debug)]
