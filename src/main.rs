@@ -1,14 +1,13 @@
 use dotenv::dotenv;
-use std::sync::Arc;
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper,
-    Time,
+    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time,
 };
 use std::env;
 use std::error::Error;
 use std::fs::File;
+use std::sync::Arc;
 use std::vec;
 extern crate env_logger;
 extern crate log;
@@ -82,7 +81,11 @@ async fn run_course_classes_page_scraper_job(
                 sleep(rate_limit_delay).await;
 
                 // Perform the scraping task
-                class_area_scraper.lock().await.scrape().await
+                class_area_scraper
+                    .lock()
+                    .await
+                    .scrape()
+                    .await
                     .map_err(|e| Box::new(e) as Box<dyn Error + Send>)
             });
 
@@ -91,18 +94,17 @@ async fn run_course_classes_page_scraper_job(
     }
 
     // Wait for all tasks to complete and collect results
-    let results: Vec<Result<Course, Box<dyn Error + Send>>> = join_all(tasks).await.into_iter()
+    let results: Vec<Result<Course, Box<dyn Error + Send>>> = join_all(tasks)
+        .await
+        .into_iter()
         .map(|result| result.unwrap_or_else(|e| Err(Box::new(e) as Box<dyn Error + Send>))) // Handle errors
         .collect();
 
     // Filter out errors and collect successful results
-    let courses_vec: Vec<Course> = results.into_iter()
-        .filter_map(Result::ok)
-        .collect();
+    let courses_vec: Vec<Course> = results.into_iter().filter_map(Result::ok).collect();
 
     courses_vec
 }
-
 
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
@@ -181,7 +183,6 @@ async fn handle_scrape() -> Result<(), Box<dyn Error>> {
         let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
         course_vec.extend(course);
     }
-    
 
     let json_classes = convert_classes_to_json(&mut course_vec);
     let json_courses = convert_courses_to_json(&mut course_vec);

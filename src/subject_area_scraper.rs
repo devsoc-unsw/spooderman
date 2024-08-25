@@ -20,7 +20,9 @@ impl SubjectAreaScraper {
     pub async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error + Send>> {
         match &self.url {
             Some(url) => {
-                let html = fetch_url(url).await.expect("There was something wrong with the URL");
+                let html = fetch_url(url)
+                    .await
+                    .expect("There was something wrong with the URL");
                 println!("Scraping Subject Area for: {}", url);
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();

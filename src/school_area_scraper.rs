@@ -1,11 +1,11 @@
-use scraper::Selector;
-use tokio::sync::Mutex;
-use std::{error::Error, sync::Arc};
 use crate::{
     scraper::fetch_url,
     subject_area_scraper::SubjectAreaScraper,
-    text_manipulators::{extract_text, get_html_link_to_page}
+    text_manipulators::{extract_text, get_html_link_to_page},
 };
+use scraper::Selector;
+use std::{error::Error, sync::Arc};
+use tokio::sync::Mutex;
 
 #[derive(Debug)]
 pub struct SchoolAreaPage {
@@ -38,7 +38,9 @@ impl SchoolAreaScraper {
         match &self.url {
             Some(url) => {
                 println!("School Area for: {}", url);
-                let html = fetch_url(url).await.expect("There has been something wrong with the URL.");
+                let html = fetch_url(url)
+                    .await
+                    .expect("There has been something wrong with the URL.");
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
 
@@ -72,7 +74,9 @@ impl SchoolAreaScraper {
 
                 Ok(())
             }
-            None => Err(Box::new(ScrapeError { details :  "There was something wrong with scraping the class".to_string()})),
+            None => Err(Box::new(ScrapeError {
+                details: "There was something wrong with scraping the class".to_string(),
+            })),
         }
     }
 }

@@ -1,8 +1,10 @@
-use std::collections::HashMap;
 use rayon::prelude::*;
 use scraper::Selector;
+use std::collections::HashMap;
 
-use crate::{school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text};
+use crate::{
+    school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
+};
 
 #[derive(Debug)]
 pub struct Course {
@@ -54,15 +56,19 @@ pub struct ClassScraper {
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
-        let html = fetch_url(&self.url).await.expect(&format!("Something was wrong with the URL: {}", self.url));
+        let html = fetch_url(&self.url)
+            .await
+            .expect(&format!("Something was wrong with the URL: {}", self.url));
         let document = scraper::Html::parse_document(&html);
 
         // Selectors
         let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
-        let table_selector = Selector::parse("td.formBody > table:nth-of-type(1) > tbody > tr").unwrap();
+        let table_selector =
+            Selector::parse("td.formBody > table:nth-of-type(1) > tbody > tr").unwrap();
         let label_selector = Selector::parse("td.label").unwrap();
         let data_selector = Selector::parse("td.data").unwrap();
-        let term_course_information_table = Selector::parse("td.formBody td.formBody table").unwrap();
+        let term_course_information_table =
+            Selector::parse("td.formBody td.formBody table").unwrap();
 
         let information_body = document.select(&form_bodies).next().unwrap();
         let mut course_info = Course {
@@ -79,8 +85,14 @@ impl ClassScraper {
 
         // Extract banner information
         for row in information_body.select(&table_selector) {
-            let labels: Vec<_> = row.select(&label_selector).map(|el| el.text().collect::<Vec<_>>().join("")).collect();
-            let data: Vec<_> = row.select(&data_selector).map(|el| el.text().collect::<Vec<_>>().join("")).collect();
+            let labels: Vec<_> = row
+                .select(&label_selector)
+                .map(|el| el.text().collect::<Vec<_>>().join(""))
+                .collect();
+            let data: Vec<_> = row
+                .select(&data_selector)
+                .map(|el| el.text().collect::<Vec<_>>().join(""))
+                .collect();
 
             for (label, data) in labels.iter().zip(data.iter()) {
                 match label.trim().to_lowercase().as_str() {
@@ -94,20 +106,35 @@ impl ClassScraper {
         }
 
         // Parse terms
-        let term_count = document.select(&term_course_information_table)
-            .take_while(|row| row.text().collect::<Vec<_>>().join("").contains("Teaching Period"))
+        let term_count = document
+            .select(&term_course_information_table)
+            .take_while(|row| {
+                row.text()
+                    .collect::<Vec<_>>()
+                    .join("")
+                    .contains("Teaching Period")
+            })
             .map(|row| extract_text(row).trim().replace("\u{a0}", ""))
             .collect::<Vec<_>>();
-        
+
         course_info.terms = term_count.clone();
 
         // Skip header and course info, and go to class details
         let skip_count = 3 + term_count.len() + 3 * term_count.len();
-        let class_activity_information: Vec<Vec<String>> = document.select(&term_course_information_table)
+        let class_activity_information: Vec<Vec<String>> = document
+            .select(&term_course_information_table)
             .skip(skip_count)
-            .map(|row| row.select(&Selector::parse("td.label, td.data").unwrap())
-                .map(|cell| cell.text().collect::<String>().trim().replace("\u{a0}", "").to_string())
-                .collect())
+            .map(|row| {
+                row.select(&Selector::parse("td.label, td.data").unwrap())
+                    .map(|cell| {
+                        cell.text()
+                            .collect::<String>()
+                            .trim()
+                            .replace("\u{a0}", "")
+                            .to_string()
+                    })
+                    .collect()
+            })
             .filter(|cells: &Vec<String>| !cells.is_empty() && cells[0] == "Class Nbr")
             .collect();
 
@@ -116,7 +143,10 @@ impl ClassScraper {
             .map(|class_data| parse_class_info(class_data, self.subject_area_course_code.clone()))
             .collect();
 
-        println!("Currently working on {:?}", course_info.subject_area_course_name);
+        println!(
+            "Currently working on {:?}",
+            course_info.subject_area_course_name
+        );
         Ok(course_info)
     }
 }
@@ -149,19 +179,48 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
 
     Class {
         course_id: course_id.clone(),
-        class_id: format!("{}-{}", course_id, map.get("Class Nbr").unwrap_or(&String::new())),
+        class_id: format!(
+            "{}-{}",
+            course_id,
+            map.get("Class Nbr").unwrap_or(&String::new())
+        ),
         section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
-        term: map.get("Teaching Period").unwrap_or(&"".to_string()).to_string(),
+        term: map
+            .get("Teaching Period")
+            .unwrap_or(&"".to_string())
+            .to_string(),
         activity: map.get("Activity").unwrap_or(&"".to_string()).to_string(),
         status: map.get("Status").unwrap_or(&"".to_string()).to_string(),
-        course_enrolment: map.get("Enrols/Capacity").unwrap_or(&"".to_string()).to_string(),
-        offering_period: map.get("Offering Period").unwrap_or(&"".to_string()).to_string(),
-        meeting_dates: map.get("Meeting Dates").unwrap_or(&"".to_string()).to_string(),
-        census_date: map.get("Census Date").unwrap_or(&"".to_string()).to_string(),
-        mode: map.get("Mode of Delivery").unwrap_or(&"".to_string()).to_string(),
+        course_enrolment: map
+            .get("Enrols/Capacity")
+            .unwrap_or(&"".to_string())
+            .to_string(),
+        offering_period: map
+            .get("Offering Period")
+            .unwrap_or(&"".to_string())
+            .to_string(),
+        meeting_dates: map
+            .get("Meeting Dates")
+            .unwrap_or(&"".to_string())
+            .to_string(),
+        census_date: map
+            .get("Census Date")
+            .unwrap_or(&"".to_string())
+            .to_string(),
+        mode: map
+            .get("Mode of Delivery")
+            .unwrap_or(&"".to_string())
+            .to_string(),
         consent: map.get("Consent").unwrap_or(&"".to_string()).to_string(),
-        times: if times_parsed.is_empty() { None } else { Some(times_parsed) },
-        class_notes: map.get("Class Notes").map(|s| s.to_string()).filter(|s| !s.is_empty()),
+        times: if times_parsed.is_empty() {
+            None
+        } else {
+            Some(times_parsed)
+        },
+        class_notes: map
+            .get("Class Notes")
+            .map(|s| s.to_string())
+            .filter(|s| !s.is_empty()),
     }
 }
 
@@ -176,7 +235,9 @@ fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
             timeslot.day = day.clone();
 
             // Safely unwrap time, location, and weeks
-            if let (Some(time), Some(location), Some(weeks)) = (iter.next(), iter.next(), iter.next()) {
+            if let (Some(time), Some(location), Some(weeks)) =
+                (iter.next(), iter.next(), iter.next())
+            {
                 timeslot.time = time.clone();
                 timeslot.location = location.clone();
                 timeslot.weeks = weeks.clone();
