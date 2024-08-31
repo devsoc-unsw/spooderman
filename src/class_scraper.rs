@@ -56,6 +56,7 @@ pub struct ClassScraper {
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
+        println!("Currently working on {:?}", self.subject_area_course_code);
         let html = fetch_url(&self.url)
             .await
             .expect(&format!("Something was wrong with the URL: {}", self.url));
@@ -69,7 +70,6 @@ impl ClassScraper {
         let data_selector = Selector::parse("td.data").unwrap();
         let term_course_information_table =
             Selector::parse("td.formBody td.formBody table").unwrap();
-
         let information_body = document.select(&form_bodies).next().unwrap();
         let mut course_info = Course {
             subject_area_course_code: self.subject_area_course_code.clone(),
@@ -106,21 +106,19 @@ impl ClassScraper {
         }
 
         // Parse terms
-        let term_count = document
-            .select(&term_course_information_table)
-            .take_while(|row| {
-                row.text()
-                    .collect::<Vec<_>>()
-                    .join("")
-                    .contains("Teaching Period")
-            })
+        let term_data_selector = Selector::parse(
+            "td.formBody td.formBody table:nth-of-type(3) td.data td.data:nth-of-type(2)",
+        )
+        .unwrap();
+        let term_data = document
+            .select(&term_data_selector)
             .map(|row| extract_text(row).trim().replace("\u{a0}", ""))
             .collect::<Vec<_>>();
 
-        course_info.terms = term_count.clone();
+        course_info.terms = term_data.clone();
 
         // Skip header and course info, and go to class details
-        let skip_count = 3 + term_count.len() + 3 * term_count.len();
+        let skip_count = 3 + term_data.len() + 3 * term_data.len();
         let class_activity_information: Vec<Vec<String>> = document
             .select(&term_course_information_table)
             .skip(skip_count)
@@ -142,11 +140,6 @@ impl ClassScraper {
             .into_par_iter()
             .map(|class_data| parse_class_info(class_data, self.subject_area_course_code.clone()))
             .collect();
-
-        println!(
-            "Currently working on {:?}",
-            course_info.subject_area_course_name
-        );
         Ok(course_info)
     }
 }
@@ -188,6 +181,10 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
         term: map
             .get("Teaching Period")
             .unwrap_or(&"".to_string())
+            .to_string()
+            .split(" - ")
+            .next()
+            .expect("Could not split teaching periods properly!")
             .to_string(),
         activity: map.get("Activity").unwrap_or(&"".to_string()).to_string(),
         status: map.get("Status").unwrap_or(&"".to_string()).to_string(),

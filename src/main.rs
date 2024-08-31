@@ -4,9 +4,12 @@ use serde_json::{json, to_writer_pretty};
 use spooderman::{
     mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time,
 };
+use spooderman::{ReadFromFile, ReadFromMemory};
 use std::env;
 use std::error::Error;
 use std::fs::File;
+use std::io::ErrorKind;
+use std::path::Path;
 use std::sync::Arc;
 use std::vec;
 extern crate env_logger;
@@ -174,7 +177,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     json_classes
 }
 
-async fn handle_scrape() -> Result<(), Box<dyn Error>> {
+async fn handle_scrape() -> Result<Vec<Course>, Box<dyn Error>> {
     println!("Handling scrape...");
     let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job().await;
@@ -183,7 +186,13 @@ async fn handle_scrape() -> Result<(), Box<dyn Error>> {
         let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
         course_vec.extend(course);
     }
-
+    Ok(course_vec)
+}
+async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
+    let mut course_vec = handle_scrape()
+        .await
+        .expect("Something went wrong with scraping!");
+    println!("Writing to disk!");
     let json_classes = convert_classes_to_json(&mut course_vec);
     let json_courses = convert_courses_to_json(&mut course_vec);
     let json_times = convert_classes_times_to_json(&mut course_vec);
@@ -199,22 +208,49 @@ async fn handle_scrape() -> Result<(), Box<dyn Error>> {
 
 async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling batch insert...");
-    let _ = send_batch_data().await;
+    if !Path::new("courses.txt").is_file() {
+        return Err(Box::new(std::io::Error::new(
+            ErrorKind::NotFound,
+            "courses.json doesn't exist, please run cargo r -- scrape".to_string(),
+        )));
+    }
+    if !Path::new("classes.txt").is_file() {
+        return Err(Box::new(std::io::Error::new(
+            ErrorKind::NotFound,
+            "classes.json doesn't exist, please run cargo r -- scrape".to_string(),
+        )));
+    }
+    if !Path::new("times.txt").is_file() {
+        return Err(Box::new(std::io::Error::new(
+            ErrorKind::NotFound,
+            "times.json doesn't exist, please run cargo r -- scrape".to_string(),
+        )));
+    }
+
+    let _ = send_batch_data(&ReadFromFile).await;
     Ok(())
 }
 
 async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling scrape and batch insert...");
-    let _ = handle_scrape().await;
-    let _ = handle_batch_insert().await;
+    let mut course_vec = handle_scrape().await.expect("Could not scrape data!");
+    let json_classes = convert_classes_to_json(&mut course_vec);
+    let json_courses = convert_courses_to_json(&mut course_vec);
+    let json_times = convert_classes_times_to_json(&mut course_vec);
+    let rfm = ReadFromMemory {
+        courses_vec: json_courses,
+        classes_vec: json_classes,
+        times_vec: json_times,
+    };
+    let _ = send_batch_data(&rfm).await;
     Ok(())
 }
 
 fn print_help() {
     println!("Usage:");
-    println!("  scrape                - Perform scraping");
-    println!("  scrape_n_batch_insert - Perform scraping and batch insert");
-    println!("  batch_insert          - Perform batch insert. Note if the json files dont exist, it will be created!");
+    println!("  scrape                - Perform scraping. Creates a json file to store the data.");
+    println!("  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data.");
+    println!("  batch_insert          - Perform batch insert on json files created by scrape.");
     println!("  help                  - Show this help message");
 }
 
@@ -234,7 +270,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let command = &args[1];
     match command.as_str() {
-        "scrape" => handle_scrape().await?,
+        "scrape" => handle_scrape_write_to_file().await?,
         "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
         "batch_insert" => handle_batch_insert().await?,
         "help" => print_help(),

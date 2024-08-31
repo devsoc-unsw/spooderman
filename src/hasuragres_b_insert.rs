@@ -40,12 +40,48 @@ fn read_sql_file(file_path: &str) -> std::io::Result<String> {
     file.read_to_string(&mut contents)?;
     Ok(contents)
 }
+pub struct ReadFromFile;
+pub struct ReadFromMemory {
+    pub courses_vec: Vec<Value>,
+    pub classes_vec: Vec<Value>,
+    pub times_vec: Vec<Value>,
+}
 
-pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
+pub trait HasuragresData {
+    fn get_courses(&self) -> Vec<Value>;
+    fn get_classes(&self) -> Vec<Value>;
+    fn get_times(&self) -> Vec<Value>;
+}
+impl HasuragresData for ReadFromFile {
+    fn get_courses(&self) -> Vec<Value> {
+        read_json_file("courses.json").expect("Could not read courses.json file!")
+    }
+    fn get_classes(&self) -> Vec<Value> {
+        read_json_file("classes.json").expect("Could not read classes.json file!")
+    }
+    fn get_times(&self) -> Vec<Value> {
+        read_json_file("times.json").expect("Could not read times.json file!")
+    }
+}
+
+impl HasuragresData for ReadFromMemory {
+    fn get_courses(&self) -> Vec<Value> {
+        self.courses_vec.clone()
+    }
+    fn get_classes(&self) -> Vec<Value> {
+        self.classes_vec.clone()
+    }
+    fn get_times(&self) -> Vec<Value> {
+        self.times_vec.clone()
+    }
+}
+
+pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn Error>> {
     dotenv::dotenv().ok();
     let hasuragres_url = env::var("HASURAGRES_URL")?;
     let api_key = env::var("HASURAGRES_API_KEY")?;
     let client = Client::new();
+    println!("Starting to insert into Hasuragres!");
     let requests = vec![
         BatchInsertRequest {
             metadata: Metadata {
@@ -65,9 +101,9 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                 write_mode: Some("overwrite".to_string()),
                 sql_before: None,
                 sql_after: None,
-                dryrun: Some(false),
+                dryrun: Some(true),
             },
-            payload: read_json_file("courses.json")?,
+            payload: hdata.get_courses(),
         },
         BatchInsertRequest {
             metadata: Metadata {
@@ -92,9 +128,9 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                 write_mode: Some("overwrite".to_string()),
                 sql_before: None,
                 sql_after: None,
-                dryrun: Some(false),
+                dryrun: Some(true),
             },
-            payload: read_json_file("classes.json")?,
+            payload: hdata.get_classes(),
         },
         BatchInsertRequest {
             metadata: Metadata {
@@ -114,24 +150,20 @@ pub async fn send_batch_data() -> Result<(), Box<dyn Error>> {
                 write_mode: Some("overwrite".to_string()),
                 sql_before: None,
                 sql_after: None,
-                dryrun: Some(false),
+                dryrun: Some(true),
             },
-            payload: read_json_file("times.json")?,
+            payload: hdata.get_times(),
         },
     ];
-
     let response = client
         .post(format!("{}/batch_insert", hasuragres_url))
         .header("X-API-Key", api_key)
         .json(&requests)
         .send()
-        .await?;
-
-    if response.status().is_success() {
-        println!("Batch data inserted successfully!");
-    } else {
-        eprintln!("Failed to insert batch data: {:?}", response.text().await?);
+        .await;
+    match response { 
+        Ok(_) =>  println!("[SUCCESS] Batch data inserted successfully!"),
+        Err(e) =>  eprintln!("Failed to insert batch data: {:?}", e)
     }
-
     Ok(())
 }
