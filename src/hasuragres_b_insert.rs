@@ -27,7 +27,6 @@ struct BatchInsertRequest {
 
 fn read_json_file(file_path: &str) -> Result<Vec<Value>, Box<dyn std::error::Error>> {
     let mut file = File::open(file_path)?;
-
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     let data: Vec<Value> = serde_json::from_str(&contents)?;
@@ -95,6 +94,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                     "campus".to_string(),
                     "career".to_string(),
                     "terms".to_string(),
+                    "modes".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Courses/up.sql")?,
                 sql_down: read_sql_file("sql/Courses/down.sql")?,
@@ -161,9 +161,9 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
         .json(&requests)
         .send()
         .await;
-    match response { 
-        Ok(_) =>  println!("[SUCCESS] Batch data inserted successfully!"),
-        Err(e) =>  eprintln!("Failed to insert batch data: {:?}", e)
+    match response {
+        Ok(_) => println!("[SUCCESS] Batch data inserted successfully!"),
+        Err(e) => eprintln!("Failed to insert batch data: {:?}", e),
     }
     Ok(())
 }
