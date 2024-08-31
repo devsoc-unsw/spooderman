@@ -121,6 +121,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
             "campus": course.campus,
             "career": course.career,
             "terms": course.terms,
+            "modes": course.modes.iter().collect::<Vec<_>>(),
         }));
     }
 
@@ -208,19 +209,19 @@ async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
 
 async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling batch insert...");
-    if !Path::new("courses.txt").is_file() {
+    if !Path::new("courses.json").is_file() {
         return Err(Box::new(std::io::Error::new(
             ErrorKind::NotFound,
             "courses.json doesn't exist, please run cargo r -- scrape".to_string(),
         )));
     }
-    if !Path::new("classes.txt").is_file() {
+    if !Path::new("classes.json").is_file() {
         return Err(Box::new(std::io::Error::new(
             ErrorKind::NotFound,
             "classes.json doesn't exist, please run cargo r -- scrape".to_string(),
         )));
     }
-    if !Path::new("times.txt").is_file() {
+    if !Path::new("times.json").is_file() {
         return Err(Box::new(std::io::Error::new(
             ErrorKind::NotFound,
             "times.json doesn't exist, please run cargo r -- scrape".to_string(),
