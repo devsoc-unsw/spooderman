@@ -4,6 +4,7 @@ use serde_json::Value;
 use std::env;
 use std::error::Error;
 use std::fs::File;
+use std::future::IntoFuture;
 use std::io::Read;
 use std::vec;
 
@@ -161,8 +162,31 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
         .json(&requests)
         .send()
         .await;
+
     match response {
-        Ok(_) => println!("[SUCCESS] Batch data inserted successfully!"),
+        Ok(res) => {
+            if res.status().as_u16() == 400 {
+                let error_body: Result<Value, reqwest::Error> = res.json().await;
+
+                match error_body {
+                    Ok(json) => {
+                        println!("Error occurred: {:?}", json);
+                        if let Some(error_message) = json.get("error") {
+                            println!("Error message: {}", error_message);
+                        }
+                    }
+                    Err(err) => {
+                        eprintln!("Failed to parse error body: {:?}", err);
+                    }
+                }
+            } else {
+                let data: Result<Value, reqwest::Error> = res.json().await;
+                match data {
+                    Ok(_) => println!("Successfully inserted into Hasuragres"),
+                    Err(err) => eprintln!("Failed to parse response body: {:?}", err),
+                }
+            }
+        }
         Err(e) => eprintln!("Failed to insert batch data: {:?}", e),
     }
     Ok(())

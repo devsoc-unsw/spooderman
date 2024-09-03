@@ -6,6 +6,6 @@ CREATE TABLE Courses (
     "school"                          VARCHAR(255),
     "campus"                          VARCHAR(255),
     "career"                          VARCHAR(255),
-    "terms"                           VARCHAR(255)[],
+    "terms"                           TEXT,
     "modes"                           VARCHAR(255)[]
 );

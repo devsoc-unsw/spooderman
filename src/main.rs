@@ -120,7 +120,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
             "school": course.school,
             "campus": course.campus,
             "career": course.career,
-            "terms": course.terms,
+            "terms": json![course.terms],
             "modes": course.modes.iter().collect::<Vec<_>>(),
         }));
     }
