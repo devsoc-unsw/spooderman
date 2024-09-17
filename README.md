@@ -1,4 +1,4 @@
-# spooderman
+# spooderman - (Notangles Scraper)
 
 The scraper is written to be versatile to changes in the timetable website.
 UNSW is notorious to change and a lot of new nuances could be added without the team
