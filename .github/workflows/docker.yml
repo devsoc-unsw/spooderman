@@ -31,7 +31,7 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
           platforms: linux/amd64
-          file: client/Dockerfile
+          file: Dockerfile
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
