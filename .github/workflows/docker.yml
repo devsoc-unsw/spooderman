@@ -64,7 +64,7 @@ jobs:
           git config user.name "CSESoc CD"
           git config user.email "technical@csesoc.org.au"
           git checkout -b update/spooderman/${{ github.sha }}
-          yq -i '.items[0].spec.template.spec.containers[0].image = "ghcr.io/csesoc/spooderman:${{ github.sha }}"' projects/spooderman/cronjob.yml
+          yq -i '.spec.jobTemplate.spec.spec.containers[0].image = "ghcr.io/csesoc/spooderman:${{ github.sha }}"' projects/spooderman/cronjob.yml
           git add . 
           git commit -m "feat(spooderman): update images" 
           git push -u origin update/spooderman/${{ github.sha }}
