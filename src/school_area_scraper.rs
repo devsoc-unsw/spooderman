@@ -9,8 +9,8 @@ use tokio::sync::Mutex;
 
 #[derive(Debug)]
 pub struct SchoolAreaPage {
-    pub subject_area_course_code: String,
-    pub subject_area_course_name: String,
+    pub course_code: String,
+    pub course_name: String,
     pub school: String,
     pub subject_area_scraper: Arc<Mutex<SubjectAreaScraper>>,
 }
@@ -51,9 +51,9 @@ impl SchoolAreaScraper {
                 let document = scraper::Html::parse_document(&html);
                 for row_node in document.select(&row_selector) {
                     // Extract data from each row
-                    let subject_area_course_code =
+                    let course_code =
                         extract_text(row_node.select(&code_selector).next().unwrap());
-                    let subject_area_course_name =
+                    let course_name =
                         extract_text(row_node.select(&name_selector).next().unwrap());
                     let url = get_html_link_to_page(
                         row_node
@@ -63,8 +63,8 @@ impl SchoolAreaScraper {
                     );
                     let school = extract_text(row_node.select(&school_selector).next().unwrap());
                     let page = SchoolAreaPage {
-                        subject_area_course_code,
-                        subject_area_course_name,
+                        course_code,
+                        course_name,
                         school,
                         subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url))),
                     };

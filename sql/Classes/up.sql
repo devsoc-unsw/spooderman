@@ -13,5 +13,5 @@ CREATE TABLE Classes (
     "consent"                         VARCHAR(255) NOT NULL,
     "mode"                            VARCHAR(255) NOT NULL,
     "class_notes"                     TEXT,
-    FOREIGN KEY ("course_id") REFERENCES Courses("subject_area_course_code") ON DELETE CASCADE
+    FOREIGN KEY ("course_id") REFERENCES Courses("course_code") ON DELETE CASCADE
 );

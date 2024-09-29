@@ -87,8 +87,8 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
             metadata: Metadata {
                 table_name: "courses".to_string(),
                 columns: vec![
-                    "subject_area_course_code".to_string(),
-                    "subject_area_course_name".to_string(),
+                    "course_code".to_string(),
+                    "course_name".to_string(),
                     "uoc".to_string(),
                     "faculty".to_string(),
                     "school".to_string(),
