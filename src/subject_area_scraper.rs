@@ -32,10 +32,8 @@ impl SubjectAreaScraper {
                 let document = scraper::Html::parse_document(&html);
                 for row_node in document.select(&row_selector) {
                     // Extract data from each row
-                    let course_code =
-                        extract_text(row_node.select(&code_selector).next().unwrap());
-                    let course_name =
-                        extract_text(row_node.select(&name_selector).next().unwrap());
+                    let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
+                    let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
                     let url = get_html_link_to_page(
                         row_node
                             .select(&link_selector)
