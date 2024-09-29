@@ -40,7 +40,7 @@ async fn run_school_courses_page_scraper_job(
 
     // Iterate over the pages and create tasks for each scrape operation
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.scraper);
+        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
         let task = tokio::spawn(async move {
             let mut scraper = scraper.lock().await;
             let _ = scraper.scrape().await;
@@ -65,7 +65,7 @@ async fn run_course_classes_page_scraper_job(
     let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.scraper);
+        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
 
         // Lock the mutex to access the underlying data
         let class_scrapers = {

@@ -1,22 +1,11 @@
-FROM rust:latest AS builder
-
-WORKDIR /usr/src/app
-
-COPY Cargo.toml Cargo.lock ./
-
-RUN mkdir src
-RUN echo "fn main() {}" > src/main.rs
-RUN cargo build --release
-RUN rm -f target/release/deps/app*
-
+FROM rust:1.80
+WORKDIR /app
 COPY . .
 
-RUN cargo build --release
+ARG HASURAGRES_URL
+ARG HASURAGRES_API_KEY
 
-FROM debian:buster-slim
+ENV TIMETABLE_API_URL=https://timetable.unsw.edu.au/year/
 
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN cargo r -- scrape_n_batch_insert -release
 
-COPY --from=builder /usr/src/app/target/release/spooderman /usr/local/bin/spooderman
-
-CMD ["/usr/local/bin/spooderman", "scrape_n_batch_insert"]
