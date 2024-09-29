@@ -8,8 +8,8 @@ use crate::{
 
 #[derive(Debug)]
 pub struct Course {
-    pub subject_area_course_code: String,
-    pub subject_area_course_name: String,
+    pub course_code: String,
+    pub course_name: String,
     pub uoc: i32,
     pub faculty: Option<String>,
     pub school: Option<String>,
@@ -49,15 +49,15 @@ pub struct Time {
 
 #[derive(Debug)]
 pub struct ClassScraper {
-    pub subject_area_course_code: String,
-    pub subject_area_course_name: String,
+    pub course_code: String,
+    pub course_name: String,
     pub uoc: i32,
     pub url: String,
 }
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
-        println!("Currently working on {:?}", self.subject_area_course_code);
+        println!("Currently working on {:?}", self.course_code);
         let html = fetch_url(&self.url)
             .await
             .expect(&format!("Something was wrong with the URL: {}", self.url));
@@ -84,8 +84,8 @@ impl ClassScraper {
             .map(|course_name_words| String::from(course_name_words))
             .collect();
         let mut course_info = Course {
-            subject_area_course_code: self.subject_area_course_code.clone(),
-            subject_area_course_name: course_name_code_info.join(" "),
+            course_code: self.course_code.clone(),
+            course_name: course_name_code_info.join(" "),
             uoc: self.uoc,
             faculty: None,
             school: None,
@@ -151,7 +151,7 @@ impl ClassScraper {
 
         course_info.classes = class_activity_information
             .into_par_iter()
-            .map(|class_data| parse_class_info(class_data, self.subject_area_course_code.clone()))
+            .map(|class_data| parse_class_info(class_data, self.course_code.clone()))
             .collect();
         let _ = course_info
             .classes

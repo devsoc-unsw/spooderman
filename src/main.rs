@@ -40,9 +40,9 @@ async fn run_school_courses_page_scraper_job(
 
     // Iterate over the pages and create tasks for each scrape operation
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let subject_area_scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
+        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
         let task = tokio::spawn(async move {
-            let mut scraper = subject_area_scraper.lock().await;
+            let mut scraper = scraper.lock().await;
             let _ = scraper.scrape().await;
         });
         tasks.push(task);
@@ -65,11 +65,11 @@ async fn run_course_classes_page_scraper_job(
     let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let subject_area_scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
+        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
 
         // Lock the mutex to access the underlying data
         let class_scrapers = {
-            let scraper = subject_area_scraper.lock().await;
+            let scraper = scraper.lock().await;
             scraper.class_scrapers.clone()
         };
 
@@ -113,8 +113,8 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     let mut json_courses = Vec::new();
     for course in course_vec.iter() {
         json_courses.push(json!({
-            "subject_area_course_code": course.subject_area_course_code,
-            "subject_area_course_name": course.subject_area_course_name,
+            "course_code": course.course_code,
+            "course_name": course.course_name,
             "uoc": course.uoc,
             "faculty": course.faculty,
             "school": course.school,
