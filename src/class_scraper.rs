@@ -191,9 +191,17 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
     Class {
         course_id: course_id.clone(),
         class_id: format!(
-            "{}-{}",
+            "{}-{}-{}",
             course_id,
-            map.get("Class Nbr").unwrap_or(&String::new())
+            map.get("Class Nbr").unwrap_or(&String::new()), 
+            map
+            .get("Teaching Period")
+            .unwrap_or(&"".to_string())
+            .to_string()
+            .split(" - ")
+            .next()
+            .expect("Could not split teaching periods properly!")
+            .to_string()
         ),
         section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
         term: map
