@@ -6,7 +6,7 @@ use tokio::sync::Mutex;
 use crate::{
     class_scraper::ClassScraper,
     scraper::fetch_url,
-    text_manipulators::{extract_text, get_html_link_to_page},
+    text_manipulators::{extract_text, extract_year, get_html_link_to_page},
     UrlInvalidError,
 };
 
@@ -34,7 +34,9 @@ impl SubjectAreaScraper {
                     // Extract data from each row
                     let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
                     let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
-                    let url = get_html_link_to_page(
+                    let year_to_scrape = extract_year(url).unwrap(); 
+                    let url_to_scrape_further = get_html_link_to_page(
+                        year_to_scrape as i32, 
                         row_node
                             .select(&link_selector)
                             .next()
@@ -47,7 +49,7 @@ impl SubjectAreaScraper {
                         course_code,
                         course_name,
                         uoc,
-                        url,
+                        url: url_to_scrape_further,
                     })));
                 }
 

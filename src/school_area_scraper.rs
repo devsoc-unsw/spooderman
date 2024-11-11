@@ -1,7 +1,7 @@
 use crate::{
     scraper::fetch_url,
     subject_area_scraper::SubjectAreaScraper,
-    text_manipulators::{extract_text, get_html_link_to_page},
+    text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
 use scraper::Selector;
 use std::{error::Error, sync::Arc};
@@ -53,18 +53,20 @@ impl SchoolAreaScraper {
                     // Extract data from each row
                     let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
                     let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
-                    let url = get_html_link_to_page(
+                    let url_to_scrape_further = get_html_link_to_page(
+                        extract_year(url).unwrap() as i32,
                         row_node
                             .select(&link_selector)
                             .next()
                             .map_or("", |node| node.value().attr("href").unwrap_or("")),
                     );
+
                     let school = extract_text(row_node.select(&school_selector).next().unwrap());
                     let page = SchoolAreaPage {
                         course_code,
                         course_name,
                         school,
-                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url))),
+                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url_to_scrape_further))),
                     };
 
                     self.pages.push(page);
