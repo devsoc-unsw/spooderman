@@ -26,6 +26,7 @@ pub struct Class {
     pub class_id: String,
     pub section: String,
     pub term: String,
+    pub year: String,
     pub activity: String,
     pub status: String,
     pub course_enrolment: String,
@@ -187,11 +188,17 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
         map.insert(key, value);
         i += 2;
     }
-
+    let offering_period_str =  map
+    .get("Offering Period")
+    .unwrap_or(&"".to_string())
+    .to_string();
+    let mut split_offering_period_str = offering_period_str.split(" - ");
+    let date = split_offering_period_str.next().unwrap();
+    let year = date.split("/").nth(2).unwrap();
     Class {
         course_id: course_id.clone(),
         class_id: format!(
-            "{}-{}-{}",
+            "{}-{}-{}-{}",
             course_id,
             map.get("Class Nbr").unwrap_or(&String::new()), 
             map
@@ -201,7 +208,8 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
             .split(" - ")
             .next()
             .expect("Could not split teaching periods properly!")
-            .to_string()
+            .to_string(), 
+            year,
         ),
         section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
         term: map
@@ -212,6 +220,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
             .next()
             .expect("Could not split teaching periods properly!")
             .to_string(),
+        year: year.to_string(),
         activity: map.get("Activity").unwrap_or(&"".to_string()).to_string(),
         status: map.get("Status").unwrap_or(&"".to_string()).to_string(),
         course_enrolment: map

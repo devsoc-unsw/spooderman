@@ -114,6 +114,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                     "section".to_string(),
                     "term".to_string(),
                     "activity".to_string(),
+                    "year".to_string(),
                     "status".to_string(),
                     "course_enrolment".to_string(),
                     "offering_period".to_string(),

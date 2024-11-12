@@ -163,6 +163,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
                 "class_id": class.class_id,
                 "section": class.section,
                 "term": class.term,
+                "year": class.year,
                 "activity": class.activity,
                 "status": class.status,
                 "course_enrolment": class.course_enrolment,
