@@ -23,7 +23,7 @@ async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<Sc
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
-            let mut scraper = SchoolAreaScraper::new(url_to_scrape);
+            let mut scraper = SchoolAreaScraper::new(url_to_scrape, curr_year.to_string());
             let _ = scraper.scrape().await;
             return Some(scraper);
         }
@@ -112,10 +112,12 @@ async fn run_course_classes_page_scraper_job(
 
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
+
     for course in course_vec.iter() {
         json_courses.push(json!({
             "course_code": course.course_code,
             "course_name": course.course_name,
+            "year": course.year,
             "uoc": course.uoc,
             "faculty": course.faculty,
             "school": course.school,
@@ -158,7 +160,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     for course in course_vec.iter() {
         for class in course.classes.iter() {
             json_classes.push(json!({
-                "course_id": class.course_id,
+                "course_code": class.course_code,
                 "class_id": class.class_id,
                 "section": class.section,
                 "term": class.term,
@@ -180,7 +182,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
 }
 
 async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<(), Box<dyn Error>> {
-    for year in &[start_year, start_year + 1] {
+    for year in &[start_year + 1] { // TODO: Check for next year as well
         println!("Handling scrape for year: {year}");
         let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job(*year).await;
         if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
