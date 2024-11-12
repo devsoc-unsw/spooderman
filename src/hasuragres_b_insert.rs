@@ -139,7 +139,6 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                 columns: vec![
                     "id".to_string(),
                     "class_id".to_string(),
-                    "course_id".to_string(),
                     "day".to_string(),
                     "instructor".to_string(),
                     "location".to_string(),

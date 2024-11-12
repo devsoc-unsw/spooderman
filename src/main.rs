@@ -140,7 +140,6 @@ fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json
                     times_json.push(json!({
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
-                        "course_id": class.course_id,
                         "day": time.day,
                         "instructor": time.instructor,
                         "location": time.location,
