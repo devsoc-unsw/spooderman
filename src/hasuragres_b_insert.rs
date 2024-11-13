@@ -88,7 +88,6 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                 columns: vec![
                     "course_code".to_string(),
                     "course_name".to_string(),
-                    "year".to_string(),
                     "uoc".to_string(),
                     "faculty".to_string(),
                     "school".to_string(),
@@ -111,7 +110,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                 table_name: "classes".to_string(),
                 columns: vec![
                     "class_id".to_string(),
-                    "course_code".to_string(),
+                    "course_id".to_string(),
                     "section".to_string(),
                     "term".to_string(),
                     "activity".to_string(),

@@ -13,7 +13,6 @@ use crate::{
 #[derive(Debug)]
 pub struct SubjectAreaScraper {
     pub url: Option<String>,
-    pub year: String,
     pub class_scrapers: Vec<Arc<Mutex<ClassScraper>>>,
 }
 
@@ -50,7 +49,6 @@ impl SubjectAreaScraper {
                         course_code,
                         course_name,
                         uoc,
-                        year: self.year.clone(),
                         url: url_to_scrape_further,
                     })));
                 }
@@ -63,10 +61,9 @@ impl SubjectAreaScraper {
 }
 
 impl SubjectAreaScraper {
-    pub fn new(url: String, year: String) -> Self {
+    pub fn new(url: String) -> Self {
         Self {
             url: Some(url),
-            year,
             class_scrapers: vec![],
         }
     }

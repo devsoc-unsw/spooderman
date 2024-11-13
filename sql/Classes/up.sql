@@ -1,7 +1,7 @@
 CREATE TYPE status_enum AS ENUM ('Open', 'Closed', 'Full', 'On Hold');
 CREATE TABLE Classes (
     "class_id"                        VARCHAR(255) PRIMARY KEY,
-    "course_code"                       VARCHAR(8)   NOT NULL,
+    "course_id"                       VARCHAR(8)   NOT NULL,
     "section"                         VARCHAR(255) NOT NULL,
     "term"                            VARCHAR(50)  NOT NULL,
     "year"                            VARCHAR(4)   NOT NULL,
@@ -14,5 +14,5 @@ CREATE TABLE Classes (
     "consent"                         VARCHAR(255) NOT NULL,
     "mode"                            VARCHAR(255) NOT NULL,
     "class_notes"                     TEXT,
-    FOREIGN KEY ("course_code") REFERENCES Courses("course_code") ON DELETE CASCADE
+    FOREIGN KEY ("course_id") REFERENCES Courses("course_code") ON DELETE CASCADE
 );

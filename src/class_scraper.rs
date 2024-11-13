@@ -9,7 +9,6 @@ use crate::{
 #[derive(Debug)]
 pub struct Course {
     pub course_code: String,
-    pub year: String,
     pub course_name: String,
     pub uoc: i32,
     pub faculty: Option<String>,
@@ -17,13 +16,13 @@ pub struct Course {
     pub career: Option<String>,
     pub modes: HashSet<String>, // For Notangles.
     pub campus: Option<String>,
-    pub terms: HashSet<String>,
+    pub terms: Vec<String>,
     pub classes: Vec<Class>,
 }
 
 #[derive(Debug)]
 pub struct Class {
-    pub course_code: String,
+    pub course_id: String,
     pub class_id: String,
     pub section: String,
     pub term: String,
@@ -53,7 +52,6 @@ pub struct Time {
 pub struct ClassScraper {
     pub course_code: String,
     pub course_name: String,
-    pub year: String,
     pub uoc: i32,
     pub url: String,
 }
@@ -77,23 +75,25 @@ impl ClassScraper {
             Selector::parse("td.formBody td.formBody table").unwrap();
         let information_body = document.select(&form_bodies).next().unwrap();
         let course_name: String = document
-            .select(&course_name_selector).nth(0)
-            .map(|el| el.text().collect::<String>()).unwrap()
-            .split_whitespace() 
+            .select(&course_name_selector)
+            .map(|el| el.text().collect::<String>())
+            .collect();
+        let course_name_code_info: Vec<_> = course_name
+            .split(" ")
+            .into_iter()
             .skip(1)
-            .collect::<Vec<&str>>() 
-            .join(" ");
+            .map(|course_name_words| String::from(course_name_words))
+            .collect();
         let mut course_info = Course {
             course_code: self.course_code.clone(),
-            course_name,
-            year: self.year.clone(),
+            course_name: course_name_code_info.join(" "),
             uoc: self.uoc,
             faculty: None,
             school: None,
             campus: None,
             career: None,
             modes: HashSet::<String>::new(),
-            terms: HashSet::<String>::new(),
+            terms: vec![],
             classes: vec![],
         };
 
@@ -129,7 +129,7 @@ impl ClassScraper {
             .map(|row| extract_text(row).trim().replace("\u{a0}", ""))
             .collect::<Vec<_>>();
 
-        course_info.terms = term_data.clone().into_iter().collect();
+        course_info.terms = term_data.clone();
 
         // Skip header and course info, and go to class details
         let skip_count = 3 + term_data.len() + 3 * term_data.len();
@@ -163,7 +163,7 @@ impl ClassScraper {
     }
 }
 
-fn parse_class_info(class_data: Vec<String>, course_code: String) -> Class {
+fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
     let mut map = HashMap::new();
     let mut i = 0;
     let mut times_parsed = Vec::<Time>::new();
@@ -196,10 +196,10 @@ fn parse_class_info(class_data: Vec<String>, course_code: String) -> Class {
     let date = split_offering_period_str.next().unwrap();
     let year = date.split("/").nth(2).unwrap();
     Class {
-        course_code: course_code.clone(),
+        course_id: course_id.clone(),
         class_id: format!(
             "{}-{}-{}-{}",
-            course_code,
+            course_id,
             map.get("Class Nbr").unwrap_or(&String::new()), 
             map
             .get("Teaching Period")
