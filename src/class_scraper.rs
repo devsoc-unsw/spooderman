@@ -11,6 +11,7 @@ pub struct Course {
     pub course_code: String,
     pub course_name: String,
     pub uoc: i32,
+    pub year: String,
     pub faculty: Option<String>,
     pub school: Option<String>,
     pub career: Option<String>,
@@ -52,6 +53,7 @@ pub struct Time {
 pub struct ClassScraper {
     pub course_code: String,
     pub course_name: String,
+    pub year: String,
     pub uoc: i32,
     pub url: String,
 }
@@ -92,6 +94,7 @@ impl ClassScraper {
             school: None,
             campus: None,
             career: None,
+            year: self.year.clone(),
             modes: HashSet::<String>::new(),
             terms: vec![],
             classes: vec![],
@@ -152,7 +155,7 @@ impl ClassScraper {
 
         course_info.classes = class_activity_information
             .into_par_iter()
-            .map(|class_data| parse_class_info(class_data, self.course_code.clone()))
+            .map(|class_data| parse_class_info(class_data, self.course_code.clone(), self.year.clone()))
             .collect();
         let _ = course_info
             .classes
@@ -163,7 +166,7 @@ impl ClassScraper {
     }
 }
 
-fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
+fn parse_class_info(class_data: Vec<String>, course_id: String, year: String) -> Class {
     let mut map = HashMap::new();
     let mut i = 0;
     let mut times_parsed = Vec::<Time>::new();
@@ -188,13 +191,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
         map.insert(key, value);
         i += 2;
     }
-    let offering_period_str =  map
-    .get("Offering Period")
-    .unwrap_or(&"".to_string())
-    .to_string();
-    let mut split_offering_period_str = offering_period_str.split(" - ");
-    let date = split_offering_period_str.next().unwrap();
-    let year = date.split("/").nth(2).unwrap();
+
     Class {
         course_id: course_id.clone(),
         class_id: format!(

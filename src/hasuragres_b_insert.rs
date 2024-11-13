@@ -95,6 +95,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                     "career".to_string(),
                     "terms".to_string(),
                     "modes".to_string(),
+                    "year".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Courses/up.sql")?,
                 sql_down: read_sql_file("sql/Courses/down.sql")?,

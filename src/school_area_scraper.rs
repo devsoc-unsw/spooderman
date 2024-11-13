@@ -19,6 +19,7 @@ pub struct SchoolAreaPage {
 pub struct SchoolAreaScraper {
     pub url: Option<String>,
     pub pages: Vec<SchoolAreaPage>,
+    pub year: String,
 }
 
 #[derive(Debug)]
@@ -66,7 +67,7 @@ impl SchoolAreaScraper {
                         course_code,
                         course_name,
                         school,
-                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url_to_scrape_further))),
+                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url_to_scrape_further, self.year.clone()))),
                     };
 
                     self.pages.push(page);
@@ -82,10 +83,11 @@ impl SchoolAreaScraper {
 }
 
 impl SchoolAreaScraper {
-    pub fn new(url: String) -> Self {
+    pub fn new(url: String, year: String) -> Self {
         SchoolAreaScraper {
             url: Some(url),
             pages: Vec::new(),
+            year,
         }
     }
 }

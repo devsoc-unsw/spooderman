@@ -1,5 +1,5 @@
 CREATE TABLE Courses (
-    "course_code"                     VARCHAR(8) PRIMARY KEY, --id
+    "course_code"                     VARCHAR(8) NOT NULL,
     "course_name"                     VARCHAR(255) NOT NULL,
     "uoc"                             INT NOT NULL,
     "faculty"                         VARCHAR(255),
@@ -7,5 +7,7 @@ CREATE TABLE Courses (
     "campus"                          VARCHAR(255),
     "career"                          VARCHAR(255),
     "terms"                           TEXT,
-    "modes"                           VARCHAR(255)[]
+    "modes"                           VARCHAR(255)[],
+    "year"                            VARCHAR(4)   NOT NULL,
+    PRIMARY KEY ("course_code", "year")
 );
