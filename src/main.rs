@@ -8,7 +8,6 @@ use spooderman::{
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::env;
 use std::error::Error;
-use std::ffi::c_long;
 use std::fs::File;
 use std::io::ErrorKind;
 use std::path::Path;
