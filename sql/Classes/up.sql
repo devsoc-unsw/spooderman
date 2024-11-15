@@ -1,6 +1,7 @@
 CREATE TYPE status_enum AS ENUM ('Open', 'Closed', 'Full', 'On Hold');
 CREATE TABLE Classes (
     "class_id"                        VARCHAR(255) PRIMARY KEY,
+    -- "career"                          VARCHAR(255),
     "course_id"                       VARCHAR(8)   NOT NULL,
     "section"                         VARCHAR(255) NOT NULL,
     "term"                            VARCHAR(50)  NOT NULL,

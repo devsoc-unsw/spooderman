@@ -24,6 +24,7 @@ pub struct Course {
 #[derive(Debug)]
 pub struct Class {
     pub course_id: String,
+    pub career: String,
     pub class_id: String,
     pub section: String,
     pub term: String,
@@ -42,6 +43,7 @@ pub struct Class {
 
 #[derive(Debug)]
 pub struct Time {
+    pub career: String,
     pub day: String,
     pub time: String,
     pub location: String,
@@ -61,7 +63,7 @@ pub struct ClassScraper {
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
-        // println!("Currently working on {:?}", self.course_code);
+        println!("Currently working on {:?}", self.course_code);
         let html = fetch_url(&self.url)
             .await
             .expect(&format!("Something was wrong with the URL: {}", self.url));
@@ -155,20 +157,17 @@ impl ClassScraper {
 
         course_info.classes = class_activity_information
             .into_par_iter()
-            .map(|class_data| parse_class_info(class_data, self.course_code.clone()))
+            .map(|class_data| parse_class_info(class_data, self.course_code.clone(), self.career.clone()))
             .collect();
         let _ = course_info
             .classes
             .iter_mut()
             .map(|c| course_info.modes.insert(c.mode.to_string()))
             .collect::<Vec<_>>();
-        if course_info.course_code == "COMP6441" {
-            println!("TESTTEST {:?}", course_info.career);
-        }
         Ok(course_info)
     }
 }
-fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
+fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) -> Class {
     let mut map = HashMap::new();
     let mut i = 0;
     let mut times_parsed = Vec::<Time>::new();
@@ -180,7 +179,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
             while j < class_data.len() && class_data[j] != "Class Notes" {
                 j += 1;
             }
-            times_parsed = parse_meeting_info(&class_data[i + 1..j]);
+            times_parsed = parse_meeting_info(&class_data[i + 1..j], career.clone());
             i = j + 1;
             continue;
         }
@@ -249,6 +248,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
             .unwrap_or(&"".to_string())
             .to_string(),
         consent: map.get("Consent").unwrap_or(&"".to_string()).to_string(),
+        career,
         times: if times_parsed.is_empty() {
             None
         } else {
@@ -261,7 +261,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
     }
 }
 
-fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
+fn parse_meeting_info(vec: &[String], career: String) -> Vec<Time> {
     let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let mut meetings = Vec::new();
     let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
@@ -290,7 +290,7 @@ fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
                     iter = Box::new(std::iter::once(instructor).chain(iter));
                 }
             }
-
+            timeslot.career = career.clone();
             meetings.push(timeslot);
         }
     }
@@ -300,6 +300,7 @@ fn parse_meeting_info(vec: &[String]) -> Vec<Time> {
 
 fn get_blank_time_struct() -> Time {
     Time {
+        career: "".to_string(),
         day: "".to_string(),
         time: "".to_string(),
         location: "".to_string(),

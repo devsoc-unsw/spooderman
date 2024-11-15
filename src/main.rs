@@ -141,6 +141,7 @@ fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
                         "day": time.day,
+                        "career": time.career,
                         "instructor": time.instructor,
                         "location": time.location,
                         "time": time.time,
@@ -162,6 +163,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
                 "class_id": class.class_id,
                 "section": class.section,
                 "term": class.term,
+                "career": class.career,
                 "year": class.year,
                 "activity": class.activity,
                 "status": class.status,
@@ -188,10 +190,6 @@ async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<
             let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
             course_vec.extend(course);
         }
-        // let mut rc = ClassScraper { course_code: "COMP6420".to_string(), course_name: "Hardware Security".to_string(), career: "Undergraduate".to_string(), uoc: 6, url: "https://timetable.unsw.edu.au/2025/COMP1511.html".to_string() };
-        // rc.scrape().await;
-        // println!("{:?}", rc);
-
     }
    
     Ok(())
