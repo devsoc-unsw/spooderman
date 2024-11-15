@@ -72,13 +72,16 @@ impl ClassScraper {
 
         // Selectors
         let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
+        let term_selector =
+            Selector::parse("table table:nth-of-type(3)").unwrap();
         let table_selector =
-            Selector::parse("td.formBody > table:nth-of-type(1) > tbody > tr").unwrap();
+            Selector::parse("table table").unwrap();
         let label_selector = Selector::parse("td.label").unwrap();
         let data_selector = Selector::parse("td.data").unwrap();
         let term_course_information_table =
             Selector::parse("td.formBody td.formBody table").unwrap();
-        let information_body = document.select(&form_bodies).next().unwrap();
+        let information_body = document.select(&form_bodies);
+        
         let mut course_info = Course {
             course_code: self.course_code.clone(),
             course_name: self.course_name.clone(),
@@ -91,29 +94,81 @@ impl ClassScraper {
             terms: vec![],
             classes: vec![],
         };
+        let mut skip_this_info_box = false;
+        for info_box in information_body {
+            if let Some(label_info) = info_box.select(&label_selector).next() {
+                
+                // Check if it is a form body with course information
+                if extract_text(label_info).trim() == "Faculty" {
+                    println!("Real {:?}", extract_text(label_info));
+                    let mut terms: Vec<String> = vec![]; 
+                    let labels: Vec<_> = info_box
+                    .select(&label_selector)
+                    .map(|el| 
+                        extract_text(el).trim().replace("\u{a0}", ""))
+                    .collect();
+                
+                    let data: Vec<_> = info_box
+                            .select(&data_selector)
+                            .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
+                            .collect();
+                    for (label, data) in labels.iter().zip(data.iter()) {
+                        match label.trim().to_lowercase().as_str() {
+                            "faculty" => course_info.faculty = Some(data.clone()),
+                            "school" => course_info.school = Some(data.clone()),
+                            "campus" => course_info.campus = Some(data.clone()),
+                            "career" => if course_info.career != Some(data.clone()) {
+                                println!("Wrong career");
+                                skip_this_info_box = true;
+                                break;
+                            } else { 
+                                skip_this_info_box = false;
+                            },
+                            _ => {}
+                        }
+                    }
+                    if let Some(terms_info_table) = info_box.select(&term_selector).next() {
+                        for terms_table in terms_info_table.select(&table_selector) {
+                            let curr_terms_row = terms_table.text().map(|e| e.trim().to_string()).filter(|s| !s.is_empty()).collect::<Vec<_>>();
+                            terms.extend(curr_terms_row);
+                        }
+                    }
 
-        // Extract banner information
-        for row in information_body.select(&table_selector) {
-            let labels: Vec<_> = row
-                .select(&label_selector)
-                .map(|el| el.text().collect::<Vec<_>>().join(""))
-                .collect();
-            let data: Vec<_> = row
-                .select(&data_selector)
-                .map(|el| el.text().collect::<Vec<_>>().join(""))
-                .collect();
-
-            for (label, data) in labels.iter().zip(data.iter()) {
-                match label.trim().to_lowercase().as_str() {
-                    "faculty" => course_info.faculty = Some(data.clone()),
-                    "school" => course_info.school = Some(data.clone()),
-                    "campus" => course_info.campus = Some(data.clone()),
-                    // "career" => course_info.career = Some(data.clone()),
-                    _ => {}
+                    println!("{:?}", terms);
+                } else if extract_text(label_info).trim() == "Class Nbr" && !skip_this_info_box {
+                    // Extract class.
+                    println!("Class Nbr in here {:?} {:?}", extract_text(label_info), skip_this_info_box);
                 }
-            }
-        }
 
+        }
+    }
+
+
+    //     let mut wrong_career = false;
+    //     // Extract banner information
+    //     for row in information_body.select(&table_selector) {
+
+            
+    //         let data: Vec<_> = row
+    //             .select(&data_selector)
+    //             .map(|el| el.text().collect::<Vec<_>>().join(""))
+    //             .collect();
+    //         println!("{:?} {:?}", labels, data);
+
+            // for (label, data) in labels.iter().zip(data.iter()) {
+            //     match label.trim().to_lowercase().as_str() {
+            //         "faculty" => course_info.faculty = Some(data.clone()),
+            //         "school" => course_info.school = Some(data.clone()),
+            //         "campus" => course_info.campus = Some(data.clone()),
+            //         "career" => if course_info.career != Some(data.clone()) {
+            //             wrong_career = true;
+            //             break;
+            //         },
+            //         _ => {}
+            //     }
+            // }
+    //     }
+    // }
         // Parse terms
         let term_data_selector = Selector::parse(
             "td.formBody td.formBody table:nth-of-type(3) td.data td.data:nth-of-type(2)",

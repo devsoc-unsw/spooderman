@@ -1,0 +1,75 @@
+<table width="100%" cellspacing="0">
+                                    <tbody>
+                                    <tr>
+                                       <td width="10%" class="tableHeading"></td>
+                                       <td width="20%" class="tableHeading">Teaching Period</td>
+                                       <td width="20%" class="tableHeading">Staff Contact</td>
+                                       <td width="10%" class="tableHeading">Census Date</td>
+                                       <td class="tableHeading">Notes</td>
+                                       <td width="10%" class="tableHeading"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="6"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data" colspan="5"><a href="#S1S">TERM ONE</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data">
+                                          <table width="100%" cellspacing="0">
+                                             <tbody><tr>
+                                                <td class="data" width="25%">&nbsp;</td>
+                                                <td class="data">T1</td>
+                                             </tr>
+                                          </tbody></table>
+                                       </td>
+                                       <td class="data">Dr A  Vassar</td>
+                                       <td class="data">13-MAR-2025</td>
+                                       <td class="data"><font color="red">COMP1511 in T1 2025 is only available to students with a COMP major in their program. BINF, SENGAH, and COMPBH students can
+                                             take this in T2 2025. All other students can take it in T3 2025.</font></td>
+                                       <td class="data">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data" colspan="5"><a href="#S2S">TERM TWO</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data">
+                                          <table width="100%" cellspacing="0">
+                                             <tbody><tr>
+                                                <td class="data" width="25%">&nbsp;</td>
+                                                <td class="data">T2</td>
+                                             </tr>
+                                          </tbody></table>
+                                       </td>
+                                       <td class="data">School Office</td>
+                                       <td class="data">26-JUN-2025</td>
+                                       <td class="data"><font color="red"></font></td>
+                                       <td class="data">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data" colspan="5"><a href="#S3S">TERM THREE</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="data">&nbsp;</td>
+                                       <td class="data">
+                                          <table width="100%" cellspacing="0">
+                                             <tbody><tr>
+                                                <td class="data" width="25%">&nbsp;</td>
+                                                <td class="data">T3</td>
+                                             </tr>
+                                          </tbody></table>
+                                       </td>
+                                       <td class="data">Dr A  Finlayson</td>
+                                       <td class="data">09-OCT-2025</td>
+                                       <td class="data"><font color="red"></font></td>
+                                       <td class="data">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer"></td>
+                                    </tr>
+                                 </tbody></table>

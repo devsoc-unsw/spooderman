@@ -181,16 +181,16 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
 
 async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<(), Box<dyn Error>> {
     for year in &[start_year + 1] { // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-        println!("Handling scrape for year: {year}");
-        let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job(*year).await;
-        if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-            run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-            let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-            course_vec.extend(course);
-        }
-        // let mut rc = ClassScraper { course_code: "COMP6420".to_string(), course_name: "Hardware Security".to_string(), career: "Postgraduate".to_string(), uoc: 6, url: "https://timetable.unsw.edu.au/2025/COMP6420.html".to_string() };
-        // rc.scrape().await;
-        // println!("{:?}", rc);
+        // println!("Handling scrape for year: {year}");
+        // let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job(*year).await;
+        // if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
+        //     run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
+        //     let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+        //     course_vec.extend(course);
+        // }
+        let mut rc = ClassScraper { course_code: "COMP6420".to_string(), course_name: "Hardware Security".to_string(), career: "Postgraduate".to_string(), uoc: 6, url: "https://timetable.unsw.edu.au/2025/COMP6420.html".to_string() };
+        rc.scrape().await;
+        println!("{:?}", rc);
 
     }
    
