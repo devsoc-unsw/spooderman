@@ -1,10 +1,7 @@
-use rayon::{current_thread_index, prelude::*};
+use rayon::prelude::*;
 use scraper::Selector;
-use std::{clone, collections::{HashMap, HashSet}};
-use html5ever::driver::ParseOpts;
-use html5ever::tendril::TendrilSink;
-use roxmltree::Document;
-use std::io::Read;
+use std::collections::{HashMap, HashSet};
+
 
 use crate::{
     school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
@@ -64,7 +61,7 @@ pub struct ClassScraper {
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
-        println!("Currently working on {:?}", self.course_code);
+        // println!("Currently working on {:?}", self.course_code);
         let html = fetch_url(&self.url)
             .await
             .expect(&format!("Something was wrong with the URL: {}", self.url));
@@ -78,8 +75,6 @@ impl ClassScraper {
             Selector::parse("table table").unwrap();
         let label_selector = Selector::parse("td.label").unwrap();
         let data_selector = Selector::parse("td.data").unwrap();
-        let term_course_information_table =
-            Selector::parse("td.formBody td.formBody table").unwrap();
         let information_body = document.select(&form_bodies);
         
         let mut course_info = Course {
@@ -95,13 +90,13 @@ impl ClassScraper {
             classes: vec![],
         };
         let mut skip_this_info_box = false;
+        let mut terms: Vec<String> = vec![]; 
+        let mut class_activity_information: Vec<Vec<String>> = vec![];
         for info_box in information_body {
             if let Some(label_info) = info_box.select(&label_selector).next() {
                 
                 // Check if it is a form body with course information
                 if extract_text(label_info).trim() == "Faculty" {
-                    println!("Real {:?}", extract_text(label_info));
-                    let mut terms: Vec<String> = vec![]; 
                     let labels: Vec<_> = info_box
                     .select(&label_selector)
                     .map(|el| 
@@ -118,7 +113,6 @@ impl ClassScraper {
                             "school" => course_info.school = Some(data.clone()),
                             "campus" => course_info.campus = Some(data.clone()),
                             "career" => if course_info.career != Some(data.clone()) {
-                                println!("Wrong career");
                                 skip_this_info_box = true;
                                 break;
                             } else { 
@@ -127,78 +121,37 @@ impl ClassScraper {
                             _ => {}
                         }
                     }
+                    if skip_this_info_box {
+                        continue;
+                    }
                     if let Some(terms_info_table) = info_box.select(&term_selector).next() {
                         for terms_table in terms_info_table.select(&table_selector) {
                             let curr_terms_row = terms_table.text().map(|e| e.trim().to_string()).filter(|s| !s.is_empty()).collect::<Vec<_>>();
-                            terms.extend(curr_terms_row);
+                            if !curr_terms_row.is_empty() {
+                                terms.extend(curr_terms_row);
+                            }
                         }
                     }
 
-                    println!("{:?}", terms);
                 } else if extract_text(label_info).trim() == "Class Nbr" && !skip_this_info_box {
                     // Extract class.
-                    println!("Class Nbr in here {:?} {:?}", extract_text(label_info), skip_this_info_box);
-                }
-
-        }
-    }
-
-
-    //     let mut wrong_career = false;
-    //     // Extract banner information
-    //     for row in information_body.select(&table_selector) {
-
-            
-    //         let data: Vec<_> = row
-    //             .select(&data_selector)
-    //             .map(|el| el.text().collect::<Vec<_>>().join(""))
-    //             .collect();
-    //         println!("{:?} {:?}", labels, data);
-
-            // for (label, data) in labels.iter().zip(data.iter()) {
-            //     match label.trim().to_lowercase().as_str() {
-            //         "faculty" => course_info.faculty = Some(data.clone()),
-            //         "school" => course_info.school = Some(data.clone()),
-            //         "campus" => course_info.campus = Some(data.clone()),
-            //         "career" => if course_info.career != Some(data.clone()) {
-            //             wrong_career = true;
-            //             break;
-            //         },
-            //         _ => {}
-            //     }
-            // }
-    //     }
-    // }
-        // Parse terms
-        let term_data_selector = Selector::parse(
-            "td.formBody td.formBody table:nth-of-type(3) td.data td.data:nth-of-type(2)",
-        )
-        .unwrap();
-        let term_data = document
-            .select(&term_data_selector)
-            .map(|row| extract_text(row).trim().replace("\u{a0}", ""))
-            .collect::<Vec<_>>();
-
-        course_info.terms = term_data.clone();
-
-        // Skip header and course info, and go to class details
-        let skip_count = 3 + term_data.len() + 3 * term_data.len();
-        let class_activity_information: Vec<Vec<String>> = document
-            .select(&term_course_information_table)
-            .skip(skip_count)
-            .map(|row| {
-                row.select(&Selector::parse("td.label, td.data").unwrap())
+                    let info_map = info_box.select(&Selector::parse("td.label, td.data").unwrap())
                     .map(|cell| {
                         cell.text()
                             .collect::<String>()
                             .trim()
                             .replace("\u{a0}", "")
                             .to_string()
-                    })
-                    .collect()
-            })
-            .filter(|cells: &Vec<String>| !cells.is_empty() && cells[0] == "Class Nbr")
-            .collect();
+                    }).collect::<Vec<_>>();
+                    if !info_map.is_empty() {
+                        class_activity_information.push(info_map);
+                    }
+                }
+
+        }
+    }
+
+        course_info.terms = terms.clone();
 
         course_info.classes = class_activity_information
             .into_par_iter()
@@ -209,6 +162,9 @@ impl ClassScraper {
             .iter_mut()
             .map(|c| course_info.modes.insert(c.mode.to_string()))
             .collect::<Vec<_>>();
+        if course_info.course_code == "COMP6441" {
+            println!("TESTTEST {:?}", course_info.career);
+        }
         Ok(course_info)
     }
 }
@@ -275,7 +231,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
         course_enrolment: map
             .get("Enrols/Capacity")
             .unwrap_or(&"".to_string())
-            .to_string(),
+            .replace("*", "").to_string(),
         offering_period: map
             .get("Offering Period")
             .unwrap_or(&"".to_string())
