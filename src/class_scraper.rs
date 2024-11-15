@@ -1,6 +1,10 @@
-use rayon::prelude::*;
+use rayon::{current_thread_index, prelude::*};
 use scraper::Selector;
-use std::collections::{HashMap, HashSet};
+use std::{clone, collections::{HashMap, HashSet}};
+use html5ever::driver::ParseOpts;
+use html5ever::tendril::TendrilSink;
+use roxmltree::Document;
+use std::io::Read;
 
 use crate::{
     school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
@@ -52,9 +56,11 @@ pub struct Time {
 pub struct ClassScraper {
     pub course_code: String,
     pub course_name: String,
+    pub career: String,
     pub uoc: i32,
     pub url: String,
 }
+
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
@@ -66,7 +72,6 @@ impl ClassScraper {
 
         // Selectors
         let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
-        let course_name_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
         let table_selector =
             Selector::parse("td.formBody > table:nth-of-type(1) > tbody > tr").unwrap();
         let label_selector = Selector::parse("td.label").unwrap();
@@ -74,24 +79,14 @@ impl ClassScraper {
         let term_course_information_table =
             Selector::parse("td.formBody td.formBody table").unwrap();
         let information_body = document.select(&form_bodies).next().unwrap();
-        let course_name: String = document
-            .select(&course_name_selector)
-            .map(|el| el.text().collect::<String>())
-            .collect();
-        let course_name_code_info: Vec<_> = course_name
-            .split(" ")
-            .into_iter()
-            .skip(1)
-            .map(|course_name_words| String::from(course_name_words))
-            .collect();
         let mut course_info = Course {
             course_code: self.course_code.clone(),
-            course_name: course_name_code_info.join(" "),
+            course_name: self.course_name.clone(),
             uoc: self.uoc,
             faculty: None,
             school: None,
             campus: None,
-            career: None,
+            career: Some(self.career.clone()),
             modes: HashSet::<String>::new(),
             terms: vec![],
             classes: vec![],
@@ -113,7 +108,7 @@ impl ClassScraper {
                     "faculty" => course_info.faculty = Some(data.clone()),
                     "school" => course_info.school = Some(data.clone()),
                     "campus" => course_info.campus = Some(data.clone()),
-                    "career" => course_info.career = Some(data.clone()),
+                    // "career" => course_info.career = Some(data.clone()),
                     _ => {}
                 }
             }
@@ -162,7 +157,6 @@ impl ClassScraper {
         Ok(course_info)
     }
 }
-
 fn parse_class_info(class_data: Vec<String>, course_id: String) -> Class {
     let mut map = HashMap::new();
     let mut i = 0;
