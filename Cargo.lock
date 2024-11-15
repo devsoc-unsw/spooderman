@@ -1440,10 +1440,24 @@ checksum = "e5c13fb08e5d4dfc151ee5e88bae63f7773d61852f3bdc73c9f4b9e1bde03148"
 dependencies = [
  "log 0.4.21",
  "mac",
- "markup5ever",
+ "markup5ever 0.10.1",
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "html5ever"
+version = "0.29.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2e15626aaf9c351bc696217cbe29cb9b5e86c43f8a46b5e2f5c6c5cf7cb904ce"
+dependencies = [
+ "log 0.4.21",
+ "mac",
+ "markup5ever 0.14.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.66",
 ]
 
 [[package]]
@@ -1849,13 +1863,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "markup5ever"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "82c88c6129bd24319e62a0359cb6b958fa7e8be6e19bb1663bc396b90883aca5"
+dependencies = [
+ "log 0.4.21",
+ "phf 0.11.2",
+ "phf_codegen 0.11.2",
+ "string_cache",
+ "string_cache_codegen",
+ "tendril",
+]
+
+[[package]]
 name = "markup5ever_rcdom"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f015da43bcd8d4f144559a3423f4591d69b8ce0652c905374da7205df336ae2b"
 dependencies = [
- "html5ever",
- "markup5ever",
+ "html5ever 0.25.2",
+ "markup5ever 0.10.1",
  "tendril",
  "xml5ever",
 ]
@@ -2920,6 +2948,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "roxmltree"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c20b6793b5c2fa6553b250154b78d6d0db37e72700ae35fad9387a46f487c97"
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3006,7 +3040,7 @@ dependencies = [
  "cssparser",
  "ego-tree",
  "getopts",
- "html5ever",
+ "html5ever 0.25.2",
  "matches",
  "selectors",
  "smallvec",
@@ -3043,7 +3077,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ee061f90afcc8678bef7a78d0d121683f0ba753f740ff7005f833ec445876b7"
 dependencies = [
  "bit-set",
- "html5ever",
+ "html5ever 0.25.2",
  "markup5ever_rcdom",
 ]
 
@@ -3245,11 +3279,13 @@ dependencies = [
  "dotenv",
  "env_logger",
  "futures",
+ "html5ever 0.29.0",
  "log 0.4.21",
  "logger",
  "rayon",
  "regex",
  "reqwest",
+ "roxmltree",
  "scraper",
  "select",
  "serde",
@@ -4328,7 +4364,7 @@ checksum = "9234163818fd8e2418fcde330655e757900d4236acd8cc70fef345ef91f6d865"
 dependencies = [
  "log 0.4.21",
  "mac",
- "markup5ever",
+ "markup5ever 0.10.1",
  "time 0.1.45",
 ]
 
