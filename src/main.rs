@@ -25,11 +25,11 @@ async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<Sc
             let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
             let mut scraper = SchoolAreaScraper::new(url_to_scrape);
             let _ = scraper.scrape().await;
-            return Some(scraper);
+            Some(scraper)
         }
         Err(e) => {
             warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-            return None;
+            None
         }
     }
 }
