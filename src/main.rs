@@ -3,7 +3,7 @@ use dotenv::dotenv;
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, ClassScraper, Course, SchoolAreaScraper, SubjectAreaScraper, Time
+    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::env;
@@ -25,11 +25,11 @@ async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<Sc
             let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
             let mut scraper = SchoolAreaScraper::new(url_to_scrape);
             let _ = scraper.scrape().await;
-            return Some(scraper);
+            Some(scraper)
         }
         Err(e) => {
             warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-            return None;
+            None
         }
     }
 }
@@ -114,6 +114,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     let mut json_courses = Vec::new();
     for course in course_vec.iter() {
         json_courses.push(json!({
+            "course_id": course.course_id,
             "course_code": course.course_code,
             "course_name": course.course_name,
             "uoc": course.uoc,
@@ -141,6 +142,7 @@ fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
                         "day": time.day,
+                        "career": time.career,
                         "instructor": time.instructor,
                         "location": time.location,
                         "time": time.time,
@@ -162,6 +164,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
                 "class_id": class.class_id,
                 "section": class.section,
                 "term": class.term,
+                "career": class.career,
                 "year": class.year,
                 "activity": class.activity,
                 "status": class.status,
@@ -180,7 +183,7 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
 }
 
 async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<(), Box<dyn Error>> {
-    for year in &[start_year + 1] { // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+    for year in &[2025] { // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         println!("Handling scrape for year: {year}");
         let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job(*year).await;
         if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
@@ -188,10 +191,6 @@ async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<
             let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
             course_vec.extend(course);
         }
-        // let mut rc = ClassScraper { course_code: "COMP6420".to_string(), course_name: "Hardware Security".to_string(), career: "Postgraduate".to_string(), uoc: 6, url: "https://timetable.unsw.edu.au/2025/COMP6420.html".to_string() };
-        // rc.scrape().await;
-        // println!("{:?}", rc);
-
     }
    
     Ok(())

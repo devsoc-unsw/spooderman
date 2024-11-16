@@ -86,6 +86,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
             metadata: Metadata {
                 table_name: "courses".to_string(),
                 columns: vec![
+                    "course_id".to_string(),
                     "course_code".to_string(),
                     "course_name".to_string(),
                     "uoc".to_string(),
@@ -110,6 +111,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                 table_name: "classes".to_string(),
                 columns: vec![
                     "class_id".to_string(),
+                    "career".to_string(),
                     "course_id".to_string(),
                     "section".to_string(),
                     "term".to_string(),
@@ -139,6 +141,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                 columns: vec![
                     "id".to_string(),
                     "class_id".to_string(),
+                    "career".to_string(),
                     "day".to_string(),
                     "instructor".to_string(),
                     "location".to_string(),
@@ -155,6 +158,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
             payload: hdata.get_times(),
         },
     ];
+
     let response = client
         .post(format!("{}/batch_insert", hasuragres_url))
         .header("X-API-Key", api_key)
