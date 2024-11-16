@@ -80,13 +80,13 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
     let hasuragres_url = env::var("HASURAGRES_URL")?;
     let api_key = env::var("HASURAGRES_API_KEY")?;
     let client = Client::new();
-    println!("{:?} {:?}", hasuragres_url, api_key);
     println!("Starting to insert into Hasuragres!");
     let requests = vec![
         BatchInsertRequest {
             metadata: Metadata {
                 table_name: "courses".to_string(),
                 columns: vec![
+                    "course_id".to_string(),
                     "course_code".to_string(),
                     "course_name".to_string(),
                     "uoc".to_string(),

@@ -9,6 +9,7 @@ use crate::{
 
 #[derive(Debug)]
 pub struct Course {
+    pub course_id: String,
     pub course_code: String,
     pub course_name: String,
     pub uoc: i32,
@@ -80,6 +81,7 @@ impl ClassScraper {
         let information_body = document.select(&form_bodies);
         
         let mut course_info = Course {
+            course_id: self.course_code.clone() + &self.career.clone(),
             course_code: self.course_code.clone(),
             course_name: self.course_name.clone(),
             uoc: self.uoc,
@@ -157,7 +159,7 @@ impl ClassScraper {
 
         course_info.classes = class_activity_information
             .into_par_iter()
-            .map(|class_data| parse_class_info(class_data, self.course_code.clone(), self.career.clone()))
+            .map(|class_data| parse_class_info(class_data, self.course_code.clone() + &self.career.clone(), self.career.clone()))
             .collect();
         let _ = course_info
             .classes

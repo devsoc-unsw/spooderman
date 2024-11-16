@@ -114,6 +114,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     let mut json_courses = Vec::new();
     for course in course_vec.iter() {
         json_courses.push(json!({
+            "course_id": course.course_id,
             "course_code": course.course_code,
             "course_name": course.course_name,
             "uoc": course.uoc,
