@@ -1,4 +1,4 @@
-use std::sync::Arc;
+use std::{collections::HashSet, sync::Arc};
 
 use scraper::Selector;
 use tokio::sync::Mutex;
@@ -31,6 +31,7 @@ impl SubjectAreaScraper {
                 let link_selector = Selector::parse("td.data a").unwrap();
                 let uoc_selector = Selector::parse("td.data:nth-child(3)").unwrap();
                 let document = scraper::Html::parse_document(&html);
+                let mut course_code_career_set = HashSet::<String>::new();
                 for career_elem_ref in document.select(&career_selector) {
                     let career = extract_text(career_elem_ref);
                     if career.is_empty() {continue};
@@ -38,6 +39,10 @@ impl SubjectAreaScraper {
                         // Extract data from each row
                         let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
                         let course_name = extract_text(row_node.select(&name_selector).nth(1).unwrap());
+                        let name_hash = course_code.to_string() + &career;
+                        if course_code_career_set.contains(&name_hash) {
+                            continue;
+                        }
                         let year_to_scrape = extract_year(url).unwrap(); 
                         let url_to_scrape_further = get_html_link_to_page(
                             year_to_scrape as i32, 
@@ -50,12 +55,13 @@ impl SubjectAreaScraper {
                             .parse()
                             .expect("Could not parse UOC!");
                         self.class_scrapers.push(Arc::new(Mutex::new(ClassScraper {
-                            course_code,
+                            course_code: course_code.clone(),
                             course_name,
                             career: career.trim().to_string(),
                             uoc,
                             url: url_to_scrape_further,
                         })));
+                        course_code_career_set.insert(name_hash);
                     }
                 }
 

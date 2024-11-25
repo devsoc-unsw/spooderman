@@ -6,5 +6,6 @@ CREATE TABLE Times (
     "location"                        VARCHAR(255) NOT NULL,
     "time"                            VARCHAR(100) NOT NULL,
     "weeks"                           VARCHAR(100) NOT NULL,
-    FOREIGN KEY (class_id) REFERENCES Classes(class_id) ON DELETE CASCADE
+    "career"                          VARCHAR(255),
+    FOREIGN KEY ("class_id") REFERENCES Classes("class_id") ON DELETE CASCADE
 );
