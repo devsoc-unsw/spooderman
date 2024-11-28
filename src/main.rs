@@ -243,7 +243,8 @@ async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
 async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling scrape and batch insert...");
     let mut course_vec: Vec<Course> =  Vec::<Course>::new();
-    let current_year = chrono::Utc::now().year();
+    // let current_year = chrono::Utc::now().year();
+    let current_year = 2025;
     handle_scrape(&mut course_vec, current_year)
             .await
             .expect("Something went wrong with scraping!");
