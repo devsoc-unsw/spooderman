@@ -183,7 +183,8 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
                     }
                 }
             } else {
-                let data: Result<Value, reqwest::Error> = res.json().await;
+                let text = res.text().await.unwrap();
+                let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
                 match data {
                     Ok(_) => println!("Successfully inserted into Hasuragres"),
                     Err(err) => eprintln!("Failed to parse response body: {:?}", err),
