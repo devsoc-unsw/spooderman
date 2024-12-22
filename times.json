@@ -31111,776 +31111,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "COMP9315Postgraduate-4162-T1-2025",
-    "day": "Tue",
-    "id": "COMP9315Postgraduate-4162-T1-2025TuePhysics Theatre (K-K14-19)09:00 - 11:001-10",
-    "instructor": "Dr X  Wang",
-    "location": "Physics Theatre (K-K14-19)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9315Postgraduate-4163-T1-2025",
-    "day": "Tue",
-    "id": "COMP9315Postgraduate-4163-T1-2025TueOnline (ONLINE)09:00 - 11:001-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9315Postgraduate-4164-T1-2025",
-    "day": "Thu",
-    "id": "COMP9315Postgraduate-4164-T1-2025ThuKeith Burrows Theatre (K-J14-G5)11:00 - 13:001-10",
-    "instructor": "Dr X  Wang",
-    "location": "Keith Burrows Theatre (K-J14-G5)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9315Postgraduate-4165-T1-2025",
-    "day": "Thu",
-    "id": "COMP9315Postgraduate-4165-T1-2025ThuOnline (ONLINE)11:00 - 13:001-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9321Postgraduate-4170-T1-2025",
-    "day": "Mon",
-    "id": "COMP9321Postgraduate-4170-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9321Postgraduate-4170-T1-2025",
-    "day": "Thu",
-    "id": "COMP9321Postgraduate-4170-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9334Postgraduate-6336-T1-2025",
-    "day": "Tue",
-    "id": "COMP9334Postgraduate-6336-T1-2025TueF10 June Griffith M18 (K-F10-M18)16:00 - 18:001-5,7-10",
-    "instructor": "Apro CT Chou",
-    "location": "F10 June Griffith M18 (K-F10-M18)",
-    "time": "16:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9334Postgraduate-6336-T1-2025",
-    "day": "Fri",
-    "id": "COMP9334Postgraduate-6336-T1-2025FriE19 Patricia O'Shane 103 (K-E19-103)14:00 - 16:001-5,7-8",
-    "instructor": "Apro CT Chou",
-    "location": "E19 Patricia O'Shane 103 (K-E19-103)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-8"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9334Postgraduate-6337-T1-2025",
-    "day": "Tue",
-    "id": "COMP9334Postgraduate-6337-T1-2025TueOnline (ONLINE)16:00 - 18:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9334Postgraduate-6337-T1-2025",
-    "day": "Fri",
-    "id": "COMP9334Postgraduate-6337-T1-2025FriOnline (ONLINE)14:00 - 16:001-5,7-8",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-8"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4213-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4213-T1-2025TueLaw Theatre G04 (K-F8-G04)11:00 - 13:001-5,7-10",
-    "instructor": "",
-    "location": "Law Theatre G04 (K-F8-G04)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4214-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4214-T1-2025TueOnline (ONLINE)11:00 - 13:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4215-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4215-T1-2025ThuLaw Theatre G04 (K-F8-G04)09:00 - 11:001-5,7-10",
-    "instructor": "",
-    "location": "Law Theatre G04 (K-F8-G04)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4216-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4216-T1-2025ThuOnline (ONLINE)09:00 - 11:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4217-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4217-T1-2025ThuNewton 306 (K-J12-306)11:00 - 12:002-5,7-10",
-    "instructor": "",
-    "location": "Newton 306 (K-J12-306)",
-    "time": "11:00 - 12:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4218-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4218-T1-2025ThuAGSM LG06 (K-G27-LG06)12:00 - 13:002-5,7-10",
-    "instructor": "",
-    "location": "AGSM LG06 (K-G27-LG06)",
-    "time": "12:00 - 13:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4219-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4219-T1-2025ThuRupert Myers 540 (K-M15-540)13:00 - 14:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 540 (K-M15-540)",
-    "time": "13:00 - 14:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4220-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4220-T1-2025ThuRupert Myers 440 (K-M15-440)13:00 - 14:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 440 (K-M15-440)",
-    "time": "13:00 - 14:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4221-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4221-T1-2025ThuH13 Lawrence West 4037 (K-H13-4037)15:00 - 16:002-5,7-10",
-    "instructor": "",
-    "location": "H13 Lawrence West 4037 (K-H13-4037)",
-    "time": "15:00 - 16:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4222-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4222-T1-2025ThuQuadrangle G052 (K-E15-G052)16:00 - 17:002-5,7-10",
-    "instructor": "",
-    "location": "Quadrangle G052 (K-E15-G052)",
-    "time": "16:00 - 17:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4223-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4223-T1-2025ThuRupert Myers 520 (K-M15-520)17:00 - 18:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 520 (K-M15-520)",
-    "time": "17:00 - 18:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4224-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4224-T1-2025ThuRupert Myers 410 (K-M15-410)18:00 - 19:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 410 (K-M15-410)",
-    "time": "18:00 - 19:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4225-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4225-T1-2025ThuOnline (ONLINE)18:00 - 19:002-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 19:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4226-T1-2025",
-    "day": "Thu",
-    "id": "COMP9417Postgraduate-4226-T1-2025ThuMathews 309 (K-F23-309)19:00 - 20:002-5,7-10",
-    "instructor": "",
-    "location": "Mathews 309 (K-F23-309)",
-    "time": "19:00 - 20:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4227-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4227-T1-2025TueOnline (ONLINE)13:00 - 14:002-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "13:00 - 14:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4228-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4228-T1-2025TueNewton 307 (K-J12-307)13:00 - 14:002-5,7-10",
-    "instructor": "",
-    "location": "Newton 307 (K-J12-307)",
-    "time": "13:00 - 14:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4229-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4229-T1-2025TueRupert Myers 560 (K-M15-560)14:00 - 15:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 560 (K-M15-560)",
-    "time": "14:00 - 15:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4230-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4230-T1-2025TueMorven Brown LG2 (K-C20-LG2)14:00 - 15:002-5,7-10",
-    "instructor": "",
-    "location": "Morven Brown LG2 (K-C20-LG2)",
-    "time": "14:00 - 15:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4231-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4231-T1-2025TueH13 Lawrence West 2035 (K-H13-2035)15:00 - 16:002-5,7-10",
-    "instructor": "",
-    "location": "H13 Lawrence West 2035 (K-H13-2035)",
-    "time": "15:00 - 16:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4232-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4232-T1-2025TueColombo LG02 (K-B16-LG02)16:00 - 17:002-5,7-10",
-    "instructor": "",
-    "location": "Colombo LG02 (K-B16-LG02)",
-    "time": "16:00 - 17:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4233-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4233-T1-2025TueOnline (ONLINE)16:00 - 17:002-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 17:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4234-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4234-T1-2025TueRupert Myers 420 (K-M15-420)17:00 - 18:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 420 (K-M15-420)",
-    "time": "17:00 - 18:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4235-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4235-T1-2025TueH13 Lawrence West 4037 (K-H13-4037)17:00 - 18:002-5,7-10",
-    "instructor": "",
-    "location": "H13 Lawrence West 4037 (K-H13-4037)",
-    "time": "17:00 - 18:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4236-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4236-T1-2025TueNewton 307 (K-J12-307)18:00 - 19:002-5,7-10",
-    "instructor": "",
-    "location": "Newton 307 (K-J12-307)",
-    "time": "18:00 - 19:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4237-T1-2025",
-    "day": "Tue",
-    "id": "COMP9417Postgraduate-4237-T1-2025TueSquarehouse 206 (K-E4-206)19:00 - 20:002-5,7-10",
-    "instructor": "",
-    "location": "Squarehouse 206 (K-E4-206)",
-    "time": "19:00 - 20:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4238-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4238-T1-2025WedElectrical Engineering G04 (K-G17-G04)15:00 - 16:002-5,7-10",
-    "instructor": "",
-    "location": "Electrical Engineering G04 (K-G17-G04)",
-    "time": "15:00 - 16:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4239-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4239-T1-2025WedAinsworth 101 (K-J17-101)15:00 - 16:002-5,7-10",
-    "instructor": "",
-    "location": "Ainsworth 101 (K-J17-101)",
-    "time": "15:00 - 16:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4240-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4240-T1-2025WedRupert Myers 420 (K-M15-420)16:00 - 17:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 420 (K-M15-420)",
-    "time": "16:00 - 17:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4241-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4241-T1-2025WedRupert Myers 440 (K-M15-440)17:00 - 18:002-5,7-10",
-    "instructor": "",
-    "location": "Rupert Myers 440 (K-M15-440)",
-    "time": "17:00 - 18:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4242-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4242-T1-2025WedMathews 306 (K-F23-306)18:00 - 19:002-5,7-10",
-    "instructor": "",
-    "location": "Mathews 306 (K-F23-306)",
-    "time": "18:00 - 19:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9417Postgraduate-4243-T1-2025",
-    "day": "Wed",
-    "id": "COMP9417Postgraduate-4243-T1-2025WedOnline (ONLINE)19:00 - 20:002-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "19:00 - 20:00",
-    "weeks": "2-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4275-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4275-T1-2025TueE19 Patricia O'Shane 104 (K-E19-104)09:00 - 11:001-5,7-10",
-    "instructor": "",
-    "location": "E19 Patricia O'Shane 104 (K-E19-104)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4275-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4275-T1-2025WedMathews Theatre A (K-D23-201)11:00 - 13:001-5,7-10",
-    "instructor": "Dr S  Singh",
-    "location": "Mathews Theatre A (K-D23-201)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4285-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4285-T1-2025ThuCivil Engineering G6 (K-H20-G6)11:00 - 13:001-10",
-    "instructor": "",
-    "location": "Civil Engineering G6 (K-H20-G6)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4286-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4286-T1-2025ThuH13 Lawrence East 1043 (K-H13-1043)13:00 - 15:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence East 1043 (K-H13-1043)",
-    "time": "13:00 - 15:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4287-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4287-T1-2025ThuH13 Lawrence East 1043 (K-H13-1043)15:00 - 17:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence East 1043 (K-H13-1043)",
-    "time": "15:00 - 17:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4288-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4288-T1-2025ThuMorven Brown LG2 (K-C20-LG2)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Morven Brown LG2 (K-C20-LG2)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4289-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4289-T1-2025ThuWallace Wurth LG02 (K-C27-LG02)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Wallace Wurth LG02 (K-C27-LG02)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4290-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4290-T1-2025ThuMathews 309 (K-F23-309)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Mathews 309 (K-F23-309)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4291-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4291-T1-2025ThuMathews 306 (K-F23-306)19:00 - 21:001-10",
-    "instructor": "",
-    "location": "Mathews 306 (K-F23-306)",
-    "time": "19:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4292-T1-2025",
-    "day": "Thu",
-    "id": "COMP9444Postgraduate-4292-T1-2025ThuJohn Goodsell LG19 (K-F20-LG19)19:00 - 21:001-10",
-    "instructor": "",
-    "location": "John Goodsell LG19 (K-F20-LG19)",
-    "time": "19:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4293-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4293-T1-2025TueBlockhouse G15 (K-G6-G15)11:00 - 13:001-10",
-    "instructor": "",
-    "location": "Blockhouse G15 (K-G6-G15)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4294-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4294-T1-2025TueBlockhouse G6 (K-G6-G6)11:00 - 13:001-10",
-    "instructor": "",
-    "location": "Blockhouse G6 (K-G6-G6)",
-    "time": "11:00 - 13:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4295-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4295-T1-2025TueCivil Engineering G6 (K-H20-G6)13:00 - 15:001-10",
-    "instructor": "",
-    "location": "Civil Engineering G6 (K-H20-G6)",
-    "time": "13:00 - 15:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4296-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4296-T1-2025TueCivil Engineering G6 (K-H20-G6)15:00 - 17:001-10",
-    "instructor": "",
-    "location": "Civil Engineering G6 (K-H20-G6)",
-    "time": "15:00 - 17:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4297-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4297-T1-2025TueRuper Myers 430 (K-M15-430)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Ruper Myers 430 (K-M15-430)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4298-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4298-T1-2025TueMorven Brown G6 (K-C20-G6)18:00 - 20:001-10",
-    "instructor": "",
-    "location": "Morven Brown G6 (K-C20-G6)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4299-T1-2025",
-    "day": "Tue",
-    "id": "COMP9444Postgraduate-4299-T1-2025TueRupert Myers 520 (K-M15-520)19:00 - 21:001-10",
-    "instructor": "",
-    "location": "Rupert Myers 520 (K-M15-520)",
-    "time": "19:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4300-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4300-T1-2025WedH13 Lawrence West 4034 (K-H13-4034)09:00 - 11:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence West 4034 (K-H13-4034)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4301-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4301-T1-2025WedH13 Lawrence West 4037 (K-H13-4037)09:00 - 11:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence West 4037 (K-H13-4037)",
-    "time": "09:00 - 11:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4302-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4302-T1-2025WedQuadrangle G032 (K-E15-G032)13:00 - 15:001-10",
-    "instructor": "",
-    "location": "Quadrangle G032 (K-E15-G032)",
-    "time": "13:00 - 15:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4303-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4303-T1-2025WedH13 Lawrence East 2060 (K-H13-2060)13:00 - 15:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence East 2060 (K-H13-2060)",
-    "time": "13:00 - 15:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4304-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4304-T1-2025WedCivil Engineering 102 (K-H20-102)15:00 - 17:001-10",
-    "instructor": "",
-    "location": "Civil Engineering 102 (K-H20-102)",
-    "time": "15:00 - 17:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4305-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4305-T1-2025WedH13 Lawrence East 2060 (K-H13-2060)15:00 - 17:001-10",
-    "instructor": "",
-    "location": "H13 Lawrence East 2060 (K-H13-2060)",
-    "time": "15:00 - 17:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4306-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4306-T1-2025WedAinsworth 201 (K-J17-201)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Ainsworth 201 (K-J17-201)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4307-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4307-T1-2025WedCivil Engineering 701 (K-H20-701)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Civil Engineering 701 (K-H20-701)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4308-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4308-T1-2025WedMathews 307 (K-F23-307)17:00 - 19:001-10",
-    "instructor": "",
-    "location": "Mathews 307 (K-F23-307)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4309-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4309-T1-2025WedUNSW Business School  219 (K-E12-219)19:00 - 21:001-10",
-    "instructor": "",
-    "location": "UNSW Business School  219 (K-E12-219)",
-    "time": "19:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9444Postgraduate-4310-T1-2025",
-    "day": "Wed",
-    "id": "COMP9444Postgraduate-4310-T1-2025WedGoldstein G01 (K-D16-G01)19:00 - 21:001-10",
-    "instructor": "",
-    "location": "Goldstein G01 (K-D16-G01)",
-    "time": "19:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4349-T1-2025",
-    "day": "Tue",
-    "id": "COMP9517Postgraduate-4349-T1-2025TueE19 Patricia O'Shane 104 (K-E19-104)14:00 - 16:001-5,7-10",
-    "instructor": "Apro Y  Song",
-    "location": "E19 Patricia O'Shane 104 (K-E19-104)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4350-T1-2025",
-    "day": "Tue",
-    "id": "COMP9517Postgraduate-4350-T1-2025TueOnline (ONLINE)14:00 - 16:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4351-T1-2025",
-    "day": "Wed",
-    "id": "COMP9517Postgraduate-4351-T1-2025WedMathews Theatre A (K-D23-201)14:00 - 16:001-5,7-10",
-    "instructor": "",
-    "location": "Mathews Theatre A (K-D23-201)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4352-T1-2025",
-    "day": "Wed",
-    "id": "COMP9517Postgraduate-4352-T1-2025WedOnline (ONLINE)14:00 - 16:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4353-T1-2025",
-    "day": "Fri",
-    "id": "COMP9517Postgraduate-4353-T1-2025FriOnline (ONLINE)12:00 - 13:001-5,7-8",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "12:00 - 13:00",
-    "weeks": "1-5,7-8"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4354-T1-2025",
-    "day": "Thu",
-    "id": "COMP9517Postgraduate-4354-T1-2025ThuOnline (ONLINE)16:00 - 17:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4355-T1-2025",
-    "day": "Thu",
-    "id": "COMP9517Postgraduate-4355-T1-2025ThuOnline (ONLINE)17:00 - 18:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "COMP9517Postgraduate-4356-T1-2025",
-    "day": "Wed",
-    "id": "COMP9517Postgraduate-4356-T1-2025WedOnline (ONLINE)16:00 - 17:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "COMP9020Postgraduate-3982-T1-2025",
     "day": "Mon",
     "id": "COMP9020Postgraduate-3982-T1-2025MonScience Theatre (K-F13-G09)14:00 - 16:001-9",
@@ -34681,6 +33911,66 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "COMP9315Postgraduate-4162-T1-2025",
+    "day": "Tue",
+    "id": "COMP9315Postgraduate-4162-T1-2025TuePhysics Theatre (K-K14-19)09:00 - 11:001-10",
+    "instructor": "Dr X  Wang",
+    "location": "Physics Theatre (K-K14-19)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9315Postgraduate-4163-T1-2025",
+    "day": "Tue",
+    "id": "COMP9315Postgraduate-4163-T1-2025TueOnline (ONLINE)09:00 - 11:001-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9315Postgraduate-4164-T1-2025",
+    "day": "Thu",
+    "id": "COMP9315Postgraduate-4164-T1-2025ThuKeith Burrows Theatre (K-J14-G5)11:00 - 13:001-10",
+    "instructor": "Dr X  Wang",
+    "location": "Keith Burrows Theatre (K-J14-G5)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9315Postgraduate-4165-T1-2025",
+    "day": "Thu",
+    "id": "COMP9315Postgraduate-4165-T1-2025ThuOnline (ONLINE)11:00 - 13:001-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9321Postgraduate-4170-T1-2025",
+    "day": "Mon",
+    "id": "COMP9321Postgraduate-4170-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9321Postgraduate-4170-T1-2025",
+    "day": "Thu",
+    "id": "COMP9321Postgraduate-4170-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "COMP9331Postgraduate-4174-T1-2025",
     "day": "Fri",
     "id": "COMP9331Postgraduate-4174-T1-2025FriSitar Lab J17 306 (K-J17-306)09:00 - 11:002-5,7-8",
@@ -35111,6 +34401,46 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "COMP9334Postgraduate-6336-T1-2025",
+    "day": "Tue",
+    "id": "COMP9334Postgraduate-6336-T1-2025TueF10 June Griffith M18 (K-F10-M18)16:00 - 18:001-5,7-10",
+    "instructor": "Apro CT Chou",
+    "location": "F10 June Griffith M18 (K-F10-M18)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9334Postgraduate-6336-T1-2025",
+    "day": "Fri",
+    "id": "COMP9334Postgraduate-6336-T1-2025FriE19 Patricia O'Shane 103 (K-E19-103)14:00 - 16:001-5,7-8",
+    "instructor": "Apro CT Chou",
+    "location": "E19 Patricia O'Shane 103 (K-E19-103)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9334Postgraduate-6337-T1-2025",
+    "day": "Tue",
+    "id": "COMP9334Postgraduate-6337-T1-2025TueOnline (ONLINE)16:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9334Postgraduate-6337-T1-2025",
+    "day": "Fri",
+    "id": "COMP9334Postgraduate-6337-T1-2025FriOnline (ONLINE)14:00 - 16:001-5,7-8",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "COMP9337Postgraduate-7094-T1-2025",
     "day": "Mon",
     "id": "COMP9337Postgraduate-7094-T1-2025MonClavier Lab Physics Undercroft (K-K14-LG20)18:00 - 20:001-5,7-9",
@@ -35208,6 +34538,676 @@
     "location": "F10 June Griffith M17 (K-F10-M17)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4213-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4213-T1-2025TueLaw Theatre G04 (K-F8-G04)11:00 - 13:001-5,7-10",
+    "instructor": "",
+    "location": "Law Theatre G04 (K-F8-G04)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4214-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4214-T1-2025TueOnline (ONLINE)11:00 - 13:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4215-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4215-T1-2025ThuLaw Theatre G04 (K-F8-G04)09:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "Law Theatre G04 (K-F8-G04)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4216-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4216-T1-2025ThuOnline (ONLINE)09:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4217-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4217-T1-2025ThuNewton 306 (K-J12-306)11:00 - 12:002-5,7-10",
+    "instructor": "",
+    "location": "Newton 306 (K-J12-306)",
+    "time": "11:00 - 12:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4218-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4218-T1-2025ThuAGSM LG06 (K-G27-LG06)12:00 - 13:002-5,7-10",
+    "instructor": "",
+    "location": "AGSM LG06 (K-G27-LG06)",
+    "time": "12:00 - 13:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4219-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4219-T1-2025ThuRupert Myers 540 (K-M15-540)13:00 - 14:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 540 (K-M15-540)",
+    "time": "13:00 - 14:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4220-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4220-T1-2025ThuRupert Myers 440 (K-M15-440)13:00 - 14:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 440 (K-M15-440)",
+    "time": "13:00 - 14:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4221-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4221-T1-2025ThuH13 Lawrence West 4037 (K-H13-4037)15:00 - 16:002-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 4037 (K-H13-4037)",
+    "time": "15:00 - 16:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4222-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4222-T1-2025ThuQuadrangle G052 (K-E15-G052)16:00 - 17:002-5,7-10",
+    "instructor": "",
+    "location": "Quadrangle G052 (K-E15-G052)",
+    "time": "16:00 - 17:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4223-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4223-T1-2025ThuRupert Myers 520 (K-M15-520)17:00 - 18:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 520 (K-M15-520)",
+    "time": "17:00 - 18:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4224-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4224-T1-2025ThuRupert Myers 410 (K-M15-410)18:00 - 19:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 410 (K-M15-410)",
+    "time": "18:00 - 19:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4225-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4225-T1-2025ThuOnline (ONLINE)18:00 - 19:002-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 19:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4226-T1-2025",
+    "day": "Thu",
+    "id": "COMP9417Postgraduate-4226-T1-2025ThuMathews 309 (K-F23-309)19:00 - 20:002-5,7-10",
+    "instructor": "",
+    "location": "Mathews 309 (K-F23-309)",
+    "time": "19:00 - 20:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4227-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4227-T1-2025TueOnline (ONLINE)13:00 - 14:002-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "13:00 - 14:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4228-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4228-T1-2025TueNewton 307 (K-J12-307)13:00 - 14:002-5,7-10",
+    "instructor": "",
+    "location": "Newton 307 (K-J12-307)",
+    "time": "13:00 - 14:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4229-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4229-T1-2025TueRupert Myers 560 (K-M15-560)14:00 - 15:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 560 (K-M15-560)",
+    "time": "14:00 - 15:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4230-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4230-T1-2025TueMorven Brown LG2 (K-C20-LG2)14:00 - 15:002-5,7-10",
+    "instructor": "",
+    "location": "Morven Brown LG2 (K-C20-LG2)",
+    "time": "14:00 - 15:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4231-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4231-T1-2025TueH13 Lawrence West 2035 (K-H13-2035)15:00 - 16:002-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 2035 (K-H13-2035)",
+    "time": "15:00 - 16:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4232-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4232-T1-2025TueColombo LG02 (K-B16-LG02)16:00 - 17:002-5,7-10",
+    "instructor": "",
+    "location": "Colombo LG02 (K-B16-LG02)",
+    "time": "16:00 - 17:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4233-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4233-T1-2025TueOnline (ONLINE)16:00 - 17:002-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 17:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4234-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4234-T1-2025TueRupert Myers 420 (K-M15-420)17:00 - 18:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 420 (K-M15-420)",
+    "time": "17:00 - 18:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4235-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4235-T1-2025TueH13 Lawrence West 4037 (K-H13-4037)17:00 - 18:002-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 4037 (K-H13-4037)",
+    "time": "17:00 - 18:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4236-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4236-T1-2025TueNewton 307 (K-J12-307)18:00 - 19:002-5,7-10",
+    "instructor": "",
+    "location": "Newton 307 (K-J12-307)",
+    "time": "18:00 - 19:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4237-T1-2025",
+    "day": "Tue",
+    "id": "COMP9417Postgraduate-4237-T1-2025TueSquarehouse 206 (K-E4-206)19:00 - 20:002-5,7-10",
+    "instructor": "",
+    "location": "Squarehouse 206 (K-E4-206)",
+    "time": "19:00 - 20:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4238-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4238-T1-2025WedElectrical Engineering G04 (K-G17-G04)15:00 - 16:002-5,7-10",
+    "instructor": "",
+    "location": "Electrical Engineering G04 (K-G17-G04)",
+    "time": "15:00 - 16:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4239-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4239-T1-2025WedAinsworth 101 (K-J17-101)15:00 - 16:002-5,7-10",
+    "instructor": "",
+    "location": "Ainsworth 101 (K-J17-101)",
+    "time": "15:00 - 16:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4240-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4240-T1-2025WedRupert Myers 420 (K-M15-420)16:00 - 17:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 420 (K-M15-420)",
+    "time": "16:00 - 17:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4241-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4241-T1-2025WedRupert Myers 440 (K-M15-440)17:00 - 18:002-5,7-10",
+    "instructor": "",
+    "location": "Rupert Myers 440 (K-M15-440)",
+    "time": "17:00 - 18:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4242-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4242-T1-2025WedMathews 306 (K-F23-306)18:00 - 19:002-5,7-10",
+    "instructor": "",
+    "location": "Mathews 306 (K-F23-306)",
+    "time": "18:00 - 19:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9417Postgraduate-4243-T1-2025",
+    "day": "Wed",
+    "id": "COMP9417Postgraduate-4243-T1-2025WedOnline (ONLINE)19:00 - 20:002-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "19:00 - 20:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4275-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4275-T1-2025TueE19 Patricia O'Shane 104 (K-E19-104)09:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "E19 Patricia O'Shane 104 (K-E19-104)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4275-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4275-T1-2025WedMathews Theatre A (K-D23-201)11:00 - 13:001-5,7-10",
+    "instructor": "Dr S  Singh",
+    "location": "Mathews Theatre A (K-D23-201)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4285-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4285-T1-2025ThuCivil Engineering G6 (K-H20-G6)11:00 - 13:001-10",
+    "instructor": "",
+    "location": "Civil Engineering G6 (K-H20-G6)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4286-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4286-T1-2025ThuH13 Lawrence East 1043 (K-H13-1043)13:00 - 15:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence East 1043 (K-H13-1043)",
+    "time": "13:00 - 15:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4287-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4287-T1-2025ThuH13 Lawrence East 1043 (K-H13-1043)15:00 - 17:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence East 1043 (K-H13-1043)",
+    "time": "15:00 - 17:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4288-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4288-T1-2025ThuMorven Brown LG2 (K-C20-LG2)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Morven Brown LG2 (K-C20-LG2)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4289-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4289-T1-2025ThuWallace Wurth LG02 (K-C27-LG02)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Wallace Wurth LG02 (K-C27-LG02)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4290-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4290-T1-2025ThuMathews 309 (K-F23-309)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Mathews 309 (K-F23-309)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4291-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4291-T1-2025ThuMathews 306 (K-F23-306)19:00 - 21:001-10",
+    "instructor": "",
+    "location": "Mathews 306 (K-F23-306)",
+    "time": "19:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4292-T1-2025",
+    "day": "Thu",
+    "id": "COMP9444Postgraduate-4292-T1-2025ThuJohn Goodsell LG19 (K-F20-LG19)19:00 - 21:001-10",
+    "instructor": "",
+    "location": "John Goodsell LG19 (K-F20-LG19)",
+    "time": "19:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4293-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4293-T1-2025TueBlockhouse G15 (K-G6-G15)11:00 - 13:001-10",
+    "instructor": "",
+    "location": "Blockhouse G15 (K-G6-G15)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4294-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4294-T1-2025TueBlockhouse G6 (K-G6-G6)11:00 - 13:001-10",
+    "instructor": "",
+    "location": "Blockhouse G6 (K-G6-G6)",
+    "time": "11:00 - 13:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4295-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4295-T1-2025TueCivil Engineering G6 (K-H20-G6)13:00 - 15:001-10",
+    "instructor": "",
+    "location": "Civil Engineering G6 (K-H20-G6)",
+    "time": "13:00 - 15:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4296-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4296-T1-2025TueCivil Engineering G6 (K-H20-G6)15:00 - 17:001-10",
+    "instructor": "",
+    "location": "Civil Engineering G6 (K-H20-G6)",
+    "time": "15:00 - 17:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4297-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4297-T1-2025TueRuper Myers 430 (K-M15-430)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Ruper Myers 430 (K-M15-430)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4298-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4298-T1-2025TueMorven Brown G6 (K-C20-G6)18:00 - 20:001-10",
+    "instructor": "",
+    "location": "Morven Brown G6 (K-C20-G6)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4299-T1-2025",
+    "day": "Tue",
+    "id": "COMP9444Postgraduate-4299-T1-2025TueRupert Myers 520 (K-M15-520)19:00 - 21:001-10",
+    "instructor": "",
+    "location": "Rupert Myers 520 (K-M15-520)",
+    "time": "19:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4300-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4300-T1-2025WedH13 Lawrence West 4034 (K-H13-4034)09:00 - 11:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 4034 (K-H13-4034)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4301-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4301-T1-2025WedH13 Lawrence West 4037 (K-H13-4037)09:00 - 11:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 4037 (K-H13-4037)",
+    "time": "09:00 - 11:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4302-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4302-T1-2025WedQuadrangle G032 (K-E15-G032)13:00 - 15:001-10",
+    "instructor": "",
+    "location": "Quadrangle G032 (K-E15-G032)",
+    "time": "13:00 - 15:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4303-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4303-T1-2025WedH13 Lawrence East 2060 (K-H13-2060)13:00 - 15:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence East 2060 (K-H13-2060)",
+    "time": "13:00 - 15:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4304-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4304-T1-2025WedCivil Engineering 102 (K-H20-102)15:00 - 17:001-10",
+    "instructor": "",
+    "location": "Civil Engineering 102 (K-H20-102)",
+    "time": "15:00 - 17:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4305-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4305-T1-2025WedH13 Lawrence East 2060 (K-H13-2060)15:00 - 17:001-10",
+    "instructor": "",
+    "location": "H13 Lawrence East 2060 (K-H13-2060)",
+    "time": "15:00 - 17:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4306-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4306-T1-2025WedAinsworth 201 (K-J17-201)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Ainsworth 201 (K-J17-201)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4307-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4307-T1-2025WedCivil Engineering 701 (K-H20-701)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Civil Engineering 701 (K-H20-701)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4308-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4308-T1-2025WedMathews 307 (K-F23-307)17:00 - 19:001-10",
+    "instructor": "",
+    "location": "Mathews 307 (K-F23-307)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4309-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4309-T1-2025WedUNSW Business School  219 (K-E12-219)19:00 - 21:001-10",
+    "instructor": "",
+    "location": "UNSW Business School  219 (K-E12-219)",
+    "time": "19:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9444Postgraduate-4310-T1-2025",
+    "day": "Wed",
+    "id": "COMP9444Postgraduate-4310-T1-2025WedGoldstein G01 (K-D16-G01)19:00 - 21:001-10",
+    "instructor": "",
+    "location": "Goldstein G01 (K-D16-G01)",
+    "time": "19:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4349-T1-2025",
+    "day": "Tue",
+    "id": "COMP9517Postgraduate-4349-T1-2025TueE19 Patricia O'Shane 104 (K-E19-104)14:00 - 16:001-5,7-10",
+    "instructor": "Apro Y  Song",
+    "location": "E19 Patricia O'Shane 104 (K-E19-104)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4350-T1-2025",
+    "day": "Tue",
+    "id": "COMP9517Postgraduate-4350-T1-2025TueOnline (ONLINE)14:00 - 16:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4351-T1-2025",
+    "day": "Wed",
+    "id": "COMP9517Postgraduate-4351-T1-2025WedMathews Theatre A (K-D23-201)14:00 - 16:001-5,7-10",
+    "instructor": "",
+    "location": "Mathews Theatre A (K-D23-201)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4352-T1-2025",
+    "day": "Wed",
+    "id": "COMP9517Postgraduate-4352-T1-2025WedOnline (ONLINE)14:00 - 16:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4353-T1-2025",
+    "day": "Fri",
+    "id": "COMP9517Postgraduate-4353-T1-2025FriOnline (ONLINE)12:00 - 13:001-5,7-8",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "12:00 - 13:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4354-T1-2025",
+    "day": "Thu",
+    "id": "COMP9517Postgraduate-4354-T1-2025ThuOnline (ONLINE)16:00 - 17:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4355-T1-2025",
+    "day": "Thu",
+    "id": "COMP9517Postgraduate-4355-T1-2025ThuOnline (ONLINE)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "COMP9517Postgraduate-4356-T1-2025",
+    "day": "Wed",
+    "id": "COMP9517Postgraduate-4356-T1-2025WedOnline (ONLINE)16:00 - 17:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
   },
   {
     "career": "Postgraduate",
@@ -37341,96 +37341,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "CVEN9640Postgraduate-7327-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9640Postgraduate-7327-T1-2025TueCivil Engineering 701 (K-H20-701)10:00 - 14:001-5,7-10",
-    "instructor": "Apro KD Splinter",
-    "location": "Civil Engineering 701 (K-H20-701)",
-    "time": "10:00 - 14:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9640Postgraduate-7328-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9640Postgraduate-7328-T1-2025TueOnline (ONLINE)10:00 - 14:001-5,7-10",
-    "instructor": "Apro KD Splinter",
-    "location": "Online (ONLINE)",
-    "time": "10:00 - 14:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9809Postgraduate-4374-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9809Postgraduate-4374-T1-2025TueAinsworth G02 (K-J17-G02)18:00 - 21:001-5,7-10",
-    "instructor": "Prof HR Vali Pour Goudarzi",
-    "location": "Ainsworth G02 (K-J17-G02)",
-    "time": "18:00 - 21:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9820Postgraduate-4388-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9820Postgraduate-4388-T1-2025TueCivil Engineering 201 (K-H20-201)12:00 - 14:005,8",
-    "instructor": "",
-    "location": "Civil Engineering 201 (K-H20-201)",
-    "time": "12:00 - 14:00",
-    "weeks": "5,8"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9820Postgraduate-4383-T1-2025",
-    "day": "Mon",
-    "id": "CVEN9820Postgraduate-4383-T1-2025MonCivil Engineering 101 (K-H20-101)12:00 - 14:001-5,7-9",
-    "instructor": "Prof C  Song",
-    "location": "Civil Engineering 101 (K-H20-101)",
-    "time": "12:00 - 14:00",
-    "weeks": "1-5,7-9"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9820Postgraduate-4384-T1-2025",
-    "day": "Mon",
-    "id": "CVEN9820Postgraduate-4384-T1-2025MonVallentine Annexe 121 (K-H22-121)14:00 - 16:001-5,7-9",
-    "instructor": "Prof C  Song",
-    "location": "Vallentine Annexe 121 (K-H22-121)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-9"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9822Postgraduate-4394-T1-2025",
-    "day": "Fri",
-    "id": "CVEN9822Postgraduate-4394-T1-2025FriCivil Engineering 101 (K-H20-101)18:00 - 20:005",
-    "instructor": "Apro E  Hamed",
-    "location": "Civil Engineering 101 (K-H20-101)",
-    "time": "18:00 - 20:00",
-    "weeks": "5"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9822Postgraduate-4395-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9822Postgraduate-4395-T1-2025TueF10 June Griffith M11 (K-F10-M11)12:00 - 15:001-5,7-10",
-    "instructor": "Apro E  Hamed",
-    "location": "F10 June Griffith M11 (K-F10-M11)",
-    "time": "12:00 - 15:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "CVEN9822Postgraduate-4396-T1-2025",
-    "day": "Tue",
-    "id": "CVEN9822Postgraduate-4396-T1-2025TueF10 June Griffith M11 (K-F10-M11)15:00 - 16:001-5,7-10",
-    "instructor": "",
-    "location": "F10 June Griffith M11 (K-F10-M11)",
-    "time": "15:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "CVEN9421Postgraduate-4365-T1-2025",
     "day": "Tue",
     "id": "CVEN9421Postgraduate-4365-T1-2025TueMathews 310 (K-F23-310)14:00 - 18:001-5,7-10",
@@ -37651,6 +37561,26 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "CVEN9640Postgraduate-7327-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9640Postgraduate-7327-T1-2025TueCivil Engineering 701 (K-H20-701)10:00 - 14:001-5,7-10",
+    "instructor": "Apro KD Splinter",
+    "location": "Civil Engineering 701 (K-H20-701)",
+    "time": "10:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9640Postgraduate-7328-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9640Postgraduate-7328-T1-2025TueOnline (ONLINE)10:00 - 14:001-5,7-10",
+    "instructor": "Apro KD Splinter",
+    "location": "Online (ONLINE)",
+    "time": "10:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "CVEN9701Postgraduate-4369-T1-2025",
     "day": "Wed",
     "id": "CVEN9701Postgraduate-4369-T1-2025WedKeith Burrows Theatre (K-J14-G5)16:00 - 18:001-5,7-10",
@@ -37747,6 +37677,76 @@
     "instructor": "Prof C  Song",
     "location": "E19 Patricia O'Shane G06 (K-E19-G06)",
     "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9809Postgraduate-4374-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9809Postgraduate-4374-T1-2025TueAinsworth G02 (K-J17-G02)18:00 - 21:001-5,7-10",
+    "instructor": "Prof HR Vali Pour Goudarzi",
+    "location": "Ainsworth G02 (K-J17-G02)",
+    "time": "18:00 - 21:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9820Postgraduate-4388-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9820Postgraduate-4388-T1-2025TueCivil Engineering 201 (K-H20-201)12:00 - 14:005,8",
+    "instructor": "",
+    "location": "Civil Engineering 201 (K-H20-201)",
+    "time": "12:00 - 14:00",
+    "weeks": "5,8"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9820Postgraduate-4383-T1-2025",
+    "day": "Mon",
+    "id": "CVEN9820Postgraduate-4383-T1-2025MonCivil Engineering 101 (K-H20-101)12:00 - 14:001-5,7-9",
+    "instructor": "Prof C  Song",
+    "location": "Civil Engineering 101 (K-H20-101)",
+    "time": "12:00 - 14:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9820Postgraduate-4384-T1-2025",
+    "day": "Mon",
+    "id": "CVEN9820Postgraduate-4384-T1-2025MonVallentine Annexe 121 (K-H22-121)14:00 - 16:001-5,7-9",
+    "instructor": "Prof C  Song",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9822Postgraduate-4394-T1-2025",
+    "day": "Fri",
+    "id": "CVEN9822Postgraduate-4394-T1-2025FriCivil Engineering 101 (K-H20-101)18:00 - 20:005",
+    "instructor": "Apro E  Hamed",
+    "location": "Civil Engineering 101 (K-H20-101)",
+    "time": "18:00 - 20:00",
+    "weeks": "5"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9822Postgraduate-4395-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9822Postgraduate-4395-T1-2025TueF10 June Griffith M11 (K-F10-M11)12:00 - 15:001-5,7-10",
+    "instructor": "Apro E  Hamed",
+    "location": "F10 June Griffith M11 (K-F10-M11)",
+    "time": "12:00 - 15:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "CVEN9822Postgraduate-4396-T1-2025",
+    "day": "Tue",
+    "id": "CVEN9822Postgraduate-4396-T1-2025TueF10 June Griffith M11 (K-F10-M11)15:00 - 16:001-5,7-10",
+    "instructor": "",
+    "location": "F10 June Griffith M11 (K-F10-M11)",
+    "time": "15:00 - 16:00",
     "weeks": "1-5,7-10"
   },
   {
@@ -50931,966 +50931,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "EDST6700Postgraduate-4573-T1-2025",
-    "day": "Thu",
-    "id": "EDST6700Postgraduate-4573-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6700Postgraduate-4574-T1-2025",
-    "day": "Thu",
-    "id": "EDST6700Postgraduate-4574-T1-2025ThuMathews 303 (K-F23-303)17:00 - 19:001-5,7-10",
-    "instructor": "Ms B  Yang",
-    "location": "Mathews 303 (K-F23-303)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6700Postgraduate-4575-T1-2025",
-    "day": "Thu",
-    "id": "EDST6700Postgraduate-4575-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6701Postgraduate-4553-T1-2025",
-    "day": "Thu",
-    "id": "EDST6701Postgraduate-4553-T1-2025ThuGoldstein G07 (K-D16-G07)17:00 - 18:001-5,7-10",
-    "instructor": "Ms TA Crittle",
-    "location": "Goldstein G07 (K-D16-G07)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6701Postgraduate-4554-T1-2025",
-    "day": "Thu",
-    "id": "EDST6701Postgraduate-4554-T1-2025ThuGoldstein G07 (K-D16-G07)18:00 - 20:001-5,7-10",
-    "instructor": "Ms TA Crittle",
-    "location": "Goldstein G07 (K-D16-G07)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6701Postgraduate-4555-T1-2025",
-    "day": "Thu",
-    "id": "EDST6701Postgraduate-4555-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6702Postgraduate-4560-T1-2025",
-    "day": "Mon",
-    "id": "EDST6702Postgraduate-4560-T1-2025MonQuadrangle G034 (K-E15-G034)16:00 - 17:001-5,7-9,N1",
-    "instructor": "Mrs K  Petrevski",
-    "location": "Quadrangle G034 (K-E15-G034)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6702Postgraduate-4561-T1-2025",
-    "day": "Mon",
-    "id": "EDST6702Postgraduate-4561-T1-2025MonLibrary 176A (K-F21-176A)17:00 - 19:001-5,7-9,N1",
-    "instructor": "Mrs K  Petrevski,Mr J  Bell",
-    "location": "Library 176A (K-F21-176A)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6702Postgraduate-4562-T1-2025",
-    "day": "Mon",
-    "id": "EDST6702Postgraduate-4562-T1-2025MonLibrary 176B (K-F21-176B)17:00 - 19:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Library 176B (K-F21-176B)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6702Postgraduate-4563-T1-2025",
-    "day": "Mon",
-    "id": "EDST6702Postgraduate-4563-T1-2025MonOnline (ONLINE)17:00 - 19:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6704Postgraduate-4567-T1-2025",
-    "day": "Tue",
-    "id": "EDST6704Postgraduate-4567-T1-2025TueOld Main Building G32 (K-K15-G32)17:00 - 18:001-5,7-10",
-    "instructor": "Ms S  Durney",
-    "location": "Old Main Building G32 (K-K15-G32)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6704Postgraduate-4568-T1-2025",
-    "day": "Tue",
-    "id": "EDST6704Postgraduate-4568-T1-2025TueOld Main Building G32 (K-K15-G32)18:00 - 20:001-5,7-10",
-    "instructor": "Ms S  Durney",
-    "location": "Old Main Building G32 (K-K15-G32)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6704Postgraduate-4569-T1-2025",
-    "day": "Tue",
-    "id": "EDST6704Postgraduate-4569-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6705Postgraduate-4579-T1-2025",
-    "day": "Thu",
-    "id": "EDST6705Postgraduate-4579-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6705Postgraduate-4580-T1-2025",
-    "day": "Thu",
-    "id": "EDST6705Postgraduate-4580-T1-2025ThuOld Main Building 230 (K-K15-230)17:00 - 19:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "Old Main Building 230 (K-K15-230)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6705Postgraduate-4581-T1-2025",
-    "day": "Thu",
-    "id": "EDST6705Postgraduate-4581-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6706Postgraduate-4597-T1-2025",
-    "day": "Tue",
-    "id": "EDST6706Postgraduate-4597-T1-2025TueVallentine Annexe 121 (K-H22-121)17:00 - 18:001-5,7-10",
-    "instructor": "Mr D  Latimer",
-    "location": "Vallentine Annexe 121 (K-H22-121)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6706Postgraduate-4598-T1-2025",
-    "day": "Tue",
-    "id": "EDST6706Postgraduate-4598-T1-2025TueVallentine Annexe 121 (K-H22-121)18:00 - 20:001-5,7-10",
-    "instructor": "Mr D  Latimer",
-    "location": "Vallentine Annexe 121 (K-H22-121)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6706Postgraduate-4599-T1-2025",
-    "day": "Tue",
-    "id": "EDST6706Postgraduate-4599-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6711Postgraduate-4585-T1-2025",
-    "day": "Thu",
-    "id": "EDST6711Postgraduate-4585-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6711Postgraduate-4586-T1-2025",
-    "day": "Thu",
-    "id": "EDST6711Postgraduate-4586-T1-2025ThuOld Main Building 151 (K-K15-151)17:00 - 19:001-5,7-10",
-    "instructor": "Mrs KL Gilles",
-    "location": "Old Main Building 151 (K-K15-151)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6711Postgraduate-4587-T1-2025",
-    "day": "Thu",
-    "id": "EDST6711Postgraduate-4587-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6714Postgraduate-4591-T1-2025",
-    "day": "Thu",
-    "id": "EDST6714Postgraduate-4591-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6714Postgraduate-4592-T1-2025",
-    "day": "Thu",
-    "id": "EDST6714Postgraduate-4592-T1-2025ThuOld Main Building 230 (K-K15-230)17:00 - 19:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "Old Main Building 230 (K-K15-230)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6714Postgraduate-4593-T1-2025",
-    "day": "Thu",
-    "id": "EDST6714Postgraduate-4593-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6715Postgraduate-6280-T1-2025",
-    "day": "Wed",
-    "id": "EDST6715Postgraduate-6280-T1-2025WedMathews 310 (K-F23-310)17:00 - 18:001-5,7-10",
-    "instructor": "Mr J  Alvaro",
-    "location": "Mathews 310 (K-F23-310)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6715Postgraduate-6281-T1-2025",
-    "day": "Wed",
-    "id": "EDST6715Postgraduate-6281-T1-2025WedMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
-    "instructor": "Mr J  Alvaro",
-    "location": "Mathews 310 (K-F23-310)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6715Postgraduate-6282-T1-2025",
-    "day": "Wed",
-    "id": "EDST6715Postgraduate-6282-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6716Postgraduate-6380-T1-2025",
-    "day": "Mon",
-    "id": "EDST6716Postgraduate-6380-T1-2025MonQuadrangle G026 (K-E15-G026)17:00 - 18:001-5,7-9,N1",
-    "instructor": "Mr P  Pain",
-    "location": "Quadrangle G026 (K-E15-G026)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6716Postgraduate-6381-T1-2025",
-    "day": "Mon",
-    "id": "EDST6716Postgraduate-6381-T1-2025MonQuadrangle G026 (K-E15-G026)18:00 - 20:001-5,7-9,N1",
-    "instructor": "Mr P  Pain",
-    "location": "Quadrangle G026 (K-E15-G026)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6716Postgraduate-6382-T1-2025",
-    "day": "Mon",
-    "id": "EDST6716Postgraduate-6382-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6717Postgraduate-7746-T1-2025",
-    "day": "Wed",
-    "id": "EDST6717Postgraduate-7746-T1-2025WedOnline (ONLINE)17:00 - 18:001-5,7-10",
-    "instructor": "Ms ML Ebsworth",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6717Postgraduate-7747-T1-2025",
-    "day": "Wed",
-    "id": "EDST6717Postgraduate-7747-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "Ms ML Ebsworth",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6717Postgraduate-12740-T1-2025",
-    "day": "Wed",
-    "id": "EDST6717Postgraduate-12740-T1-2025WedAGSM LG07 (K-G27-LG07)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "AGSM LG07 (K-G27-LG07)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6718Postgraduate-7822-T1-2025",
-    "day": "Thu",
-    "id": "EDST6718Postgraduate-7822-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
-    "instructor": "Miss AC Walker",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6718Postgraduate-7823-T1-2025",
-    "day": "Thu",
-    "id": "EDST6718Postgraduate-7823-T1-2025ThuOld Main Building 151 (K-K15-151)17:00 - 19:001-5,7-10",
-    "instructor": "Mrs KL Gilles",
-    "location": "Old Main Building 151 (K-K15-151)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6718Postgraduate-7824-T1-2025",
-    "day": "Thu",
-    "id": "EDST6718Postgraduate-7824-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6719Postgraduate-7974-T1-2025",
-    "day": "Tue",
-    "id": "EDST6719Postgraduate-7974-T1-2025TueLibrary 176B (K-F21-176B)17:00 - 18:001-5,7-10",
-    "instructor": "Mrs K  Nightingale",
-    "location": "Library 176B (K-F21-176B)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6719Postgraduate-7975-T1-2025",
-    "day": "Tue",
-    "id": "EDST6719Postgraduate-7975-T1-2025TueLibrary 176B (K-F21-176B)18:00 - 20:001-5,7-10",
-    "instructor": "Mrs K  Nightingale",
-    "location": "Library 176B (K-F21-176B)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6719Postgraduate-7976-T1-2025",
-    "day": "Tue",
-    "id": "EDST6719Postgraduate-7976-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6722Postgraduate-8168-T1-2025",
-    "day": "Thu",
-    "id": "EDST6722Postgraduate-8168-T1-2025ThuQuadrangle G053 (K-E15-G053)17:00 - 18:001-5,7-10",
-    "instructor": "Mr Y  Moushi",
-    "location": "Quadrangle G053 (K-E15-G053)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6722Postgraduate-8169-T1-2025",
-    "day": "Thu",
-    "id": "EDST6722Postgraduate-8169-T1-2025ThuQuadrangle G053 (K-E15-G053)18:00 - 20:001-5,7-10",
-    "instructor": "Mr Y  Moushi",
-    "location": "Quadrangle G053 (K-E15-G053)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6722Postgraduate-8170-T1-2025",
-    "day": "Thu",
-    "id": "EDST6722Postgraduate-8170-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6723Postgraduate-8354-T1-2025",
-    "day": "Thu",
-    "id": "EDST6723Postgraduate-8354-T1-2025ThuGoldstein G09 (K-D16-G09)17:00 - 18:001-5,7-10",
-    "instructor": "Mrs KL Davis",
-    "location": "Goldstein G09 (K-D16-G09)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6723Postgraduate-8355-T1-2025",
-    "day": "Thu",
-    "id": "EDST6723Postgraduate-8355-T1-2025ThuGoldstein G09 (K-D16-G09)18:00 - 20:001-5,7-10",
-    "instructor": "Mrs KL Davis",
-    "location": "Goldstein G09 (K-D16-G09)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6723Postgraduate-8356-T1-2025",
-    "day": "Thu",
-    "id": "EDST6723Postgraduate-8356-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6725Postgraduate-8361-T1-2025",
-    "day": "Mon",
-    "id": "EDST6725Postgraduate-8361-T1-2025MonUNSW Business School  216 (K-E12-216)16:00 - 17:001-5,7-9,N1",
-    "instructor": "Ms C  Robinson",
-    "location": "UNSW Business School  216 (K-E12-216)",
-    "time": "16:00 - 17:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6725Postgraduate-8362-T1-2025",
-    "day": "Mon",
-    "id": "EDST6725Postgraduate-8362-T1-2025MonUNSW Business School  216 (K-E12-216)17:00 - 19:001-5,7-9,N1",
-    "instructor": "",
-    "location": "UNSW Business School  216 (K-E12-216)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6725Postgraduate-8363-T1-2025",
-    "day": "Mon",
-    "id": "EDST6725Postgraduate-8363-T1-2025MonUNSW Business School  205 (K-E12-205)17:00 - 19:001-5,7-9,N1",
-    "instructor": "",
-    "location": "UNSW Business School  205 (K-E12-205)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6725Postgraduate-8364-T1-2025",
-    "day": "Mon",
-    "id": "EDST6725Postgraduate-8364-T1-2025MonOnline (ONLINE)17:00 - 19:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "17:00 - 19:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6726Postgraduate-8348-T1-2025",
-    "day": "Thu",
-    "id": "EDST6726Postgraduate-8348-T1-2025ThuMathews 310 (K-F23-310)17:00 - 18:001-5,7-10",
-    "instructor": "Mr M  Goreta",
-    "location": "Mathews 310 (K-F23-310)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6726Postgraduate-8349-T1-2025",
-    "day": "Thu",
-    "id": "EDST6726Postgraduate-8349-T1-2025ThuMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
-    "instructor": "Mr M  Goreta",
-    "location": "Mathews 310 (K-F23-310)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6726Postgraduate-8350-T1-2025",
-    "day": "Thu",
-    "id": "EDST6726Postgraduate-8350-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6727Postgraduate-8368-T1-2025",
-    "day": "Wed",
-    "id": "EDST6727Postgraduate-8368-T1-2025WedWebster 327 (Theatrette) (K-G14-327)13:00 - 14:001-5,7-10",
-    "instructor": "Dr J  Robinson",
-    "location": "Webster 327 (Theatrette) (K-G14-327)",
-    "time": "13:00 - 14:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6727Postgraduate-8369-T1-2025",
-    "day": "Wed",
-    "id": "EDST6727Postgraduate-8369-T1-2025WedWebster G17 (K-G14-G17)14:00 - 16:001-5,7-10",
-    "instructor": "Dr J  Robinson",
-    "location": "Webster G17 (K-G14-G17)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6727Postgraduate-8370-T1-2025",
-    "day": "Wed",
-    "id": "EDST6727Postgraduate-8370-T1-2025WedOnline (ONLINE)14:00 - 16:001-5,7-10",
-    "instructor": "Dr J  Robinson",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6728Postgraduate-8374-T1-2025",
-    "day": "Mon",
-    "id": "EDST6728Postgraduate-8374-T1-2025MonWebster 327 (Theatrette) (K-G14-327)17:30 - 18:301-5,7-9,N1",
-    "instructor": "Ms R  Lewis",
-    "location": "Webster 327 (Theatrette) (K-G14-327)",
-    "time": "17:30 - 18:30",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6728Postgraduate-8375-T1-2025",
-    "day": "Mon",
-    "id": "EDST6728Postgraduate-8375-T1-2025MonWebster G17 (K-G14-G17)18:30 - 20:301-5,7-9,N1",
-    "instructor": "Ms R  Lewis",
-    "location": "Webster G17 (K-G14-G17)",
-    "time": "18:30 - 20:30",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6728Postgraduate-8376-T1-2025",
-    "day": "Mon",
-    "id": "EDST6728Postgraduate-8376-T1-2025MonOnline (ONLINE)18:30 - 20:301-5,7-9,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:30 - 20:30",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6771Postgraduate-8563-T1-2025",
-    "day": "Tue",
-    "id": "EDST6771Postgraduate-8563-T1-2025TueLibrary 176A (K-F21-176A)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Davidson",
-    "location": "Library 176A (K-F21-176A)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6771Postgraduate-8564-T1-2025",
-    "day": "Tue",
-    "id": "EDST6771Postgraduate-8564-T1-2025TueLibrary 176A (K-F21-176A)18:00 - 20:001-5,7-10",
-    "instructor": "Mr B  Davidson",
-    "location": "Library 176A (K-F21-176A)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6771Postgraduate-8565-T1-2025",
-    "day": "Tue",
-    "id": "EDST6771Postgraduate-8565-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6775Postgraduate-8570-T1-2025",
-    "day": "Mon",
-    "id": "EDST6775Postgraduate-8570-T1-2025MonQuadrangle G034 (K-E15-G034)17:00 - 18:001-5,7-9,N1",
-    "instructor": "Mrs V  Doran",
-    "location": "Quadrangle G034 (K-E15-G034)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6775Postgraduate-8571-T1-2025",
-    "day": "Mon",
-    "id": "EDST6775Postgraduate-8571-T1-2025MonQuadrangle G027 (K-E15-G027)18:00 - 20:001-5,7-9,N1",
-    "instructor": "Mrs V  Doran",
-    "location": "Quadrangle G027 (K-E15-G027)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6775Postgraduate-8572-T1-2025",
-    "day": "Mon",
-    "id": "EDST6775Postgraduate-8572-T1-2025MonOld Main Building G32 (K-K15-G32)18:00 - 20:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Old Main Building G32 (K-K15-G32)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6775Postgraduate-8573-T1-2025",
-    "day": "Mon",
-    "id": "EDST6775Postgraduate-8573-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-9,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6777Postgraduate-8577-T1-2025",
-    "day": "Thu",
-    "id": "EDST6777Postgraduate-8577-T1-2025ThuMathews 101 (K-F23-101)17:00 - 18:001-5,7-10",
-    "instructor": "Ms ML Brennan",
-    "location": "Mathews 101 (K-F23-101)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6777Postgraduate-8578-T1-2025",
-    "day": "Thu",
-    "id": "EDST6777Postgraduate-8578-T1-2025ThuMathews 101 (K-F23-101)18:00 - 20:001-5,7-10",
-    "instructor": "Ms ML Brennan",
-    "location": "Mathews 101 (K-F23-101)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6777Postgraduate-8579-T1-2025",
-    "day": "Thu",
-    "id": "EDST6777Postgraduate-8579-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6920Postgraduate-10252-T1-2025",
-    "day": "Wed",
-    "id": "EDST6920Postgraduate-10252-T1-2025WedVallentine Annexe 121 (K-H22-121)17:00 - 18:001-5,7-10",
-    "instructor": "Dr K  Ayer",
-    "location": "Vallentine Annexe 121 (K-H22-121)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6920Postgraduate-10253-T1-2025",
-    "day": "Wed",
-    "id": "EDST6920Postgraduate-10253-T1-2025WedVallentine Annexe 121 (K-H22-121)18:00 - 20:001-5,7-10",
-    "instructor": "Dr K  Ayer",
-    "location": "Vallentine Annexe 121 (K-H22-121)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6920Postgraduate-10254-T1-2025",
-    "day": "Wed",
-    "id": "EDST6920Postgraduate-10254-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6921Postgraduate-10259-T1-2025",
-    "day": "Fri",
-    "id": "EDST6921Postgraduate-10259-T1-2025FriQuadrangle G034 (K-E15-G034)15:00 - 16:001-5,7-8,N1",
-    "instructor": "Mr J  Dallimore",
-    "location": "Quadrangle G034 (K-E15-G034)",
-    "time": "15:00 - 16:00",
-    "weeks": "1-5,7-8,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6921Postgraduate-10260-T1-2025",
-    "day": "Fri",
-    "id": "EDST6921Postgraduate-10260-T1-2025FriQuadrangle G025 (K-E15-G025)16:00 - 18:001-5,7-8,N1",
-    "instructor": "Mr J  Dallimore",
-    "location": "Quadrangle G025 (K-E15-G025)",
-    "time": "16:00 - 18:00",
-    "weeks": "1-5,7-8,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6921Postgraduate-10261-T1-2025",
-    "day": "Fri",
-    "id": "EDST6921Postgraduate-10261-T1-2025FriQuadrangle G026 (K-E15-G026)16:00 - 18:001-5,7-8,N1",
-    "instructor": "",
-    "location": "Quadrangle G026 (K-E15-G026)",
-    "time": "16:00 - 18:00",
-    "weeks": "1-5,7-8,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6921Postgraduate-10262-T1-2025",
-    "day": "Fri",
-    "id": "EDST6921Postgraduate-10262-T1-2025FriOnline (ONLINE)16:00 - 18:001-5,7-8,N1",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 18:00",
-    "weeks": "1-5,7-8,N1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6922Postgraduate-10266-T1-2025",
-    "day": "Wed",
-    "id": "EDST6922Postgraduate-10266-T1-2025WedMathews 101 (K-F23-101)17:00 - 18:001-5,7-10",
-    "instructor": "Ms R  Kaddour",
-    "location": "Mathews 101 (K-F23-101)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6922Postgraduate-10267-T1-2025",
-    "day": "Wed",
-    "id": "EDST6922Postgraduate-10267-T1-2025WedMathews 101 (K-F23-101)18:00 - 20:001-5,7-10",
-    "instructor": "Ms R  Kaddour",
-    "location": "Mathews 101 (K-F23-101)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6922Postgraduate-10268-T1-2025",
-    "day": "Wed",
-    "id": "EDST6922Postgraduate-10268-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6923Postgraduate-10272-T1-2025",
-    "day": "Tue",
-    "id": "EDST6923Postgraduate-10272-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6923Postgraduate-10273-T1-2025",
-    "day": "Tue",
-    "id": "EDST6923Postgraduate-10273-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "Mathews 102 (K-F23-102)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6923Postgraduate-10274-T1-2025",
-    "day": "Tue",
-    "id": "EDST6923Postgraduate-10274-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6924Postgraduate-10290-T1-2025",
-    "day": "Tue",
-    "id": "EDST6924Postgraduate-10290-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6924Postgraduate-10291-T1-2025",
-    "day": "Tue",
-    "id": "EDST6924Postgraduate-10291-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "Mathews 102 (K-F23-102)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6924Postgraduate-10292-T1-2025",
-    "day": "Tue",
-    "id": "EDST6924Postgraduate-10292-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6925Postgraduate-10278-T1-2025",
-    "day": "Tue",
-    "id": "EDST6925Postgraduate-10278-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6925Postgraduate-10279-T1-2025",
-    "day": "Tue",
-    "id": "EDST6925Postgraduate-10279-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "Mathews 102 (K-F23-102)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6925Postgraduate-10280-T1-2025",
-    "day": "Tue",
-    "id": "EDST6925Postgraduate-10280-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6926Postgraduate-10284-T1-2025",
-    "day": "Tue",
-    "id": "EDST6926Postgraduate-10284-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6926Postgraduate-10285-T1-2025",
-    "day": "Tue",
-    "id": "EDST6926Postgraduate-10285-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
-    "instructor": "Dr S  Chapman",
-    "location": "Mathews 102 (K-F23-102)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6926Postgraduate-10286-T1-2025",
-    "day": "Tue",
-    "id": "EDST6926Postgraduate-10286-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6927Postgraduate-10298-T1-2025",
-    "day": "Tue",
-    "id": "EDST6927Postgraduate-10298-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
-    "instructor": "Mr B  Webb",
-    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
-    "time": "17:00 - 18:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6927Postgraduate-10299-T1-2025",
-    "day": "Tue",
-    "id": "EDST6927Postgraduate-10299-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
-    "instructor": "Dr S  Chapman",
-    "location": "Mathews 102 (K-F23-102)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6927Postgraduate-10300-T1-2025",
-    "day": "Tue",
-    "id": "EDST6927Postgraduate-10300-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6927Postgraduate-10301-T1-2025",
-    "day": "Tue",
-    "id": "EDST6927Postgraduate-10301-T1-2025TueMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Mathews 310 (K-F23-310)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "EDST6927Postgraduate-10302-T1-2025",
-    "day": "Tue",
-    "id": "EDST6927Postgraduate-10302-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
-    "instructor": "",
-    "location": "Online (ONLINE)",
-    "time": "18:00 - 20:00",
-    "weeks": "1-5,7-10"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "EDST5099Postgraduate-11989-T1-2025",
     "day": "Mon",
     "id": "EDST5099Postgraduate-11989-T1-2025MonF10 June Griffith M10 (K-F10-M10)15:00 - 17:001-5,7-9",
@@ -53061,6 +52101,696 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "EDST6700Postgraduate-4573-T1-2025",
+    "day": "Thu",
+    "id": "EDST6700Postgraduate-4573-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6700Postgraduate-4574-T1-2025",
+    "day": "Thu",
+    "id": "EDST6700Postgraduate-4574-T1-2025ThuMathews 303 (K-F23-303)17:00 - 19:001-5,7-10",
+    "instructor": "Ms B  Yang",
+    "location": "Mathews 303 (K-F23-303)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6700Postgraduate-4575-T1-2025",
+    "day": "Thu",
+    "id": "EDST6700Postgraduate-4575-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6701Postgraduate-4553-T1-2025",
+    "day": "Thu",
+    "id": "EDST6701Postgraduate-4553-T1-2025ThuGoldstein G07 (K-D16-G07)17:00 - 18:001-5,7-10",
+    "instructor": "Ms TA Crittle",
+    "location": "Goldstein G07 (K-D16-G07)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6701Postgraduate-4554-T1-2025",
+    "day": "Thu",
+    "id": "EDST6701Postgraduate-4554-T1-2025ThuGoldstein G07 (K-D16-G07)18:00 - 20:001-5,7-10",
+    "instructor": "Ms TA Crittle",
+    "location": "Goldstein G07 (K-D16-G07)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6701Postgraduate-4555-T1-2025",
+    "day": "Thu",
+    "id": "EDST6701Postgraduate-4555-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6702Postgraduate-4560-T1-2025",
+    "day": "Mon",
+    "id": "EDST6702Postgraduate-4560-T1-2025MonQuadrangle G034 (K-E15-G034)16:00 - 17:001-5,7-9,N1",
+    "instructor": "Mrs K  Petrevski",
+    "location": "Quadrangle G034 (K-E15-G034)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6702Postgraduate-4561-T1-2025",
+    "day": "Mon",
+    "id": "EDST6702Postgraduate-4561-T1-2025MonLibrary 176A (K-F21-176A)17:00 - 19:001-5,7-9,N1",
+    "instructor": "Mrs K  Petrevski,Mr J  Bell",
+    "location": "Library 176A (K-F21-176A)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6702Postgraduate-4562-T1-2025",
+    "day": "Mon",
+    "id": "EDST6702Postgraduate-4562-T1-2025MonLibrary 176B (K-F21-176B)17:00 - 19:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Library 176B (K-F21-176B)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6702Postgraduate-4563-T1-2025",
+    "day": "Mon",
+    "id": "EDST6702Postgraduate-4563-T1-2025MonOnline (ONLINE)17:00 - 19:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6704Postgraduate-4567-T1-2025",
+    "day": "Tue",
+    "id": "EDST6704Postgraduate-4567-T1-2025TueOld Main Building G32 (K-K15-G32)17:00 - 18:001-5,7-10",
+    "instructor": "Ms S  Durney",
+    "location": "Old Main Building G32 (K-K15-G32)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6704Postgraduate-4568-T1-2025",
+    "day": "Tue",
+    "id": "EDST6704Postgraduate-4568-T1-2025TueOld Main Building G32 (K-K15-G32)18:00 - 20:001-5,7-10",
+    "instructor": "Ms S  Durney",
+    "location": "Old Main Building G32 (K-K15-G32)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6704Postgraduate-4569-T1-2025",
+    "day": "Tue",
+    "id": "EDST6704Postgraduate-4569-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6705Postgraduate-4579-T1-2025",
+    "day": "Thu",
+    "id": "EDST6705Postgraduate-4579-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6705Postgraduate-4580-T1-2025",
+    "day": "Thu",
+    "id": "EDST6705Postgraduate-4580-T1-2025ThuOld Main Building 230 (K-K15-230)17:00 - 19:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "Old Main Building 230 (K-K15-230)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6705Postgraduate-4581-T1-2025",
+    "day": "Thu",
+    "id": "EDST6705Postgraduate-4581-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6706Postgraduate-4597-T1-2025",
+    "day": "Tue",
+    "id": "EDST6706Postgraduate-4597-T1-2025TueVallentine Annexe 121 (K-H22-121)17:00 - 18:001-5,7-10",
+    "instructor": "Mr D  Latimer",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6706Postgraduate-4598-T1-2025",
+    "day": "Tue",
+    "id": "EDST6706Postgraduate-4598-T1-2025TueVallentine Annexe 121 (K-H22-121)18:00 - 20:001-5,7-10",
+    "instructor": "Mr D  Latimer",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6706Postgraduate-4599-T1-2025",
+    "day": "Tue",
+    "id": "EDST6706Postgraduate-4599-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6711Postgraduate-4585-T1-2025",
+    "day": "Thu",
+    "id": "EDST6711Postgraduate-4585-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6711Postgraduate-4586-T1-2025",
+    "day": "Thu",
+    "id": "EDST6711Postgraduate-4586-T1-2025ThuOld Main Building 151 (K-K15-151)17:00 - 19:001-5,7-10",
+    "instructor": "Mrs KL Gilles",
+    "location": "Old Main Building 151 (K-K15-151)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6711Postgraduate-4587-T1-2025",
+    "day": "Thu",
+    "id": "EDST6711Postgraduate-4587-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6714Postgraduate-4591-T1-2025",
+    "day": "Thu",
+    "id": "EDST6714Postgraduate-4591-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6714Postgraduate-4592-T1-2025",
+    "day": "Thu",
+    "id": "EDST6714Postgraduate-4592-T1-2025ThuOld Main Building 230 (K-K15-230)17:00 - 19:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "Old Main Building 230 (K-K15-230)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6714Postgraduate-4593-T1-2025",
+    "day": "Thu",
+    "id": "EDST6714Postgraduate-4593-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6715Postgraduate-6280-T1-2025",
+    "day": "Wed",
+    "id": "EDST6715Postgraduate-6280-T1-2025WedMathews 310 (K-F23-310)17:00 - 18:001-5,7-10",
+    "instructor": "Mr J  Alvaro",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6715Postgraduate-6281-T1-2025",
+    "day": "Wed",
+    "id": "EDST6715Postgraduate-6281-T1-2025WedMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
+    "instructor": "Mr J  Alvaro",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6715Postgraduate-6282-T1-2025",
+    "day": "Wed",
+    "id": "EDST6715Postgraduate-6282-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6716Postgraduate-6380-T1-2025",
+    "day": "Mon",
+    "id": "EDST6716Postgraduate-6380-T1-2025MonQuadrangle G026 (K-E15-G026)17:00 - 18:001-5,7-9,N1",
+    "instructor": "Mr P  Pain",
+    "location": "Quadrangle G026 (K-E15-G026)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6716Postgraduate-6381-T1-2025",
+    "day": "Mon",
+    "id": "EDST6716Postgraduate-6381-T1-2025MonQuadrangle G026 (K-E15-G026)18:00 - 20:001-5,7-9,N1",
+    "instructor": "Mr P  Pain",
+    "location": "Quadrangle G026 (K-E15-G026)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6716Postgraduate-6382-T1-2025",
+    "day": "Mon",
+    "id": "EDST6716Postgraduate-6382-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6717Postgraduate-7746-T1-2025",
+    "day": "Wed",
+    "id": "EDST6717Postgraduate-7746-T1-2025WedOnline (ONLINE)17:00 - 18:001-5,7-10",
+    "instructor": "Ms ML Ebsworth",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6717Postgraduate-7747-T1-2025",
+    "day": "Wed",
+    "id": "EDST6717Postgraduate-7747-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "Ms ML Ebsworth",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6717Postgraduate-12740-T1-2025",
+    "day": "Wed",
+    "id": "EDST6717Postgraduate-12740-T1-2025WedAGSM LG07 (K-G27-LG07)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "AGSM LG07 (K-G27-LG07)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6718Postgraduate-7822-T1-2025",
+    "day": "Thu",
+    "id": "EDST6718Postgraduate-7822-T1-2025ThuE19 Patricia O'Shane G04 (K-E19-G04)16:00 - 17:001-5,7-10",
+    "instructor": "Miss AC Walker",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6718Postgraduate-7823-T1-2025",
+    "day": "Thu",
+    "id": "EDST6718Postgraduate-7823-T1-2025ThuOld Main Building 151 (K-K15-151)17:00 - 19:001-5,7-10",
+    "instructor": "Mrs KL Gilles",
+    "location": "Old Main Building 151 (K-K15-151)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6718Postgraduate-7824-T1-2025",
+    "day": "Thu",
+    "id": "EDST6718Postgraduate-7824-T1-2025ThuOnline (ONLINE)17:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6719Postgraduate-7974-T1-2025",
+    "day": "Tue",
+    "id": "EDST6719Postgraduate-7974-T1-2025TueLibrary 176B (K-F21-176B)17:00 - 18:001-5,7-10",
+    "instructor": "Mrs K  Nightingale",
+    "location": "Library 176B (K-F21-176B)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6719Postgraduate-7975-T1-2025",
+    "day": "Tue",
+    "id": "EDST6719Postgraduate-7975-T1-2025TueLibrary 176B (K-F21-176B)18:00 - 20:001-5,7-10",
+    "instructor": "Mrs K  Nightingale",
+    "location": "Library 176B (K-F21-176B)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6719Postgraduate-7976-T1-2025",
+    "day": "Tue",
+    "id": "EDST6719Postgraduate-7976-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6722Postgraduate-8168-T1-2025",
+    "day": "Thu",
+    "id": "EDST6722Postgraduate-8168-T1-2025ThuQuadrangle G053 (K-E15-G053)17:00 - 18:001-5,7-10",
+    "instructor": "Mr Y  Moushi",
+    "location": "Quadrangle G053 (K-E15-G053)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6722Postgraduate-8169-T1-2025",
+    "day": "Thu",
+    "id": "EDST6722Postgraduate-8169-T1-2025ThuQuadrangle G053 (K-E15-G053)18:00 - 20:001-5,7-10",
+    "instructor": "Mr Y  Moushi",
+    "location": "Quadrangle G053 (K-E15-G053)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6722Postgraduate-8170-T1-2025",
+    "day": "Thu",
+    "id": "EDST6722Postgraduate-8170-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6723Postgraduate-8354-T1-2025",
+    "day": "Thu",
+    "id": "EDST6723Postgraduate-8354-T1-2025ThuGoldstein G09 (K-D16-G09)17:00 - 18:001-5,7-10",
+    "instructor": "Mrs KL Davis",
+    "location": "Goldstein G09 (K-D16-G09)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6723Postgraduate-8355-T1-2025",
+    "day": "Thu",
+    "id": "EDST6723Postgraduate-8355-T1-2025ThuGoldstein G09 (K-D16-G09)18:00 - 20:001-5,7-10",
+    "instructor": "Mrs KL Davis",
+    "location": "Goldstein G09 (K-D16-G09)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6723Postgraduate-8356-T1-2025",
+    "day": "Thu",
+    "id": "EDST6723Postgraduate-8356-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6725Postgraduate-8361-T1-2025",
+    "day": "Mon",
+    "id": "EDST6725Postgraduate-8361-T1-2025MonUNSW Business School  216 (K-E12-216)16:00 - 17:001-5,7-9,N1",
+    "instructor": "Ms C  Robinson",
+    "location": "UNSW Business School  216 (K-E12-216)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6725Postgraduate-8362-T1-2025",
+    "day": "Mon",
+    "id": "EDST6725Postgraduate-8362-T1-2025MonUNSW Business School  216 (K-E12-216)17:00 - 19:001-5,7-9,N1",
+    "instructor": "",
+    "location": "UNSW Business School  216 (K-E12-216)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6725Postgraduate-8363-T1-2025",
+    "day": "Mon",
+    "id": "EDST6725Postgraduate-8363-T1-2025MonUNSW Business School  205 (K-E12-205)17:00 - 19:001-5,7-9,N1",
+    "instructor": "",
+    "location": "UNSW Business School  205 (K-E12-205)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6725Postgraduate-8364-T1-2025",
+    "day": "Mon",
+    "id": "EDST6725Postgraduate-8364-T1-2025MonOnline (ONLINE)17:00 - 19:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "17:00 - 19:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6726Postgraduate-8348-T1-2025",
+    "day": "Thu",
+    "id": "EDST6726Postgraduate-8348-T1-2025ThuMathews 310 (K-F23-310)17:00 - 18:001-5,7-10",
+    "instructor": "Mr M  Goreta",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6726Postgraduate-8349-T1-2025",
+    "day": "Thu",
+    "id": "EDST6726Postgraduate-8349-T1-2025ThuMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
+    "instructor": "Mr M  Goreta",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6726Postgraduate-8350-T1-2025",
+    "day": "Thu",
+    "id": "EDST6726Postgraduate-8350-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6727Postgraduate-8368-T1-2025",
+    "day": "Wed",
+    "id": "EDST6727Postgraduate-8368-T1-2025WedWebster 327 (Theatrette) (K-G14-327)13:00 - 14:001-5,7-10",
+    "instructor": "Dr J  Robinson",
+    "location": "Webster 327 (Theatrette) (K-G14-327)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6727Postgraduate-8369-T1-2025",
+    "day": "Wed",
+    "id": "EDST6727Postgraduate-8369-T1-2025WedWebster G17 (K-G14-G17)14:00 - 16:001-5,7-10",
+    "instructor": "Dr J  Robinson",
+    "location": "Webster G17 (K-G14-G17)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6727Postgraduate-8370-T1-2025",
+    "day": "Wed",
+    "id": "EDST6727Postgraduate-8370-T1-2025WedOnline (ONLINE)14:00 - 16:001-5,7-10",
+    "instructor": "Dr J  Robinson",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6728Postgraduate-8374-T1-2025",
+    "day": "Mon",
+    "id": "EDST6728Postgraduate-8374-T1-2025MonWebster 327 (Theatrette) (K-G14-327)17:30 - 18:301-5,7-9,N1",
+    "instructor": "Ms R  Lewis",
+    "location": "Webster 327 (Theatrette) (K-G14-327)",
+    "time": "17:30 - 18:30",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6728Postgraduate-8375-T1-2025",
+    "day": "Mon",
+    "id": "EDST6728Postgraduate-8375-T1-2025MonWebster G17 (K-G14-G17)18:30 - 20:301-5,7-9,N1",
+    "instructor": "Ms R  Lewis",
+    "location": "Webster G17 (K-G14-G17)",
+    "time": "18:30 - 20:30",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6728Postgraduate-8376-T1-2025",
+    "day": "Mon",
+    "id": "EDST6728Postgraduate-8376-T1-2025MonOnline (ONLINE)18:30 - 20:301-5,7-9,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:30 - 20:30",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6771Postgraduate-8563-T1-2025",
+    "day": "Tue",
+    "id": "EDST6771Postgraduate-8563-T1-2025TueLibrary 176A (K-F21-176A)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Davidson",
+    "location": "Library 176A (K-F21-176A)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6771Postgraduate-8564-T1-2025",
+    "day": "Tue",
+    "id": "EDST6771Postgraduate-8564-T1-2025TueLibrary 176A (K-F21-176A)18:00 - 20:001-5,7-10",
+    "instructor": "Mr B  Davidson",
+    "location": "Library 176A (K-F21-176A)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6771Postgraduate-8565-T1-2025",
+    "day": "Tue",
+    "id": "EDST6771Postgraduate-8565-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6775Postgraduate-8570-T1-2025",
+    "day": "Mon",
+    "id": "EDST6775Postgraduate-8570-T1-2025MonQuadrangle G034 (K-E15-G034)17:00 - 18:001-5,7-9,N1",
+    "instructor": "Mrs V  Doran",
+    "location": "Quadrangle G034 (K-E15-G034)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6775Postgraduate-8571-T1-2025",
+    "day": "Mon",
+    "id": "EDST6775Postgraduate-8571-T1-2025MonQuadrangle G027 (K-E15-G027)18:00 - 20:001-5,7-9,N1",
+    "instructor": "Mrs V  Doran",
+    "location": "Quadrangle G027 (K-E15-G027)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6775Postgraduate-8572-T1-2025",
+    "day": "Mon",
+    "id": "EDST6775Postgraduate-8572-T1-2025MonOld Main Building G32 (K-K15-G32)18:00 - 20:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Old Main Building G32 (K-K15-G32)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6775Postgraduate-8573-T1-2025",
+    "day": "Mon",
+    "id": "EDST6775Postgraduate-8573-T1-2025MonOnline (ONLINE)18:00 - 20:001-5,7-9,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-9,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6777Postgraduate-8577-T1-2025",
+    "day": "Thu",
+    "id": "EDST6777Postgraduate-8577-T1-2025ThuMathews 101 (K-F23-101)17:00 - 18:001-5,7-10",
+    "instructor": "Ms ML Brennan",
+    "location": "Mathews 101 (K-F23-101)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6777Postgraduate-8578-T1-2025",
+    "day": "Thu",
+    "id": "EDST6777Postgraduate-8578-T1-2025ThuMathews 101 (K-F23-101)18:00 - 20:001-5,7-10",
+    "instructor": "Ms ML Brennan",
+    "location": "Mathews 101 (K-F23-101)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6777Postgraduate-8579-T1-2025",
+    "day": "Thu",
+    "id": "EDST6777Postgraduate-8579-T1-2025ThuOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "EDST6779Postgraduate-9680-T1-2025",
     "day": "Mon",
     "id": "EDST6779Postgraduate-9680-T1-2025MonOld Main Building 150 (K-K15-150)15:00 - 16:001-5,7-9",
@@ -53138,6 +52868,276 @@
     "location": "See School for Location (SEESCHOOL)",
     "time": "09:30 - 14:30",
     "weeks": "9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6920Postgraduate-10252-T1-2025",
+    "day": "Wed",
+    "id": "EDST6920Postgraduate-10252-T1-2025WedVallentine Annexe 121 (K-H22-121)17:00 - 18:001-5,7-10",
+    "instructor": "Dr K  Ayer",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6920Postgraduate-10253-T1-2025",
+    "day": "Wed",
+    "id": "EDST6920Postgraduate-10253-T1-2025WedVallentine Annexe 121 (K-H22-121)18:00 - 20:001-5,7-10",
+    "instructor": "Dr K  Ayer",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6920Postgraduate-10254-T1-2025",
+    "day": "Wed",
+    "id": "EDST6920Postgraduate-10254-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6921Postgraduate-10259-T1-2025",
+    "day": "Fri",
+    "id": "EDST6921Postgraduate-10259-T1-2025FriQuadrangle G034 (K-E15-G034)15:00 - 16:001-5,7-8,N1",
+    "instructor": "Mr J  Dallimore",
+    "location": "Quadrangle G034 (K-E15-G034)",
+    "time": "15:00 - 16:00",
+    "weeks": "1-5,7-8,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6921Postgraduate-10260-T1-2025",
+    "day": "Fri",
+    "id": "EDST6921Postgraduate-10260-T1-2025FriQuadrangle G025 (K-E15-G025)16:00 - 18:001-5,7-8,N1",
+    "instructor": "Mr J  Dallimore",
+    "location": "Quadrangle G025 (K-E15-G025)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5,7-8,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6921Postgraduate-10261-T1-2025",
+    "day": "Fri",
+    "id": "EDST6921Postgraduate-10261-T1-2025FriQuadrangle G026 (K-E15-G026)16:00 - 18:001-5,7-8,N1",
+    "instructor": "",
+    "location": "Quadrangle G026 (K-E15-G026)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5,7-8,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6921Postgraduate-10262-T1-2025",
+    "day": "Fri",
+    "id": "EDST6921Postgraduate-10262-T1-2025FriOnline (ONLINE)16:00 - 18:001-5,7-8,N1",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5,7-8,N1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6922Postgraduate-10266-T1-2025",
+    "day": "Wed",
+    "id": "EDST6922Postgraduate-10266-T1-2025WedMathews 101 (K-F23-101)17:00 - 18:001-5,7-10",
+    "instructor": "Ms R  Kaddour",
+    "location": "Mathews 101 (K-F23-101)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6922Postgraduate-10267-T1-2025",
+    "day": "Wed",
+    "id": "EDST6922Postgraduate-10267-T1-2025WedMathews 101 (K-F23-101)18:00 - 20:001-5,7-10",
+    "instructor": "Ms R  Kaddour",
+    "location": "Mathews 101 (K-F23-101)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6922Postgraduate-10268-T1-2025",
+    "day": "Wed",
+    "id": "EDST6922Postgraduate-10268-T1-2025WedOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6923Postgraduate-10272-T1-2025",
+    "day": "Tue",
+    "id": "EDST6923Postgraduate-10272-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6923Postgraduate-10273-T1-2025",
+    "day": "Tue",
+    "id": "EDST6923Postgraduate-10273-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "Mathews 102 (K-F23-102)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6923Postgraduate-10274-T1-2025",
+    "day": "Tue",
+    "id": "EDST6923Postgraduate-10274-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6924Postgraduate-10290-T1-2025",
+    "day": "Tue",
+    "id": "EDST6924Postgraduate-10290-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6924Postgraduate-10291-T1-2025",
+    "day": "Tue",
+    "id": "EDST6924Postgraduate-10291-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "Mathews 102 (K-F23-102)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6924Postgraduate-10292-T1-2025",
+    "day": "Tue",
+    "id": "EDST6924Postgraduate-10292-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6925Postgraduate-10278-T1-2025",
+    "day": "Tue",
+    "id": "EDST6925Postgraduate-10278-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6925Postgraduate-10279-T1-2025",
+    "day": "Tue",
+    "id": "EDST6925Postgraduate-10279-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "Mathews 102 (K-F23-102)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6925Postgraduate-10280-T1-2025",
+    "day": "Tue",
+    "id": "EDST6925Postgraduate-10280-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6926Postgraduate-10284-T1-2025",
+    "day": "Tue",
+    "id": "EDST6926Postgraduate-10284-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6926Postgraduate-10285-T1-2025",
+    "day": "Tue",
+    "id": "EDST6926Postgraduate-10285-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
+    "instructor": "Dr S  Chapman",
+    "location": "Mathews 102 (K-F23-102)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6926Postgraduate-10286-T1-2025",
+    "day": "Tue",
+    "id": "EDST6926Postgraduate-10286-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6927Postgraduate-10298-T1-2025",
+    "day": "Tue",
+    "id": "EDST6927Postgraduate-10298-T1-2025TueE19 Patricia O'Shane G04 (K-E19-G04)17:00 - 18:001-5,7-10",
+    "instructor": "Mr B  Webb",
+    "location": "E19 Patricia O'Shane G04 (K-E19-G04)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6927Postgraduate-10299-T1-2025",
+    "day": "Tue",
+    "id": "EDST6927Postgraduate-10299-T1-2025TueMathews 102 (K-F23-102)18:00 - 20:001-5,7-10",
+    "instructor": "Dr S  Chapman",
+    "location": "Mathews 102 (K-F23-102)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6927Postgraduate-10300-T1-2025",
+    "day": "Tue",
+    "id": "EDST6927Postgraduate-10300-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6927Postgraduate-10301-T1-2025",
+    "day": "Tue",
+    "id": "EDST6927Postgraduate-10301-T1-2025TueMathews 310 (K-F23-310)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "EDST6927Postgraduate-10302-T1-2025",
+    "day": "Tue",
+    "id": "EDST6927Postgraduate-10302-T1-2025TueOnline (ONLINE)18:00 - 20:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-5,7-10"
   },
   {
     "career": "Research",
@@ -61391,26 +61391,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "GSOE9712Postgraduate-7273-T1-2025",
-    "day": "Wed",
-    "id": "GSOE9712Postgraduate-7273-T1-2025WedAinsworth 204 (K-J17-204)13:00 - 14:303,7,9",
-    "instructor": "Dr R  Chan",
-    "location": "Ainsworth 204 (K-J17-204)",
-    "time": "13:00 - 14:30",
-    "weeks": "3,7,9"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "GSOE9712Postgraduate-7274-T1-2025",
-    "day": "Mon",
-    "id": "GSOE9712Postgraduate-7274-T1-2025MonOld Main Building G32 (K-K15-G32)09:00 - 12:001-9",
-    "instructor": "Dr R  Chan",
-    "location": "Old Main Building G32 (K-K15-G32)",
-    "time": "09:00 - 12:00",
-    "weeks": "1-9"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "GSOE9010Postgraduate-8774-T1-2025",
     "day": "Mon",
     "id": "GSOE9010Postgraduate-8774-T1-2025MonF10 June Griffith M18 (K-F10-M18)18:00 - 19:001-9",
@@ -61708,6 +61688,26 @@
     "location": "E19 Patricia O'Shane G06 (K-E19-G06)",
     "time": "14:00 - 17:00",
     "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "GSOE9712Postgraduate-7273-T1-2025",
+    "day": "Wed",
+    "id": "GSOE9712Postgraduate-7273-T1-2025WedAinsworth 204 (K-J17-204)13:00 - 14:303,7,9",
+    "instructor": "Dr R  Chan",
+    "location": "Ainsworth 204 (K-J17-204)",
+    "time": "13:00 - 14:30",
+    "weeks": "3,7,9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "GSOE9712Postgraduate-7274-T1-2025",
+    "day": "Mon",
+    "id": "GSOE9712Postgraduate-7274-T1-2025MonOld Main Building G32 (K-K15-G32)09:00 - 12:001-9",
+    "instructor": "Dr R  Chan",
+    "location": "Old Main Building G32 (K-K15-G32)",
+    "time": "09:00 - 12:00",
+    "weeks": "1-9"
   },
   {
     "career": "Postgraduate",
@@ -91871,56 +91871,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "PHCM9391Postgraduate-4763-T1-2025",
-    "day": "Tue",
-    "id": "PHCM9391Postgraduate-4763-T1-2025TueOnline (ONLINE)14:00 - 16:001-10",
-    "instructor": "Dr BF Harris-Roxas",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 16:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "PHCM9391Postgraduate-4764-T1-2025",
-    "day": "Wed",
-    "id": "PHCM9391Postgraduate-4764-T1-2025WedOnline (ONLINE)14:00 - 15:001-10",
-    "instructor": "Dr BF Harris-Roxas",
-    "location": "Online (ONLINE)",
-    "time": "14:00 - 15:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "PHCM9391Postgraduate-4765-T1-2025",
-    "day": "Wed",
-    "id": "PHCM9391Postgraduate-4765-T1-2025WedMathews 311 (K-F23-311)11:00 - 12:001-10",
-    "instructor": "Dr BF Harris-Roxas",
-    "location": "Mathews 311 (K-F23-311)",
-    "time": "11:00 - 12:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "PHCM9630Postgraduate-3771-T1-2025",
-    "day": "Mon",
-    "id": "PHCM9630Postgraduate-3771-T1-2025MonOnline (ONLINE)16:00 - 18:001",
-    "instructor": "Miss E  Lewis",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 18:00",
-    "weeks": "1"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "PHCM9630Postgraduate-3771-T1-2025",
-    "day": "Tue",
-    "id": "PHCM9630Postgraduate-3771-T1-2025TueOnline (ONLINE)16:00 - 18:001",
-    "instructor": "Miss E  Lewis",
-    "location": "Online (ONLINE)",
-    "time": "16:00 - 18:00",
-    "weeks": "1"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "PHCM9041Postgraduate-6408-T1-2025",
     "day": "Tue",
     "id": "PHCM9041Postgraduate-6408-T1-2025TueOnline (ONLINE)10:00 - 12:001-10",
@@ -91958,6 +91908,36 @@
     "location": "Ruper Myers 430 (K-M15-430)",
     "time": "15:00 - 17:00",
     "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "PHCM9391Postgraduate-4763-T1-2025",
+    "day": "Tue",
+    "id": "PHCM9391Postgraduate-4763-T1-2025TueOnline (ONLINE)14:00 - 16:001-10",
+    "instructor": "Dr BF Harris-Roxas",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 16:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "PHCM9391Postgraduate-4764-T1-2025",
+    "day": "Wed",
+    "id": "PHCM9391Postgraduate-4764-T1-2025WedOnline (ONLINE)14:00 - 15:001-10",
+    "instructor": "Dr BF Harris-Roxas",
+    "location": "Online (ONLINE)",
+    "time": "14:00 - 15:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "PHCM9391Postgraduate-4765-T1-2025",
+    "day": "Wed",
+    "id": "PHCM9391Postgraduate-4765-T1-2025WedMathews 311 (K-F23-311)11:00 - 12:001-10",
+    "instructor": "Dr BF Harris-Roxas",
+    "location": "Mathews 311 (K-F23-311)",
+    "time": "11:00 - 12:00",
+    "weeks": "1-10"
   },
   {
     "career": "Postgraduate",
@@ -92068,6 +92048,26 @@
     "location": "Online (ONLINE)",
     "time": "09:00 - 10:30",
     "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "PHCM9630Postgraduate-3771-T1-2025",
+    "day": "Mon",
+    "id": "PHCM9630Postgraduate-3771-T1-2025MonOnline (ONLINE)16:00 - 18:001",
+    "instructor": "Miss E  Lewis",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 18:00",
+    "weeks": "1"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "PHCM9630Postgraduate-3771-T1-2025",
+    "day": "Tue",
+    "id": "PHCM9630Postgraduate-3771-T1-2025TueOnline (ONLINE)16:00 - 18:001",
+    "instructor": "Miss E  Lewis",
+    "location": "Online (ONLINE)",
+    "time": "16:00 - 18:00",
+    "weeks": "1"
   },
   {
     "career": "Postgraduate",
@@ -101471,21 +101471,21 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "TELE9757Postgraduate-7643-T1-2025",
-    "day": "Thu",
-    "id": "TELE9757Postgraduate-7643-T1-2025ThuElectrical Engineering G23 (K-G17-G23)18:00 - 21:001-10",
-    "instructor": "Prof R  Malaney",
-    "location": "Electrical Engineering G23 (K-G17-G23)",
-    "time": "18:00 - 21:00",
-    "weeks": "1-10"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "TELE9753Postgraduate-7338-T1-2025",
     "day": "Tue",
     "id": "TELE9753Postgraduate-7338-T1-2025TueH13 Lawrence Theatre (K-H13-G001)18:00 - 21:001-10",
     "instructor": "Prof J  YUAN",
     "location": "H13 Lawrence Theatre (K-H13-G001)",
+    "time": "18:00 - 21:00",
+    "weeks": "1-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "TELE9757Postgraduate-7643-T1-2025",
+    "day": "Thu",
+    "id": "TELE9757Postgraduate-7643-T1-2025ThuElectrical Engineering G23 (K-G17-G23)18:00 - 21:001-10",
+    "instructor": "Prof R  Malaney",
+    "location": "Electrical Engineering G23 (K-G17-G23)",
     "time": "18:00 - 21:00",
     "weeks": "1-10"
   },

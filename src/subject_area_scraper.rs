@@ -1,6 +1,6 @@
 use std::{collections::HashSet, sync::Arc};
 
-use scraper::Selector;
+use scraper::{ElementRef, Selector};
 use tokio::sync::Mutex;
 
 use crate::{
@@ -34,18 +34,33 @@ impl SubjectAreaScraper {
                 let mut course_code_career_set = HashSet::<String>::new();
                 for career_elem_ref in document.select(&career_selector) {
                     let career = extract_text(career_elem_ref);
-                    if career.is_empty() {continue};
-                    for row_node in document.select(&row_selector) {
+                    if career.is_empty() {
+                        continue;
+                    };
+                    for row_node in ElementRef::wrap(
+                        career_elem_ref
+                            .parent()
+                            .expect("Expected career to be inside td element")
+                            .next_sibling()
+                            .expect("Expected career classes td element to come after careers")
+                            .next_sibling()
+                            .expect("Expected career classes td element to come after careers"),
+                    )
+                    .unwrap()
+                    .select(&row_selector)
+                    {
                         // Extract data from each row
-                        let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
-                        let course_name = extract_text(row_node.select(&name_selector).nth(1).unwrap());
+                        let course_code =
+                            extract_text(row_node.select(&code_selector).next().unwrap());
+                        let course_name =
+                            extract_text(row_node.select(&name_selector).nth(1).unwrap());
                         let name_hash = course_code.to_string() + &career;
                         if course_code_career_set.contains(&name_hash) {
                             continue;
                         }
-                        let year_to_scrape = extract_year(url).unwrap(); 
+                        let year_to_scrape = extract_year(url).unwrap();
                         let url_to_scrape_further = get_html_link_to_page(
-                            year_to_scrape as i32, 
+                            year_to_scrape as i32,
                             row_node
                                 .select(&link_selector)
                                 .next()
