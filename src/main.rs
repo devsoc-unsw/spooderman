@@ -3,7 +3,7 @@ use dotenv::dotenv;
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time
+    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::env;
@@ -22,7 +22,8 @@ use log::LevelFilter;
 async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<SchoolAreaScraper> {
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
-            let url_to_scrape = mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
+            let url_to_scrape =
+                mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
             let mut scraper = SchoolAreaScraper::new(url_to_scrape);
             let _ = scraper.scrape().await;
             Some(scraper)
@@ -113,6 +114,11 @@ async fn run_course_classes_page_scraper_job(
 fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
     for course in course_vec.iter() {
+        // Modes come from HashSet, so order is non-deterministic
+        // This is annoying for our json diff, so quickly sort first
+        let mut modes = course.modes.iter().collect::<Vec<_>>();
+        modes.sort_unstable();
+
         json_courses.push(json!({
             "course_id": course.course_id,
             "course_code": course.course_code,
@@ -123,7 +129,7 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
             "campus": course.campus,
             "career": course.career,
             "terms": json![course.terms],
-            "modes": course.modes.iter().collect::<Vec<_>>(),
+            "modes": modes,
         }));
     }
 
@@ -182,25 +188,31 @@ fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
     json_classes
 }
 
-async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> Result<(), Box<dyn Error>> {
-    for year in &[2025] { // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+async fn handle_scrape(
+    course_vec: &mut Vec<Course>,
+    start_year: i32,
+) -> Result<(), Box<dyn Error>> {
+    for year in &[2025] {
+        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         println!("Handling scrape for year: {year}");
-        let mut all_school_offered_courses_scraper = run_all_school_offered_courses_scraper_job(*year).await;
+        let mut all_school_offered_courses_scraper =
+            run_all_school_offered_courses_scraper_job(*year).await;
         if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
             run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-            let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+            let course =
+                run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
             course_vec.extend(course);
         }
     }
-   
+
     Ok(())
 }
 async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
-    let mut course_vec: Vec<Course> =  Vec::<Course>::new();
+    let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
-            .await
-            .expect("Something went wrong with scraping!");
+        .await
+        .expect("Something went wrong with scraping!");
     println!("Writing to disk!");
     let json_classes = convert_classes_to_json(&mut course_vec);
     let json_courses = convert_courses_to_json(&mut course_vec);
@@ -242,11 +254,11 @@ async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
 
 async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     println!("Handling scrape and batch insert...");
-    let mut course_vec: Vec<Course> =  Vec::<Course>::new();
+    let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
-            .await
-            .expect("Something went wrong with scraping!");
+        .await
+        .expect("Something went wrong with scraping!");
     let json_classes = convert_classes_to_json(&mut course_vec);
     let json_courses = convert_courses_to_json(&mut course_vec);
     let json_times = convert_classes_times_to_json(&mut course_vec);

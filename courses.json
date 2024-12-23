@@ -386,8 +386,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -1154,8 +1154,8 @@
     "course_name": "Superannuation and Retirement Benefits",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Hybrid"
+      "Hybrid",
+      "In Person"
     ],
     "school": "School of Risk & Actuarial St",
     "terms": [
@@ -1237,8 +1237,8 @@
     "course_name": "Actuarial Theory and Practice A",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Risk & Actuarial St",
     "terms": [
@@ -1733,8 +1733,8 @@
     "course_name": "Aerodynamics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -1782,8 +1782,8 @@
     "course_name": "Dynamics of Aerospace Vehicles, Systems and Avionics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -1953,9 +1953,9 @@
     "course_name": "Strategy",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -1973,9 +1973,9 @@
     "course_name": "Accounting and Financial Management",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -1993,9 +1993,9 @@
     "course_name": "Data Analytics and Decision-making",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2013,9 +2013,9 @@
     "course_name": "Marketing Management",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2034,8 +2034,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2053,8 +2053,8 @@
     "course_name": "Corporate Finance",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "AGSM MBA Programs",
@@ -2074,8 +2074,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2093,9 +2093,9 @@
     "course_name": "Economics in Management Practice",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2113,8 +2113,8 @@
     "course_name": "Corporate Innovation",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2216,8 +2216,8 @@
     "course_name": "Digital Strategy",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2234,9 +2234,9 @@
     "course_name": "Implementing Strategy",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2323,8 +2323,8 @@
     "course_name": "Sustainable and Inclusive Business",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2373,9 +2373,9 @@
     "course_name": "Approaches to Change",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2426,8 +2426,8 @@
     "course_name": "Negotiation Skills",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2493,8 +2493,8 @@
     "course_name": "Introductory Anatomy",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -2640,8 +2640,8 @@
     "course_name": "Neuroanatomy",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -3607,8 +3607,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3657,8 +3657,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3756,9 +3756,9 @@
     "course_name": "French 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3826,8 +3826,8 @@
     "course_name": "Modern Greek 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3859,9 +3859,9 @@
     "course_name": "Spanish 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3927,8 +3927,8 @@
     "course_name": "Korean 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3961,8 +3961,8 @@
     "course_name": "The Structure of Language",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -3994,8 +3994,8 @@
     "course_name": "Introduction to Global Development",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -4059,8 +4059,8 @@
     "course_name": "Foundations of Politics and International Relations",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -4653,10 +4653,10 @@
     "course_name": "Environment, Sustainability and Development",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "Multimodal",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -5345,9 +5345,9 @@
     "course_name": "Spanish 4",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -5523,9 +5523,9 @@
     "course_name": "The Grammar of English",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -5846,8 +5846,8 @@
     "course_name": "Citizens, Action and Dissent",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -7900,9 +7900,9 @@
     "course_name": "Creative Writing Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Research"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -7920,8 +7920,8 @@
     "course_name": "Creative Writing Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Research"
     ],
     "school": "School of the Arts & Media",
@@ -8282,8 +8282,8 @@
     "course_name": "Spanish Studies Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
-      "Multimodal"
+      "Multimodal",
+      "Research"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -8625,8 +8625,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Research",
-      "Multimodal"
+      "Multimodal",
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -8644,9 +8644,9 @@
     "course_name": "Sociology Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Research",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -8664,9 +8664,9 @@
     "course_name": "Sociology Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -8684,9 +8684,9 @@
     "course_name": "Politics and International Relations Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -8704,9 +8704,9 @@
     "course_name": "Politics and International Relations Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Research",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -8724,8 +8724,8 @@
     "course_name": "Politics and International Relations Honours",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Research"
     ],
     "school": "School of Social Sciences",
@@ -8951,9 +8951,9 @@
     "course_name": "Research Specialisation",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Research"
     ],
     "school": "Faculty of Arts, Design & Arch",
     "terms": [
@@ -8971,9 +8971,9 @@
     "course_name": "Personalised English Language Enhancement for Higher Degree Research Students",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -9066,8 +9066,8 @@
     "course_name": "Indigenous Australia",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Nura Gili Indigenous Programs",
     "terms": [
@@ -9246,8 +9246,8 @@
     "course_name": "Indigenous Studies Honours III",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Nura Gili Indigenous Programs",
     "terms": [
@@ -9956,9 +9956,9 @@
     "course_name": "Aviation Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Aviation",
     "terms": [
@@ -10108,8 +10108,8 @@
     "course_name": "Aviation Honours - Part Time",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Aviation",
     "terms": [
@@ -10717,8 +10717,8 @@
     "course_name": "Immunology",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10750,8 +10750,8 @@
     "course_name": "Commercial Biotechnology",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10783,8 +10783,8 @@
     "course_name": "Molecular Biology of Nucleic Acids",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10816,9 +10816,9 @@
     "course_name": "BABS Work Placement 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10886,9 +10886,9 @@
     "course_name": "BABS Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10942,8 +10942,8 @@
     "course_name": "Biotechnology and Biomolecular Sciences Honours",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10961,8 +10961,8 @@
     "course_name": "Research Project (6 UOC)",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10980,8 +10980,8 @@
     "course_name": "Research Project (12 Units of Credit)",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -10999,8 +10999,8 @@
     "course_name": "Research Project (18 Units of Credit)",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -11018,8 +11018,8 @@
     "course_name": "Research Techniques",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -11126,9 +11126,9 @@
     "course_name": "Data Analysis for Life and Earth Sciences",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -11177,9 +11177,9 @@
     "course_name": "BEES Work Placement 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -11214,8 +11214,8 @@
     "course_name": "BEES Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
@@ -11674,8 +11674,8 @@
     "course_name": "Communication in the Built Environment",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -12326,8 +12326,8 @@
     "course_name": "Research Thesis B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12364,8 +12364,8 @@
     "course_name": "Masters Project A",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12383,8 +12383,8 @@
     "course_name": "Masters Project B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12418,8 +12418,8 @@
     "course_name": "Biomaterials and Cell Technologies",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
@@ -12484,9 +12484,9 @@
     "course_name": "Regulatory Requirements of Biomedical Technology",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12630,9 +12630,9 @@
     "course_name": "Biosensors and Transducers",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12664,9 +12664,9 @@
     "course_name": "Dynamics of the Cardiovascular System",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12682,9 +12682,9 @@
     "course_name": "Modelling Organs, Tissues and Devices",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12700,8 +12700,8 @@
     "course_name": "Applications of Light in Engineering, Technology and the Life Sciences",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
@@ -12734,8 +12734,8 @@
     "course_name": "Masters Project",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12769,8 +12769,8 @@
     "course_name": "Masters Project A",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12788,8 +12788,8 @@
     "course_name": "Masters Project B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -12889,8 +12889,8 @@
     "course_name": "Regulatory Requirements of Biomedical Technology",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
@@ -13035,8 +13035,8 @@
     "course_name": "Biosensors and Transducers",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
@@ -13070,8 +13070,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -13139,8 +13139,8 @@
     "course_name": "Masters Project",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "Grad. School of Biomedical Eng",
     "terms": [
@@ -13406,8 +13406,8 @@
     "course_name": "Ocean to Estuarine Ecosystems",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -13519,8 +13519,8 @@
     "course_name": "Ecology, Sustainability and Environmental Science",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -13646,9 +13646,9 @@
     "course_name": "Low Rise Building Construction",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -13682,9 +13682,9 @@
     "course_name": "Introduction to Construction Management and Property",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -13813,8 +13813,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -13862,8 +13862,8 @@
     "course_name": "Construction Planning",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Built Environment",
@@ -13899,8 +13899,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -13965,8 +13965,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -13982,9 +13982,9 @@
     "course_name": "Building Appraisal & Land Economics",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -15278,8 +15278,8 @@
     "course_name": "Introductory Chemistry",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15295,8 +15295,8 @@
     "course_name": "Chemistry 1A: Atoms, Molecules and Energy",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15314,8 +15314,8 @@
     "course_name": "Chemistry 1B: Elements, Compounds and Life",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15333,8 +15333,8 @@
     "course_name": "Higher Chemistry 1A: Atoms, Molecules and Energy",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15366,8 +15366,8 @@
     "course_name": "Higher Chemistry 1A (Medicinal): Atoms, Molecules and Energy",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15545,8 +15545,8 @@
     "course_name": "Analytical Chemistry: Essential Methods",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15563,8 +15563,8 @@
     "course_name": "Analytical Chemistry for the Pharmaceutical Sciences",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15664,8 +15664,8 @@
     "course_name": "Organic Chemistry: Modern Synthetic Strategies",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15729,8 +15729,8 @@
     "course_name": "Chemistry of Materials",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15783,9 +15783,9 @@
     "course_name": "Chemistry Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -16296,9 +16296,9 @@
     "course_name": "NGOs, Civil Society and Development",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -16315,8 +16315,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -16420,8 +16420,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16439,9 +16439,9 @@
     "course_name": "Collaboration and Innovation in Business",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16461,8 +16461,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16481,9 +16481,9 @@
     "course_name": "Global Business Environments",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16502,8 +16502,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16541,8 +16541,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16599,9 +16599,9 @@
     "course_name": "Creating Social Change: From Innovation to Impact",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16621,8 +16621,8 @@
     "course_name": "Industry Experience Program",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16763,9 +16763,9 @@
     "course_name": "Social Entrepreneurship Practicum",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -16928,9 +16928,9 @@
     "course_name": "Data Literacy for Business",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -16947,9 +16947,9 @@
     "course_name": "Quantitative Methods for Business",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -17093,8 +17093,8 @@
     "course_name": "Future of Work Project",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -17213,8 +17213,8 @@
     "course_name": "Social Impact",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -17250,8 +17250,8 @@
     "course_name": "Demonstrating Social Impact",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -17498,8 +17498,8 @@
     "course_name": "The Art of Computing",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17532,8 +17532,8 @@
     "course_name": "Programming Fundamentals",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17551,8 +17551,8 @@
     "course_name": "Computer Systems Fundamentals",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -17660,8 +17660,8 @@
     "course_name": "Data Structures and Algorithms",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -17701,8 +17701,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17782,8 +17782,8 @@
     "course_name": "Digital Circuits and Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17815,8 +17815,8 @@
     "course_name": "Database Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17833,8 +17833,8 @@
     "course_name": "Computer Networks and Applications",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -17966,8 +17966,8 @@
     "course_name": "Computer Science Project",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -18039,9 +18039,9 @@
     "course_name": "Theory of Computation",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18153,9 +18153,9 @@
     "course_name": "Professional Issues and Ethics in Information Technology",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18172,8 +18172,8 @@
     "course_name": "Research Thesis A",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18191,8 +18191,8 @@
     "course_name": "Research Thesis B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18265,8 +18265,8 @@
     "course_name": "Computer Science Thesis C",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18284,9 +18284,9 @@
     "course_name": "Web Front-End Programming",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18400,8 +18400,8 @@
     "course_name": "Security Engineering Masterclass",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18529,8 +18529,8 @@
     "course_name": "Extended Web Application Security and Testing",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18562,8 +18562,8 @@
     "course_name": "Solving Modern Programming Problems with Rust",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18646,8 +18646,8 @@
     "course_name": "Big Data Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18713,9 +18713,9 @@
     "course_name": "Capacity Planning of Computer Systems and Networks",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18731,8 +18731,8 @@
     "course_name": "Machine Learning and Data Mining",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18766,9 +18766,9 @@
     "course_name": "Neural Networks and Deep Learning",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18803,9 +18803,9 @@
     "course_name": "Computer Vision",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18856,8 +18856,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18922,8 +18922,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19037,8 +19037,8 @@
     "course_name": "Security Engineering Masterclass",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19217,8 +19217,8 @@
     "course_name": "Foundations of Computer Science",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -19292,9 +19292,9 @@
     "course_name": "Software Construction: Techniques and Tools",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19311,8 +19311,8 @@
     "course_name": "Algorithm Design and Analysis",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19330,8 +19330,8 @@
     "course_name": "Programming Languages and Compilers",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -19495,8 +19495,8 @@
     "course_name": "Database Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -19548,8 +19548,8 @@
     "course_name": "Database Systems Implementation",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19597,8 +19597,8 @@
     "course_name": "Computer Networks and Applications",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19616,8 +19616,8 @@
     "course_name": "Capacity Planning of Computer Systems and Networks",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19750,8 +19750,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19802,9 +19802,9 @@
     "course_name": "Computer Vision",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19854,8 +19854,8 @@
     "course_name": "Extended Artificial Intelligence",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19873,8 +19873,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19892,8 +19892,8 @@
     "course_name": "Research Project A",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19911,8 +19911,8 @@
     "course_name": "Research Project B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19930,8 +19930,8 @@
     "course_name": "Research Project C",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19949,9 +19949,9 @@
     "course_name": "Management of Construction Organisations",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -19983,9 +19983,9 @@
     "course_name": "Construction Planning and Control",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -20084,8 +20084,8 @@
     "faculty": "Faculty of Law and Justice",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -21001,8 +21001,8 @@
     "course_name": "Groundwater Resource Investigation",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -21287,8 +21287,8 @@
     "course_name": "Coastal Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -21688,8 +21688,8 @@
     "course_name": "Groundwater Resource Investigation",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -21867,8 +21867,8 @@
     "course_name": "Traffic Flow Theory and Simulation",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22050,8 +22050,8 @@
     "course_name": "Fundamentals of Geomechanics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22083,8 +22083,8 @@
     "course_name": "Urban Hydrology and Stormwater Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22100,8 +22100,8 @@
     "course_name": "Catchment and Water Resources Modelling",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22167,8 +22167,8 @@
     "course_name": "Coastal Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22184,8 +22184,8 @@
     "course_name": "Engineering Economics and Financial Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22235,8 +22235,8 @@
     "course_name": "Design of Construction Operations",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22332,8 +22332,8 @@
     "course_name": "Prestressed Concrete Design",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22349,8 +22349,8 @@
     "course_name": "Reinforced Concrete Design",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22399,8 +22399,8 @@
     "course_name": "Steel and Composite Structures",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22515,8 +22515,8 @@
     "course_name": "Solid Waste Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22532,8 +22532,8 @@
     "course_name": "Hazardous Waste Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22566,8 +22566,8 @@
     "course_name": "Environmental Microbial Processes",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22600,8 +22600,8 @@
     "course_name": "Environmental Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -22940,8 +22940,8 @@
     "course_name": "Introduction to Dietetics and Food Innovation",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -22990,8 +22990,8 @@
     "course_name": "Farm to Fork 1",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -23105,8 +23105,8 @@
     "course_name": "Sports Performance Nutrition",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -23139,8 +23139,8 @@
     "faculty": "UNSW College",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23158,9 +23158,9 @@
     "course_name": "Evidence Based Problem Solving",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23178,9 +23178,9 @@
     "course_name": "Collaboration and Innovation in Business",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23198,9 +23198,9 @@
     "course_name": "Financial Management",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23218,9 +23218,9 @@
     "course_name": "Global Business Environments",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23258,9 +23258,9 @@
     "course_name": "Value Creation",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23278,9 +23278,9 @@
     "course_name": "Data, Insights and Decisions",
     "faculty": "UNSW College",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23298,9 +23298,9 @@
     "course_name": "Practical Design Studio 1",
     "faculty": "UNSW College",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23337,8 +23337,8 @@
     "faculty": "UNSW College",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23356,8 +23356,8 @@
     "course_name": "Practical Design Studio 2",
     "faculty": "UNSW College",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23393,9 +23393,9 @@
     "course_name": "Building Environments and Technics 1",
     "faculty": "UNSW College",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23708,8 +23708,8 @@
     "faculty": "UNSW College",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23890,8 +23890,8 @@
     "course_name": "Applied Biomolecular Sciences",
     "faculty": "UNSW College",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23979,8 +23979,8 @@
     "course_name": "Introduction to Programming",
     "faculty": "UNSW College",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -24055,8 +24055,8 @@
     "course_name": "Macroeconomics 1",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -24090,8 +24090,8 @@
     "course_name": "Quantitative Analysis for Business and Economics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -24162,8 +24162,8 @@
     "course_name": "Macroeconomics 2",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -24896,9 +24896,9 @@
     "course_name": "Microeconomics",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -24916,8 +24916,8 @@
     "course_name": "Macroeconomics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Economics",
@@ -24935,9 +24935,9 @@
     "course_name": "Business Economics",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -24986,8 +24986,8 @@
     "course_name": "Econometrics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Economics",
@@ -25021,9 +25021,9 @@
     "course_name": "Reflections on Practicum through the Economist’s Lens",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -25041,9 +25041,9 @@
     "course_name": "Business Forecasting",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -25108,9 +25108,9 @@
     "course_name": "Politics and Economics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -25159,8 +25159,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -25585,8 +25585,8 @@
     "course_name": "Social Perspectives in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -25718,9 +25718,9 @@
     "course_name": "Learning and Teaching: Language, Literacy and Numeracy",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -25851,8 +25851,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -25868,8 +25868,8 @@
     "course_name": "Responding to Gifted and Talented Students",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -25994,10 +25994,10 @@
     "course_name": "Chinese Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26014,8 +26014,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26032,10 +26032,10 @@
     "course_name": "English Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Hybrid",
-      "Online",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26051,9 +26051,9 @@
     "course_name": "English as an Additional Language or Dialect Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26069,10 +26069,10 @@
     "course_name": "French Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26088,10 +26088,10 @@
     "course_name": "Geography Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26107,9 +26107,9 @@
     "course_name": "Japanese Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid",
       "Online"
     ],
     "school": "School of Education",
@@ -26126,10 +26126,10 @@
     "course_name": "Spanish Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
+      "Hybrid",
       "In Person",
-      "Online",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26147,8 +26147,8 @@
     "modes": [
       "Hybrid",
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26165,9 +26165,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26201,9 +26201,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26219,9 +26219,9 @@
     "course_name": "Legal Studies Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid",
       "Online"
     ],
     "school": "School of Education",
@@ -26238,9 +26238,9 @@
     "course_name": "Society and Culture Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26258,8 +26258,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26276,10 +26276,10 @@
     "course_name": "Mathematics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "Multimodal",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26295,9 +26295,9 @@
     "course_name": "Extension Mathematics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid",
       "Online"
     ],
     "school": "School of Education",
@@ -26315,9 +26315,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26333,10 +26333,10 @@
     "course_name": "Extension Music Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
-      "Online",
       "Multimodal",
-      "Hybrid"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26691,9 +26691,9 @@
     "course_name": "Graphics and Multimedia Technology Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26726,10 +26726,10 @@
     "course_name": "Visual Arts Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26761,10 +26761,10 @@
     "course_name": "Extension Visual Arts Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
+      "Hybrid",
       "In Person",
-      "Online",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26812,10 +26812,10 @@
     "course_name": "Ancient History Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "Online",
+      "Hybrid",
       "In Person",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26832,9 +26832,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26850,10 +26850,10 @@
     "course_name": "Science Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26869,10 +26869,10 @@
     "course_name": "Physics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26888,10 +26888,10 @@
     "course_name": "Earth and Environmental Science Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "Online",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26907,10 +26907,10 @@
     "course_name": "Chemistry Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26926,10 +26926,10 @@
     "course_name": "Biology Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -26945,9 +26945,9 @@
     "course_name": "Chemistry/Biology Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid",
       "Online"
     ],
     "school": "School of Education",
@@ -27108,10 +27108,10 @@
     "course_name": "Foundation 1: University Study Skills in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "Multimodal",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27129,9 +27129,9 @@
     "course_name": "Foundation 2: Fields of Practice in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27233,8 +27233,8 @@
     "course_name": "Students on the Autism Spectrum",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27251,9 +27251,9 @@
     "course_name": "Curriculum and Assessment",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27388,9 +27388,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27523,8 +27523,8 @@
     "course_name": "Child Development: Psychological and Social Perspectives",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27541,9 +27541,9 @@
     "course_name": "Building Education Systems",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27559,8 +27559,8 @@
     "course_name": "Learning, Problem Solving, and the Development of Expertise",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27641,9 +27641,9 @@
     "course_name": "Motivation in Educational Settings",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27660,9 +27660,9 @@
     "course_name": "TESOL Advanced Professional Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27712,9 +27712,9 @@
     "course_name": "Leadership Theory, Research and Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27732,8 +27732,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27799,9 +27799,9 @@
     "course_name": "Educational Research",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27835,9 +27835,9 @@
     "course_name": "Contemporary Issues in Language Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -27854,8 +27854,8 @@
     "course_name": "Developing Literacies: From Kindergarten to University",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27958,9 +27958,9 @@
     "course_name": "Developing Effective Programs for Gifted Students",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28078,8 +28078,8 @@
     "course_name": "Minor Thesis",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
-      "Online"
+      "Online",
+      "Research"
     ],
     "school": "School of Education",
     "terms": [
@@ -28115,10 +28115,10 @@
     "course_name": "Chinese Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
+      "Hybrid",
       "In Person",
-      "Online",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28134,10 +28134,10 @@
     "course_name": "Drama Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
-      "Online",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28153,10 +28153,10 @@
     "course_name": "English Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "Online",
+      "Hybrid",
       "In Person",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28172,8 +28172,8 @@
     "course_name": "English as an Additional Language or Dialect Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Hybrid",
+      "In Person",
       "Online"
     ],
     "school": "School of Education",
@@ -28190,10 +28190,10 @@
     "course_name": "French Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
-      "Online",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28210,9 +28210,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28230,8 +28230,8 @@
     "modes": [
       "Hybrid",
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28248,9 +28248,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28266,9 +28266,9 @@
     "course_name": "Business Studies Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28285,9 +28285,9 @@
     "course_name": "Economics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person",
       "Hybrid",
+      "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28304,8 +28304,8 @@
     "course_name": "Aboriginal Studies Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28322,8 +28322,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28340,10 +28340,10 @@
     "course_name": "Legal Studies Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "Online",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28359,10 +28359,10 @@
     "course_name": "Society and Culture Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Hybrid",
-      "Online",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28379,9 +28379,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28416,8 +28416,8 @@
     "course_name": "Extension Mathematics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Hybrid",
+      "In Person",
       "Multimodal",
       "Online"
     ],
@@ -28435,9 +28435,9 @@
     "course_name": "Music Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person",
       "Hybrid",
+      "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28456,8 +28456,8 @@
     "modes": [
       "Hybrid",
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28812,10 +28812,10 @@
     "course_name": "Graphics and Multimedia Technology Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28847,10 +28847,10 @@
     "course_name": "Visual Arts Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28882,10 +28882,10 @@
     "course_name": "Extension Visual Arts Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "Multimodal",
+      "Hybrid",
       "In Person",
-      "Hybrid"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28917,10 +28917,10 @@
     "course_name": "Mathematics 1 (Years K-2)",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "Hybrid",
       "In Person",
       "Multimodal",
-      "Hybrid"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -28968,9 +28968,9 @@
     "course_name": "Early Reading Instruction",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29018,9 +29018,9 @@
     "course_name": "Personal Development, Health and Physical Education (K-6)",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29052,10 +29052,10 @@
     "course_name": "Ancient History Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
-      "Online",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29071,10 +29071,10 @@
     "course_name": "Modern History Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
-      "Online",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29090,10 +29090,10 @@
     "course_name": "Science Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "Multimodal",
       "Hybrid",
-      "In Person"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29109,9 +29109,9 @@
     "course_name": "Physics Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29128,10 +29128,10 @@
     "course_name": "Earth and Environmental Science Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Hybrid",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29147,9 +29147,9 @@
     "course_name": "Chemistry Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person",
       "Hybrid",
+      "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29166,10 +29166,10 @@
     "course_name": "Biology Method 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person",
       "Hybrid",
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29186,9 +29186,9 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Hybrid",
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29774,8 +29774,8 @@
     "course_name": "Electromagnetic Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -29839,9 +29839,9 @@
     "course_name": "Electrical Design Proficiency",
     "faculty": "Faculty of Engineering",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30380,8 +30380,8 @@
     "course_name": "Real-Time Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30723,8 +30723,8 @@
     "course_name": "Project Report A",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30815,8 +30815,8 @@
     "course_name": "Part-Time Research Electrical Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30871,8 +30871,8 @@
     "course_name": "Undergraduate Special Projects",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Engineering",
     "terms": [
@@ -30891,8 +30891,8 @@
     "course_name": "Engineering Mechanics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -30926,8 +30926,8 @@
     "course_name": "Computing for Engineers",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -31050,8 +31050,8 @@
     "course_name": "Introduction to Nuclear Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -31341,8 +31341,8 @@
     "course_name": "Introduction to Nuclear Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -31590,8 +31590,8 @@
     "course_name": "Exercise and Nutrition",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -31607,8 +31607,8 @@
     "course_name": "Physical Activity and Health",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -31624,8 +31624,8 @@
     "course_name": "Functional Anatomy and Biomechanics 3",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -31819,8 +31819,8 @@
     "course_name": "Musculoskeletal Clinical Practice 2",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -31900,8 +31900,8 @@
     "course_name": "ADA Professional Placement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -31919,8 +31919,8 @@
     "course_name": "ADA Professional Placement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -31954,8 +31954,8 @@
     "course_name": "Intermediate Business Finance",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -31973,8 +31973,8 @@
     "course_name": "Capital Markets and Institutions",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32008,8 +32008,8 @@
     "course_name": "Portfolio Management",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32143,8 +32143,8 @@
     "course_name": "International Business Finance",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32399,8 +32399,8 @@
     "course_name": "Trading and Market Making",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32497,8 +32497,8 @@
     "course_name": "Personal Financial Planning and Client Engagement",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32571,8 +32571,8 @@
     "course_name": "Capital Budgeting and Financial Decisions",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32658,8 +32658,8 @@
     "course_name": "Financial Institution Management",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32725,8 +32725,8 @@
     "course_name": "Applied Funds Management",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -32814,8 +32814,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Banking & Finance",
     "terms": [
@@ -33485,8 +33485,8 @@
     "course_name": "Creative Entrepreneurship",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Faculty of Engineering",
@@ -33685,8 +33685,8 @@
     "course_name": "Inside the Criminal Mind",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -33873,8 +33873,8 @@
     "course_name": "Earth and Environmental Science",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -34083,9 +34083,9 @@
     "course_name": "Environmental Impact Assessment",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -34118,8 +34118,8 @@
     "faculty": "Faculty of Science",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -34285,8 +34285,8 @@
     "course_name": "Surveying Field Projects",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -34538,8 +34538,8 @@
     "course_name": "Engineering Statistics and Experiment Design",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -34721,9 +34721,9 @@
     "course_name": "Ethics and Leadership in Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -34740,8 +34740,8 @@
     "course_name": "Engineering Statistics and Experiment Design",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -34789,8 +34789,8 @@
     "course_name": "Process and Product Quality in Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -34808,8 +34808,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Faculty of Engineering",
     "terms": [
@@ -34861,8 +34861,8 @@
     "course_name": "Engineering Postgraduate Research Essentials",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Engineering",
     "terms": [
@@ -34930,9 +34930,9 @@
     "course_name": "Context of Health Data Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -34948,9 +34948,9 @@
     "course_name": "Statistical Foundations for Health Data Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -34966,9 +34966,9 @@
     "course_name": "Computing for Health Data Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35032,8 +35032,8 @@
     "course_name": "Context of Health Data Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Biomedical Sciences",
@@ -35050,9 +35050,9 @@
     "course_name": "Statistical Foundations for Health Data Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35088,8 +35088,8 @@
     "course_name": "Management and Curation of Health Data",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35141,8 +35141,8 @@
     "course_name": "Health Data Analytics: Statistical Modelling I",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35192,8 +35192,8 @@
     "course_name": "Health Data Science: Dissertation (6 Units of Credit)",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35365,8 +35365,8 @@
     "course_name": "Exercise Physiology Research Seminars",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -35447,8 +35447,8 @@
     "course_name": "Clinical Practicum A",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -35533,8 +35533,8 @@
     "course_name": "Driving Behaviour Change 2",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -36112,8 +36112,8 @@
     "course_name": "Rethinking Environment: Sociocultural Theory",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36130,8 +36130,8 @@
     "course_name": "Political Ecology: Sustainable Development and Justice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36147,8 +36147,8 @@
     "course_name": "Large-scale Conservation in Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36232,8 +36232,8 @@
     "course_name": "Climate Crisis and Action",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36266,8 +36266,8 @@
     "course_name": "Engaging Science for Environmental Leadership",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36283,8 +36283,8 @@
     "course_name": "Demystifying Environmental Law: From Regulation to Rights of Nature",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36317,8 +36317,8 @@
     "course_name": "Indigenous Knowledges and Caring for Country",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36334,8 +36334,8 @@
     "course_name": "Environmental Leadership Practicum I: Project or Internship",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36374,8 +36374,8 @@
     "course_name": "Research Project in Environmental Leadership",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36393,8 +36393,8 @@
     "course_name": "Research Project/Thesis in Environmental Leadership",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36412,8 +36412,8 @@
     "course_name": "Major Research Project/Thesis in Environmental Leadership",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36431,8 +36431,8 @@
     "course_name": "Digital Transformation in Business",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
@@ -36503,8 +36503,8 @@
     "course_name": "Managing Information Systems",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
@@ -36522,8 +36522,8 @@
     "course_name": "Business Analysis and Agile Product Management",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
@@ -39537,8 +39537,8 @@
     "course_name": "UNSW Law Internships",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -43141,8 +43141,8 @@
     "course_name": "Current Issues in Criminal Justice",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Law, Society & Criminology",
@@ -43434,9 +43434,9 @@
     "course_name": "European Union Law",
     "faculty": "Faculty of Law and Justice",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
@@ -43699,8 +43699,8 @@
     "course_name": "Legal Concepts, Research and Writing",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch of Global & Public Law",
@@ -43720,8 +43720,8 @@
     "faculty": "Faculty of Law and Justice",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
@@ -44304,8 +44304,8 @@
     "course_name": "The Grammar of English",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School Humanities & Languages",
@@ -44538,8 +44538,8 @@
     "course_name": "Design and Analysis of Product-Process Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -44571,8 +44571,8 @@
     "course_name": "Reliability and Maintenance Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -44620,8 +44620,8 @@
     "course_name": "Design and Analysis of Product-Process Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -44653,8 +44653,8 @@
     "course_name": "Reliability and Maintenance Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -45230,8 +45230,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -45285,8 +45285,8 @@
     "course_name": "Applied Marketing Research",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -45336,8 +45336,8 @@
     "course_name": "Digital Marketing",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -45371,8 +45371,8 @@
     "course_name": "Events Management and Marketing",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -45609,8 +45609,8 @@
     "course_name": "Fundamentals of Mathematics B",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Mathematics & Statistics",
@@ -45629,8 +45629,8 @@
     "faculty": "Faculty of Science",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45647,9 +45647,9 @@
     "course_name": "Statistics for Life and Social Sciences",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45668,8 +45668,8 @@
     "faculty": "Faculty of Science",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45703,9 +45703,9 @@
     "course_name": "Mathematics 1A",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45723,9 +45723,9 @@
     "course_name": "Higher Mathematics 1A",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45742,8 +45742,8 @@
     "course_name": "Mathematics for Actuarial Studies and Finance 1A",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Mathematics & Statistics",
@@ -45760,9 +45760,9 @@
     "course_name": "Mathematics 1B",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45831,9 +45831,9 @@
     "course_name": "Engineering Mathematics 2D",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -45980,8 +45980,8 @@
     "course_name": "Mathematical Computing",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46393,8 +46393,8 @@
     "course_name": "Prediction and Inverse Modelling",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Mathematics & Statistics",
@@ -46768,8 +46768,8 @@
     "course_name": "Higher Probability and Stochastic Processes",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46987,8 +46987,8 @@
     "course_name": "Prediction and Inverse Modelling",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Sch Mathematics & Statistics",
@@ -47309,8 +47309,8 @@
     "course_name": "Advanced Stochastic Processes",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -47442,8 +47442,8 @@
     "course_name": "Stochastic Processes",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -47871,9 +47871,9 @@
     "course_name": "Materials Science Work Placement 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Materials Sci & Eng",
     "terms": [
@@ -47892,9 +47892,9 @@
     "course_name": "Materials Science Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Materials Sci & Eng",
     "terms": [
@@ -48009,8 +48009,8 @@
     "course_name": "Materials Engineering Project",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Materials Sci & Eng",
     "terms": [
@@ -49105,8 +49105,8 @@
     "course_name": "Communication Strategies",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -49506,8 +49506,8 @@
     "course_name": "Public Relations in Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -49966,8 +49966,8 @@
     "course_name": "Critical Perspectives in Communication",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of the Arts & Media",
@@ -50196,8 +50196,8 @@
     "course_name": "Fundamentals of Acoustics and Noise",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -50214,8 +50214,8 @@
     "course_name": "Composite Materials and Mechanics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -50408,8 +50408,8 @@
     "course_name": "Fundamentals of Acoustics and Noise",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -51377,8 +51377,8 @@
     "course_name": "Selective",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Medicine and Health",
     "terms": [
@@ -51481,8 +51481,8 @@
     "course_name": "Value-Based Health Care in Clinical Practice",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Medicine and Health",
     "terms": [
@@ -52451,8 +52451,8 @@
     "course_name": "Microbiology 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -52533,8 +52533,8 @@
     "course_name": "Marine Microbiology",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -52588,8 +52588,8 @@
     "course_name": "Mineral Resources Engineering",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
@@ -52814,8 +52814,8 @@
     "course_name": "Hazard Identification, Risk and Safety Management in Mining",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
@@ -52961,8 +52961,8 @@
     "course_name": "Mine Processes, Systems and Analysis",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
@@ -52979,8 +52979,8 @@
     "course_name": "Hazard Identification, Risk and Safety Management in Mining",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
@@ -54118,9 +54118,9 @@
     "course_name": "Specialised Translation",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "Hybrid",
       "Multimodal",
-      "Hybrid"
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -54282,8 +54282,8 @@
     "course_name": "The Marine Environment",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -54348,8 +54348,8 @@
     "course_name": "Topics in Australian Marine Science",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -54398,8 +54398,8 @@
     "course_name": "Topics in Australian Marine Science",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -54447,8 +54447,8 @@
     "course_name": "Modelling and Control of Mechatronic Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54480,8 +54480,8 @@
     "course_name": "Feedback Control Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54695,8 +54695,8 @@
     "course_name": "Music Craft 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -54921,8 +54921,8 @@
     "course_name": "Music Ensemble",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55422,8 +55422,8 @@
     "course_name": "Performance Laboratory D (Music Creative Practice)",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55949,8 +55949,8 @@
     "course_name": "Research Skills in Optometry",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Schl of Optometry & Vision Sci",
     "terms": [
@@ -56340,8 +56340,8 @@
     "course_name": "Clinical Pharmacology for Health and Exercise Science",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -56373,8 +56373,8 @@
     "course_name": "Clinical and Experimental Pharmacology",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -56406,8 +56406,8 @@
     "course_name": "Pharmacokinetics, Pharmacodynamics and Pharmacogenomics",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -56440,8 +56440,8 @@
     "faculty": "Faculty of Medicine and Health",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -56457,8 +56457,8 @@
     "course_name": "Global Health",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Population Health",
@@ -56491,8 +56491,8 @@
     "course_name": "Epidemiology",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Population Health",
@@ -56525,9 +56525,9 @@
     "course_name": "Communicable Disease",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -56607,9 +56607,9 @@
     "course_name": "Ethics in Public Health",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -56625,8 +56625,8 @@
     "course_name": "Public Health Capstone",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Population Health",
@@ -56662,9 +56662,9 @@
     "course_name": "Global Health Systems",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -56728,9 +56728,9 @@
     "course_name": "Health Organisations, Strategy and Change",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -56874,8 +56874,8 @@
     "course_name": "Foundations in Public Health and Health Care Systems",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Population Health",
@@ -56941,8 +56941,8 @@
     "course_name": "Independent Study",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57045,8 +57045,8 @@
     "course_name": "Project",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57064,8 +57064,8 @@
     "course_name": "Minor Project",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57102,8 +57102,8 @@
     "course_name": "Major Project",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57121,8 +57121,8 @@
     "course_name": "Major Project",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57190,9 +57190,9 @@
     "course_name": "Health Organisations, Strategy and Change",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57224,9 +57224,9 @@
     "course_name": "Healthcare Economics and Financial Management",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57259,8 +57259,8 @@
     "faculty": "Faculty of Medicine and Health",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -57326,8 +57326,8 @@
     "course_name": "Global Health and Development",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Population Health",
@@ -57864,8 +57864,8 @@
     "course_name": "Future Health Leaders Workshop A",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Population Health",
     "terms": [
@@ -58242,8 +58242,8 @@
     "course_name": "Fundamentals of Physics",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Physics",
     "terms": [
@@ -58368,8 +58368,8 @@
     "course_name": "Physics 1B",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Physics",
     "terms": [
@@ -58532,8 +58532,8 @@
     "course_name": "Thermal Physics and Statistical Mechanics",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Physics",
     "terms": [
@@ -58650,8 +58650,8 @@
     "course_name": "Physics Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Physics",
@@ -58671,8 +58671,8 @@
     "course_name": "Quantum Mechanics (Honours)",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Physics",
     "terms": [
@@ -58688,8 +58688,8 @@
     "course_name": "Statistical Physics (Honours)",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Physics",
     "terms": [
@@ -59183,8 +59183,8 @@
     "course_name": "Planning Practice: Ethics and Expertise",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -59738,8 +59738,8 @@
     "course_name": "Global Politics: The Globalisation of World Politics",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Social Sciences",
@@ -59820,8 +59820,8 @@
     "course_name": "The Foreign Policies of the Great Powers",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Social Sciences",
@@ -59838,9 +59838,9 @@
     "course_name": "International Peace and Security",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -60503,8 +60503,8 @@
     "course_name": "Research Methods 3",
     "faculty": "Faculty of Science",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Psychology",
     "terms": [
@@ -60568,8 +60568,8 @@
     "course_name": "Psychology Work Placement 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Psychology",
@@ -62104,8 +62104,8 @@
     "course_name": "Mathematics Skills 1",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "Std Acad & Career Success",
@@ -62187,8 +62187,8 @@
     "course_name": "Social Science Skills 1",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Std Acad & Career Success",
     "terms": [
@@ -62258,8 +62258,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -62275,9 +62275,9 @@
     "course_name": "Property Investment and Finance",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -62357,9 +62357,9 @@
     "course_name": "Research Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -62590,9 +62590,9 @@
     "course_name": "Perspectives in Medical Science",
     "faculty": "Faculty of Science",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -62624,8 +62624,8 @@
     "course_name": "Research Internship A",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Science",
     "terms": [
@@ -62662,8 +62662,8 @@
     "course_name": "Research Internship B",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Faculty of Science",
     "terms": [
@@ -62903,8 +62903,8 @@
     "course_name": "Research Issues in Counselling Social Work",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -62937,8 +62937,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -62970,8 +62970,8 @@
     "course_name": "Professional Practice Research Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
-      "In Person"
+      "In Person",
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -63039,8 +63039,8 @@
     "course_name": "Introduction to Social Work Counselling and Assessment",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -63104,8 +63104,8 @@
     "course_name": "First Nations People and Social Work",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -63515,8 +63515,8 @@
     "course_name": "Solar Cells",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Photovoltaic Engineering",
     "terms": [
@@ -63747,8 +63747,8 @@
     "course_name": "Solar Cells",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "Photovoltaic Engineering",
     "terms": [
@@ -63828,8 +63828,8 @@
     "course_name": "Wind Energy Converters",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Photovoltaic Engineering",
     "terms": [
@@ -64198,9 +64198,9 @@
     "course_name": "SOMS Work Placement 1",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -64292,8 +64292,8 @@
     "course_name": "Policy and Society",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64326,8 +64326,8 @@
     "course_name": "Qualitative Social Research",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64621,8 +64621,8 @@
     "course_name": "Policy Analysis",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Social Sciences",
@@ -64688,8 +64688,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Research",
-      "Multimodal"
+      "Multimodal",
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64707,9 +64707,9 @@
     "course_name": "Research Methods and Project Design",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64742,9 +64742,9 @@
     "course_name": "Research Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64781,9 +64781,9 @@
     "course_name": "DPPG Thesis Part Time",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Research",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Research"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -64980,9 +64980,9 @@
     "course_name": "Managing the Sustainable Built Environment",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -65571,9 +65571,9 @@
     "course_name": "Taxation of Commercial Transactions",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -65621,9 +65621,9 @@
     "course_name": "Tax Administration",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -65639,9 +65639,9 @@
     "course_name": "Taxation and Regulation of Superannuation",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -65657,9 +65657,9 @@
     "course_name": "Taxation Strategies in Financial Planning",
     "faculty": "UNSW Business School",
     "modes": [
-      "Online",
+      "In Person",
       "Multimodal",
-      "In Person"
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -65745,8 +65745,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -65763,8 +65763,8 @@
     "course_name": "Contemporary Issues in Taxation",
     "faculty": "UNSW Business School",
     "modes": [
-      "Research",
-      "Online"
+      "Online",
+      "Research"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -66431,8 +66431,8 @@
     "course_name": "Development and Aging of the Visual System",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Schl of Optometry & Vision Sci",
     "terms": [
@@ -68092,8 +68092,8 @@
     "course_name": "Honours Professional Experience Program",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -68146,8 +68146,8 @@
     "course_name": "Research Foundations in Art and Design",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -68165,8 +68165,8 @@
     "course_name": "Internship",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -68217,8 +68217,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -68309,8 +68309,8 @@
     "course_name": "Research Foundations in Art, Design and Media",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -68876,8 +68876,8 @@
     "course_name": "Creative Experimentation",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -69150,8 +69150,8 @@
     "course_name": "Data Aesthetics",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -69345,8 +69345,8 @@
     "course_name": "Global Contemporary Art",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -69556,8 +69556,8 @@
     "course_name": "Art Theory Honours Research Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -70996,9 +70996,9 @@
     "course_name": "Immersive Design, Complexity and Wicked Problems",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -71063,8 +71063,8 @@
     "course_name": "Visualisation, Simulation, and Immersive Design Capstone",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Multimodal",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Art & Design",
@@ -71199,8 +71199,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Online",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -71297,9 +71297,9 @@
     "course_name": "Global Contemporary Art",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -71315,9 +71315,9 @@
     "course_name": "Conservation, Registration and Handling",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -71365,9 +71365,9 @@
     "course_name": "Exhibiting Cultures",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal",
-      "Online",
-      "In Person"
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -74811,8 +74811,8 @@
     "course_name": "Cyber Offence: Threats and Opportunities",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch of Systems and Computing",
     "terms": [
@@ -74908,8 +74908,8 @@
     "course_name": "Critical Infrastructure and Control System Security",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch of Systems and Computing",
     "terms": [
@@ -75515,8 +75515,8 @@
     "course_name": "Systems Thinking and Modelling",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch of Systems and Computing",
     "terms": [
@@ -75871,8 +75871,8 @@
     "course_name": "Law, Force and Legitimacy",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "Multimodal",
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "UC Humanities and Soc Science",
     "terms": [
@@ -75921,8 +75921,8 @@
     "course_name": "Strategy, Management and Leadership",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "Online",
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UC School of Business",
     "terms": [
