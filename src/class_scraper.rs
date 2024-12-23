@@ -65,7 +65,7 @@ impl ClassScraper {
         println!("Currently working on {:?}", self.course_code);
         let html = fetch_url(&self.url)
             .await
-            .expect(&format!("Something was wrong with the URL: {}", self.url));
+            .unwrap_or_else(|_| panic!("Something was wrong with the URL: {}", self.url));
         let document = scraper::Html::parse_document(&html);
 
         // Selectors
@@ -215,18 +215,15 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
             map.get("Class Nbr").unwrap_or(&String::new()),
             map.get("Teaching Period")
                 .unwrap_or(&"".to_string())
-                .to_string()
                 .split(" - ")
                 .next()
-                .expect("Could not split teaching periods properly!")
-                .to_string(),
+                .expect("Could not split teaching periods properly!"),
             year,
         ),
         section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
         term: map
             .get("Teaching Period")
             .unwrap_or(&"".to_string())
-            .to_string()
             .split(" - ")
             .next()
             .expect("Could not split teaching periods properly!")
@@ -270,7 +267,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
 }
 
 fn parse_meeting_info(vec: &[String], career: String) -> Vec<Time> {
-    let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let mut meetings = Vec::new();
     let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
 

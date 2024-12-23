@@ -111,9 +111,9 @@ async fn run_course_classes_page_scraper_job(
     courses_vec
 }
 
-fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
-    for course in course_vec.iter() {
+    for course in courses.iter() {
         // Modes come from HashSet, so order is non-deterministic
         // This is annoying for our json diff, so quickly sort first
         let mut modes = course.modes.iter().collect::<Vec<_>>();
@@ -138,12 +138,12 @@ fn convert_courses_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Valu
 fn generate_time_id(class: &Class, time: &Time) -> String {
     class.class_id.to_string() + &time.day + &time.location + &time.time + &time.weeks
 }
-fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut times_json = Vec::<serde_json::Value>::new();
-    for course in course_vec.iter() {
+    for course in courses.iter() {
         for class in course.classes.iter() {
             if class.times.is_some() {
-                for time in class.times.as_ref().unwrap().into_iter() {
+                for time in class.times.as_ref().unwrap().iter() {
                     times_json.push(json!({
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
@@ -161,9 +161,9 @@ fn convert_classes_times_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json
 
     times_json
 }
-fn convert_classes_to_json(course_vec: &mut Vec<Course>) -> Vec<serde_json::Value> {
+fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut json_classes = Vec::new();
-    for course in course_vec.iter() {
+    for course in courses.iter() {
         for class in course.classes.iter() {
             json_classes.push(json!({
                 "course_id": class.course_id,
@@ -214,9 +214,9 @@ async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
         .await
         .expect("Something went wrong with scraping!");
     println!("Writing to disk!");
-    let json_classes = convert_classes_to_json(&mut course_vec);
-    let json_courses = convert_courses_to_json(&mut course_vec);
-    let json_times = convert_classes_times_to_json(&mut course_vec);
+    let json_classes = convert_classes_to_json(&course_vec);
+    let json_courses = convert_courses_to_json(&course_vec);
+    let json_times = convert_classes_times_to_json(&course_vec);
 
     let file_classes = File::create("classes.json")?;
     let file_courses = File::create("courses.json")?;
@@ -259,9 +259,9 @@ async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     handle_scrape(&mut course_vec, current_year)
         .await
         .expect("Something went wrong with scraping!");
-    let json_classes = convert_classes_to_json(&mut course_vec);
-    let json_courses = convert_courses_to_json(&mut course_vec);
-    let json_times = convert_classes_times_to_json(&mut course_vec);
+    let json_classes = convert_classes_to_json(&course_vec);
+    let json_courses = convert_courses_to_json(&course_vec);
+    let json_times = convert_classes_times_to_json(&course_vec);
     let rfm = ReadFromMemory {
         courses_vec: json_courses,
         classes_vec: json_classes,
