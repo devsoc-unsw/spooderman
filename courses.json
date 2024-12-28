@@ -3310,7 +3310,7 @@
     "career": "Postgraduate",
     "course_code": "ARCH7809",
     "course_id": "ARCH7809Postgraduate",
-    "course_name": "Architectural Environment & Building Services",
+    "course_name": "Architectural Environment and Building Services",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person"
@@ -17519,8 +17519,7 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -36903,9 +36902,7 @@
     "course_id": "INFS4777Undergraduate",
     "course_name": "Web3 and Blockchain Applications",
     "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
       "T1"
@@ -37234,9 +37231,7 @@
     "course_id": "INFS5777Postgraduate",
     "course_name": "Web3 and Blockchain Applications",
     "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
       "T1"
@@ -50574,7 +50569,7 @@
     "career": "Undergraduate",
     "course_code": "MERE2810",
     "course_id": "MERE2810Undergraduate",
-    "course_name": "Mineral Resource Geology & Geophysics",
+    "course_name": "Mineral Resource Geology and Geophysics",
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person"

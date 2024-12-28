@@ -1001,26 +1001,6 @@
   },
   {
     "career": "Postgraduate",
-    "class_id": "ACCT5943Postgraduate-2032-U1-2025",
-    "day": "Tue",
-    "id": "ACCT5943Postgraduate-2032-U1-2025TueUNSW Business School 115 (K-E12-115)09:00 - 12:001-5",
-    "instructor": "",
-    "location": "UNSW Business School 115 (K-E12-115)",
-    "time": "09:00 - 12:00",
-    "weeks": "1-5"
-  },
-  {
-    "career": "Postgraduate",
-    "class_id": "ACCT5943Postgraduate-2032-U1-2025",
-    "day": "Thu",
-    "id": "ACCT5943Postgraduate-2032-U1-2025ThuUNSW Business School 115 (K-E12-115)09:00 - 12:001-5",
-    "instructor": "",
-    "location": "UNSW Business School 115 (K-E12-115)",
-    "time": "09:00 - 12:00",
-    "weeks": "1-5"
-  },
-  {
-    "career": "Postgraduate",
     "class_id": "ACCT5947Postgraduate-11540-T1-2025",
     "day": "Wed",
     "id": "ACCT5947Postgraduate-11540-T1-2025WedQuadrangle G040 (K-E15-G040)15:00 - 18:001-9",
@@ -5644,7 +5624,7 @@
     "class_id": "ARTS1452Undergraduate-8144-T1-2025",
     "day": "Wed",
     "id": "ARTS1452Undergraduate-8144-T1-2025WedMathews 108 (K-F23-108)09:00 - 11:001-5,7-10",
-    "instructor": "",
+    "instructor": "Ms H  Chen,Ms X  Zhang",
     "location": "Mathews 108 (K-F23-108)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -5654,7 +5634,7 @@
     "class_id": "ARTS1452Undergraduate-8144-T1-2025",
     "day": "Fri",
     "id": "ARTS1452Undergraduate-8144-T1-2025FriMorven Brown G4 (K-C20-G4)09:00 - 11:001-5,7-8",
-    "instructor": "",
+    "instructor": "Ms H  Chen,Ms X  Zhang",
     "location": "Morven Brown G4 (K-C20-G4)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-8"
@@ -5664,7 +5644,7 @@
     "class_id": "ARTS1452Undergraduate-8145-T1-2025",
     "day": "Wed",
     "id": "ARTS1452Undergraduate-8145-T1-2025WedMathews 106 (K-F23-106)11:00 - 13:001-5,7-10",
-    "instructor": "",
+    "instructor": "Ms H  Chen,Ms X  Zhang",
     "location": "Mathews 106 (K-F23-106)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -5674,7 +5654,7 @@
     "class_id": "ARTS1452Undergraduate-8145-T1-2025",
     "day": "Fri",
     "id": "ARTS1452Undergraduate-8145-T1-2025FriMorven Brown G4 (K-C20-G4)11:00 - 13:001-5,7-8",
-    "instructor": "",
+    "instructor": "Ms H  Chen,Ms X  Zhang",
     "location": "Morven Brown G4 (K-C20-G4)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-8"
@@ -6331,6 +6311,16 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "ARTS1750Undergraduate-7547-T1-2025",
+    "day": "Tue",
+    "id": "ARTS1750Undergraduate-7547-T1-2025TueMathews 227 (K-F23-227)09:00 - 10:301-5,7-10",
+    "instructor": "",
+    "location": "Mathews 227 (K-F23-227)",
+    "time": "09:00 - 10:30",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "ARTS1750Undergraduate-7548-T1-2025",
     "day": "Tue",
     "id": "ARTS1750Undergraduate-7548-T1-2025TueMathews 104 (K-F23-104)12:00 - 13:301-5,7-10",
@@ -6531,6 +6521,16 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "ARTS1870Undergraduate-7558-T1-2025",
+    "day": "Thu",
+    "id": "ARTS1870Undergraduate-7558-T1-2025ThuOnline (ONLINE)09:00 - 10:001-5,7-10",
+    "instructor": "",
+    "location": "Online (ONLINE)",
+    "time": "09:00 - 10:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "ARTS1870Undergraduate-7559-T1-2025",
     "day": "Thu",
     "id": "ARTS1870Undergraduate-7559-T1-2025ThuOnline (ONLINE)10:00 - 11:001-5,7-10",
@@ -6587,6 +6587,16 @@
     "instructor": "",
     "location": "H13 Lawrence West 3037 (K-H13-3037)",
     "time": "15:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "ARTS1870Undergraduate-7565-T1-2025",
+    "day": "Wed",
+    "id": "ARTS1870Undergraduate-7565-T1-2025WedLaw Building 203 (K-F8-203)11:00 - 12:001-5,7-10",
+    "instructor": "",
+    "location": "Law Building 203 (K-F8-203)",
+    "time": "11:00 - 12:00",
     "weeks": "1-5,7-10"
   },
   {
@@ -8004,7 +8014,7 @@
     "class_id": "ARTS2461Undergraduate-8324-T1-2025",
     "day": "Wed",
     "id": "ARTS2461Undergraduate-8324-T1-2025WedMathews 228 (K-F23-228)14:00 - 16:001-5,7-10",
-    "instructor": "Dr W  Lim",
+    "instructor": "L  Yan",
     "location": "Mathews 228 (K-F23-228)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -8014,7 +8024,7 @@
     "class_id": "ARTS2461Undergraduate-8325-T1-2025",
     "day": "Fri",
     "id": "ARTS2461Undergraduate-8325-T1-2025FriMorven Brown G4 (K-C20-G4)14:00 - 17:001-5,7-8",
-    "instructor": "Dr W  Lim",
+    "instructor": "L  Yan",
     "location": "Morven Brown G4 (K-C20-G4)",
     "time": "14:00 - 17:00",
     "weeks": "1-5,7-8"
@@ -9654,7 +9664,7 @@
     "class_id": "ARTS3216Undergraduate-8131-T1-2025",
     "day": "Mon",
     "id": "ARTS3216Undergraduate-8131-T1-2025MonMathews 107 (K-F23-107)12:00 - 14:001-5,7-9",
-    "instructor": "",
+    "instructor": "Dr J  Paull",
     "location": "Mathews 107 (K-F23-107)",
     "time": "12:00 - 14:00",
     "weeks": "1-5,7-9"
@@ -15933,9 +15943,9 @@
     "career": "Undergraduate",
     "class_id": "CHEM2921Undergraduate-3742-T1-2025",
     "day": "Mon",
-    "id": "CHEM2921Undergraduate-3742-T1-2025MonH13 Lawrence East M032 (K-H13-M032)10:00 - 11:005",
+    "id": "CHEM2921Undergraduate-3742-T1-2025MonTyree Energy Technology LG03 (K-H6-LG03)10:00 - 11:005",
     "instructor": "Dr J  Black",
-    "location": "H13 Lawrence East M032 (K-H13-M032)",
+    "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "10:00 - 11:00",
     "weeks": "5"
   },
@@ -15943,9 +15953,9 @@
     "career": "Undergraduate",
     "class_id": "CHEM2921Undergraduate-3742-T1-2025",
     "day": "Mon",
-    "id": "CHEM2921Undergraduate-3742-T1-2025MonH13 Lawrence East M032 (K-H13-M032)10:00 - 11:009",
+    "id": "CHEM2921Undergraduate-3742-T1-2025MonTyree Energy Technology LG03 (K-H6-LG03)10:00 - 11:009",
     "instructor": "Apro TV Nguyen,Prof N  Kumar",
-    "location": "H13 Lawrence East M032 (K-H13-M032)",
+    "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "10:00 - 11:00",
     "weeks": "9"
   },
@@ -24673,9 +24683,9 @@
     "career": "Undergraduate",
     "class_id": "COMP2511Undergraduate-9441-T1-2025",
     "day": "Thu",
-    "id": "COMP2511Undergraduate-9441-T1-2025ThuFlute Lab J17 303 (K-J17-303)09:00 - 10:001-5,7-10",
+    "id": "COMP2511Undergraduate-9441-T1-2025ThuMorven Brown G6 (K-C20-G6)09:00 - 10:001-5,7-10",
     "instructor": "",
-    "location": "Flute Lab J17 303 (K-J17-303)",
+    "location": "Morven Brown G6 (K-C20-G6)",
     "time": "09:00 - 10:00",
     "weeks": "1-5,7-10"
   },
@@ -25227,6 +25237,46 @@
     "instructor": "",
     "location": "Tabla Lab K17 G07B (K-K17-G07B)",
     "time": "15:00 - 17:00",
+    "weeks": "1-5"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "COMP2521Undergraduate-2122-U1-2025",
+    "day": "Thu",
+    "id": "COMP2521Undergraduate-2122-U1-2025ThuQuadrangle G052 (K-E15-G052)15:00 - 16:001-5",
+    "instructor": "",
+    "location": "Quadrangle G052 (K-E15-G052)",
+    "time": "15:00 - 16:00",
+    "weeks": "1-5"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "COMP2521Undergraduate-2122-U1-2025",
+    "day": "Thu",
+    "id": "COMP2521Undergraduate-2122-U1-2025ThuKora Lab J17 307 (K-J17-307)16:00 - 18:001-5",
+    "instructor": "",
+    "location": "Kora Lab J17 307 (K-J17-307)",
+    "time": "16:00 - 18:00",
+    "weeks": "1-5"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "COMP2521Undergraduate-2123-U1-2025",
+    "day": "Thu",
+    "id": "COMP2521Undergraduate-2123-U1-2025ThuQuadrangle 1001 (K-E15-1001)17:00 - 18:001-5",
+    "instructor": "",
+    "location": "Quadrangle 1001 (K-E15-1001)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "COMP2521Undergraduate-2123-U1-2025",
+    "day": "Thu",
+    "id": "COMP2521Undergraduate-2123-U1-2025ThuSitar Lab J17 306 (K-J17-306)18:00 - 20:001-5",
+    "instructor": "",
+    "location": "Sitar Lab J17 306 (K-J17-306)",
+    "time": "18:00 - 20:00",
     "weeks": "1-5"
   },
   {
@@ -49550,6 +49600,16 @@
     "weeks": "1-10"
   },
   {
+    "career": "Postgraduate",
+    "class_id": "ECON7202Postgraduate-12685-T1-2025",
+    "day": "Tue",
+    "id": "ECON7202Postgraduate-12685-T1-2025TueMorven Brown LG30 (K-C20-LG30)17:00 - 18:301-10",
+    "instructor": "",
+    "location": "Morven Brown LG30 (K-C20-LG30)",
+    "time": "17:00 - 18:30",
+    "weeks": "1-10"
+  },
+  {
     "career": "Undergraduate",
     "class_id": "EDST1104Undergraduate-6560-T1-2025",
     "day": "Mon",
@@ -49697,6 +49757,16 @@
     "instructor": "Mrs R  Andrews",
     "location": "Morven Brown G6 (K-C20-G6)",
     "time": "11:00 - 13:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "EDST1143Undergraduate-11863-T1-2025",
+    "day": "Thu",
+    "id": "EDST1143Undergraduate-11863-T1-2025ThuWebster 256 (K-G14-256)13:00 - 15:001-5,7-10",
+    "instructor": "Mrs R  Andrews",
+    "location": "Webster 256 (K-G14-256)",
+    "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
   },
   {
@@ -53578,6 +53648,16 @@
     "location": "ElecEng 225 Electronics Lab (K-G17-225)",
     "time": "15:00 - 18:00",
     "weeks": "1-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "ELEC2134Undergraduate-13235-T1-2025",
+    "day": "Mon",
+    "id": "ELEC2134Undergraduate-13235-T1-2025MonElecEng 224 Electronics Lab (K-G17-224)18:00 - 21:001-10",
+    "instructor": "",
+    "location": "ElecEng 224 Electronics Lab (K-G17-224)",
+    "time": "18:00 - 21:00",
+    "weeks": "1-10"
   },
   {
     "career": "Undergraduate",
@@ -58886,6 +58966,16 @@
     "id": "FINS2618Undergraduate-13028-T1-2025FriQuadrangle 1048 (K-E15-1048)16:00 - 17:301-5,7-8",
     "instructor": "",
     "location": "Quadrangle 1048 (K-E15-1048)",
+    "time": "16:00 - 17:30",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "FINS2618Undergraduate-13238-T1-2025",
+    "day": "Fri",
+    "id": "FINS2618Undergraduate-13238-T1-2025FriUNSW Business School 107 (K-E12-107)16:00 - 17:301-5,7-8",
+    "instructor": "",
+    "location": "UNSW Business School 107 (K-E12-107)",
     "time": "16:00 - 17:30",
     "weeks": "1-5,7-8"
   },
@@ -72331,6 +72421,16 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MARK2052Undergraduate-13222-T1-2025",
+    "day": "Fri",
+    "id": "MARK2052Undergraduate-13222-T1-2025FriUNSW Business School G21 i-Lab (K-E12-G21)10:00 - 12:001-5,7-8",
+    "instructor": "",
+    "location": "UNSW Business School G21 i-Lab (K-E12-G21)",
+    "time": "10:00 - 12:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MARK2052Undergraduate-12909-T1-2025",
     "day": "Fri",
     "id": "MARK2052Undergraduate-12909-T1-2025FriSquarehouse 205 (K-E4-205)11:00 - 13:001-5,7-8",
@@ -73151,6 +73251,16 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "MARK5700Postgraduate-8312-T1-2025",
+    "day": "Wed",
+    "id": "MARK5700Postgraduate-8312-T1-2025WedAGSM LG06 (K-G27-LG06)18:00 - 20:001-9",
+    "instructor": "",
+    "location": "AGSM LG06 (K-G27-LG06)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-9"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "MARK5800Postgraduate-6425-T1-2025",
     "day": "Wed",
     "id": "MARK5800Postgraduate-6425-T1-2025WedPhysics Theatre (K-K14-19)17:00 - 19:001-10",
@@ -73258,6 +73368,16 @@
     "location": "UNSW Business School 118 (K-E12-118)",
     "time": "15:30 - 17:30",
     "weeks": "2-5,7-9"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "MARK5800Postgraduate-12711-T1-2025",
+    "day": "Thu",
+    "id": "MARK5800Postgraduate-12711-T1-2025ThuCivil Engineering 101 (K-H20-101)15:00 - 17:002-5,7-8",
+    "instructor": "",
+    "location": "Civil Engineering 101 (K-H20-101)",
+    "time": "15:00 - 17:00",
+    "weeks": "2-5,7-8"
   },
   {
     "career": "Postgraduate",
@@ -73591,6 +73711,16 @@
   },
   {
     "career": "Postgraduate",
+    "class_id": "MARK5814Postgraduate-6453-T1-2025",
+    "day": "Wed",
+    "id": "MARK5814Postgraduate-6453-T1-2025WedQuadrangle 1043 (K-E15-1043)18:00 - 20:001-8",
+    "instructor": "",
+    "location": "Quadrangle 1043 (K-E15-1043)",
+    "time": "18:00 - 20:00",
+    "weeks": "1-8"
+  },
+  {
+    "career": "Postgraduate",
     "class_id": "MARK5820Postgraduate-8314-T1-2025",
     "day": "Wed",
     "id": "MARK5820Postgraduate-8314-T1-2025WedOnline (ONLINE)15:00 - 17:001-5,7-10",
@@ -73666,6 +73796,16 @@
     "id": "MARK5820Postgraduate-12748-T1-2025ThuSquarehouse 114 (K-E4-114)19:00 - 21:002-5,7-10",
     "instructor": "",
     "location": "Squarehouse 114 (K-E4-114)",
+    "time": "19:00 - 21:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "MARK5820Postgraduate-13144-T1-2025",
+    "day": "Thu",
+    "id": "MARK5820Postgraduate-13144-T1-2025ThuBlockhouse G6 (K-G6-G6)19:00 - 21:002-5,7-10",
+    "instructor": "",
+    "location": "Blockhouse G6 (K-G6-G6)",
     "time": "19:00 - 21:00",
     "weeks": "2-5,7-10"
   },
@@ -73936,6 +74076,16 @@
     "id": "MARK5827Postgraduate-9928-T1-2025ThuQuadrangle G032 (K-E15-G032)19:00 - 21:002-5,7-10",
     "instructor": "",
     "location": "Quadrangle G032 (K-E15-G032)",
+    "time": "19:00 - 21:00",
+    "weeks": "2-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "MARK5827Postgraduate-12679-T1-2025",
+    "day": "Wed",
+    "id": "MARK5827Postgraduate-12679-T1-2025WedSquarehouse 114 (K-E4-114)19:00 - 21:002-5,7-10",
+    "instructor": "",
+    "location": "Squarehouse 114 (K-E4-114)",
     "time": "19:00 - 21:00",
     "weeks": "2-5,7-10"
   },
@@ -75111,6 +75261,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5099-T1-2025",
+    "day": "Mon",
+    "id": "MATH1081Undergraduate-5099-T1-2025MonOld Main Building G31 (K-K15-G31)10:00 - 11:001-5,7-9",
+    "instructor": "",
+    "location": "Old Main Building G31 (K-K15-G31)",
+    "time": "10:00 - 11:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5099-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5099-T1-2025ThuUNSW Business School  232 (K-E12-232)10:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  232 (K-E12-232)",
+    "time": "10:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1081Undergraduate-5101-T1-2025",
     "day": "Mon",
     "id": "MATH1081Undergraduate-5101-T1-2025MonColombo Theatre B (K-B16-LG04)11:00 - 12:001-5,7-9",
@@ -75211,6 +75381,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5106-T1-2025",
+    "day": "Mon",
+    "id": "MATH1081Undergraduate-5106-T1-2025MonColombo Theatre B (K-B16-LG04)11:00 - 12:001-5,7-9",
+    "instructor": "",
+    "location": "Colombo Theatre B (K-B16-LG04)",
+    "time": "11:00 - 12:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5106-T1-2025",
+    "day": "Wed",
+    "id": "MATH1081Undergraduate-5106-T1-2025WedUNSW Business School  216 (K-E12-216)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  216 (K-E12-216)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1081Undergraduate-5108-T1-2025",
     "day": "Mon",
     "id": "MATH1081Undergraduate-5108-T1-2025MonF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-9",
@@ -75291,6 +75481,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5113-T1-2025",
+    "day": "Mon",
+    "id": "MATH1081Undergraduate-5113-T1-2025MonF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-9",
+    "instructor": "",
+    "location": "F10 June Griffith M18 (K-F10-M18)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5113-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5113-T1-2025ThuUNSW Business School 130 (K-E12-130)09:00 - 10:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School 130 (K-E12-130)",
+    "time": "09:00 - 10:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1081Undergraduate-5115-T1-2025",
     "day": "Mon",
     "id": "MATH1081Undergraduate-5115-T1-2025MonE19 Patricia O'Shane G05 (K-E19-G05)16:00 - 17:001-5,7-9",
@@ -75351,6 +75561,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5118-T1-2025",
+    "day": "Mon",
+    "id": "MATH1081Undergraduate-5118-T1-2025MonE19 Patricia O'Shane G05 (K-E19-G05)16:00 - 17:001-5,7-9",
+    "instructor": "",
+    "location": "E19 Patricia O'Shane G05 (K-E19-G05)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5118-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5118-T1-2025ThuVallentine Annexe 121 (K-H22-121)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "Vallentine Annexe 121 (K-H22-121)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1081Undergraduate-5119-T1-2025",
     "day": "Mon",
     "id": "MATH1081Undergraduate-5119-T1-2025MonE19 Patricia O'Shane G05 (K-E19-G05)17:00 - 18:001-5,7-9",
@@ -75406,6 +75636,26 @@
     "id": "MATH1081Undergraduate-5121-T1-2025ThuUNSW Business School 130 (K-E12-130)15:00 - 16:001-5,7-10",
     "instructor": "",
     "location": "UNSW Business School 130 (K-E12-130)",
+    "time": "15:00 - 16:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5122-T1-2025",
+    "day": "Mon",
+    "id": "MATH1081Undergraduate-5122-T1-2025MonE19 Patricia O'Shane G05 (K-E19-G05)17:00 - 18:001-5,7-9",
+    "instructor": "",
+    "location": "E19 Patricia O'Shane G05 (K-E19-G05)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5122-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5122-T1-2025ThuUNSW Business School  205 (K-E12-205)15:00 - 16:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  205 (K-E12-205)",
     "time": "15:00 - 16:00",
     "weeks": "1-5,7-10"
   },
@@ -75491,6 +75741,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5128-T1-2025",
+    "day": "Tue",
+    "id": "MATH1081Undergraduate-5128-T1-2025TueOld Main Building G31 (K-K15-G31)10:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "Old Main Building G31 (K-K15-G31)",
+    "time": "10:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5128-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5128-T1-2025ThuUNSW Business School  232 (K-E12-232)14:00 - 15:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  232 (K-E12-232)",
+    "time": "14:00 - 15:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1081Undergraduate-5134-T1-2025",
     "day": "Tue",
     "id": "MATH1081Undergraduate-5134-T1-2025TueWebster Theatre A (K-G15-190)13:00 - 14:001-5,7-10",
@@ -75526,6 +75796,26 @@
     "id": "MATH1081Undergraduate-5135-T1-2025ThuUNSW Business School  205 (K-E12-205)16:00 - 17:001-5,7-10",
     "instructor": "",
     "location": "UNSW Business School  205 (K-E12-205)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5136-T1-2025",
+    "day": "Tue",
+    "id": "MATH1081Undergraduate-5136-T1-2025TueWebster Theatre A (K-G15-190)13:00 - 14:001-5,7-10",
+    "instructor": "",
+    "location": "Webster Theatre A (K-G15-190)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5136-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5136-T1-2025ThuUNSW Business School 130 (K-E12-130)16:00 - 17:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School 130 (K-E12-130)",
     "time": "16:00 - 17:00",
     "weeks": "1-5,7-10"
   },
@@ -75586,6 +75876,26 @@
     "id": "MATH1081Undergraduate-5141-T1-2025ThuUNSW Business School 130 (K-E12-130)13:00 - 14:001-5,7-10",
     "instructor": "",
     "location": "UNSW Business School 130 (K-E12-130)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5142-T1-2025",
+    "day": "Tue",
+    "id": "MATH1081Undergraduate-5142-T1-2025TueE19 Patricia O'Shane G03 (K-E19-G03)14:00 - 15:001-5,7-10",
+    "instructor": "",
+    "location": "E19 Patricia O'Shane G03 (K-E19-G03)",
+    "time": "14:00 - 15:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1081Undergraduate-5142-T1-2025",
+    "day": "Thu",
+    "id": "MATH1081Undergraduate-5142-T1-2025ThuUNSW Business School  205 (K-E12-205)13:00 - 14:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  205 (K-E12-205)",
     "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
   },
@@ -77321,6 +77631,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5353-T1-2025",
+    "day": "Tue",
+    "id": "MATH1141Undergraduate-5353-T1-2025TueUNSW Business School  232 (K-E12-232)16:00 - 17:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  232 (K-E12-232)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5353-T1-2025",
+    "day": "Thu",
+    "id": "MATH1141Undergraduate-5353-T1-2025ThuOld Main Building G31 (K-K15-G31)10:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "Old Main Building G31 (K-K15-G31)",
+    "time": "10:00 - 11:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1141Undergraduate-5355-T1-2025",
     "day": "Tue",
     "id": "MATH1141Undergraduate-5355-T1-2025TueUNSW Business School  205 (K-E12-205)17:00 - 18:001-5,7-10",
@@ -77461,6 +77791,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5364-T1-2025",
+    "day": "Wed",
+    "id": "MATH1141Undergraduate-5364-T1-2025WedUNSW Business School  219 (K-E12-219)13:00 - 14:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  219 (K-E12-219)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5364-T1-2025",
+    "day": "Fri",
+    "id": "MATH1141Undergraduate-5364-T1-2025FriOld Main Building G31 (K-K15-G31)15:00 - 16:001-5,7-8",
+    "instructor": "",
+    "location": "Old Main Building G31 (K-K15-G31)",
+    "time": "15:00 - 16:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1141Undergraduate-5365-T1-2025",
     "day": "Wed",
     "id": "MATH1141Undergraduate-5365-T1-2025WedUNSW Business School 130 (K-E12-130)16:00 - 17:001-5,7-10",
@@ -77534,6 +77884,26 @@
     "class_id": "MATH1141Undergraduate-5368-T1-2025",
     "day": "Fri",
     "id": "MATH1141Undergraduate-5368-T1-2025FriF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-8",
+    "instructor": "",
+    "location": "F10 June Griffith M18 (K-F10-M18)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5369-T1-2025",
+    "day": "Wed",
+    "id": "MATH1141Undergraduate-5369-T1-2025WedUNSW Business School  232 (K-E12-232)16:00 - 17:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  232 (K-E12-232)",
+    "time": "16:00 - 17:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5369-T1-2025",
+    "day": "Fri",
+    "id": "MATH1141Undergraduate-5369-T1-2025FriF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-8",
     "instructor": "",
     "location": "F10 June Griffith M18 (K-F10-M18)",
     "time": "13:00 - 14:00",
@@ -86937,6 +87307,16 @@
     "instructor": "",
     "location": "Rupert Myers 410 (K-M15-410)",
     "time": "19:00 - 21:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Postgraduate",
+    "class_id": "MGMT5601Postgraduate-4796-T1-2025",
+    "day": "Wed",
+    "id": "MGMT5601Postgraduate-4796-T1-2025WedH13 Lawrence East 1040 (K-H13-1040)09:00 - 11:001-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence East 1040 (K-H13-1040)",
+    "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
   },
   {
@@ -96721,6 +97101,16 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "PSYC1001Undergraduate-5638-T1-2025",
+    "day": "Thu",
+    "id": "PSYC1001Undergraduate-5638-T1-2025ThuMathews 310 (K-F23-310)14:00 - 15:003-5,7-10",
+    "instructor": "",
+    "location": "Mathews 310 (K-F23-310)",
+    "time": "14:00 - 15:00",
+    "weeks": "3-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "PSYC1001Undergraduate-5642-T1-2025",
     "day": "Thu",
     "id": "PSYC1001Undergraduate-5642-T1-2025ThuMathews 105 (K-F23-105)16:00 - 17:003-5,7-10",
@@ -96756,6 +97146,16 @@
     "id": "PSYC1001Undergraduate-5648-T1-2025MonMathews 230 (K-F23-230)13:00 - 14:003-5,7-9",
     "instructor": "",
     "location": "Mathews 230 (K-F23-230)",
+    "time": "13:00 - 14:00",
+    "weeks": "3-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "PSYC1001Undergraduate-5649-T1-2025",
+    "day": "Mon",
+    "id": "PSYC1001Undergraduate-5649-T1-2025MonMathews 231 (K-F23-231)13:00 - 14:003-5,7-9",
+    "instructor": "",
+    "location": "Mathews 231 (K-F23-231)",
     "time": "13:00 - 14:00",
     "weeks": "3-5,7-9"
   },
@@ -96797,6 +97197,16 @@
     "instructor": "",
     "location": "Mathews 231 (K-F23-231)",
     "time": "13:00 - 14:00",
+    "weeks": "3-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "PSYC1001Undergraduate-5656-T1-2025",
+    "day": "Tue",
+    "id": "PSYC1001Undergraduate-5656-T1-2025TueMathews 231 (K-F23-231)14:00 - 15:003-5,7-10",
+    "instructor": "",
+    "location": "Mathews 231 (K-F23-231)",
+    "time": "14:00 - 15:00",
     "weeks": "3-5,7-10"
   },
   {
@@ -100347,6 +100757,16 @@
     "instructor": "",
     "location": "John Goodsell LG19 (K-F20-LG19)",
     "time": "11:00 - 12:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "SOSS1000Undergraduate-5810-T1-2025",
+    "day": "Wed",
+    "id": "SOSS1000Undergraduate-5810-T1-2025WedH13 Lawrence West 3037 (K-H13-3037)13:00 - 14:001-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence West 3037 (K-H13-3037)",
+    "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
   },
   {
