@@ -2344,7 +2344,7 @@
     "class_id": "AERO3410Undergraduate-7221-T1-2025",
     "day": "Mon",
     "id": "AERO3410Undergraduate-7221-T1-2025MonAinsworth G02 (K-J17-G02)11:00 - 13:001-9",
-    "instructor": "Apro GM Pearce",
+    "instructor": "Prof GM Pearce",
     "location": "Ainsworth G02 (K-J17-G02)",
     "time": "11:00 - 13:00",
     "weeks": "1-9"
@@ -2354,7 +2354,7 @@
     "class_id": "AERO3410Undergraduate-7221-T1-2025",
     "day": "Thu",
     "id": "AERO3410Undergraduate-7221-T1-2025ThuAinsworth 202 (K-J17-202)11:00 - 13:001-5",
-    "instructor": "Apro GM Pearce",
+    "instructor": "Prof GM Pearce",
     "location": "Ainsworth 202 (K-J17-202)",
     "time": "11:00 - 13:00",
     "weeks": "1-5"
@@ -2364,7 +2364,7 @@
     "class_id": "AERO3410Undergraduate-7222-T1-2025",
     "day": "Mon",
     "id": "AERO3410Undergraduate-7222-T1-2025MonOnline (ONLINE)11:00 - 13:001-9",
-    "instructor": "Apro GM Pearce",
+    "instructor": "Prof GM Pearce",
     "location": "Online (ONLINE)",
     "time": "11:00 - 13:00",
     "weeks": "1-9"
@@ -2374,7 +2374,7 @@
     "class_id": "AERO3410Undergraduate-7222-T1-2025",
     "day": "Thu",
     "id": "AERO3410Undergraduate-7222-T1-2025ThuOnline (ONLINE)11:00 - 13:001-10",
-    "instructor": "Apro GM Pearce",
+    "instructor": "Prof GM Pearce",
     "location": "Online (ONLINE)",
     "time": "11:00 - 13:00",
     "weeks": "1-10"
@@ -2384,7 +2384,7 @@
     "class_id": "AERO3410Undergraduate-7220-T1-2025",
     "day": "Tue",
     "id": "AERO3410Undergraduate-7220-T1-2025TueOld Main Building G31 (K-K15-G31)11:00 - 13:001-5,7-10",
-    "instructor": "Apro GM Pearce",
+    "instructor": "Prof GM Pearce",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -6364,7 +6364,7 @@
     "class_id": "ARTS1810Undergraduate-7609-T1-2025",
     "day": "Wed",
     "id": "ARTS1810Undergraduate-7609-T1-2025WedLaw Theatre G04 (K-F8-G04)11:00 - 13:001-5,7-10",
-    "instructor": "Dr D  Barros Leal Farias",
+    "instructor": "Apro D  Barros Leal Farias",
     "location": "Law Theatre G04 (K-F8-G04)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -6504,7 +6504,7 @@
     "class_id": "ARTS1870Undergraduate-7554-T1-2025",
     "day": "Tue",
     "id": "ARTS1870Undergraduate-7554-T1-2025TueMathews Theatre B (K-D23-203)11:00 - 13:001-5,7-10",
-    "instructor": "Apro MA White",
+    "instructor": "Prof MA White",
     "location": "Mathews Theatre B (K-D23-203)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -9314,7 +9314,7 @@
     "class_id": "ARTS2876Undergraduate-6973-T1-2025",
     "day": "Mon",
     "id": "ARTS2876Undergraduate-6973-T1-2025MonE19 Patricia O'Shane G06 (K-E19-G06)10:00 - 12:001-5,7-9",
-    "instructor": "Apro MA White",
+    "instructor": "Prof MA White",
     "location": "E19 Patricia O'Shane G06 (K-E19-G06)",
     "time": "10:00 - 12:00",
     "weeks": "1-5,7-9"
@@ -10214,7 +10214,7 @@
     "class_id": "ARTS4266Undergraduate-8435-T1-2025",
     "day": "Mon",
     "id": "ARTS4266Undergraduate-8435-T1-2025MonMathews 101 (K-F23-101)15:00 - 17:001-5,7-9",
-    "instructor": "Apro MD Lenette",
+    "instructor": "Prof MD Lenette",
     "location": "Mathews 101 (K-F23-101)",
     "time": "15:00 - 17:00",
     "weeks": "1-5,7-9"
@@ -10244,7 +10244,7 @@
     "class_id": "ARTS5505Postgraduate-2003-U1-2025",
     "day": "Mon",
     "id": "ARTS5505Postgraduate-2003-U1-2025MonE19 Patricia O'Shane 103 (K-E19-103)10:00 - 12:001-5",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "E19 Patricia O'Shane 103 (K-E19-103)",
     "time": "10:00 - 12:00",
     "weeks": "1-5"
@@ -10254,7 +10254,7 @@
     "class_id": "ARTS5505Postgraduate-2003-U1-2025",
     "day": "Thu",
     "id": "ARTS5505Postgraduate-2003-U1-2025ThuE19 Patricia O'Shane 103 (K-E19-103)10:00 - 12:001-4",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "E19 Patricia O'Shane 103 (K-E19-103)",
     "time": "10:00 - 12:00",
     "weeks": "1-4"
@@ -10364,7 +10364,7 @@
     "class_id": "ARTS5505Postgraduate-2063-U1-2025",
     "day": "Mon",
     "id": "ARTS5505Postgraduate-2063-U1-2025MonQuadrangle G026 (K-E15-G026)15:00 - 17:001-5",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Quadrangle G026 (K-E15-G026)",
     "time": "15:00 - 17:00",
     "weeks": "1-5"
@@ -10374,7 +10374,7 @@
     "class_id": "ARTS5505Postgraduate-2063-U1-2025",
     "day": "Thu",
     "id": "ARTS5505Postgraduate-2063-U1-2025ThuLaw Library 111 (K-F8-111)15:00 - 17:001-4",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Law Library 111 (K-F8-111)",
     "time": "15:00 - 17:00",
     "weeks": "1-4"
@@ -10384,7 +10384,7 @@
     "class_id": "ARTS5505Postgraduate-9260-T1-2025",
     "day": "Mon",
     "id": "ARTS5505Postgraduate-9260-T1-2025MonElectrical Engineering G22 (K-G17-G22)11:00 - 13:001-5,7-9",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Electrical Engineering G22 (K-G17-G22)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-9"
@@ -12444,7 +12444,7 @@
     "class_id": "BENV7500Postgraduate-9364-T1-2025",
     "day": "Fri",
     "id": "BENV7500Postgraduate-9364-T1-2025FriRuper Myers 430 (K-M15-430)09:00 - 10:001-8",
-    "instructor": "Dr N  Nazarian",
+    "instructor": "Apro N  Nazarian",
     "location": "Ruper Myers 430 (K-M15-430)",
     "time": "09:00 - 10:00",
     "weeks": "1-8"
@@ -12454,7 +12454,7 @@
     "class_id": "BENV7500Postgraduate-9365-T1-2025",
     "day": "Fri",
     "id": "BENV7500Postgraduate-9365-T1-2025FriRuper Myers 430 (K-M15-430)10:00 - 13:001-8",
-    "instructor": "Dr N  Nazarian",
+    "instructor": "Apro N  Nazarian",
     "location": "Ruper Myers 430 (K-M15-430)",
     "time": "10:00 - 13:00",
     "weeks": "1-8"
@@ -12464,7 +12464,7 @@
     "class_id": "BENV7504Postgraduate-8580-T1-2025",
     "day": "Tue",
     "id": "BENV7504Postgraduate-8580-T1-2025TueColombo LG02 (K-B16-LG02)17:00 - 18:001-10",
-    "instructor": "Dr N  Nazarian",
+    "instructor": "Apro N  Nazarian",
     "location": "Colombo LG02 (K-B16-LG02)",
     "time": "17:00 - 18:00",
     "weeks": "1-10"
@@ -12474,7 +12474,7 @@
     "class_id": "BENV7504Postgraduate-8581-T1-2025",
     "day": "Tue",
     "id": "BENV7504Postgraduate-8581-T1-2025TueColombo LG02 (K-B16-LG02)18:00 - 20:001-10",
-    "instructor": "Dr N  Nazarian",
+    "instructor": "Apro N  Nazarian",
     "location": "Colombo LG02 (K-B16-LG02)",
     "time": "18:00 - 20:00",
     "weeks": "1-10"
@@ -13584,7 +13584,7 @@
     "class_id": "BLDG3011Undergraduate-9009-T1-2025",
     "day": "Mon",
     "id": "BLDG3011Undergraduate-9009-T1-2025MonElectrical Engineering G23 (K-G17-G23)10:00 - 12:001-5,7-9",
-    "instructor": "Dr TH Lim",
+    "instructor": "Apro TH Lim",
     "location": "Electrical Engineering G23 (K-G17-G23)",
     "time": "10:00 - 12:00",
     "weeks": "1-5,7-9"
@@ -13604,7 +13604,7 @@
     "class_id": "BLDG3011Undergraduate-9011-T1-2025",
     "day": "Mon",
     "id": "BLDG3011Undergraduate-9011-T1-2025MonRupert Myers 410 (K-M15-410)12:00 - 14:001-5,7-9",
-    "instructor": "Dr TH Lim",
+    "instructor": "Apro TH Lim",
     "location": "Rupert Myers 410 (K-M15-410)",
     "time": "12:00 - 14:00",
     "weeks": "1-5,7-9"
@@ -13704,7 +13704,7 @@
     "class_id": "BLDG3023Undergraduate-9021-T1-2025",
     "day": "Mon",
     "id": "BLDG3023Undergraduate-9021-T1-2025MonElectrical Engineering G22 (K-G17-G22)17:00 - 19:001-5,7-9",
-    "instructor": "Dr TH Lim",
+    "instructor": "Apro TH Lim",
     "location": "Electrical Engineering G22 (K-G17-G22)",
     "time": "17:00 - 19:00",
     "weeks": "1-5,7-9"
@@ -13794,7 +13794,7 @@
     "class_id": "BLDG4024Undergraduate-9026-T1-2025",
     "day": "Tue",
     "id": "BLDG4024Undergraduate-9026-T1-2025TueH13 Lawrence West 3034 (K-H13-3034)16:00 - 18:001-5,7-10",
-    "instructor": "Dr TH Lim",
+    "instructor": "Apro TH Lim",
     "location": "H13 Lawrence West 3034 (K-H13-3034)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -13814,7 +13814,7 @@
     "class_id": "BLDG4024Undergraduate-9028-T1-2025",
     "day": "Tue",
     "id": "BLDG4024Undergraduate-9028-T1-2025TueH13 Lawrence West 3034 (K-H13-3034)18:00 - 20:001-5,7-10",
-    "instructor": "Dr TH Lim",
+    "instructor": "Apro TH Lim",
     "location": "H13 Lawrence West 3034 (K-H13-3034)",
     "time": "18:00 - 20:00",
     "weeks": "1-5,7-10"
@@ -14044,7 +14044,7 @@
     "class_id": "CEIC3000Undergraduate-7280-T1-2025",
     "day": "Mon",
     "id": "CEIC3000Undergraduate-7280-T1-2025MonTyree Energy Technology LG05 (K-H6-LG05)14:00 - 16:001-5,7-9",
-    "instructor": "Apro SW Prescott,Dr P  Kumar",
+    "instructor": "Prof SW Prescott,Dr P  Kumar",
     "location": "Tyree Energy Technology LG05 (K-H6-LG05)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -14054,7 +14054,7 @@
     "class_id": "CEIC3000Undergraduate-7280-T1-2025",
     "day": "Thu",
     "id": "CEIC3000Undergraduate-7280-T1-2025ThuF10 June Griffith M11 (K-F10-M11)11:00 - 13:001-5,7-10",
-    "instructor": "Apro SW Prescott,Dr P  Kumar",
+    "instructor": "Prof SW Prescott,Dr P  Kumar",
     "location": "F10 June Griffith M11 (K-F10-M11)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -14064,7 +14064,7 @@
     "class_id": "CEIC3000Undergraduate-7282-T1-2025",
     "day": "Wed",
     "id": "CEIC3000Undergraduate-7282-T1-2025WedScience & Engineering B26 (K-E8-B26)15:00 - 17:001-10",
-    "instructor": "Apro SW Prescott,Dr P  Kumar",
+    "instructor": "Prof SW Prescott,Dr P  Kumar",
     "location": "Science & Engineering B26 (K-E8-B26)",
     "time": "15:00 - 17:00",
     "weeks": "1-10"
@@ -14224,7 +14224,7 @@
     "class_id": "CEIC6711Undergraduate-9936-T1-2025",
     "day": "Wed",
     "id": "CEIC6711Undergraduate-9936-T1-2025WedLaw Theatre G02 (K-F8-G02)13:00 - 15:001-5,7-10",
-    "instructor": "Apro P  Spicer,Apro SW Prescott",
+    "instructor": "Apro P  Spicer,Prof SW Prescott",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -14234,7 +14234,7 @@
     "class_id": "CEIC6711Undergraduate-9937-T1-2025",
     "day": "Thu",
     "id": "CEIC6711Undergraduate-9937-T1-2025ThuMathews 103 (K-F23-103)17:00 - 19:001-10",
-    "instructor": "Apro P  Spicer,Apro SW Prescott",
+    "instructor": "Apro P  Spicer,Prof SW Prescott",
     "location": "Mathews 103 (K-F23-103)",
     "time": "17:00 - 19:00",
     "weeks": "1-10"
@@ -14434,7 +14434,7 @@
     "class_id": "CEIC6711Postgraduate-9938-T1-2025",
     "day": "Wed",
     "id": "CEIC6711Postgraduate-9938-T1-2025WedLaw Theatre G02 (K-F8-G02)13:00 - 15:001-5,7-10",
-    "instructor": "Apro P  Spicer,Apro SW Prescott",
+    "instructor": "Apro P  Spicer,Prof SW Prescott",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -14444,7 +14444,7 @@
     "class_id": "CEIC6711Postgraduate-9939-T1-2025",
     "day": "Thu",
     "id": "CEIC6711Postgraduate-9939-T1-2025ThuMathews 103 (K-F23-103)17:00 - 19:001-10",
-    "instructor": "Apro P  Spicer,Apro SW Prescott",
+    "instructor": "Apro P  Spicer,Prof SW Prescott",
     "location": "Mathews 103 (K-F23-103)",
     "time": "17:00 - 19:00",
     "weeks": "1-10"
@@ -14914,7 +14914,7 @@
     "class_id": "CHEM1021Undergraduate-5869-T1-2025",
     "day": "Mon",
     "id": "CHEM1021Undergraduate-5869-T1-2025MonTyree Energy Technology LG03 (K-H6-LG03)11:00 - 12:001-5",
-    "instructor": "Apro JE Beves",
+    "instructor": "Prof JE Beves",
     "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "11:00 - 12:00",
     "weeks": "1-5"
@@ -14934,7 +14934,7 @@
     "class_id": "CHEM1021Undergraduate-5869-T1-2025",
     "day": "Tue",
     "id": "CHEM1021Undergraduate-5869-T1-2025TueAinsworth 102 (K-J17-102)16:00 - 17:001-5",
-    "instructor": "Apro JE Beves",
+    "instructor": "Prof JE Beves",
     "location": "Ainsworth 102 (K-J17-102)",
     "time": "16:00 - 17:00",
     "weeks": "1-5"
@@ -14954,7 +14954,7 @@
     "class_id": "CHEM1021Undergraduate-5869-T1-2025",
     "day": "Wed",
     "id": "CHEM1021Undergraduate-5869-T1-2025WedElectrical Engineering G23 (K-G17-G23)09:00 - 11:001-5",
-    "instructor": "Apro JE Beves",
+    "instructor": "Prof JE Beves",
     "location": "Electrical Engineering G23 (K-G17-G23)",
     "time": "09:00 - 11:00",
     "weeks": "1-5"
@@ -15374,7 +15374,7 @@
     "class_id": "CHEM1811Undergraduate-9224-T1-2025",
     "day": "Mon",
     "id": "CHEM1811Undergraduate-9224-T1-2025MonColombo Theatre C (K-B16-LG05)17:00 - 18:001-3",
-    "instructor": "Apro SW Prescott",
+    "instructor": "Prof SW Prescott",
     "location": "Colombo Theatre C (K-B16-LG05)",
     "time": "17:00 - 18:00",
     "weeks": "1-3"
@@ -15404,7 +15404,7 @@
     "class_id": "CHEM1811Undergraduate-9224-T1-2025",
     "day": "Tue",
     "id": "CHEM1811Undergraduate-9224-T1-2025TueH13 Lawrence East M032 (K-H13-M032)10:00 - 11:001-3",
-    "instructor": "Apro SW Prescott",
+    "instructor": "Prof SW Prescott",
     "location": "H13 Lawrence East M032 (K-H13-M032)",
     "time": "10:00 - 11:00",
     "weeks": "1-3"
@@ -15434,7 +15434,7 @@
     "class_id": "CHEM1811Undergraduate-9224-T1-2025",
     "day": "Wed",
     "id": "CHEM1811Undergraduate-9224-T1-2025WedF10 June Griffith M11 (K-F10-M11)11:00 - 13:001-3",
-    "instructor": "Apro SW Prescott",
+    "instructor": "Prof SW Prescott",
     "location": "F10 June Griffith M11 (K-F10-M11)",
     "time": "11:00 - 13:00",
     "weeks": "1-3"
@@ -16034,7 +16034,7 @@
     "class_id": "CHEM3021Undergraduate-3744-T1-2025",
     "day": "Mon",
     "id": "CHEM3021Undergraduate-3744-T1-2025MonF10 June Griffith M11 (K-F10-M11)10:00 - 11:008-9",
-    "instructor": "Dr S  Kyne",
+    "instructor": "Dr S  Clements",
     "location": "F10 June Griffith M11 (K-F10-M11)",
     "time": "10:00 - 11:00",
     "weeks": "8-9"
@@ -16044,7 +16044,7 @@
     "class_id": "CHEM3021Undergraduate-3744-T1-2025",
     "day": "Thu",
     "id": "CHEM3021Undergraduate-3744-T1-2025ThuF10 June Griffith M10 (K-F10-M10)13:00 - 15:001-3",
-    "instructor": "Dr S  Kyne",
+    "instructor": "Dr S  Clements",
     "location": "F10 June Griffith M10 (K-F10-M10)",
     "time": "13:00 - 15:00",
     "weeks": "1-3"
@@ -16084,7 +16084,7 @@
     "class_id": "CHEM3021Undergraduate-3744-T1-2025",
     "day": "Fri",
     "id": "CHEM3021Undergraduate-3744-T1-2025FriF10 June Griffith M10 (K-F10-M10)10:00 - 11:004-5",
-    "instructor": "Dr S  Kyne",
+    "instructor": "Dr S  Clements",
     "location": "F10 June Griffith M10 (K-F10-M10)",
     "time": "10:00 - 11:00",
     "weeks": "4-5"
@@ -16474,7 +16474,7 @@
     "class_id": "CODE3100Undergraduate-8825-T1-2025",
     "day": "Tue",
     "id": "CODE3100Undergraduate-8825-T1-2025TueOld Main Building 151 (K-K15-151)14:00 - 15:001-5,7-10",
-    "instructor": "Apro MH Haeusler",
+    "instructor": "Prof MH Haeusler",
     "location": "Old Main Building 151 (K-K15-151)",
     "time": "14:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -16484,7 +16484,7 @@
     "class_id": "CODE3100Undergraduate-8826-T1-2025",
     "day": "Tue",
     "id": "CODE3100Undergraduate-8826-T1-2025TueOld Main Building 151 (K-K15-151)15:00 - 18:001-5,7-10",
-    "instructor": "Apro MH Haeusler",
+    "instructor": "Prof MH Haeusler",
     "location": "Old Main Building 151 (K-K15-151)",
     "time": "15:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -17874,7 +17874,7 @@
     "class_id": "COMM1140Undergraduate-10822-T1-2025",
     "day": "Mon",
     "id": "COMM1140Undergraduate-10822-T1-2025MonSir John Clancy Auditorium (K-C24-G17)10:30 - 12:001-5,7-9",
-    "instructor": "Dr C  Clune,Dr K  Vojvoda,Ms S  Sun,Dr IP Kwan",
+    "instructor": "Apro C  Clune,Dr K  Vojvoda,  S  Sun,Dr IP Kwan",
     "location": "Sir John Clancy Auditorium (K-C24-G17)",
     "time": "10:30 - 12:00",
     "weeks": "1-5,7-9"
@@ -17884,7 +17884,7 @@
     "class_id": "COMM1140Undergraduate-10823-T1-2025",
     "day": "Mon",
     "id": "COMM1140Undergraduate-10823-T1-2025MonOnline (ONLINE)14:30 - 16:001-5,7-9",
-    "instructor": "Dr RJ Brown,Dr C  Clune,Dr K  Vojvoda,Ms S  Sun,Dr IP Kwan",
+    "instructor": "Dr RJ Brown,Apro C  Clune,Dr K  Vojvoda,  S  Sun,Dr IP Kwan",
     "location": "Online (ONLINE)",
     "time": "14:30 - 16:00",
     "weeks": "1-5,7-9"
@@ -22644,7 +22644,7 @@
     "class_id": "COMP1521Undergraduate-9546-T1-2025",
     "day": "Mon",
     "id": "COMP1521Undergraduate-9546-T1-2025MonAinsworth G03 (K-J17-G03)14:00 - 16:001-5,7-9",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "Ainsworth G03 (K-J17-G03)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -22654,7 +22654,7 @@
     "class_id": "COMP1521Undergraduate-9546-T1-2025",
     "day": "Wed",
     "id": "COMP1521Undergraduate-9546-T1-2025WedSee School for Location (SEESCHOOL)14:00 - 16:001-5,7-10",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "See School for Location (SEESCHOOL)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -23874,7 +23874,7 @@
     "class_id": "COMP2041Undergraduate-3777-T1-2025",
     "day": "Tue",
     "id": "COMP2041Undergraduate-3777-T1-2025TueAinsworth G03 (K-J17-G03)11:00 - 13:001-5,7-10",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "Ainsworth G03 (K-J17-G03)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -23884,7 +23884,7 @@
     "class_id": "COMP2041Undergraduate-3777-T1-2025",
     "day": "Thu",
     "id": "COMP2041Undergraduate-3777-T1-2025ThuSee School for Location (SEESCHOOL)14:00 - 16:001-5,7-10",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "See School for Location (SEESCHOOL)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -32394,7 +32394,7 @@
     "class_id": "COMP9044Postgraduate-10093-T1-2025",
     "day": "Tue",
     "id": "COMP9044Postgraduate-10093-T1-2025TueAinsworth G03 (K-J17-G03)11:00 - 13:001-5,7-10",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "Ainsworth G03 (K-J17-G03)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -32404,7 +32404,7 @@
     "class_id": "COMP9044Postgraduate-10093-T1-2025",
     "day": "Thu",
     "id": "COMP9044Postgraduate-10093-T1-2025ThuSee School for Location (SEESCHOOL)14:00 - 16:001-5,7-10",
-    "instructor": "Dr AJ Taylor",
+    "instructor": "Apro AJ Taylor",
     "location": "See School for Location (SEESCHOOL)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -37534,7 +37534,7 @@
     "class_id": "CVEN9525Postgraduate-7329-T1-2025",
     "day": "Tue",
     "id": "CVEN9525Postgraduate-7329-T1-2025TueElectrical Engineering G23 (K-G17-G23)14:00 - 16:001-5,7-10",
-    "instructor": "Dr A  Khoshghalb",
+    "instructor": "Apro A  Khoshghalb",
     "location": "Electrical Engineering G23 (K-G17-G23)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -37544,7 +37544,7 @@
     "class_id": "CVEN9525Postgraduate-7329-T1-2025",
     "day": "Thu",
     "id": "CVEN9525Postgraduate-7329-T1-2025ThuElectrical Engineering G22 (K-G17-G22)11:00 - 13:001-5,7-10",
-    "instructor": "Dr A  Khoshghalb",
+    "instructor": "Apro A  Khoshghalb",
     "location": "Electrical Engineering G22 (K-G17-G22)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -37634,7 +37634,7 @@
     "class_id": "CVEN9701Postgraduate-4369-T1-2025",
     "day": "Wed",
     "id": "CVEN9701Postgraduate-4369-T1-2025WedKeith Burrows Theatre (K-J14-G5)16:00 - 18:001-5,7-10",
-    "instructor": "Dr SR Davis",
+    "instructor": "Apro SR Davis",
     "location": "Keith Burrows Theatre (K-J14-G5)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -37644,7 +37644,7 @@
     "class_id": "CVEN9701Postgraduate-4369-T1-2025",
     "day": "Thu",
     "id": "CVEN9701Postgraduate-4369-T1-2025ThuScience Theatre (K-F13-G09)14:00 - 16:001-5,7-10",
-    "instructor": "Dr SR Davis",
+    "instructor": "Apro SR Davis",
     "location": "Science Theatre (K-F13-G09)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -48354,7 +48354,7 @@
     "class_id": "ECON2206Undergraduate-4483-T1-2025",
     "day": "Tue",
     "id": "ECON2206Undergraduate-4483-T1-2025TueRitchie Theatre (K-G19-LG02)11:00 - 12:301-5,7-10",
-    "instructor": "Apro Y  Zhang",
+    "instructor": "Prof Y  Zhang",
     "location": "Ritchie Theatre (K-G19-LG02)",
     "time": "11:00 - 12:30",
     "weeks": "1-5,7-10"
@@ -48364,7 +48364,7 @@
     "class_id": "ECON2206Undergraduate-4483-T1-2025",
     "day": "Thu",
     "id": "ECON2206Undergraduate-4483-T1-2025ThuRitchie Theatre (K-G19-LG02)11:00 - 12:301-5,7-10",
-    "instructor": "Apro Y  Zhang",
+    "instructor": "Prof Y  Zhang",
     "location": "Ritchie Theatre (K-G19-LG02)",
     "time": "11:00 - 12:30",
     "weeks": "1-5,7-10"
@@ -49614,7 +49614,7 @@
     "class_id": "EDST1104Undergraduate-6560-T1-2025",
     "day": "Mon",
     "id": "EDST1104Undergraduate-6560-T1-2025MonOnline (ONLINE)14:00 - 16:001-5,7-9",
-    "instructor": "Dr M  Stacey",
+    "instructor": "Apro M  Stacey",
     "location": "Online (ONLINE)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -51884,7 +51884,7 @@
     "class_id": "EDST5438Postgraduate-6106-T1-2025",
     "day": "Wed",
     "id": "EDST5438Postgraduate-6106-T1-2025WedOnline (ONLINE)17:00 - 18:301-10",
-    "instructor": "Apro R  Niesche",
+    "instructor": "Prof R  Niesche",
     "location": "Online (ONLINE)",
     "time": "17:00 - 18:30",
     "weeks": "1-10"
@@ -51894,7 +51894,7 @@
     "class_id": "EDST5438Postgraduate-6107-T1-2025",
     "day": "Sat",
     "id": "EDST5438Postgraduate-6107-T1-2025SatSee School for Location (SEESCHOOL)09:30 - 16:001,6",
-    "instructor": "Apro R  Niesche",
+    "instructor": "Prof R  Niesche",
     "location": "See School for Location (SEESCHOOL)",
     "time": "09:30 - 16:00",
     "weeks": "1,6"
@@ -53214,7 +53214,7 @@
     "class_id": "EDST5035Research-9760-T1-2025",
     "day": "Sat",
     "id": "EDST5035Research-9760-T1-2025SatQuadrangle G026 (K-E15-G026)09:30 - 16:002,7",
-    "instructor": "Apro R  Niesche",
+    "instructor": "Prof R  Niesche",
     "location": "Quadrangle G026 (K-E15-G026)",
     "time": "09:30 - 16:00",
     "weeks": "2,7"
@@ -54274,7 +54274,7 @@
     "class_id": "ELEC3115Undergraduate-6675-T1-2025",
     "day": "Mon",
     "id": "ELEC3115Undergraduate-6675-T1-2025MonE19 Patricia O'Shane 105 (K-E19-105)14:00 - 16:001-9",
-    "instructor": "Apro R  Dutta",
+    "instructor": "Prof R  Dutta",
     "location": "E19 Patricia O'Shane 105 (K-E19-105)",
     "time": "14:00 - 16:00",
     "weeks": "1-9"
@@ -54284,7 +54284,7 @@
     "class_id": "ELEC3115Undergraduate-6675-T1-2025",
     "day": "Thu",
     "id": "ELEC3115Undergraduate-6675-T1-2025ThuColombo Theatre A (K-B16-LG03)09:00 - 11:001-10",
-    "instructor": "Apro R  Dutta",
+    "instructor": "Prof R  Dutta",
     "location": "Colombo Theatre A (K-B16-LG03)",
     "time": "09:00 - 11:00",
     "weeks": "1-10"
@@ -54324,7 +54324,7 @@
     "class_id": "ELEC4122Undergraduate-6700-T1-2025",
     "day": "Tue",
     "id": "ELEC4122Undergraduate-6700-T1-2025TueF10 June Griffith M17 (K-F10-M17)14:00 - 16:001-10",
-    "instructor": "Dr S  Atakaramians",
+    "instructor": "Apro S  Atakaramians",
     "location": "F10 June Griffith M17 (K-F10-M17)",
     "time": "14:00 - 16:00",
     "weeks": "1-10"
@@ -55824,7 +55824,7 @@
     "class_id": "ELEC9703Postgraduate-7335-T1-2025",
     "day": "Wed",
     "id": "ELEC9703Postgraduate-7335-T1-2025WedElectrical Engineering G23 (K-G17-G23)18:00 - 21:001-10",
-    "instructor": "Dr AM Woldeghiorgis",
+    "instructor": "Apro AM Woldeghiorgis",
     "location": "Electrical Engineering G23 (K-G17-G23)",
     "time": "18:00 - 21:00",
     "weeks": "1-10"
@@ -57513,9 +57513,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11763-T1-2025",
     "day": "Thu",
-    "id": "EXPT2137Undergraduate-11763-T1-2025ThuEx Phys Clinical Teaching Room (K-C27-G31)09:00 - 11:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11763-T1-2025ThuBiomechanics (K-C27-G31)09:00 - 11:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
   },
@@ -57523,9 +57523,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11764-T1-2025",
     "day": "Thu",
-    "id": "EXPT2137Undergraduate-11764-T1-2025ThuEx Phys Clinical Teaching Room (K-C27-G31)11:00 - 13:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11764-T1-2025ThuBiomechanics (K-C27-G31)11:00 - 13:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
   },
@@ -57533,9 +57533,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11765-T1-2025",
     "day": "Thu",
-    "id": "EXPT2137Undergraduate-11765-T1-2025ThuEx Phys Clinical Teaching Room (K-C27-G31)13:00 - 15:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11765-T1-2025ThuBiomechanics (K-C27-G31)13:00 - 15:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
   },
@@ -57543,9 +57543,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11766-T1-2025",
     "day": "Tue",
-    "id": "EXPT2137Undergraduate-11766-T1-2025TueEx Phys Clinical Teaching Room (K-C27-G31)09:00 - 11:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11766-T1-2025TueBiomechanics (K-C27-G31)09:00 - 11:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
   },
@@ -57553,9 +57553,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11767-T1-2025",
     "day": "Tue",
-    "id": "EXPT2137Undergraduate-11767-T1-2025TueEx Phys Clinical Teaching Room (K-C27-G31)11:00 - 13:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11767-T1-2025TueBiomechanics (K-C27-G31)11:00 - 13:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
   },
@@ -57563,9 +57563,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11768-T1-2025",
     "day": "Tue",
-    "id": "EXPT2137Undergraduate-11768-T1-2025TueEx Phys Clinical Teaching Room (K-C27-G31)14:00 - 16:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11768-T1-2025TueBiomechanics (K-C27-G31)14:00 - 16:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
   },
@@ -57573,9 +57573,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11769-T1-2025",
     "day": "Tue",
-    "id": "EXPT2137Undergraduate-11769-T1-2025TueEx Phys Clinical Teaching Room (K-C27-G31)16:00 - 18:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11769-T1-2025TueBiomechanics (K-C27-G31)16:00 - 18:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
   },
@@ -57583,9 +57583,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11770-T1-2025",
     "day": "Wed",
-    "id": "EXPT2137Undergraduate-11770-T1-2025WedEx Phys Clinical Teaching Room (K-C27-G31)09:00 - 11:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11770-T1-2025WedBiomechanics (K-C27-G31)09:00 - 11:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
   },
@@ -57593,9 +57593,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11771-T1-2025",
     "day": "Wed",
-    "id": "EXPT2137Undergraduate-11771-T1-2025WedEx Phys Clinical Teaching Room (K-C27-G31)11:00 - 13:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11771-T1-2025WedBiomechanics (K-C27-G31)11:00 - 13:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
   },
@@ -57603,9 +57603,9 @@
     "career": "Undergraduate",
     "class_id": "EXPT2137Undergraduate-11772-T1-2025",
     "day": "Wed",
-    "id": "EXPT2137Undergraduate-11772-T1-2025WedEx Phys Clinical Teaching Room (K-C27-G31)14:00 - 16:001-5,7-10",
+    "id": "EXPT2137Undergraduate-11772-T1-2025WedBiomechanics (K-C27-G31)14:00 - 16:001-5,7-10",
     "instructor": "Dr K  McDonald",
-    "location": "Ex Phys Clinical Teaching Room (K-C27-G31)",
+    "location": "Biomechanics (K-C27-G31)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
   },
@@ -61394,7 +61394,7 @@
     "class_id": "GMAT3150Undergraduate-4759-T1-2025",
     "day": "Mon",
     "id": "GMAT3150Undergraduate-4759-T1-2025MonCivil Engineering 201 (K-H20-201)09:00 - 11:001-5,7-9",
-    "instructor": "Dr CA Roberts",
+    "instructor": "Apro CA Roberts",
     "location": "Civil Engineering 201 (K-H20-201)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -62374,7 +62374,7 @@
     "class_id": "HUMS1005Undergraduate-2008-U1-2025",
     "day": "Mon",
     "id": "HUMS1005Undergraduate-2008-U1-2025MonE19 Patricia O'Shane 103 (K-E19-103)10:00 - 12:001-5",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "E19 Patricia O'Shane 103 (K-E19-103)",
     "time": "10:00 - 12:00",
     "weeks": "1-5"
@@ -62384,7 +62384,7 @@
     "class_id": "HUMS1005Undergraduate-2008-U1-2025",
     "day": "Thu",
     "id": "HUMS1005Undergraduate-2008-U1-2025ThuE19 Patricia O'Shane 103 (K-E19-103)10:00 - 12:001-4",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "E19 Patricia O'Shane 103 (K-E19-103)",
     "time": "10:00 - 12:00",
     "weeks": "1-4"
@@ -62494,7 +62494,7 @@
     "class_id": "HUMS1005Undergraduate-2062-U1-2025",
     "day": "Mon",
     "id": "HUMS1005Undergraduate-2062-U1-2025MonQuadrangle G026 (K-E15-G026)15:00 - 17:001-5",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Quadrangle G026 (K-E15-G026)",
     "time": "15:00 - 17:00",
     "weeks": "1-5"
@@ -62504,7 +62504,7 @@
     "class_id": "HUMS1005Undergraduate-2062-U1-2025",
     "day": "Thu",
     "id": "HUMS1005Undergraduate-2062-U1-2025ThuLaw Library 111 (K-F8-111)15:00 - 17:001-4",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Law Library 111 (K-F8-111)",
     "time": "15:00 - 17:00",
     "weeks": "1-4"
@@ -62514,7 +62514,7 @@
     "class_id": "HUMS1005Undergraduate-9267-T1-2025",
     "day": "Mon",
     "id": "HUMS1005Undergraduate-9267-T1-2025MonElectrical Engineering G22 (K-G17-G22)11:00 - 13:001-5,7-9",
-    "instructor": "Apro M  Kim",
+    "instructor": "Prof M  Kim",
     "location": "Electrical Engineering G22 (K-G17-G22)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-9"
@@ -62644,7 +62644,7 @@
     "class_id": "IDES2326Undergraduate-11606-T1-2025",
     "day": "Wed",
     "id": "IDES2326Undergraduate-11606-T1-2025WedBE Studio Squarehouse 103 (K-E4-103)09:00 - 10:001-5,7-10",
-    "instructor": "Dr MJ Ramirez,Dr CR Tietz",
+    "instructor": "Apro MJ Ramirez,Dr CR Tietz",
     "location": "BE Studio Squarehouse 103 (K-E4-103)",
     "time": "09:00 - 10:00",
     "weeks": "1-5,7-10"
@@ -62654,7 +62654,7 @@
     "class_id": "IDES2326Undergraduate-11607-T1-2025",
     "day": "Wed",
     "id": "IDES2326Undergraduate-11607-T1-2025WedBE Studio Squarehouse 103 (K-E4-103)10:00 - 12:001-5,7-10",
-    "instructor": "Dr MJ Ramirez,Dr CR Tietz",
+    "instructor": "Apro MJ Ramirez,Dr CR Tietz",
     "location": "BE Studio Squarehouse 103 (K-E4-103)",
     "time": "10:00 - 12:00",
     "weeks": "1-5,7-10"
@@ -65484,7 +65484,7 @@
     "class_id": "JURD7152Postgraduate-7838-T1-2025",
     "day": "Tue",
     "id": "JURD7152Postgraduate-7838-T1-2025TueLaw Library 111 (K-F8-111)11:00 - 13:001-5,7-10",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Library 111 (K-F8-111)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -65494,7 +65494,7 @@
     "class_id": "JURD7152Postgraduate-7838-T1-2025",
     "day": "Thu",
     "id": "JURD7152Postgraduate-7838-T1-2025ThuLaw Library 111 (K-F8-111)11:00 - 13:001-5,7-8,10",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Library 111 (K-F8-111)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-8,10"
@@ -65534,7 +65534,7 @@
     "class_id": "JURD7155Postgraduate-11286-T1-2025",
     "day": "Tue",
     "id": "JURD7155Postgraduate-11286-T1-2025TueLaw Building 301 (K-F8-301)11:00 - 13:001-5,7-9",
-    "instructor": "Mr D  de Oliveira Machado",
+    "instructor": "Dr D  de Oliveira Machado",
     "location": "Law Building 301 (K-F8-301)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-9"
@@ -66424,7 +66424,7 @@
     "class_id": "JURD7367Postgraduate-7914-T1-2025",
     "day": "Tue",
     "id": "JURD7367Postgraduate-7914-T1-2025TueLaw Theatre G02 (K-F8-G02)18:00 - 21:001-3,5,7-10",
-    "instructor": "Mr D  de Oliveira Machado",
+    "instructor": "Dr D  de Oliveira Machado",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "18:00 - 21:00",
     "weeks": "1-3,5,7-10"
@@ -66684,7 +66684,7 @@
     "class_id": "JURD7491Postgraduate-7860-T1-2025",
     "day": "Mon",
     "id": "JURD7491Postgraduate-7860-T1-2025MonLaw Building 389 (K-F8-389)14:00 - 16:001-5,7-9",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Building 389 (K-F8-389)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -66694,7 +66694,7 @@
     "class_id": "JURD7491Postgraduate-7860-T1-2025",
     "day": "Thu",
     "id": "JURD7491Postgraduate-7860-T1-2025ThuLaw Building 389 (K-F8-389)14:00 - 16:001-5,7-10",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Building 389 (K-F8-389)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -66704,7 +66704,7 @@
     "class_id": "JURD7491Postgraduate-7861-T1-2025",
     "day": "Mon",
     "id": "JURD7491Postgraduate-7861-T1-2025MonLaw Theatre G02 (K-F8-G02)09:00 - 11:001-5,7-9",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -66714,7 +66714,7 @@
     "class_id": "JURD7491Postgraduate-7861-T1-2025",
     "day": "Thu",
     "id": "JURD7491Postgraduate-7861-T1-2025ThuCivil Engineering 102 (K-H20-102)09:00 - 11:001-5,7-10",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Civil Engineering 102 (K-H20-102)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -67814,7 +67814,7 @@
     "class_id": "LAWS1052Undergraduate-6308-T1-2025",
     "day": "Mon",
     "id": "LAWS1052Undergraduate-6308-T1-2025MonLaw Building 276 (K-F8-276)09:00 - 11:001-5,7-9",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Building 276 (K-F8-276)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -67824,7 +67824,7 @@
     "class_id": "LAWS1052Undergraduate-6308-T1-2025",
     "day": "Thu",
     "id": "LAWS1052Undergraduate-6308-T1-2025ThuLaw Building 276 (K-F8-276)09:00 - 11:001-5,7-10",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Building 276 (K-F8-276)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -68014,7 +68014,7 @@
     "class_id": "LAWS1052Undergraduate-6318-T1-2025",
     "day": "Mon",
     "id": "LAWS1052Undergraduate-6318-T1-2025MonLaw Library G17 (K-F8-G17)14:00 - 16:001-5,7-9",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Library G17 (K-F8-G17)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -68024,7 +68024,7 @@
     "class_id": "LAWS1052Undergraduate-6318-T1-2025",
     "day": "Thu",
     "id": "LAWS1052Undergraduate-6318-T1-2025ThuLaw Library G17 (K-F8-G17)14:00 - 16:001-5,7-10",
-    "instructor": "Dr S  Burbidge",
+    "instructor": "Dr SA Burbidge",
     "location": "Law Library G17 (K-F8-G17)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -68844,7 +68844,7 @@
     "class_id": "LAWS1160Undergraduate-4924-T1-2025",
     "day": "Tue",
     "id": "LAWS1160Undergraduate-4924-T1-2025TueLaw Library G17 (K-F8-G17)11:00 - 13:001-5,7-10",
-    "instructor": "C  Bostock",
+    "instructor": "Apro C  Bostock",
     "location": "Law Library G17 (K-F8-G17)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -68854,7 +68854,7 @@
     "class_id": "LAWS1160Undergraduate-4924-T1-2025",
     "day": "Fri",
     "id": "LAWS1160Undergraduate-4924-T1-2025FriLaw Library G17 (K-F8-G17)11:00 - 13:001-5,7-8",
-    "instructor": "C  Bostock",
+    "instructor": "Apro C  Bostock",
     "location": "Law Library G17 (K-F8-G17)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-8"
@@ -68884,7 +68884,7 @@
     "class_id": "LAWS1160Undergraduate-4926-T1-2025",
     "day": "Mon",
     "id": "LAWS1160Undergraduate-4926-T1-2025MonLaw Library G17 (K-F8-G17)09:00 - 11:001-5,7-9",
-    "instructor": "C  Bostock",
+    "instructor": "Apro C  Bostock",
     "location": "Law Library G17 (K-F8-G17)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -68894,7 +68894,7 @@
     "class_id": "LAWS1160Undergraduate-4926-T1-2025",
     "day": "Thu",
     "id": "LAWS1160Undergraduate-4926-T1-2025ThuLaw Theatre G23 (K-F8-G23)09:00 - 11:001-5,7-10",
-    "instructor": "C  Bostock",
+    "instructor": "Apro C  Bostock",
     "location": "Law Theatre G23 (K-F8-G23)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -69094,7 +69094,7 @@
     "class_id": "LAWS2150Undergraduate-4916-T1-2025",
     "day": "Mon",
     "id": "LAWS2150Undergraduate-4916-T1-2025MonLaw Building 202 (K-F8-202)11:00 - 13:001-5,7-9",
-    "instructor": "Dr S  Tyulkina",
+    "instructor": "Apro S  Tyulkina",
     "location": "Law Building 202 (K-F8-202)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-9"
@@ -69104,7 +69104,7 @@
     "class_id": "LAWS2150Undergraduate-4916-T1-2025",
     "day": "Thu",
     "id": "LAWS2150Undergraduate-4916-T1-2025ThuLaw Building 202 (K-F8-202)11:00 - 13:001-5,7-10",
-    "instructor": "Dr S  Tyulkina",
+    "instructor": "Apro S  Tyulkina",
     "location": "Law Building 202 (K-F8-202)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -70184,7 +70184,7 @@
     "class_id": "LAWS3391Undergraduate-4932-T1-2025",
     "day": "Mon",
     "id": "LAWS3391Undergraduate-4932-T1-2025MonLaw Building 389 (K-F8-389)14:00 - 16:001-5,7-9",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Building 389 (K-F8-389)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -70194,7 +70194,7 @@
     "class_id": "LAWS3391Undergraduate-4932-T1-2025",
     "day": "Thu",
     "id": "LAWS3391Undergraduate-4932-T1-2025ThuLaw Building 389 (K-F8-389)14:00 - 16:001-5,7-10",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Building 389 (K-F8-389)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-10"
@@ -70204,7 +70204,7 @@
     "class_id": "LAWS3391Undergraduate-4933-T1-2025",
     "day": "Mon",
     "id": "LAWS3391Undergraduate-4933-T1-2025MonLaw Theatre G02 (K-F8-G02)09:00 - 11:001-5,7-9",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -70214,7 +70214,7 @@
     "class_id": "LAWS3391Undergraduate-4933-T1-2025",
     "day": "Thu",
     "id": "LAWS3391Undergraduate-4933-T1-2025ThuCivil Engineering 102 (K-H20-102)09:00 - 11:001-5,7-10",
-    "instructor": "Dr N  Peleg",
+    "instructor": "Apro N  Peleg",
     "location": "Civil Engineering 102 (K-H20-102)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -70524,7 +70524,7 @@
     "class_id": "LAWS8067Postgraduate-7911-T1-2025",
     "day": "Tue",
     "id": "LAWS8067Postgraduate-7911-T1-2025TueLaw Theatre G02 (K-F8-G02)18:00 - 21:001-3,5,7-10",
-    "instructor": "Mr D  de Oliveira Machado",
+    "instructor": "Dr D  de Oliveira Machado",
     "location": "Law Theatre G02 (K-F8-G02)",
     "time": "18:00 - 21:00",
     "weeks": "1-3,5,7-10"
@@ -70874,7 +70874,7 @@
     "class_id": "LAWS8175Postgraduate-12635-T1-2025",
     "day": "Wed",
     "id": "LAWS8175Postgraduate-12635-T1-2025WedF10 June Griffith M17 (K-F10-M17)09:00 - 11:001-5,7-9",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "F10 June Griffith M17 (K-F10-M17)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-9"
@@ -70884,7 +70884,7 @@
     "class_id": "LAWS8175Postgraduate-12636-T1-2025",
     "day": "Fri",
     "id": "LAWS8175Postgraduate-12636-T1-2025FriMathews 306 (K-F23-306)11:00 - 12:002-5,7-8",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Mathews 306 (K-F23-306)",
     "time": "11:00 - 12:00",
     "weeks": "2-5,7-8"
@@ -70894,7 +70894,7 @@
     "class_id": "LAWS8175Postgraduate-12637-T1-2025",
     "day": "Fri",
     "id": "LAWS8175Postgraduate-12637-T1-2025FriMathews 306 (K-F23-306)12:00 - 13:002-5,7-8",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Mathews 306 (K-F23-306)",
     "time": "12:00 - 13:00",
     "weeks": "2-5,7-8"
@@ -70904,7 +70904,7 @@
     "class_id": "LAWS8175Postgraduate-12638-T1-2025",
     "day": "Tue",
     "id": "LAWS8175Postgraduate-12638-T1-2025TueBlockhouse G15 (K-G6-G15)09:00 - 10:002-5,7-10",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Blockhouse G15 (K-G6-G15)",
     "time": "09:00 - 10:00",
     "weeks": "2-5,7-10"
@@ -70914,7 +70914,7 @@
     "class_id": "LAWS8175Postgraduate-12639-T1-2025",
     "day": "Tue",
     "id": "LAWS8175Postgraduate-12639-T1-2025TueBlockhouse G15 (K-G6-G15)10:00 - 11:002-5,7-10",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Blockhouse G15 (K-G6-G15)",
     "time": "10:00 - 11:00",
     "weeks": "2-5,7-10"
@@ -70944,7 +70944,7 @@
     "class_id": "LAWS8175Postgraduate-12642-T1-2025",
     "day": "Wed",
     "id": "LAWS8175Postgraduate-12642-T1-2025WedQuadrangle G046 (K-E15-G046)11:00 - 12:002-5,7-10",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Quadrangle G046 (K-E15-G046)",
     "time": "11:00 - 12:00",
     "weeks": "2-5,7-10"
@@ -70954,7 +70954,7 @@
     "class_id": "LAWS8175Postgraduate-12643-T1-2025",
     "day": "Wed",
     "id": "LAWS8175Postgraduate-12643-T1-2025WedQuadrangle G046 (K-E15-G046)12:00 - 13:002-5,7-10",
-    "instructor": "E  Ferris",
+    "instructor": "Ms E  Ferris",
     "location": "Quadrangle G046 (K-E15-G046)",
     "time": "12:00 - 13:00",
     "weeks": "2-5,7-10"
@@ -70964,7 +70964,7 @@
     "class_id": "LAWS8180Postgraduate-12912-T1-2025",
     "day": "Mon",
     "id": "LAWS8180Postgraduate-12912-T1-2025MonMathews 101 (K-F23-101)18:00 - 21:001-5,7-9",
-    "instructor": "Mr D  de Oliveira Machado",
+    "instructor": "Dr D  de Oliveira Machado",
     "location": "Mathews 101 (K-F23-101)",
     "time": "18:00 - 21:00",
     "weeks": "1-5,7-9"
@@ -71404,7 +71404,7 @@
     "class_id": "LAWS8224Postgraduate-11882-T1-2025",
     "day": "Mon",
     "id": "LAWS8224Postgraduate-11882-T1-2025MonWebster Theatre A (K-G15-190)10:00 - 12:001-4,7-9",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "Webster Theatre A (K-G15-190)",
     "time": "10:00 - 12:00",
     "weeks": "1-4,7-9"
@@ -71424,7 +71424,7 @@
     "class_id": "LAWS8224Postgraduate-11884-T1-2025",
     "day": "Mon",
     "id": "LAWS8224Postgraduate-11884-T1-2025MonUNSW Business School  205 (K-E12-205)14:00 - 15:002-5,7-9",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "UNSW Business School  205 (K-E12-205)",
     "time": "14:00 - 15:00",
     "weeks": "2-5,7-9"
@@ -71434,7 +71434,7 @@
     "class_id": "LAWS8224Postgraduate-11886-T1-2025",
     "day": "Tue",
     "id": "LAWS8224Postgraduate-11886-T1-2025TueUNSW Business School  205 (K-E12-205)11:00 - 12:002-5,7-10",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "UNSW Business School  205 (K-E12-205)",
     "time": "11:00 - 12:00",
     "weeks": "2-5,7-10"
@@ -71444,7 +71444,7 @@
     "class_id": "LAWS8224Postgraduate-11887-T1-2025",
     "day": "Tue",
     "id": "LAWS8224Postgraduate-11887-T1-2025TueUNSW Business School  205 (K-E12-205)12:00 - 13:002-5,7-10",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "UNSW Business School  205 (K-E12-205)",
     "time": "12:00 - 13:00",
     "weeks": "2-5,7-10"
@@ -71454,7 +71454,7 @@
     "class_id": "LAWS8224Postgraduate-11888-T1-2025",
     "day": "Tue",
     "id": "LAWS8224Postgraduate-11888-T1-2025TueScience & Engineering G07 (K-E8-G07)16:00 - 17:002-5,7-10",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "16:00 - 17:00",
     "weeks": "2-5,7-10"
@@ -71464,7 +71464,7 @@
     "class_id": "LAWS8224Postgraduate-11885-T1-2025",
     "day": "Tue",
     "id": "LAWS8224Postgraduate-11885-T1-2025TueQuadrangle G027 (K-E15-G027)17:00 - 18:002-5,7-9",
-    "instructor": "Ms KM Sheehan",
+    "instructor": "Dr KM Sheehan",
     "location": "Quadrangle G027 (K-E15-G027)",
     "time": "17:00 - 18:00",
     "weeks": "2-5,7-9"
@@ -72404,7 +72404,7 @@
     "class_id": "MARK2052Undergraduate-4994-T1-2025",
     "day": "Tue",
     "id": "MARK2052Undergraduate-4994-T1-2025TueColombo Theatre B (K-B16-LG04)09:00 - 11:001-5,7-10",
-    "instructor": "Dr R  Govind",
+    "instructor": "Apro R  Govind",
     "location": "Colombo Theatre B (K-B16-LG04)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -77711,6 +77711,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5358-T1-2025",
+    "day": "Tue",
+    "id": "MATH1141Undergraduate-5358-T1-2025TueUNSW Business School  232 (K-E12-232)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School  232 (K-E12-232)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5358-T1-2025",
+    "day": "Fri",
+    "id": "MATH1141Undergraduate-5358-T1-2025FriElectrical Engineering G23 (K-G17-G23)09:00 - 10:001-5,7-8",
+    "instructor": "",
+    "location": "Electrical Engineering G23 (K-G17-G23)",
+    "time": "09:00 - 10:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1141Undergraduate-5360-T1-2025",
     "day": "Wed",
     "id": "MATH1141Undergraduate-5360-T1-2025WedGoldstein G09 (K-D16-G09)13:00 - 14:001-5,7-10",
@@ -77971,6 +77991,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5374-T1-2025",
+    "day": "Wed",
+    "id": "MATH1141Undergraduate-5374-T1-2025WedUNSW Business School 130 (K-E12-130)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "UNSW Business School 130 (K-E12-130)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5374-T1-2025",
+    "day": "Fri",
+    "id": "MATH1141Undergraduate-5374-T1-2025FriElectrical Engineering G23 (K-G17-G23)10:00 - 11:001-5,7-8",
+    "instructor": "",
+    "location": "Electrical Engineering G23 (K-G17-G23)",
+    "time": "10:00 - 11:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1141Undergraduate-5375-T1-2025",
     "day": "Wed",
     "id": "MATH1141Undergraduate-5375-T1-2025WedSquarehouse 114 (K-E4-114)18:00 - 19:001-5,7-10",
@@ -77984,6 +78024,26 @@
     "class_id": "MATH1141Undergraduate-5375-T1-2025",
     "day": "Fri",
     "id": "MATH1141Undergraduate-5375-T1-2025FriF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-8",
+    "instructor": "",
+    "location": "F10 June Griffith M18 (K-F10-M18)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-8"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5376-T1-2025",
+    "day": "Wed",
+    "id": "MATH1141Undergraduate-5376-T1-2025WedMathews 232 (K-F23-232)18:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "Mathews 232 (K-F23-232)",
+    "time": "18:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1141Undergraduate-5376-T1-2025",
+    "day": "Fri",
+    "id": "MATH1141Undergraduate-5376-T1-2025FriF10 June Griffith M18 (K-F10-M18)13:00 - 14:001-5,7-8",
     "instructor": "",
     "location": "F10 June Griffith M18 (K-F10-M18)",
     "time": "13:00 - 14:00",
@@ -78321,6 +78381,26 @@
   },
   {
     "career": "Undergraduate",
+    "class_id": "MATH1151Undergraduate-5391-T1-2025",
+    "day": "Mon",
+    "id": "MATH1151Undergraduate-5391-T1-2025MonOld Main Building G31 (K-K15-G31)13:00 - 14:001-5,7-9",
+    "instructor": "",
+    "location": "Old Main Building G31 (K-K15-G31)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-9"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1151Undergraduate-5391-T1-2025",
+    "day": "Thu",
+    "id": "MATH1151Undergraduate-5391-T1-2025ThuH13 Lawrence East M032 (K-H13-M032)18:00 - 19:001-5,7-10",
+    "instructor": "",
+    "location": "H13 Lawrence East M032 (K-H13-M032)",
+    "time": "18:00 - 19:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
     "class_id": "MATH1151Undergraduate-5398-T1-2025",
     "day": "Tue",
     "id": "MATH1151Undergraduate-5398-T1-2025TueElectrical Engineering G23 (K-G17-G23)16:00 - 17:001-5,7-10",
@@ -78416,6 +78496,26 @@
     "id": "MATH1151Undergraduate-5405-T1-2025ThuLaw Library 111 (K-F8-111)13:00 - 14:001-5,7-10",
     "instructor": "",
     "location": "Law Library 111 (K-F8-111)",
+    "time": "13:00 - 14:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1151Undergraduate-5406-T1-2025",
+    "day": "Tue",
+    "id": "MATH1151Undergraduate-5406-T1-2025TueElectrical Engineering G23 (K-G17-G23)17:00 - 18:001-5,7-10",
+    "instructor": "",
+    "location": "Electrical Engineering G23 (K-G17-G23)",
+    "time": "17:00 - 18:00",
+    "weeks": "1-5,7-10"
+  },
+  {
+    "career": "Undergraduate",
+    "class_id": "MATH1151Undergraduate-5406-T1-2025",
+    "day": "Thu",
+    "id": "MATH1151Undergraduate-5406-T1-2025ThuBlockhouse G13 (K-G6-G13)13:00 - 14:001-5,7-10",
+    "instructor": "",
+    "location": "Blockhouse G13 (K-G6-G13)",
     "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
   },
@@ -80374,7 +80474,7 @@
     "class_id": "MATH3711Undergraduate-6617-T1-2025",
     "day": "Tue",
     "id": "MATH3711Undergraduate-6617-T1-2025TueTyree Energy Technology LG03 (K-H6-LG03)11:00 - 13:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -80384,7 +80484,7 @@
     "class_id": "MATH3711Undergraduate-6617-T1-2025",
     "day": "Thu",
     "id": "MATH3711Undergraduate-6617-T1-2025ThuH13 Lawrence East M032 (K-H13-M032)16:00 - 18:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "H13 Lawrence East M032 (K-H13-M032)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -80394,7 +80494,7 @@
     "class_id": "MATH3711Undergraduate-6618-T1-2025",
     "day": "Thu",
     "id": "MATH3711Undergraduate-6618-T1-2025ThuBioscience G07 (K-D26-G07)13:00 - 14:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "Bioscience G07 (K-D26-G07)",
     "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
@@ -80574,7 +80674,7 @@
     "class_id": "MATH4001Undergraduate-8771-T1-2025",
     "day": "Fri",
     "id": "MATH4001Undergraduate-8771-T1-2025FriAinsworth 202 (K-J17-202)13:00 - 15:001-5,7-8",
-    "instructor": "Dr G  Geenens,Dr A  Schaeffer,Dr L  Zhao,Dr R  Chandra",
+    "instructor": "Dr G  Geenens,Dr A  Schaeffer,Apro L  Zhao,Dr R  Chandra",
     "location": "Ainsworth 202 (K-J17-202)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-8"
@@ -80764,7 +80864,7 @@
     "class_id": "MATH5706Postgraduate-9115-T1-2025",
     "day": "Tue",
     "id": "MATH5706Postgraduate-9115-T1-2025TueTyree Energy Technology LG03 (K-H6-LG03)11:00 - 13:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -80774,7 +80874,7 @@
     "class_id": "MATH5706Postgraduate-9115-T1-2025",
     "day": "Thu",
     "id": "MATH5706Postgraduate-9115-T1-2025ThuH13 Lawrence East M032 (K-H13-M032)16:00 - 18:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "H13 Lawrence East M032 (K-H13-M032)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -80784,7 +80884,7 @@
     "class_id": "MATH5706Postgraduate-9116-T1-2025",
     "day": "Thu",
     "id": "MATH5706Postgraduate-9116-T1-2025ThuBioscience G07 (K-D26-G07)13:00 - 14:001-5,7-10",
-    "instructor": "Apro DM Harvey",
+    "instructor": "Prof DM Harvey",
     "location": "Bioscience G07 (K-D26-G07)",
     "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
@@ -81694,7 +81794,7 @@
     "class_id": "MATS4002Undergraduate-8033-T1-2025",
     "day": "Wed",
     "id": "MATS4002Undergraduate-8033-T1-2025WedColombo Theatre B (K-B16-LG04)13:00 - 15:007",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Colombo Theatre B (K-B16-LG04)",
     "time": "13:00 - 15:00",
     "weeks": "7"
@@ -81714,7 +81814,7 @@
     "class_id": "MATS4002Undergraduate-8035-T1-2025",
     "day": "Tue",
     "id": "MATS4002Undergraduate-8035-T1-2025TueScience & Engineering G07 (K-E8-G07)14:00 - 16:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "14:00 - 16:00",
     "weeks": "1-4"
@@ -81724,7 +81824,7 @@
     "class_id": "MATS4002Undergraduate-8035-T1-2025",
     "day": "Wed",
     "id": "MATS4002Undergraduate-8035-T1-2025WedScience & Engineering G07 (K-E8-G07)13:00 - 15:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "13:00 - 15:00",
     "weeks": "1-4"
@@ -81734,7 +81834,7 @@
     "class_id": "MATS4002Undergraduate-8035-T1-2025",
     "day": "Thu",
     "id": "MATS4002Undergraduate-8035-T1-2025ThuScience & Engineering G07 (K-E8-G07)09:00 - 11:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "09:00 - 11:00",
     "weeks": "1-4"
@@ -81984,7 +82084,7 @@
     "class_id": "MATS6106Postgraduate-8871-T1-2025",
     "day": "Mon",
     "id": "MATS6106Postgraduate-8871-T1-2025MonScience & Engineering G07 (K-E8-G07)16:00 - 18:008-9",
-    "instructor": "Dr T  Kumeria",
+    "instructor": "Apro T  Kumeria",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "16:00 - 18:00",
     "weeks": "8-9"
@@ -81994,7 +82094,7 @@
     "class_id": "MATS6106Postgraduate-8871-T1-2025",
     "day": "Tue",
     "id": "MATS6106Postgraduate-8871-T1-2025TueScience & Engineering G05 (K-E8-G05)09:00 - 11:007-10",
-    "instructor": "Dr T  Kumeria",
+    "instructor": "Apro T  Kumeria",
     "location": "Science & Engineering G05 (K-E8-G05)",
     "time": "09:00 - 11:00",
     "weeks": "7-10"
@@ -82004,7 +82104,7 @@
     "class_id": "MATS6106Postgraduate-8871-T1-2025",
     "day": "Fri",
     "id": "MATS6106Postgraduate-8871-T1-2025FriScience & Engineering G05 (K-E8-G05)12:00 - 14:007-8",
-    "instructor": "Dr T  Kumeria",
+    "instructor": "Apro T  Kumeria",
     "location": "Science & Engineering G05 (K-E8-G05)",
     "time": "12:00 - 14:00",
     "weeks": "7-8"
@@ -82014,7 +82114,7 @@
     "class_id": "MATS6107Postgraduate-8867-T1-2025",
     "day": "Wed",
     "id": "MATS6107Postgraduate-8867-T1-2025WedColombo Theatre B (K-B16-LG04)13:00 - 15:007",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Colombo Theatre B (K-B16-LG04)",
     "time": "13:00 - 15:00",
     "weeks": "7"
@@ -82024,7 +82124,7 @@
     "class_id": "MATS6107Postgraduate-8868-T1-2025",
     "day": "Tue",
     "id": "MATS6107Postgraduate-8868-T1-2025TueScience & Engineering G07 (K-E8-G07)14:00 - 16:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "14:00 - 16:00",
     "weeks": "1-4"
@@ -82034,7 +82134,7 @@
     "class_id": "MATS6107Postgraduate-8868-T1-2025",
     "day": "Wed",
     "id": "MATS6107Postgraduate-8868-T1-2025WedScience & Engineering G07 (K-E8-G07)13:00 - 15:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "13:00 - 15:00",
     "weeks": "1-4"
@@ -82044,7 +82144,7 @@
     "class_id": "MATS6107Postgraduate-8868-T1-2025",
     "day": "Thu",
     "id": "MATS6107Postgraduate-8868-T1-2025ThuScience & Engineering G07 (K-E8-G07)09:00 - 11:001-4",
-    "instructor": "Apro D  Wang",
+    "instructor": "Prof D  Wang",
     "location": "Science & Engineering G07 (K-E8-G07)",
     "time": "09:00 - 11:00",
     "weeks": "1-4"
@@ -85764,7 +85864,7 @@
     "class_id": "MECH9420Undergraduate-8888-T1-2025",
     "day": "Mon",
     "id": "MECH9420Undergraduate-8888-T1-2025MonAinsworth G02 (K-J17-G02)14:00 - 16:001-5,7-9",
-    "instructor": "Apro GM Pearce,Apro J  Zhang",
+    "instructor": "Prof GM Pearce,Apro J  Zhang",
     "location": "Ainsworth G02 (K-J17-G02)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -86004,7 +86104,7 @@
     "class_id": "MECH9420Postgraduate-8874-T1-2025",
     "day": "Mon",
     "id": "MECH9420Postgraduate-8874-T1-2025MonAinsworth G02 (K-J17-G02)14:00 - 16:001-5,7-9",
-    "instructor": "Apro GM Pearce,Apro J  Zhang",
+    "instructor": "Prof GM Pearce,Apro J  Zhang",
     "location": "Ainsworth G02 (K-J17-G02)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -86044,7 +86144,7 @@
     "class_id": "MERE3001Undergraduate-11956-T1-2025",
     "day": "Mon",
     "id": "MERE3001Undergraduate-11956-T1-2025MonTyree Energy Tech CMLB LG34 (K-H6-LG34)16:00 - 18:001-5,7-9",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Tyree Energy Tech CMLB LG34 (K-H6-LG34)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-9"
@@ -86054,7 +86154,7 @@
     "class_id": "MERE3001Undergraduate-11957-T1-2025",
     "day": "Mon",
     "id": "MERE3001Undergraduate-11957-T1-2025MonRupert Myers Th (K-M15-1001)12:00 - 14:001-5,7-9",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Rupert Myers Th (K-M15-1001)",
     "time": "12:00 - 14:00",
     "weeks": "1-5,7-9"
@@ -86064,7 +86164,7 @@
     "class_id": "MERE3001Undergraduate-11958-T1-2025",
     "day": "Tue",
     "id": "MERE3001Undergraduate-11958-T1-2025TueRupert Myers Th (K-M15-1001)13:00 - 15:001-5,7-10",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Rupert Myers Th (K-M15-1001)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -86094,7 +86194,7 @@
     "class_id": "MERE3001Postgraduate-11959-T1-2025",
     "day": "Mon",
     "id": "MERE3001Postgraduate-11959-T1-2025MonTyree Energy Tech CMLB LG34 (K-H6-LG34)16:00 - 18:001-5,7-9",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Tyree Energy Tech CMLB LG34 (K-H6-LG34)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-9"
@@ -86104,7 +86204,7 @@
     "class_id": "MERE3001Postgraduate-11960-T1-2025",
     "day": "Mon",
     "id": "MERE3001Postgraduate-11960-T1-2025MonRupert Myers Th (K-M15-1001)12:00 - 14:001-5,7-9",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Rupert Myers Th (K-M15-1001)",
     "time": "12:00 - 14:00",
     "weeks": "1-5,7-9"
@@ -86114,7 +86214,7 @@
     "class_id": "MERE3001Postgraduate-11961-T1-2025",
     "day": "Tue",
     "id": "MERE3001Postgraduate-11961-T1-2025TueRupert Myers Th (K-M15-1001)13:00 - 15:001-5,7-10",
-    "instructor": "Apro H  Roshan",
+    "instructor": "Prof H  Roshan",
     "location": "Rupert Myers Th (K-M15-1001)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -87364,7 +87464,7 @@
     "class_id": "MGMT5603Postgraduate-4802-T1-2025",
     "day": "Wed",
     "id": "MGMT5603Postgraduate-4802-T1-2025WedF10 June Griffith M17 (K-F10-M17)17:00 - 19:001-5,7-10",
-    "instructor": "Dr W  Zheng",
+    "instructor": "Apro W  Zheng",
     "location": "F10 June Griffith M17 (K-F10-M17)",
     "time": "17:00 - 19:00",
     "weeks": "1-5,7-10"
@@ -88054,7 +88154,7 @@
     "class_id": "MINE1010Undergraduate-5555-T1-2025",
     "day": "Tue",
     "id": "MINE1010Undergraduate-5555-T1-2025TueOld Main Building 229 (K-K15-229)10:00 - 11:001-5,7-10",
-    "instructor": "Apro S  Ata,Dr G  Bournival",
+    "instructor": "Prof S  Ata,Dr G  Bournival",
     "location": "Old Main Building 229 (K-K15-229)",
     "time": "10:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -88164,7 +88264,7 @@
     "class_id": "MINE4310Undergraduate-7187-T1-2025",
     "day": "Mon",
     "id": "MINE4310Undergraduate-7187-T1-2025MonRupert Myers Th (K-M15-1001)15:00 - 17:001-5,7-9",
-    "instructor": "Dr C  Zhang",
+    "instructor": "Apro C  Zhang",
     "location": "Rupert Myers Th (K-M15-1001)",
     "time": "15:00 - 17:00",
     "weeks": "1-5,7-9"
@@ -88174,7 +88274,7 @@
     "class_id": "MINE4310Undergraduate-7187-T1-2025",
     "day": "Wed",
     "id": "MINE4310Undergraduate-7187-T1-2025WedTyree Energy Technology LG03 (K-H6-LG03)16:00 - 18:001-5,7-10",
-    "instructor": "Dr C  Zhang",
+    "instructor": "Apro C  Zhang",
     "location": "Tyree Energy Technology LG03 (K-H6-LG03)",
     "time": "16:00 - 18:00",
     "weeks": "1-5,7-10"
@@ -88704,7 +88804,7 @@
     "class_id": "MMAN4410Undergraduate-8737-T1-2025",
     "day": "Wed",
     "id": "MMAN4410Undergraduate-8737-T1-2025WedWillis Annexe Solids Lab 102 (K-J18-102)11:00 - 13:006",
-    "instructor": "Apro GM Pearce,Dr B  Zhang",
+    "instructor": "Prof GM Pearce,Dr B  Zhang",
     "location": "Willis Annexe Solids Lab 102 (K-J18-102)",
     "time": "11:00 - 13:00",
     "weeks": "6"
@@ -88914,7 +89014,7 @@
     "class_id": "MMAN4410Postgraduate-8741-T1-2025",
     "day": "Wed",
     "id": "MMAN4410Postgraduate-8741-T1-2025WedWillis Annexe Solids Lab 102 (K-J18-102)11:00 - 13:006",
-    "instructor": "Apro GM Pearce,Dr B  Zhang",
+    "instructor": "Prof GM Pearce,Dr B  Zhang",
     "location": "Willis Annexe Solids Lab 102 (K-J18-102)",
     "time": "11:00 - 13:00",
     "weeks": "6"
@@ -90464,7 +90564,7 @@
     "class_id": "MUSC1901Undergraduate-11632-T1-2025",
     "day": "Wed",
     "id": "MUSC1901Undergraduate-11632-T1-2025WedWebster G17 (K-G14-G17)09:00 - 11:001-5,7-10",
-    "instructor": "Apro M  Hooper,Prof D  Fabian,Prof E  Schubert,Dr JJ Napier",
+    "instructor": "Apro M  Hooper,Prof D  Fabian,Prof E  Schubert,Apro JJ Napier",
     "location": "Webster G17 (K-G14-G17)",
     "time": "09:00 - 11:00",
     "weeks": "1-5,7-10"
@@ -90964,7 +91064,7 @@
     "class_id": "MUSC3104Undergraduate-8387-T1-2025",
     "day": "Mon",
     "id": "MUSC3104Undergraduate-8387-T1-2025MonWebster G17 (K-G14-G17)11:00 - 13:001-5,7-9",
-    "instructor": "Dr JJ Napier",
+    "instructor": "Apro JJ Napier",
     "location": "Webster G17 (K-G14-G17)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-9"
@@ -90974,7 +91074,7 @@
     "class_id": "MUSC3104Undergraduate-8388-T1-2025",
     "day": "Tue",
     "id": "MUSC3104Undergraduate-8388-T1-2025TueWebster G18 Music Room (K-G14-G18)11:00 - 13:001-5,7-10",
-    "instructor": "Dr JJ Napier",
+    "instructor": "Apro JJ Napier",
     "location": "Webster G18 Music Room (K-G14-G18)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-10"
@@ -90984,7 +91084,7 @@
     "class_id": "MUSC3104Undergraduate-8389-T1-2025",
     "day": "Tue",
     "id": "MUSC3104Undergraduate-8389-T1-2025TueWebster G18 Music Room (K-G14-G18)13:00 - 15:001-5,7-10",
-    "instructor": "Dr JJ Napier",
+    "instructor": "Apro JJ Napier",
     "location": "Webster G18 Music Room (K-G14-G18)",
     "time": "13:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -91374,7 +91474,7 @@
     "class_id": "OPTM3201Undergraduate-9241-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9241-T1-2025WedOptometry Computer Lab (K-K15-LG21)09:00 - 11:002-4,5",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "09:00 - 11:00",
     "weeks": "2-4,5"
@@ -91384,7 +91484,7 @@
     "class_id": "OPTM3201Undergraduate-9241-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9241-T1-2025WedOptometry Computer Lab (K-K15-LG21)09:00 - 11:005,7",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "09:00 - 11:00",
     "weeks": "5,7"
@@ -91414,7 +91514,7 @@
     "class_id": "OPTM3201Undergraduate-9242-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9242-T1-2025WedOptometry Computer Lab (K-K15-LG21)11:00 - 13:002-4,5",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "11:00 - 13:00",
     "weeks": "2-4,5"
@@ -91424,7 +91524,7 @@
     "class_id": "OPTM3201Undergraduate-9242-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9242-T1-2025WedOptometry Computer Lab (K-K15-LG21)11:00 - 13:005,7",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "11:00 - 13:00",
     "weeks": "5,7"
@@ -91454,7 +91554,7 @@
     "class_id": "OPTM3201Undergraduate-9243-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9243-T1-2025WedOptometry Computer Lab (K-K15-LG21)16:00 - 18:002-4,5",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "16:00 - 18:00",
     "weeks": "2-4,5"
@@ -91464,7 +91564,7 @@
     "class_id": "OPTM3201Undergraduate-9243-T1-2025",
     "day": "Wed",
     "id": "OPTM3201Undergraduate-9243-T1-2025WedOptometry Computer Lab (K-K15-LG21)16:00 - 18:005,7",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "16:00 - 18:00",
     "weeks": "5,7"
@@ -91494,7 +91594,7 @@
     "class_id": "OPTM3201Undergraduate-9244-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9244-T1-2025ThuOptometry Computer Lab (K-K15-LG21)09:00 - 11:002-4,5",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "09:00 - 11:00",
     "weeks": "2-4,5"
@@ -91504,7 +91604,7 @@
     "class_id": "OPTM3201Undergraduate-9244-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9244-T1-2025ThuOptometry Computer Lab (K-K15-LG21)09:00 - 11:005,7",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "09:00 - 11:00",
     "weeks": "5,7"
@@ -91534,7 +91634,7 @@
     "class_id": "OPTM3201Undergraduate-9245-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9245-T1-2025ThuOptometry Computer Lab (K-K15-LG21)11:00 - 13:002-4",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "11:00 - 13:00",
     "weeks": "2-4"
@@ -91544,7 +91644,7 @@
     "class_id": "OPTM3201Undergraduate-9245-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9245-T1-2025ThuOptometry Computer Lab (K-K15-LG21)11:00 - 13:002-4,5",
-    "instructor": "Apro J  Kim,Prof A  Ho",
+    "instructor": "Prof J  Kim,Prof A  Ho",
     "location": "Optometry Computer Lab (K-K15-LG21)",
     "time": "11:00 - 13:00",
     "weeks": "2-4,5"
@@ -91574,7 +91674,7 @@
     "class_id": "OPTM3201Undergraduate-9245-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9245-T1-2025ThuOptometry Optics Laboratory (K-M15-3049)11:00 - 13:0010",
-    "instructor": "Apro J  Kim",
+    "instructor": "Prof J  Kim",
     "location": "Optometry Optics Laboratory (K-M15-3049)",
     "time": "11:00 - 13:00",
     "weeks": "10"
@@ -91584,7 +91684,7 @@
     "class_id": "OPTM3201Undergraduate-9246-T1-2025",
     "day": "Thu",
     "id": "OPTM3201Undergraduate-9246-T1-2025ThuCivil Engineering 101 (K-H20-101)14:00 - 16:001",
-    "instructor": "Apro J  Kim",
+    "instructor": "Prof J  Kim",
     "location": "Civil Engineering 101 (K-H20-101)",
     "time": "14:00 - 16:00",
     "weeks": "1"
@@ -91834,7 +91934,7 @@
     "class_id": "PATH3205Undergraduate-6015-T1-2025",
     "day": "Thu",
     "id": "PATH3205Undergraduate-6015-T1-2025ThuWallace Wurth 115 (K-C27-115)11:00 - 13:001-4,7-8,10",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "11:00 - 13:00",
     "weeks": "1-4,7-8,10"
@@ -91844,7 +91944,7 @@
     "class_id": "PATH3205Undergraduate-6017-T1-2025",
     "day": "Mon",
     "id": "PATH3205Undergraduate-6017-T1-2025MonOnline (ONLINE)14:00 - 16:001-5,7-9",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "Online (ONLINE)",
     "time": "14:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -91854,7 +91954,7 @@
     "class_id": "PATH3205Undergraduate-6017-T1-2025",
     "day": "Tue",
     "id": "PATH3205Undergraduate-6017-T1-2025TueOnline (ONLINE)13:00 - 14:001-5,7-10",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "Online (ONLINE)",
     "time": "13:00 - 14:00",
     "weeks": "1-5,7-10"
@@ -91864,7 +91964,7 @@
     "class_id": "PATH3205Undergraduate-6013-T1-2025",
     "day": "Thu",
     "id": "PATH3205Undergraduate-6013-T1-2025ThuWallace Wurth 115 (K-C27-115)11:00 - 13:005",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "11:00 - 13:00",
     "weeks": "5"
@@ -91874,7 +91974,7 @@
     "class_id": "PATH3205Undergraduate-6013-T1-2025",
     "day": "Fri",
     "id": "PATH3205Undergraduate-6013-T1-2025FriMathews Theatre D (K-D23-304)10:00 - 11:001",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "Mathews Theatre D (K-D23-304)",
     "time": "10:00 - 11:00",
     "weeks": "1"
@@ -91884,7 +91984,7 @@
     "class_id": "PATH3205Undergraduate-6016-T1-2025",
     "day": "Thu",
     "id": "PATH3205Undergraduate-6016-T1-2025ThuSee School for Location (SEESCHOOL)11:00 - 13:009",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "See School for Location (SEESCHOOL)",
     "time": "11:00 - 13:00",
     "weeks": "9"
@@ -91894,7 +91994,7 @@
     "class_id": "PATH3205Undergraduate-6014-T1-2025",
     "day": "Fri",
     "id": "PATH3205Undergraduate-6014-T1-2025FriSee School for Location (SEESCHOOL)10:00 - 11:002-5,7-8",
-    "instructor": "Dr PC Rodrigo,Dr A  Dubovyi",
+    "instructor": "Apro PC Rodrigo,Dr A  Dubovyi",
     "location": "See School for Location (SEESCHOOL)",
     "time": "10:00 - 11:00",
     "weeks": "2-5,7-8"
@@ -92154,7 +92254,7 @@
     "class_id": "PHCM3001Undergraduate-9693-T1-2025",
     "day": "Mon",
     "id": "PHCM3001Undergraduate-9693-T1-2025MonOnline (ONLINE)15:00 - 16:001-5,7-9",
-    "instructor": "B  Haire",
+    "instructor": "Apro B  Haire",
     "location": "Online (ONLINE)",
     "time": "15:00 - 16:00",
     "weeks": "1-5,7-9"
@@ -92164,7 +92264,7 @@
     "class_id": "PHCM3001Undergraduate-9691-T1-2025",
     "day": "Wed",
     "id": "PHCM3001Undergraduate-9691-T1-2025WedMathews 303 (K-F23-303)14:00 - 15:001-5,7-10",
-    "instructor": "B  Haire",
+    "instructor": "Apro B  Haire",
     "location": "Mathews 303 (K-F23-303)",
     "time": "14:00 - 15:00",
     "weeks": "1-5,7-10"
@@ -92174,7 +92274,7 @@
     "class_id": "PHCM3001Undergraduate-9692-T1-2025",
     "day": "Wed",
     "id": "PHCM3001Undergraduate-9692-T1-2025WedOnline (ONLINE)16:00 - 17:001-5,7-10",
-    "instructor": "B  Haire",
+    "instructor": "Apro B  Haire",
     "location": "Online (ONLINE)",
     "time": "16:00 - 17:00",
     "weeks": "1-5,7-10"
@@ -92204,7 +92304,7 @@
     "class_id": "PHCM9391Undergraduate-4766-T1-2025",
     "day": "Tue",
     "id": "PHCM9391Undergraduate-4766-T1-2025TueOnline (ONLINE)14:00 - 16:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Online (ONLINE)",
     "time": "14:00 - 16:00",
     "weeks": "1-10"
@@ -92214,7 +92314,7 @@
     "class_id": "PHCM9391Undergraduate-4767-T1-2025",
     "day": "Wed",
     "id": "PHCM9391Undergraduate-4767-T1-2025WedOnline (ONLINE)14:00 - 15:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Online (ONLINE)",
     "time": "14:00 - 15:00",
     "weeks": "1-10"
@@ -92224,7 +92324,7 @@
     "class_id": "PHCM9391Undergraduate-4768-T1-2025",
     "day": "Wed",
     "id": "PHCM9391Undergraduate-4768-T1-2025WedMathews 311 (K-F23-311)11:00 - 12:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Mathews 311 (K-F23-311)",
     "time": "11:00 - 12:00",
     "weeks": "1-10"
@@ -92294,7 +92394,7 @@
     "class_id": "PHCM9391Postgraduate-4763-T1-2025",
     "day": "Tue",
     "id": "PHCM9391Postgraduate-4763-T1-2025TueOnline (ONLINE)14:00 - 16:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Online (ONLINE)",
     "time": "14:00 - 16:00",
     "weeks": "1-10"
@@ -92304,7 +92404,7 @@
     "class_id": "PHCM9391Postgraduate-4764-T1-2025",
     "day": "Wed",
     "id": "PHCM9391Postgraduate-4764-T1-2025WedOnline (ONLINE)14:00 - 15:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Online (ONLINE)",
     "time": "14:00 - 15:00",
     "weeks": "1-10"
@@ -92314,7 +92414,7 @@
     "class_id": "PHCM9391Postgraduate-4765-T1-2025",
     "day": "Wed",
     "id": "PHCM9391Postgraduate-4765-T1-2025WedMathews 311 (K-F23-311)11:00 - 12:001-10",
-    "instructor": "Dr BF Harris-Roxas",
+    "instructor": "Apro BF Harris-Roxas",
     "location": "Mathews 311 (K-F23-311)",
     "time": "11:00 - 12:00",
     "weeks": "1-10"
@@ -92704,7 +92804,7 @@
     "class_id": "PHSL2101Undergraduate-5574-T1-2025",
     "day": "Tue",
     "id": "PHSL2101Undergraduate-5574-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -92714,7 +92814,7 @@
     "class_id": "PHSL2101Undergraduate-5575-T1-2025",
     "day": "Tue",
     "id": "PHSL2101Undergraduate-5575-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -92724,7 +92824,7 @@
     "class_id": "PHSL2101Undergraduate-5576-T1-2025",
     "day": "Tue",
     "id": "PHSL2101Undergraduate-5576-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -92734,7 +92834,7 @@
     "class_id": "PHSL2101Undergraduate-5577-T1-2025",
     "day": "Tue",
     "id": "PHSL2101Undergraduate-5577-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "2,4,8,10"
@@ -92744,7 +92844,7 @@
     "class_id": "PHSL2101Undergraduate-5578-T1-2025",
     "day": "Wed",
     "id": "PHSL2101Undergraduate-5578-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -92754,7 +92854,7 @@
     "class_id": "PHSL2101Undergraduate-5579-T1-2025",
     "day": "Wed",
     "id": "PHSL2101Undergraduate-5579-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -92764,7 +92864,7 @@
     "class_id": "PHSL2101Undergraduate-5580-T1-2025",
     "day": "Wed",
     "id": "PHSL2101Undergraduate-5580-T1-2025WedWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -92784,7 +92884,7 @@
     "class_id": "PHSL2101Undergraduate-5562-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5562-T1-2025MonMathews 214 (K-F23-214)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -92804,7 +92904,7 @@
     "class_id": "PHSL2101Undergraduate-5563-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5563-T1-2025MonWallace Wurth 116 (K-C27-116)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 116 (K-C27-116)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -92824,7 +92924,7 @@
     "class_id": "PHSL2101Undergraduate-5564-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5564-T1-2025MonMathews 103 (K-F23-103)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -92844,7 +92944,7 @@
     "class_id": "PHSL2101Undergraduate-5566-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5566-T1-2025MonMathews 311 (K-F23-311)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -92864,7 +92964,7 @@
     "class_id": "PHSL2101Undergraduate-5567-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5567-T1-2025MonMathews 103 (K-F23-103)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -92884,7 +92984,7 @@
     "class_id": "PHSL2101Undergraduate-5568-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5568-T1-2025MonMathews 310 (K-F23-310)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 310 (K-F23-310)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -92904,7 +93004,7 @@
     "class_id": "PHSL2101Undergraduate-5570-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5570-T1-2025MonMathews 214 (K-F23-214)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -92924,7 +93024,7 @@
     "class_id": "PHSL2101Undergraduate-5571-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5571-T1-2025MonMathews 311 (K-F23-311)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -92944,7 +93044,7 @@
     "class_id": "PHSL2101Undergraduate-5572-T1-2025",
     "day": "Mon",
     "id": "PHSL2101Undergraduate-5572-T1-2025MonMathews 103 (K-F23-103)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -92964,7 +93064,7 @@
     "class_id": "PHSL2121Undergraduate-5596-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Undergraduate-5596-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -92974,7 +93074,7 @@
     "class_id": "PHSL2121Undergraduate-5597-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Undergraduate-5597-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -92984,7 +93084,7 @@
     "class_id": "PHSL2121Undergraduate-5598-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Undergraduate-5598-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -92994,7 +93094,7 @@
     "class_id": "PHSL2121Undergraduate-5599-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Undergraduate-5599-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "2,4,8,10"
@@ -93004,7 +93104,7 @@
     "class_id": "PHSL2121Undergraduate-5600-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Undergraduate-5600-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -93014,7 +93114,7 @@
     "class_id": "PHSL2121Undergraduate-5601-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Undergraduate-5601-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -93024,7 +93124,7 @@
     "class_id": "PHSL2121Undergraduate-5602-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Undergraduate-5602-T1-2025WedWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -93044,7 +93144,7 @@
     "class_id": "PHSL2121Undergraduate-5584-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5584-T1-2025MonMathews 214 (K-F23-214)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93064,7 +93164,7 @@
     "class_id": "PHSL2121Undergraduate-5585-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5585-T1-2025MonWallace Wurth 116 (K-C27-116)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 116 (K-C27-116)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93084,7 +93184,7 @@
     "class_id": "PHSL2121Undergraduate-5586-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5586-T1-2025MonMathews 103 (K-F23-103)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93104,7 +93204,7 @@
     "class_id": "PHSL2121Undergraduate-5588-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5588-T1-2025MonMathews 311 (K-F23-311)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93124,7 +93224,7 @@
     "class_id": "PHSL2121Undergraduate-5589-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5589-T1-2025MonMathews 103 (K-F23-103)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93144,7 +93244,7 @@
     "class_id": "PHSL2121Undergraduate-5590-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5590-T1-2025MonMathews 310 (K-F23-310)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 310 (K-F23-310)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93164,7 +93264,7 @@
     "class_id": "PHSL2121Undergraduate-5592-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5592-T1-2025MonMathews 214 (K-F23-214)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -93184,7 +93284,7 @@
     "class_id": "PHSL2121Undergraduate-5593-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5593-T1-2025MonMathews 311 (K-F23-311)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -93204,7 +93304,7 @@
     "class_id": "PHSL2121Undergraduate-5594-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Undergraduate-5594-T1-2025MonMathews 103 (K-F23-103)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -93224,7 +93324,7 @@
     "class_id": "PHSL2121Postgraduate-5618-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Postgraduate-5618-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -93234,7 +93334,7 @@
     "class_id": "PHSL2121Postgraduate-5619-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Postgraduate-5619-T1-2025TueWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -93244,7 +93344,7 @@
     "class_id": "PHSL2121Postgraduate-5620-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Postgraduate-5620-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -93254,7 +93354,7 @@
     "class_id": "PHSL2121Postgraduate-5621-T1-2025",
     "day": "Tue",
     "id": "PHSL2121Postgraduate-5621-T1-2025TueWallace Wurth 115 (K-C27-115)14:00 - 17:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "2,4,8,10"
@@ -93264,7 +93364,7 @@
     "class_id": "PHSL2121Postgraduate-5622-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Postgraduate-5622-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "1,3,7,9"
@@ -93274,7 +93374,7 @@
     "class_id": "PHSL2121Postgraduate-5623-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Postgraduate-5623-T1-2025WedWallace Wurth 115 (K-C27-115)10:00 - 13:002,4,8,10",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "10:00 - 13:00",
     "weeks": "2,4,8,10"
@@ -93284,7 +93384,7 @@
     "class_id": "PHSL2121Postgraduate-5624-T1-2025",
     "day": "Wed",
     "id": "PHSL2121Postgraduate-5624-T1-2025WedWallace Wurth 115 (K-C27-115)14:00 - 17:001,3,7,9",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 115 (K-C27-115)",
     "time": "14:00 - 17:00",
     "weeks": "1,3,7,9"
@@ -93304,7 +93404,7 @@
     "class_id": "PHSL2121Postgraduate-5606-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5606-T1-2025MonMathews 214 (K-F23-214)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93324,7 +93424,7 @@
     "class_id": "PHSL2121Postgraduate-5607-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5607-T1-2025MonWallace Wurth 116 (K-C27-116)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Wallace Wurth 116 (K-C27-116)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93344,7 +93444,7 @@
     "class_id": "PHSL2121Postgraduate-5608-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5608-T1-2025MonMathews 103 (K-F23-103)10:00 - 12:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "10:00 - 12:00",
     "weeks": "2,4"
@@ -93364,7 +93464,7 @@
     "class_id": "PHSL2121Postgraduate-5610-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5610-T1-2025MonMathews 311 (K-F23-311)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93384,7 +93484,7 @@
     "class_id": "PHSL2121Postgraduate-5611-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5611-T1-2025MonMathews 103 (K-F23-103)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93404,7 +93504,7 @@
     "class_id": "PHSL2121Postgraduate-5612-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5612-T1-2025MonMathews 310 (K-F23-310)12:00 - 14:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 310 (K-F23-310)",
     "time": "12:00 - 14:00",
     "weeks": "2,4"
@@ -93424,7 +93524,7 @@
     "class_id": "PHSL2121Postgraduate-5614-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5614-T1-2025MonMathews 214 (K-F23-214)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 214 (K-F23-214)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -93444,7 +93544,7 @@
     "class_id": "PHSL2121Postgraduate-5615-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5615-T1-2025MonMathews 311 (K-F23-311)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 311 (K-F23-311)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -93464,7 +93564,7 @@
     "class_id": "PHSL2121Postgraduate-5616-T1-2025",
     "day": "Mon",
     "id": "PHSL2121Postgraduate-5616-T1-2025MonMathews 103 (K-F23-103)14:00 - 16:002,4",
-    "instructor": "Dr NY Marden,Dr JM Cederholm,Dr LG Greengarten",
+    "instructor": "Dr NY Marden,Apro JM Cederholm,Dr LG Greengarten",
     "location": "Mathews 103 (K-F23-103)",
     "time": "14:00 - 16:00",
     "weeks": "2,4"
@@ -95474,7 +95574,7 @@
     "class_id": "PHYS1221Undergraduate-5990-T1-2025",
     "day": "Tue",
     "id": "PHYS1221Undergraduate-5990-T1-2025TueOld Main Building G32 (K-K15-G32)11:00 - 13:005,7-9",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building G32 (K-K15-G32)",
     "time": "11:00 - 13:00",
     "weeks": "5,7-9"
@@ -95494,7 +95594,7 @@
     "class_id": "PHYS1221Undergraduate-5990-T1-2025",
     "day": "Thu",
     "id": "PHYS1221Undergraduate-5990-T1-2025ThuOld Main Building G32 (K-K15-G32)11:00 - 13:005,7-9",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building G32 (K-K15-G32)",
     "time": "11:00 - 13:00",
     "weeks": "5,7-9"
@@ -95554,7 +95654,7 @@
     "class_id": "PHYS1231Undergraduate-5996-T1-2025",
     "day": "Tue",
     "id": "PHYS1231Undergraduate-5996-T1-2025TueOld Main Building G32 (K-K15-G32)11:00 - 13:005,7-9",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building G32 (K-K15-G32)",
     "time": "11:00 - 13:00",
     "weeks": "5,7-9"
@@ -95574,7 +95674,7 @@
     "class_id": "PHYS1231Undergraduate-5996-T1-2025",
     "day": "Thu",
     "id": "PHYS1231Undergraduate-5996-T1-2025ThuOld Main Building G32 (K-K15-G32)11:00 - 13:005,7-9",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building G32 (K-K15-G32)",
     "time": "11:00 - 13:00",
     "weeks": "5,7-9"
@@ -95694,7 +95794,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Tue",
     "id": "PHYS2111Undergraduate-8923-T1-2025TueH13 Lawrence Theatre (K-H13-G001)16:00 - 17:001-4,5,10",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "H13 Lawrence Theatre (K-H13-G001)",
     "time": "16:00 - 17:00",
     "weeks": "1-4,5,10"
@@ -95704,7 +95804,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Tue",
     "id": "PHYS2111Undergraduate-8923-T1-2025TueH13 Lawrence Theatre (K-H13-G001)16:00 - 17:005,7-9",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "H13 Lawrence Theatre (K-H13-G001)",
     "time": "16:00 - 17:00",
     "weeks": "5,7-9"
@@ -95714,7 +95814,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Wed",
     "id": "PHYS2111Undergraduate-8923-T1-2025WedH13 Lawrence Theatre (K-H13-G001)16:00 - 17:001-4,10",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "H13 Lawrence Theatre (K-H13-G001)",
     "time": "16:00 - 17:00",
     "weeks": "1-4,10"
@@ -95724,7 +95824,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Wed",
     "id": "PHYS2111Undergraduate-8923-T1-2025WedH13 Lawrence Theatre (K-H13-G001)16:00 - 17:005,7-9,10",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "H13 Lawrence Theatre (K-H13-G001)",
     "time": "16:00 - 17:00",
     "weeks": "5,7-9,10"
@@ -95734,7 +95834,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Fri",
     "id": "PHYS2111Undergraduate-8923-T1-2025FriKeith Burrows Theatre (K-J14-G5)09:00 - 11:001-4,5",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "Keith Burrows Theatre (K-J14-G5)",
     "time": "09:00 - 11:00",
     "weeks": "1-4,5"
@@ -95744,7 +95844,7 @@
     "class_id": "PHYS2111Undergraduate-8923-T1-2025",
     "day": "Fri",
     "id": "PHYS2111Undergraduate-8923-T1-2025FriKeith Burrows Theatre (K-J14-G5)09:00 - 11:005,7-8",
-    "instructor": "Apro PJ Reece,Apro JC Berengut",
+    "instructor": "Apro PJ Reece,Prof JC Berengut",
     "location": "Keith Burrows Theatre (K-J14-G5)",
     "time": "09:00 - 11:00",
     "weeks": "5,7-8"
@@ -95914,7 +96014,7 @@
     "class_id": "PHYS3112Undergraduate-9034-T1-2025",
     "day": "Wed",
     "id": "PHYS3112Undergraduate-9034-T1-2025WedOld Main Building 150 (K-K15-150)16:00 - 18:007-8",
-    "instructor": "Apro R  Rahman",
+    "instructor": "Prof R  Rahman",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "16:00 - 18:00",
     "weeks": "7-8"
@@ -95924,7 +96024,7 @@
     "class_id": "PHYS3112Undergraduate-9034-T1-2025",
     "day": "Wed",
     "id": "PHYS3112Undergraduate-9034-T1-2025WedOld Main Building 150 (K-K15-150)16:00 - 19:001-5,9-10",
-    "instructor": "Apro R  Rahman,Prof MC Ashley",
+    "instructor": "Prof R  Rahman,Prof MC Ashley",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "16:00 - 19:00",
     "weeks": "1-5,9-10"
@@ -95934,7 +96034,7 @@
     "class_id": "PHYS3112Undergraduate-9034-T1-2025",
     "day": "Fri",
     "id": "PHYS3112Undergraduate-9034-T1-2025FriOld Main Building 150 (K-K15-150)11:00 - 13:001-5",
-    "instructor": "Apro R  Rahman,Prof MC Ashley",
+    "instructor": "Prof R  Rahman,Prof MC Ashley",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "11:00 - 13:00",
     "weeks": "1-5"
@@ -95944,7 +96044,7 @@
     "class_id": "PHYS3112Undergraduate-9034-T1-2025",
     "day": "Fri",
     "id": "PHYS3112Undergraduate-9034-T1-2025FriOld Main Building 150 (K-K15-150)11:00 - 13:001-5,7-8",
-    "instructor": "Apro R  Rahman,Prof MC Ashley",
+    "instructor": "Prof R  Rahman,Prof MC Ashley",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-8"
@@ -96024,7 +96124,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Mon",
     "id": "PHYS3113Undergraduate-9040-T1-2025MonOld Main Building G31 (K-K15-G31)16:00 - 18:001-4,5",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "16:00 - 18:00",
     "weeks": "1-4,5"
@@ -96034,7 +96134,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Mon",
     "id": "PHYS3113Undergraduate-9040-T1-2025MonOld Main Building G31 (K-K15-G31)16:00 - 18:001-4,5,7-9",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "16:00 - 18:00",
     "weeks": "1-4,5,7-9"
@@ -96044,7 +96144,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Thu",
     "id": "PHYS3113Undergraduate-9040-T1-2025ThuOld Main Building G31 (K-K15-G31)16:00 - 17:001-4,5,10",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "16:00 - 17:00",
     "weeks": "1-4,5,10"
@@ -96054,7 +96154,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Thu",
     "id": "PHYS3113Undergraduate-9040-T1-2025ThuOld Main Building G31 (K-K15-G31)16:00 - 17:001-4,5,7-9,10",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "16:00 - 17:00",
     "weeks": "1-4,5,7-9,10"
@@ -96064,7 +96164,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Fri",
     "id": "PHYS3113Undergraduate-9040-T1-2025FriOld Main Building G31 (K-K15-G31)09:00 - 10:001-4,5",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "09:00 - 10:00",
     "weeks": "1-4,5"
@@ -96074,7 +96174,7 @@
     "class_id": "PHYS3113Undergraduate-9040-T1-2025",
     "day": "Fri",
     "id": "PHYS3113Undergraduate-9040-T1-2025FriOld Main Building G31 (K-K15-G31)09:00 - 10:001-4,5,7-8",
-    "instructor": "Prof PM Curmi,Apro JC Berengut",
+    "instructor": "Prof PM Curmi,Prof JC Berengut",
     "location": "Old Main Building G31 (K-K15-G31)",
     "time": "09:00 - 10:00",
     "weeks": "1-4,5,7-8"
@@ -96204,7 +96304,7 @@
     "class_id": "PHYS4141Undergraduate-9994-T1-2025",
     "day": "Wed",
     "id": "PHYS4141Undergraduate-9994-T1-2025WedOld Main Building 150 (K-K15-150)13:00 - 15:001-5",
-    "instructor": "Dr MA Schmidt",
+    "instructor": "Apro MA Schmidt",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "13:00 - 15:00",
     "weeks": "1-5"
@@ -96224,7 +96324,7 @@
     "class_id": "PHYS4141Undergraduate-9994-T1-2025",
     "day": "Fri",
     "id": "PHYS4141Undergraduate-9994-T1-2025FriOld Main Building 229 (K-K15-229)13:00 - 14:001-5",
-    "instructor": "Dr MA Schmidt",
+    "instructor": "Apro MA Schmidt",
     "location": "Old Main Building 229 (K-K15-229)",
     "time": "13:00 - 14:00",
     "weeks": "1-5"
@@ -96244,7 +96344,7 @@
     "class_id": "PHYS4141Undergraduate-9995-T1-2025",
     "day": "Fri",
     "id": "PHYS4141Undergraduate-9995-T1-2025FriOld Main Building 229 (K-K15-229)14:00 - 15:002,4,8",
-    "instructor": "Dr MA Schmidt",
+    "instructor": "Apro MA Schmidt",
     "location": "Old Main Building 229 (K-K15-229)",
     "time": "14:00 - 15:00",
     "weeks": "2,4,8"
@@ -96254,7 +96354,7 @@
     "class_id": "PHYS4142Undergraduate-9992-T1-2025",
     "day": "Wed",
     "id": "PHYS4142Undergraduate-9992-T1-2025WedOld Main Building 150 (K-K15-150)10:00 - 12:001-5",
-    "instructor": "Dr R  Morris",
+    "instructor": "Apro R  Morris",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "10:00 - 12:00",
     "weeks": "1-5"
@@ -96264,7 +96364,7 @@
     "class_id": "PHYS4142Undergraduate-9992-T1-2025",
     "day": "Wed",
     "id": "PHYS4142Undergraduate-9992-T1-2025WedOld Main Building 150 (K-K15-150)10:00 - 12:007-10",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building 150 (K-K15-150)",
     "time": "10:00 - 12:00",
     "weeks": "7-10"
@@ -96274,7 +96374,7 @@
     "class_id": "PHYS4142Undergraduate-9992-T1-2025",
     "day": "Fri",
     "id": "PHYS4142Undergraduate-9992-T1-2025FriOld Main Building 151 (K-K15-151)11:00 - 12:001-5",
-    "instructor": "Dr R  Morris",
+    "instructor": "Apro R  Morris",
     "location": "Old Main Building 151 (K-K15-151)",
     "time": "11:00 - 12:00",
     "weeks": "1-5"
@@ -96284,7 +96384,7 @@
     "class_id": "PHYS4142Undergraduate-9992-T1-2025",
     "day": "Fri",
     "id": "PHYS4142Undergraduate-9992-T1-2025FriOld Main Building 151 (K-K15-151)11:00 - 12:007-8",
-    "instructor": "Apro DM Culcer",
+    "instructor": "Prof DM Culcer",
     "location": "Old Main Building 151 (K-K15-151)",
     "time": "11:00 - 12:00",
     "weeks": "7-8"
@@ -96494,7 +96594,7 @@
     "class_id": "PLAN2122Undergraduate-6341-T1-2025",
     "day": "Fri",
     "id": "PLAN2122Undergraduate-6341-T1-2025FriSee School for Location (SEESCHOOL)10:00 - 15:006",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "See School for Location (SEESCHOOL)",
     "time": "10:00 - 15:00",
     "weeks": "6"
@@ -96514,7 +96614,7 @@
     "class_id": "PLAN2122Undergraduate-6342-T1-2025",
     "day": "Fri",
     "id": "PLAN2122Undergraduate-6342-T1-2025FriScience & Engineering B25 (K-E8-B25)11:00 - 13:001-5,7-8",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "Science & Engineering B25 (K-E8-B25)",
     "time": "11:00 - 13:00",
     "weeks": "1-5,7-8"
@@ -96534,7 +96634,7 @@
     "class_id": "PLAN3006Undergraduate-11655-T1-2025",
     "day": "Wed",
     "id": "PLAN3006Undergraduate-11655-T1-2025WedUNSW Business School 119 (K-E12-119)09:00 - 17:00< 1",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "UNSW Business School 119 (K-E12-119)",
     "time": "09:00 - 17:00",
     "weeks": "< 1"
@@ -96544,7 +96644,7 @@
     "class_id": "PLAN3006Undergraduate-11655-T1-2025",
     "day": "Thu",
     "id": "PLAN3006Undergraduate-11655-T1-2025ThuUNSW Business School 119 (K-E12-119)09:00 - 13:00< 1",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "UNSW Business School 119 (K-E12-119)",
     "time": "09:00 - 13:00",
     "weeks": "< 1"
@@ -96554,7 +96654,7 @@
     "class_id": "PLAN3006Undergraduate-11656-T1-2025",
     "day": "Tue",
     "id": "PLAN3006Undergraduate-11656-T1-2025TueOnline (ONLINE)18:00 - 20:00< 1,6-8",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "Online (ONLINE)",
     "time": "18:00 - 20:00",
     "weeks": "< 1,6-8"
@@ -96564,7 +96664,7 @@
     "class_id": "PLAN3007Undergraduate-11675-T1-2025",
     "day": "Thu",
     "id": "PLAN3007Undergraduate-11675-T1-2025ThuUNSW Business School 119 (K-E12-119)13:00 - 17:00< 1",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "UNSW Business School 119 (K-E12-119)",
     "time": "13:00 - 17:00",
     "weeks": "< 1"
@@ -96574,7 +96674,7 @@
     "class_id": "PLAN3007Undergraduate-11675-T1-2025",
     "day": "Fri",
     "id": "PLAN3007Undergraduate-11675-T1-2025FriUNSW Business School 119 (K-E12-119)09:00 - 17:00< 1",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "UNSW Business School 119 (K-E12-119)",
     "time": "09:00 - 17:00",
     "weeks": "< 1"
@@ -96584,7 +96684,7 @@
     "class_id": "PLAN3007Undergraduate-11676-T1-2025",
     "day": "Tue",
     "id": "PLAN3007Undergraduate-11676-T1-2025TueOnline (ONLINE)18:00 - 20:003-5,9-10,N1",
-    "instructor": "Dr LM Crommelin",
+    "instructor": "Apro LM Crommelin",
     "location": "Online (ONLINE)",
     "time": "18:00 - 20:00",
     "weeks": "3-5,9-10,N1"
@@ -96834,7 +96934,7 @@
     "class_id": "POLS5120Postgraduate-5631-T1-2025",
     "day": "Tue",
     "id": "POLS5120Postgraduate-5631-T1-2025TueMathews 105 (K-F23-105)18:00 - 20:001-10",
-    "instructor": "Dr D  Barros Leal Farias",
+    "instructor": "Apro D  Barros Leal Farias",
     "location": "Mathews 105 (K-F23-105)",
     "time": "18:00 - 20:00",
     "weeks": "1-10"
@@ -96844,7 +96944,7 @@
     "class_id": "POLS5120Postgraduate-5633-T1-2025",
     "day": "Tue",
     "id": "POLS5120Postgraduate-5633-T1-2025TueMathews 102 (K-F23-102)16:00 - 18:001-10",
-    "instructor": "Dr D  Barros Leal Farias",
+    "instructor": "Apro D  Barros Leal Farias",
     "location": "Mathews 102 (K-F23-102)",
     "time": "16:00 - 18:00",
     "weeks": "1-10"
@@ -101984,7 +102084,7 @@
     "class_id": "VISN1101Undergraduate-8412-T1-2025",
     "day": "Mon",
     "id": "VISN1101Undergraduate-8412-T1-2025MonF10 June Griffith M18 (K-F10-M18)10:00 - 12:002-4,5,8",
-    "instructor": "Apro J  Kim,Dr V  Honson",
+    "instructor": "Prof J  Kim,Dr V  Honson",
     "location": "F10 June Griffith M18 (K-F10-M18)",
     "time": "10:00 - 12:00",
     "weeks": "2-4,5,8"
@@ -101994,7 +102094,7 @@
     "class_id": "VISN1101Undergraduate-8412-T1-2025",
     "day": "Mon",
     "id": "VISN1101Undergraduate-8412-T1-2025MonF10 June Griffith M18 (K-F10-M18)10:00 - 12:008",
-    "instructor": "Apro J  Kim,Dr V  Honson",
+    "instructor": "Prof J  Kim,Dr V  Honson",
     "location": "F10 June Griffith M18 (K-F10-M18)",
     "time": "10:00 - 12:00",
     "weeks": "8"
@@ -106854,7 +106954,7 @@
     "class_id": "ZEIT1600Undergraduate-1610-Z1-2025",
     "day": "Wed",
     "id": "ZEIT1600Undergraduate-1610-Z1-2025WedBldg 15, Room 210 (Z-15-210)14:00 - 17:001-6,7-13",
-    "instructor": "Dr S  Al-Deen,Mr S  Beljanski",
+    "instructor": "Apro S  Al-Deen,Mr S  Beljanski",
     "location": "Bldg 15, Room 210 (Z-15-210)",
     "time": "14:00 - 17:00",
     "weeks": "1-6,7-13"
@@ -106864,7 +106964,7 @@
     "class_id": "ZEIT1600Undergraduate-1610-Z1-2025",
     "day": "Fri",
     "id": "ZEIT1600Undergraduate-1610-Z1-2025FriBldg 15, Room 210 (Z-15-210)15:00 - 18:001-6,7-13",
-    "instructor": "Dr S  Al-Deen,Mr S  Beljanski",
+    "instructor": "Apro S  Al-Deen,Mr S  Beljanski",
     "location": "Bldg 15, Room 210 (Z-15-210)",
     "time": "15:00 - 18:00",
     "weeks": "1-6,7-13"
@@ -106944,7 +107044,7 @@
     "class_id": "ZEIT2103Undergraduate-1536-Z1-2025",
     "day": "Fri",
     "id": "ZEIT2103Undergraduate-1536-Z1-2025FriSeminar Room 06 (Z-32-SR06)10:00 - 11:001-6,7-13",
-    "instructor": "Prof K  Kasmarik,Dr SM Elsayed,Dr EL Hene Kankanamge,Dr J  Plested",
+    "instructor": "Prof K  Kasmarik,Apro SM Elsayed,Dr EL Hene Kankanamge,Dr J  Plested",
     "location": "Seminar Room 06 (Z-32-SR06)",
     "time": "10:00 - 11:00",
     "weeks": "1-6,7-13"
