@@ -1154,7 +1154,6 @@
     "course_name": "Superannuation and Retirement Benefits",
     "faculty": "UNSW Business School",
     "modes": [
-      "Hybrid",
       "In Person"
     ],
     "school": "School of Risk & Actuarial St",
@@ -5411,7 +5410,8 @@
     "course_name": "Korean 3",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -10342,8 +10342,7 @@
     ],
     "school": "School of Aviation",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -10525,6 +10524,7 @@
     ],
     "school": "School of Aviation",
     "terms": [
+      "T1",
       "T3"
     ],
     "uoc": 12
@@ -10637,7 +10637,7 @@
     "course_name": "Molecular Cell Biology 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal"
+      "In Person"
     ],
     "school": "Sch Biotech & Biomolecular Sci",
     "terms": [
@@ -17492,6 +17492,22 @@
   },
   {
     "campus": "Sydney",
+    "career": "Research",
+    "course_code": "COMM8005",
+    "course_id": "COMM8005Research",
+    "course_name": "Business Research Project Seminar",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "In Person"
+    ],
+    "school": "UNSW Business School",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 0
+  },
+  {
+    "campus": "Sydney",
     "career": "Undergraduate",
     "course_code": "COMP1010",
     "course_id": "COMP1010Undergraduate",
@@ -18700,7 +18716,8 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "T1"
+      "T1",
+      "T3"
     ],
     "uoc": 6
   },
@@ -19584,7 +19601,8 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "T1"
+      "T1",
+      "T3"
     ],
     "uoc": 6
   },
@@ -23997,7 +24015,8 @@
     "course_name": "Computer Systems Fundamentals",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -25635,7 +25654,8 @@
     "course_name": "Foundations of History and Geography in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Education",
     "terms": [
@@ -29362,7 +29382,9 @@
     "course_id": "EDST5033Research",
     "course_name": "Research Methods 2",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
+    "modes": [
+      "Online"
+    ],
     "school": "School of Education",
     "terms": [
       "T1"
@@ -29644,7 +29666,8 @@
     "course_name": "Circuits and Signals",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -29893,8 +29916,7 @@
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -30190,8 +30212,7 @@
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -30671,22 +30692,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "ELEC9762",
-    "course_id": "ELEC9762Postgraduate",
-    "course_name": "Space Mission Development",
-    "faculty": "Faculty of Engineering",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Elec Eng & Telco",
-    "terms": [
-      "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "ELEC9764",
     "course_id": "ELEC9764Postgraduate",
     "course_name": "The Ground Segment and Space Operations",
@@ -30707,7 +30712,9 @@
     "course_id": "ELEC9765Postgraduate",
     "course_name": "Space Law and Radio Regulations",
     "faculty": "Faculty of Engineering",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "School of Elec Eng & Telco",
     "terms": [
       "T3"
@@ -31899,7 +31906,6 @@
     "course_name": "ADA Professional Placement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "School of Built Environment",
@@ -31918,7 +31924,6 @@
     "course_name": "ADA Professional Placement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "School of Built Environment",
@@ -36898,20 +36903,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "INFS4777",
-    "course_id": "INFS4777Undergraduate",
-    "course_name": "Web3 and Blockchain Applications",
-    "faculty": "UNSW Business School",
-    "modes": [],
-    "school": "Sch Info Sys and Tech Mgmt",
-    "terms": [
-      "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "INFS4800",
     "course_id": "INFS4800Undergraduate",
     "course_name": "Thesis A",
@@ -37221,20 +37212,6 @@
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
       "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "INFS5777",
-    "course_id": "INFS5777Postgraduate",
-    "course_name": "Web3 and Blockchain Applications",
-    "faculty": "UNSW Business School",
-    "modes": [],
-    "school": "Sch Info Sys and Tech Mgmt",
-    "terms": [
-      "T1"
     ],
     "uoc": 6
   },
@@ -43880,7 +43857,7 @@
     "career": "Postgraduate",
     "course_code": "LAWS8365",
     "course_id": "LAWS8365Postgraduate",
-    "course_name": "Intro to Chinese Regulation of Int'l Business",
+    "course_name": "Intro to Chinese Regulation of International Business",
     "faculty": "Faculty of Law and Justice",
     "modes": [
       "In Person",
@@ -45878,7 +45855,8 @@
     "course_name": "Numerical Methods and Statistics",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46580,6 +46558,22 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "MATH3599",
+    "course_id": "MATH3599Undergraduate",
+    "course_name": "Mathematics, Statistics and Data Science Work Placement 1",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Multimodal"
+    ],
+    "school": "Sch Mathematics & Statistics",
+    "terms": [
+      "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "MATH3611",
     "course_id": "MATH3611Undergraduate",
     "course_name": "Higher Analysis",
@@ -46590,6 +46584,22 @@
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T2"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
+    "course_code": "MATH3699",
+    "course_id": "MATH3699Undergraduate",
+    "course_name": "Mathematics, Statistics and Data Science Work Placement 2",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Multimodal"
+    ],
+    "school": "Sch Mathematics & Statistics",
+    "terms": [
+      "T1"
     ],
     "uoc": 6
   },
@@ -49229,7 +49239,8 @@
     "course_name": "Creating with Generative AI",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -67938,8 +67949,7 @@
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
-      "KB",
-      "KN"
+      "KB"
     ],
     "uoc": 6
   },
@@ -69856,22 +69866,6 @@
   {
     "campus": "Paddington",
     "career": "Undergraduate",
-    "course_code": "DDES1024",
-    "course_id": "DDES1024Undergraduate",
-    "course_name": "Jewellery: Contextual Issues through Bodyworks",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Art & Design",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Undergraduate",
     "course_code": "DDES1033",
     "course_id": "DDES1033Undergraduate",
     "course_name": "Playful Spaces: Soft Structures",
@@ -69915,20 +69909,6 @@
     "school": "School of Art & Design",
     "terms": [
       "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Undergraduate",
-    "course_code": "DDES1042",
-    "course_id": "DDES1042Undergraduate",
-    "course_name": "Data Visualisation and Wayfinding",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
-    "school": "School of Art & Design",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -70683,6 +70663,7 @@
     ],
     "school": "School of Art & Design",
     "terms": [
+      "T2",
       "T3"
     ],
     "uoc": 6
@@ -70795,8 +70776,7 @@
     ],
     "school": "School of Art & Design",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -70878,38 +70858,6 @@
     "school": "School of Art & Design",
     "terms": [
       "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Postgraduate",
-    "course_code": "DDES9161",
-    "course_id": "DDES9161Postgraduate",
-    "course_name": "Vision, Strategy and Design Leadership",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Art & Design",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Postgraduate",
-    "course_code": "DDES9162",
-    "course_id": "DDES9162Postgraduate",
-    "course_name": "Leadership and Interdisciplinary Teams",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Art & Design",
-    "terms": [
-      "T1"
     ],
     "uoc": 6
   },
@@ -71172,7 +71120,7 @@
     "career": "Postgraduate",
     "course_code": "SAHT9113",
     "course_id": "SAHT9113Postgraduate",
-    "course_name": "Cultural Heritage, Ethics & the Law",
+    "course_name": "Cultural Heritage, Ethics and the Law",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
