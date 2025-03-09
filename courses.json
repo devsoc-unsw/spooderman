@@ -1781,8 +1781,7 @@
     "course_name": "Dynamics of Aerospace Vehicles, Systems and Avionics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "In Person"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -2351,12 +2350,44 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "AGSM9163",
+    "course_id": "AGSM9163Postgraduate",
+    "course_name": "Sustainable Governance and Reporting",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "Multimodal"
+    ],
+    "school": "AGSM MBA Programs",
+    "terms": [
+      "T2"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "AGSM9164",
     "course_id": "AGSM9164Postgraduate",
     "course_name": "Sustainable Value Chains and Business Models",
     "faculty": "UNSW Business School",
     "modes": [
       "Multimodal"
+    ],
+    "school": "AGSM MBA Programs",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "AGSM9165",
+    "course_id": "AGSM9165Postgraduate",
+    "course_name": "AI Strategy",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "In Person"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -4441,20 +4472,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "ARTS2110",
-    "course_id": "ARTS2110Undergraduate",
-    "course_name": "Love, Friendship, and Philosophy",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
-    "school": "School Humanities & Languages",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "ARTS2115",
     "course_id": "ARTS2115Undergraduate",
     "course_name": "Philosophy of Artificial Intelligence",
@@ -5207,20 +5224,6 @@
     "school": "School Humanities & Languages",
     "terms": [
       "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "ARTS2485",
-    "course_id": "ARTS2485Undergraduate",
-    "course_name": "Exploring French Linguistics",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
-    "school": "School Humanities & Languages",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -8836,7 +8839,8 @@
     "course_name": "Personalised English Language Enhancement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -8973,7 +8977,8 @@
     "modes": [
       "Hybrid",
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -11411,22 +11416,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "BEIL6002",
-    "course_id": "BEIL6002Undergraduate",
-    "course_name": "Urban and Regional Design",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "BEIL6003",
     "course_id": "BEIL6003Undergraduate",
     "course_name": "Cinematic Space",
@@ -11454,6 +11443,22 @@
     "school": "School of Built Environment",
     "terms": [
       "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
+    "course_code": "BEIL6006",
+    "course_id": "BEIL6006Undergraduate",
+    "course_name": "Heritage Planning",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person"
+    ],
+    "school": "School of Built Environment",
+    "terms": [
+      "T3C"
     ],
     "uoc": 6
   },
@@ -11540,22 +11545,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "BEIL6002",
-    "course_id": "BEIL6002Postgraduate",
-    "course_name": "Urban and Regional Design",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "BEIL6003",
     "course_id": "BEIL6003Postgraduate",
     "course_name": "Cinematic Space",
@@ -11583,6 +11572,22 @@
     "school": "School of Built Environment",
     "terms": [
       "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "BEIL6006",
+    "course_id": "BEIL6006Postgraduate",
+    "course_name": "Heritage Planning",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person"
+    ],
+    "school": "School of Built Environment",
+    "terms": [
+      "T3C"
     ],
     "uoc": 6
   },
@@ -16275,6 +16280,25 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "CODE4100",
+    "course_id": "CODE4100Undergraduate",
+    "course_name": "Critical Review of the Literature",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person",
+      "Multimodal"
+    ],
+    "school": "School of Built Environment",
+    "terms": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "uoc": 12
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "CODE4200",
     "course_id": "CODE4200Undergraduate",
     "course_name": "Honours Thesis",
@@ -16345,7 +16369,7 @@
     "career": "Postgraduate",
     "course_code": "COMD5004",
     "course_id": "COMD5004Postgraduate",
-    "course_name": "Climate Change Adaptation & Development",
+    "course_name": "Climate Change Adaptation and Development",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Multimodal"
@@ -16361,7 +16385,7 @@
     "career": "Undergraduate",
     "course_code": "COMM0999",
     "course_id": "COMM0999Undergraduate",
-    "course_name": "myBCom Blueprint",
+    "course_name": "my BCom Blueprint",
     "faculty": "UNSW Business School",
     "modes": [
       "Multimodal",
@@ -16893,8 +16917,7 @@
     ],
     "school": "UNSW Business School",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -17484,9 +17507,7 @@
     ],
     "school": "UNSW Business School",
     "terms": [
-      "T1",
-      "T2",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -18121,22 +18142,6 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person"
-    ],
-    "school": "School of Computer Sci & Eng",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "COMP4511",
-    "course_id": "COMP4511Undergraduate",
-    "course_name": "User Interface Design and Construction",
-    "faculty": "Faculty of Engineering",
-    "modes": [
-      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18783,14 +18788,12 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
       "T1",
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -18806,7 +18809,6 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "T1",
       "T3"
     ],
     "uoc": 6
@@ -18906,22 +18908,6 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person"
-    ],
-    "school": "School of Computer Sci & Eng",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "COMP4511",
-    "course_id": "COMP4511Postgraduate",
-    "course_name": "User Interface Design and Construction",
-    "faculty": "Faculty of Engineering",
-    "modes": [
-      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19494,10 +19480,12 @@
     "course_name": "Cyber Security Project B",
     "faculty": "Faculty of Engineering",
     "modes": [
+      "In Person",
       "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
+      "T1",
       "T2",
       "T3"
     ],
@@ -19767,14 +19755,12 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
       "T1",
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -19790,7 +19776,6 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "T1",
       "T3"
     ],
     "uoc": 6
@@ -20840,22 +20825,6 @@
     "course_code": "CVEN4104",
     "course_id": "CVEN4104Undergraduate",
     "course_name": "Sustainability in Construction",
-    "faculty": "Faculty of Engineering",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Civil & Env Eng",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "CVEN4106",
-    "course_id": "CVEN4106Undergraduate",
-    "course_name": "Construction Practicum",
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person"
@@ -22349,8 +22318,7 @@
     "course_name": "Prestressed Concrete Design",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -23451,8 +23419,7 @@
     "faculty": "UNSW College",
     "modes": [
       "In Person",
-      "Multimodal",
-      "Online"
+      "Multimodal"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23983,7 +23950,6 @@
     "school": "UNSW College Diplomas",
     "terms": [
       "GD1",
-      "GD2",
       "GD3"
     ],
     "uoc": 6
@@ -24144,7 +24110,8 @@
     "course_name": "Economic Perspectives",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -27127,7 +27094,6 @@
     "course_name": "Foundation 1: University Study Skills in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -27148,7 +27114,7 @@
     "course_name": "Foundation 2: Fields of Practice in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Hybrid",
+      "In Person",
       "Multimodal",
       "Online"
     ],
@@ -27252,6 +27218,7 @@
     "course_name": "Students on the Autism Spectrum",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -27406,7 +27373,6 @@
     "course_name": "Creating Engaging Learning Environments",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -29960,7 +29926,8 @@
     "course_name": "Power System Equipment",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30008,7 +29975,8 @@
     "course_name": "Power Electronics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30256,7 +30224,8 @@
     "course_name": "Power System Equipment",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30304,7 +30273,8 @@
     "course_name": "Power Electronics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -30810,6 +30780,38 @@
       "T1",
       "T2",
       "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "ELEC9783",
+    "course_id": "ELEC9783Postgraduate",
+    "course_name": "Hydrogen Production for Electrical Engineers Part 1",
+    "faculty": "Faculty of Engineering",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Elec Eng & Telco",
+    "terms": [
+      "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "ELEC9784",
+    "course_id": "ELEC9784Postgraduate",
+    "course_name": "Hydrogen Production for Electrical Engineers Part 2",
+    "faculty": "Faculty of Engineering",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Elec Eng & Telco",
+    "terms": [
+      "T2"
     ],
     "uoc": 6
   },
@@ -31368,6 +31370,7 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
+      "T1",
       "T2"
     ],
     "uoc": 6
@@ -31499,6 +31502,22 @@
       "T3"
     ],
     "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "ENTR9007",
+    "course_id": "ENTR9007Postgraduate",
+    "course_name": "Capstone Project - Launching Your Startup",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "In Person"
+    ],
+    "school": "AGSM MBA Programs",
+    "terms": [
+      "T1"
+    ],
+    "uoc": 12
   },
   {
     "campus": "Sydney",
@@ -32088,22 +32107,6 @@
     "school": "School of Banking & Finance",
     "terms": [
       "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "FINS3611",
-    "course_id": "FINS3611Undergraduate",
-    "course_name": "Impact Investing",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Banking & Finance",
-    "terms": [
-      "T2"
     ],
     "uoc": 6
   },
@@ -33068,7 +33071,8 @@
     "course_name": "Food Products and Ingredients Technology",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemical Engineering",
     "terms": [
@@ -33260,7 +33264,8 @@
     "course_name": "Food Products and Ingredients Technology",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemical Engineering",
     "terms": [
@@ -35253,7 +35258,8 @@
     "course_name": "Health Data Science: Capstone",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Biomedical Sciences",
     "terms": [
@@ -35644,7 +35650,8 @@
     "course_name": "Personalised English Language Enhancement",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -36168,7 +36175,8 @@
     "course_name": "Corporations, Capitalism, and Transforming Environments",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -38326,6 +38334,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T1",
       "T3"
     ],
     "uoc": 6
@@ -38342,6 +38351,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T1",
       "T3"
     ],
     "uoc": 12
@@ -38552,7 +38562,6 @@
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
-      "T1",
       "T2"
     ],
     "uoc": 6
@@ -38617,7 +38626,8 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T1A"
+      "T1A",
+      "T1B"
     ],
     "uoc": 6
   },
@@ -39360,6 +39370,20 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "JURD7511",
+    "course_id": "JURD7511Postgraduate",
+    "course_name": "Anti-Money Laundering and Proceeds of Crime",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [],
+    "school": "Sch Law, Society & Criminology",
+    "terms": [
+      "T2"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "JURD7514",
     "course_id": "JURD7514Postgraduate",
     "course_name": "Defamation and the Media",
@@ -39488,22 +39512,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "JURD7549",
-    "course_id": "JURD7549Postgraduate",
-    "course_name": "Child Rights Comparative Clinical Program: India",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "U1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "JURD7555",
     "course_id": "JURD7555Postgraduate",
     "course_name": "UNSW Law Internships",
@@ -39534,6 +39542,22 @@
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "JURD7560",
+    "course_id": "JURD7560Postgraduate",
+    "course_name": "Royal Commissions",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
+      "T3"
     ],
     "uoc": 6
   },
@@ -41944,6 +41968,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T1",
       "T3"
     ],
     "uoc": 6
@@ -41960,6 +41985,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T1",
       "T3"
     ],
     "uoc": 12
@@ -42510,22 +42536,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "LAWS3549",
-    "course_id": "LAWS3549Undergraduate",
-    "course_name": "Child Rights Comparative Clinical Program: India",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "U1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "LAWS3555",
     "course_id": "LAWS3555Undergraduate",
     "course_name": "UNSW Law Internships",
@@ -42539,6 +42549,22 @@
       "U1",
       "T1",
       "T2",
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
+    "course_code": "LAWS3560",
+    "course_id": "LAWS3560Undergraduate",
+    "course_name": "Royal Commissions",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
       "T3"
     ],
     "uoc": 6
@@ -42762,6 +42788,20 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "LAWS8011",
+    "course_id": "LAWS8011Postgraduate",
+    "course_name": "Anti-Money Laundering and Proceeds of Crime",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [],
+    "school": "Sch Law, Society & Criminology",
+    "terms": [
+      "T2"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "LAWS8014",
     "course_id": "LAWS8014Postgraduate",
     "course_name": "Defamation and the Media",
@@ -42865,7 +42905,8 @@
     "course_name": "Corporate Governance",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch of Private& Commercial Law",
     "terms": [
@@ -43068,7 +43109,6 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T2",
       "T2A"
     ],
     "uoc": 6
@@ -43085,7 +43125,8 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T1A"
+      "T1A",
+      "T1B"
     ],
     "uoc": 6
   },
@@ -43401,14 +43442,28 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "LAWS8150",
+    "course_id": "LAWS8150Postgraduate",
+    "course_name": "Foundations of Private Law",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Private& Commercial Law",
+    "terms": [
+      "T2"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "LAWS8151",
     "course_id": "LAWS8151Postgraduate",
     "course_name": "European Union Law",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person",
-      "Multimodal",
-      "Online"
+      "In Person"
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
@@ -43839,22 +43894,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "LAWS8349",
-    "course_id": "LAWS8349Postgraduate",
-    "course_name": "Child Rights Comparative Clinical Program: India",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "U1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "LAWS8365",
     "course_id": "LAWS8365Postgraduate",
     "course_name": "Intro to Chinese Regulation of International Business",
@@ -43882,7 +43921,6 @@
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
-      "T1",
       "T2"
     ],
     "uoc": 6
@@ -44031,7 +44069,8 @@
     ],
     "school": "Sch of Private& Commercial Law",
     "terms": [
-      "T2B"
+      "T2B",
+      "T3B"
     ],
     "uoc": 6
   },
@@ -44048,6 +44087,38 @@
     "school": "Sch of Global & Public Law",
     "terms": [
       "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "LAWS8853",
+    "course_id": "LAWS8853Postgraduate",
+    "course_name": "Contemporary Issues in Global Law",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
+      "T2B"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "LAWS8854",
+    "course_id": "LAWS8854Postgraduate",
+    "course_name": "Contemporary Issues in Sociolegal Studies",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch Law, Society & Criminology",
+    "terms": [
+      "T2C"
     ],
     "uoc": 6
   },
@@ -44226,12 +44297,9 @@
     "course_id": "LING6000Undergraduate",
     "course_name": "Linguistics Practicum",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School Humanities & Languages",
     "terms": [
-      "T1",
       "T2"
     ],
     "uoc": 6
@@ -44404,6 +44472,22 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "LING5031",
+    "course_id": "LING5031Postgraduate",
+    "course_name": "Research Topics in Applied Linguistics",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person"
+    ],
+    "school": "School Humanities & Languages",
+    "terms": [
+      "T1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "LING5032",
     "course_id": "LING5032Postgraduate",
     "course_name": "Thesis Writing 1",
@@ -44476,12 +44560,9 @@
     "course_id": "LING6000Postgraduate",
     "course_name": "Linguistics Practicum",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School Humanities & Languages",
     "terms": [
-      "T1",
       "T2"
     ],
     "uoc": 6
@@ -45482,8 +45563,7 @@
     ],
     "school": "School of Marketing",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -45889,7 +45969,8 @@
     "course_name": "Higher Several Variable Calculus",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46563,11 +46644,14 @@
     "course_name": "Mathematics, Statistics and Data Science Work Placement 1",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
-      "T1"
+      "T1",
+      "T2"
     ],
     "uoc": 6
   },
@@ -46595,11 +46679,14 @@
     "course_name": "Mathematics, Statistics and Data Science Work Placement 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
-      "T1"
+      "T1",
+      "T2"
     ],
     "uoc": 6
   },
@@ -47315,7 +47402,8 @@
     "faculty": "Faculty of Science",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -48085,7 +48173,8 @@
     "course_name": "Fundamentals of Materials Processing",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Materials Sci & Eng",
     "terms": [
@@ -49809,7 +49898,8 @@
     "course_name": "Media Ethics and Law",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -50073,7 +50163,8 @@
     "course_name": "Mechanical Design 1",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -50285,7 +50376,8 @@
     "course_name": "Mechanical Design 1",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -51700,7 +51792,8 @@
     "course_name": "International Business and Multinational Operations",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Management & Gov'nce",
     "terms": [
@@ -53311,7 +53404,8 @@
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
-      "U1"
+      "U1",
+      "T2"
     ],
     "uoc": 6
   },
@@ -53327,7 +53421,8 @@
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
-      "U1"
+      "U1",
+      "T2"
     ],
     "uoc": 6
   },
@@ -54519,7 +54614,8 @@
     "course_name": "Advanced Autonomous Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54583,7 +54679,8 @@
     "course_name": "Advanced Autonomous Systems",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54927,8 +55024,7 @@
     "course_name": "Music Ensemble",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -54994,8 +55090,7 @@
     "course_name": "Music Craft 4",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55428,8 +55523,7 @@
     "course_name": "Performance Laboratory D (Music Creative Practice)",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -57906,7 +58000,8 @@
     "course_name": "Concepts in Pharmacy",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Health Sciences",
     "terms": [
@@ -58727,6 +58822,7 @@
     "course_name": "Physics Honours Research A",
     "faculty": "Faculty of Science",
     "modes": [
+      "Hybrid",
       "Multimodal"
     ],
     "school": "School of Physics",
@@ -59431,7 +59527,8 @@
     "course_name": "City Economics, Urban Development & Finance",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -59827,8 +59924,7 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Multimodal",
-      "Online"
+      "Multimodal"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -60429,7 +60525,8 @@
     "course_name": "Research Methods 2",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Psychology",
     "terms": [
@@ -60445,7 +60542,8 @@
     "course_name": "Social and Developmental Psychology",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Psychology",
     "terms": [
@@ -60710,22 +60808,6 @@
     "course_code": "PSYC3341",
     "course_id": "PSYC3341Undergraduate",
     "course_name": "Developmental Psychology",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Psychology",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "PSYC3361",
-    "course_id": "PSYC3361Undergraduate",
-    "course_name": "Psychology Research Internship",
     "faculty": "Faculty of Science",
     "modes": [
       "In Person"
@@ -62752,7 +62834,8 @@
     "course_name": "Requirements and Design Workshop",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -63078,7 +63161,8 @@
     "course_name": "Culture, Identity and Diversity",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -65036,7 +65120,6 @@
     "course_name": "Basic Reproductive Physiology",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "School of Clinical Medicine",
@@ -65968,7 +66051,8 @@
     "course_name": "Analogue and Digital Communications",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Elec Eng & Telco",
     "terms": [
@@ -67063,7 +67147,6 @@
     ],
     "school": "School of Management & Gov'nce",
     "terms": [
-      "KF",
       "KR"
     ],
     "uoc": 6
@@ -67788,7 +67871,8 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "KF"
+      "KF",
+      "KN"
     ],
     "uoc": 6
   },
@@ -67804,7 +67888,8 @@
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
-      "KB"
+      "KB",
+      "KV"
     ],
     "uoc": 6
   },
@@ -68651,6 +68736,23 @@
     "course_code": "DART1240",
     "course_id": "DART1240Undergraduate",
     "course_name": "Sound 1",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person"
+    ],
+    "school": "School of Art & Design",
+    "terms": [
+      "T2",
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Paddington",
+    "career": "Undergraduate",
+    "course_code": "DART1260",
+    "course_id": "DART1260Undergraduate",
+    "course_name": "Game Art 1",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person"
@@ -69850,38 +69952,6 @@
   {
     "campus": "Paddington",
     "career": "Undergraduate",
-    "course_code": "DDES1023",
-    "course_id": "DDES1023Undergraduate",
-    "course_name": "Object as Activist: Furniture and Lighting Design",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Art & Design",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Undergraduate",
-    "course_code": "DDES1033",
-    "course_id": "DDES1033Undergraduate",
-    "course_name": "Playful Spaces: Soft Structures",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Art & Design",
-    "terms": [
-      "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Paddington",
-    "career": "Undergraduate",
     "course_code": "DDES1040",
     "course_id": "DDES1040Undergraduate",
     "course_name": "Graphics and Print/Making",
@@ -70590,7 +70660,8 @@
     "course_name": "Imperatives for a Sustainable Future",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -70959,6 +71030,22 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "Online"
+    ],
+    "school": "School of Art & Design",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Paddington",
+    "career": "Postgraduate",
+    "course_code": "DDES9912",
+    "course_id": "DDES9912Postgraduate",
+    "course_name": "Designing Immersion with Game Engines",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [
+      "In Person"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -71374,9 +71461,7 @@
     "course_id": "ZSPS1110Undergraduate",
     "course_name": "Cyber Crime and Ethics",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -71422,9 +71507,7 @@
     "course_id": "ZSPS1113Undergraduate",
     "course_name": "Computer Architecture and Operating Systems",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -71454,9 +71537,7 @@
     "course_id": "ZSPS2115Undergraduate",
     "course_name": "Computational Mathematics and Cryptography",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -71470,9 +71551,7 @@
     "course_id": "ZSPS2118Undergraduate",
     "course_name": "Machine Learning for Cyber Security",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T2"
@@ -71985,22 +72064,6 @@
   {
     "campus": "UNSW Canberra at ADFA",
     "career": "Undergraduate",
-    "course_code": "ZBUS3106",
-    "course_id": "ZBUS3106Undergraduate",
-    "course_name": "Business and Sustainable Development",
-    "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
-    "school": "UC School of Business",
-    "terms": [
-      "Z2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "UNSW Canberra at ADFA",
-    "career": "Undergraduate",
     "course_code": "ZBUS3107",
     "course_id": "ZBUS3107Undergraduate",
     "course_name": "Illicit Business in the Modern World",
@@ -72043,6 +72106,22 @@
     "school": "UC School of Business",
     "terms": [
       "Z1"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "UNSW Canberra at ADFA",
+    "career": "Undergraduate",
+    "course_code": "ZBUS3302",
+    "course_id": "ZBUS3302Undergraduate",
+    "course_name": "Defence Economics",
+    "faculty": "UNSW Canberra at ADFA",
+    "modes": [
+      "In Person"
+    ],
+    "school": "UC School of Business",
+    "terms": [
+      "Z2"
     ],
     "uoc": 6
   },
@@ -73805,8 +73884,7 @@
     ],
     "school": "UC Science",
     "terms": [
-      "Z1",
-      "Z2"
+      "Z1"
     ],
     "uoc": 6
   },
@@ -74564,7 +74642,8 @@
     ],
     "school": "UC Science",
     "terms": [
-      "Z1"
+      "Z1",
+      "Z2"
     ],
     "uoc": 6
   },
@@ -74580,7 +74659,8 @@
     ],
     "school": "UNSW Canberra at ADFA",
     "terms": [
-      "Z1"
+      "Z1",
+      "Z2"
     ],
     "uoc": 6
   },
@@ -75522,7 +75602,6 @@
     "course_name": "Capability Option Analysis",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "Sch of Systems and Computing",
@@ -77893,7 +77972,8 @@
     ],
     "school": "UC Science",
     "terms": [
-      "Z1"
+      "Z1",
+      "Z2"
     ],
     "uoc": 24
   },
