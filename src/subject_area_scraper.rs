@@ -4,10 +4,10 @@ use scraper::{ElementRef, Selector};
 use tokio::sync::Mutex;
 
 use crate::{
+    UrlInvalidError,
     class_scraper::ClassScraper,
     scraper::fetch_url,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
-    UrlInvalidError,
 };
 
 #[derive(Debug)]

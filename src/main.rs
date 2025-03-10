@@ -3,7 +3,7 @@ use dotenv::dotenv;
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    mutate_string_to_include_curr_year, send_batch_data, Class, Course, SchoolAreaScraper, Time,
+    Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::env;
@@ -16,8 +16,8 @@ use std::vec;
 extern crate env_logger;
 extern crate log;
 
-use log::warn;
 use log::LevelFilter;
+use log::warn;
 
 async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<SchoolAreaScraper> {
     match std::env::var("TIMETABLE_API_URL") {
@@ -57,7 +57,7 @@ async fn run_school_courses_page_scraper_job(
 }
 
 use tokio::sync::Semaphore;
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
 
 async fn run_course_classes_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
@@ -274,7 +274,9 @@ async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
 fn print_help() {
     println!("Usage:");
     println!("  scrape                - Perform scraping. Creates a json file to store the data.");
-    println!("  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data.");
+    println!(
+        "  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data."
+    );
     println!("  batch_insert          - Perform batch insert on json files created by scrape.");
     println!("  help                  - Show this help message");
 }
