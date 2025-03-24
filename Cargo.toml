@@ -1,26 +1,28 @@
 [package]
+edition = "2024"
 name = "spooderman"
 version = "0.1.0"
-edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cargo-watch = "8.4.1"
-chrono = "0.4.31"
-tokio = { version = "1", features = ["full"] }
-sqlx = { version = "0.5", features = ["postgres", "runtime-tokio-native-tls"] }
-reqwest = { version = "0.11", features = ["json"] }
-select = "0.5"
-scraper = "0.12"    
+chrono = "0.4.39"
 dotenv = "0.15.0"
-regex = "1.10.4"
-logger = "0.4.0"
-log = "0.4.21"
-env_logger = "0.11.3"
-serde = "1.0.203"
-serde_json = "1.0.127"
-futures = "0.3.30"
-rayon = "1.10.0"
-roxmltree = "0.20.0"
+env_logger = "0.11.6"
+futures = "0.3.31"
 html5ever = "0.29.0"
+log = "0.4.22"
+logger = "0.4.0"
+rayon = "1.10.0"
+regex = "1.11.1"
+reqwest = { version = "0.12.11", features = ["json"] }
+roxmltree = "0.20.0"
+scraper = "0.23.1"
+select = "0.6.0"
+serde = "1.0.217"
+serde_json = "1.0.134"
+sqlx = { version = "0.8.2", features = [
+    "postgres",
+    "runtime-tokio-native-tls",
+] }
+tokio = { version = "1.42.0", features = ["full"] }

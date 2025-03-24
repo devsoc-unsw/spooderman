@@ -66,7 +66,9 @@ impl SchoolAreaScraper {
                         course_code,
                         course_name,
                         school,
-                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(url_to_scrape_further))),
+                        subject_area_scraper: Arc::new(Mutex::new(SubjectAreaScraper::new(
+                            url_to_scrape_further,
+                        ))),
                     };
 
                     self.pages.push(page);

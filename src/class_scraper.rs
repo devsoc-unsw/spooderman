@@ -2,7 +2,6 @@ use rayon::prelude::*;
 use scraper::Selector;
 use std::collections::{HashMap, HashSet};
 
-
 use crate::{
     school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
 };
@@ -61,25 +60,22 @@ pub struct ClassScraper {
     pub url: String,
 }
 
-
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
         println!("Currently working on {:?}", self.course_code);
         let html = fetch_url(&self.url)
             .await
-            .expect(&format!("Something was wrong with the URL: {}", self.url));
+            .unwrap_or_else(|_| panic!("Something was wrong with the URL: {}", self.url));
         let document = scraper::Html::parse_document(&html);
 
         // Selectors
         let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
-        let term_selector =
-            Selector::parse("table table:nth-of-type(3)").unwrap();
-        let table_selector =
-            Selector::parse("table table").unwrap();
+        let term_selector = Selector::parse("table table:nth-of-type(3)").unwrap();
+        let table_selector = Selector::parse("table table").unwrap();
         let label_selector = Selector::parse("td.label").unwrap();
         let data_selector = Selector::parse("td.data").unwrap();
         let information_body = document.select(&form_bodies);
-        
+
         let mut course_info = Course {
             course_id: self.course_code.clone() + &self.career.clone(),
             course_code: self.course_code.clone(),
@@ -94,34 +90,34 @@ impl ClassScraper {
             classes: vec![],
         };
         let mut skip_this_info_box = false;
-        let mut terms: Vec<String> = vec![]; 
+        let mut terms: Vec<String> = vec![];
         let mut class_activity_information: Vec<Vec<String>> = vec![];
         for info_box in information_body {
             if let Some(label_info) = info_box.select(&label_selector).next() {
-                
                 // Check if it is a form body with course information
                 if extract_text(label_info).trim() == "Faculty" {
                     let labels: Vec<_> = info_box
-                    .select(&label_selector)
-                    .map(|el| 
-                        extract_text(el).trim().replace("\u{a0}", ""))
-                    .collect();
-                
+                        .select(&label_selector)
+                        .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
+                        .collect();
+
                     let data: Vec<_> = info_box
-                            .select(&data_selector)
-                            .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
-                            .collect();
+                        .select(&data_selector)
+                        .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
+                        .collect();
                     for (label, data) in labels.iter().zip(data.iter()) {
                         match label.trim().to_lowercase().as_str() {
                             "faculty" => course_info.faculty = Some(data.clone()),
                             "school" => course_info.school = Some(data.clone()),
                             "campus" => course_info.campus = Some(data.clone()),
-                            "career" => if course_info.career != Some(data.clone()) {
-                                skip_this_info_box = true;
-                                break;
-                            } else { 
-                                skip_this_info_box = false;
-                            },
+                            "career" => {
+                                if course_info.career != Some(data.clone()) {
+                                    skip_this_info_box = true;
+                                    break;
+                                } else {
+                                    skip_this_info_box = false;
+                                }
+                            }
                             _ => {}
                         }
                     }
@@ -130,36 +126,46 @@ impl ClassScraper {
                     }
                     if let Some(terms_info_table) = info_box.select(&term_selector).next() {
                         for terms_table in terms_info_table.select(&table_selector) {
-                            let curr_terms_row = terms_table.text().map(|e| e.trim().to_string()).filter(|s| !s.is_empty()).collect::<Vec<_>>();
+                            let curr_terms_row = terms_table
+                                .text()
+                                .map(|e| e.trim().to_string())
+                                .filter(|s| !s.is_empty())
+                                .collect::<Vec<_>>();
                             if !curr_terms_row.is_empty() {
                                 terms.extend(curr_terms_row);
                             }
                         }
                     }
-
                 } else if extract_text(label_info).trim() == "Class Nbr" && !skip_this_info_box {
                     // Extract class.
-                    let info_map = info_box.select(&Selector::parse("td.label, td.data").unwrap())
-                    .map(|cell| {
-                        cell.text()
-                            .collect::<String>()
-                            .trim()
-                            .replace("\u{a0}", "")
-                            .to_string()
-                    }).collect::<Vec<_>>();
+                    let info_map = info_box
+                        .select(&Selector::parse("td.label, td.data").unwrap())
+                        .map(|cell| {
+                            cell.text()
+                                .collect::<String>()
+                                .trim()
+                                .replace("\u{a0}", "")
+                                .to_string()
+                        })
+                        .collect::<Vec<_>>();
                     if !info_map.is_empty() {
                         class_activity_information.push(info_map);
                     }
                 }
-
+            }
         }
-    }
 
         course_info.terms = terms.clone();
 
         course_info.classes = class_activity_information
             .into_par_iter()
-            .map(|class_data| parse_class_info(class_data, self.course_code.clone() + &self.career.clone(), self.career.clone()))
+            .map(|class_data| {
+                parse_class_info(
+                    class_data,
+                    self.course_code.clone() + &self.career.clone(),
+                    self.career.clone(),
+                )
+            })
             .collect();
         let _ = course_info
             .classes
@@ -194,10 +200,10 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
         map.insert(key, value);
         i += 2;
     }
-    let offering_period_str =  map
-    .get("Offering Period")
-    .unwrap_or(&"".to_string())
-    .to_string();
+    let offering_period_str = map
+        .get("Offering Period")
+        .unwrap_or(&"".to_string())
+        .to_string();
     let mut split_offering_period_str = offering_period_str.split(" - ");
     let date = split_offering_period_str.next().unwrap();
     let year = date.split("/").nth(2).unwrap();
@@ -206,22 +212,18 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
         class_id: format!(
             "{}-{}-{}-{}",
             course_id,
-            map.get("Class Nbr").unwrap_or(&String::new()), 
-            map
-            .get("Teaching Period")
-            .unwrap_or(&"".to_string())
-            .to_string()
-            .split(" - ")
-            .next()
-            .expect("Could not split teaching periods properly!")
-            .to_string(), 
+            map.get("Class Nbr").unwrap_or(&String::new()),
+            map.get("Teaching Period")
+                .unwrap_or(&"".to_string())
+                .split(" - ")
+                .next()
+                .expect("Could not split teaching periods properly!"),
             year,
         ),
         section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
         term: map
             .get("Teaching Period")
             .unwrap_or(&"".to_string())
-            .to_string()
             .split(" - ")
             .next()
             .expect("Could not split teaching periods properly!")
@@ -232,7 +234,8 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
         course_enrolment: map
             .get("Enrols/Capacity")
             .unwrap_or(&"".to_string())
-            .replace("*", "").to_string(),
+            .replace("*", "")
+            .to_string(),
         offering_period: map
             .get("Offering Period")
             .unwrap_or(&"".to_string())
@@ -264,7 +267,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
 }
 
 fn parse_meeting_info(vec: &[String], career: String) -> Vec<Time> {
-    let days = vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let mut meetings = Vec::new();
     let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
 
