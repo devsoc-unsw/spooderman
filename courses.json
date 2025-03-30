@@ -2182,7 +2182,6 @@
     "course_name": "Mergers and Acquisitions",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
       "Multimodal",
       "Online"
     ],
@@ -2345,8 +2344,8 @@
     "course_name": "Decarbonisation and Transition to Clean Energy",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -2362,8 +2361,8 @@
     "course_name": "Sustainable Governance and Reporting",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -3213,7 +3212,8 @@
     "course_name": "Architecture and Urbanism in Asia",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -6442,7 +6442,8 @@
     "course_name": "Architecture and Urbanism in Asia",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -18497,8 +18498,7 @@
     "course_name": "Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "In Person"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18922,7 +18922,8 @@
     "course_name": "Advanced Topics in Statistical Machine Learning",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19127,8 +19128,7 @@
     "course_name": "Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "In Person"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19887,7 +19887,8 @@
     "course_name": "Advanced Topics in Statistical Machine Learning",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -37291,22 +37292,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "INFS4854",
-    "course_id": "INFS4854Undergraduate",
-    "course_name": "Information Systems Strategy and Management",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch Info Sys and Tech Mgmt",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "INFS4886",
     "course_id": "INFS4886Undergraduate",
     "course_name": "Principles of Research Design",
@@ -39691,9 +39676,7 @@
     "course_id": "JURD7511Postgraduate",
     "course_name": "Anti-Money Laundering and Proceeds of Crime",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "T2"
@@ -40274,6 +40257,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T2",
       "T2B"
     ],
     "uoc": 6
@@ -43778,6 +43762,7 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
+      "T2",
       "T2B"
     ],
     "uoc": 6
@@ -44495,6 +44480,22 @@
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T2A"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "LAWS8991",
+    "course_id": "LAWS8991Postgraduate",
+    "course_name": "International Criminal Law",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "Online"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
+      "T3"
     ],
     "uoc": 6
   },
@@ -45661,7 +45662,8 @@
     "course_name": "Marketing Communication and Promotion",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -48528,6 +48530,20 @@
   },
   {
     "campus": "Sydney",
+    "career": "Undergraduate",
+    "course_code": "MATS6007",
+    "course_id": "MATS6007Undergraduate",
+    "course_name": "Sustainable Materials Engineering",
+    "faculty": "Faculty of Science",
+    "modes": [],
+    "school": "School of Materials Sci & Eng",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
     "career": "Postgraduate",
     "course_code": "MATS6001",
     "course_id": "MATS6001Postgraduate",
@@ -50394,8 +50410,7 @@
     "course_name": "Communication Strategies",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -50477,8 +50492,7 @@
     "course_name": "Research in Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -53910,7 +53924,8 @@
     "course_name": "Additive Manufacturing",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54031,7 +54046,8 @@
     "course_name": "Linear Systems and Control",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54063,7 +54079,8 @@
     "course_name": "Additive Manufacturing",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -54996,8 +55013,7 @@
     "course_name": "Robotics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -55062,8 +55078,7 @@
     "course_name": "Robotics",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -66233,7 +66248,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -66324,7 +66340,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -67149,8 +67166,7 @@
     ],
     "school": "School of Population Health",
     "terms": [
-      "ASB",
-      "AFB"
+      "ASB"
     ],
     "uoc": 6
   },
@@ -67167,10 +67183,7 @@
     "school": "School of Population Health",
     "terms": [
       "ASA",
-      "ASB",
-      "AFA",
-      "AUA",
-      "AFB"
+      "ASB"
     ],
     "uoc": 6
   },
@@ -70387,7 +70400,6 @@
     ],
     "school": "School of Art & Design",
     "terms": [
-      "T2C",
       "T3"
     ],
     "uoc": 6
