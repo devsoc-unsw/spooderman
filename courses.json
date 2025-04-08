@@ -5830,7 +5830,8 @@
     "course_name": "Sex, Human Rights and Justice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -13808,7 +13809,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -15991,7 +15993,7 @@
     "career": "Postgraduate",
     "course_code": "CHEM7001",
     "course_id": "CHEM7001Postgraduate",
-    "course_name": "Chemical Safety & Legislation",
+    "course_name": "Chemical Safety and Legislation",
     "faculty": "Faculty of Science",
     "modes": [
       "Online"
@@ -18498,7 +18500,8 @@
     "course_name": "Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19128,7 +19131,8 @@
     "course_name": "Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Multimodal"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -23630,7 +23634,6 @@
     ],
     "school": "UNSW College Diplomas",
     "terms": [
-      "GD2",
       "GD3"
     ],
     "uoc": 6
@@ -24099,8 +24102,7 @@
     "course_name": "Introduction to Engineering Design and Innovation",
     "faculty": "UNSW College",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -28213,7 +28215,6 @@
     "course_name": "Curriculum Differentiation and Assessment in Gifted Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Multimodal",
       "Online"
     ],
@@ -34987,10 +34988,7 @@
     "course_id": "GSOE9360Postgraduate",
     "course_name": "Academic Discourse in Engineering",
     "faculty": "Faculty of Engineering",
-    "modes": [
-      "In Person",
-      "Multimodal"
-    ],
+    "modes": [],
     "school": "Faculty of Engineering",
     "terms": [
       "T2"
@@ -36101,6 +36099,7 @@
     ],
     "school": "School Humanities & Languages",
     "terms": [
+      "T2",
       "T3"
     ],
     "uoc": 6
@@ -39672,20 +39671,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "JURD7511",
-    "course_id": "JURD7511Postgraduate",
-    "course_name": "Anti-Money Laundering and Proceeds of Crime",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [],
-    "school": "Sch Law, Society & Criminology",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "JURD7514",
     "course_id": "JURD7514Postgraduate",
     "course_name": "Defamation and the Media",
@@ -43080,20 +43065,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "LAWS8011",
-    "course_id": "LAWS8011Postgraduate",
-    "course_name": "Anti-Money Laundering and Proceeds of Crime",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [],
-    "school": "Sch Law, Society & Criminology",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "LAWS8014",
     "course_id": "LAWS8014Postgraduate",
     "course_name": "Defamation and the Media",
@@ -45356,7 +45327,8 @@
     "course_name": "Strategic Marketing",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -45801,7 +45773,8 @@
     "course_name": "Marketing Analytics Tools",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Marketing",
     "terms": [
@@ -46760,9 +46733,7 @@
     "course_id": "MATH3191Undergraduate",
     "course_name": "Mathematical Optimization for Data Science",
     "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T3"
@@ -46937,22 +46908,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "MATH3531",
-    "course_id": "MATH3531Undergraduate",
-    "course_name": "Topology and Differential Geometry",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch Mathematics & Statistics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "MATH3560",
     "course_id": "MATH3560Undergraduate",
     "course_name": "History of Mathematics",
@@ -46997,23 +46952,8 @@
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T1",
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "MATH3611",
-    "course_id": "MATH3611Undergraduate",
-    "course_name": "Higher Analysis",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch Mathematics & Statistics",
-    "terms": [
-      "T2"
+      "T2",
+      "T3"
     ],
     "uoc": 6
   },
@@ -47032,7 +46972,8 @@
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T1",
-      "T2"
+      "T2",
+      "T3"
     ],
     "uoc": 6
   },
@@ -47374,9 +47315,7 @@
     "course_id": "MATH5191Postgraduate",
     "course_name": "Mathematical Optimization for Data Science",
     "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T3"
@@ -49513,7 +49452,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55197,8 +55137,7 @@
     "course_name": "Music Craft 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55247,8 +55186,7 @@
     "course_name": "BA Music Craft 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55491,8 +55429,7 @@
     "course_name": "Music Craft 5",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55571,9 +55508,7 @@
     "course_id": "MUSC3162Undergraduate",
     "course_name": "Music Since 1900",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School of the Arts & Media",
     "terms": [
       "T2"
@@ -55910,8 +55845,7 @@
     "course_name": "Performance Laboratory D (Music Creative Practice)",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -59990,7 +59924,7 @@
     "career": "Postgraduate",
     "course_code": "PLAN7146",
     "course_id": "PLAN7146Postgraduate",
-    "course_name": "City Economics, Urban Development & Finance",
+    "course_name": "City Economics, Urban Development and Finance",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
@@ -62964,22 +62898,6 @@
     "school": "School of Risk & Actuarial St",
     "terms": [
       "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "RISK3003",
-    "course_id": "RISK3003Undergraduate",
-    "course_name": "Risk Decision Analytics",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Risk & Actuarial St",
-    "terms": [
-      "T2"
     ],
     "uoc": 6
   },
@@ -67151,212 +67069,6 @@
     "school": "School of Mech & Manf. Eng",
     "terms": [
       "ASC"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "YMED3004",
-    "course_id": "YMED3004Undergraduate",
-    "course_name": "Behavioural and Mental Disorders",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "YMED3005",
-    "course_id": "YMED3005Undergraduate",
-    "course_name": "Economics for Health Majors",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "ASB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5000",
-    "course_id": "YMED5000Postgraduate",
-    "course_name": "Integrated Emergency Management",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "AUA"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5001",
-    "course_id": "YMED5001Postgraduate",
-    "course_name": "Homeland Security",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "ASB",
-      "AUA",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5002",
-    "course_id": "YMED5002Postgraduate",
-    "course_name": "Hazards Governance",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "AUA"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5003",
-    "course_id": "YMED5003Postgraduate",
-    "course_name": "Public Management",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5004",
-    "course_id": "YMED5004Postgraduate",
-    "course_name": "IT in Emergency Management",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASB",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5005",
-    "course_id": "YMED5005Postgraduate",
-    "course_name": "Community Resilience and Recovery",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "AUA"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5007",
-    "course_id": "YMED5007Postgraduate",
-    "course_name": "Critical Incident Stress Management",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5008",
-    "course_id": "YMED5008Postgraduate",
-    "course_name": "Applied Data Analysis in Criminal Justice",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASA",
-      "ASB",
-      "AUA",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5009",
-    "course_id": "YMED5009Postgraduate",
-    "course_name": "Program Evaluation for Emergency Management and Homeland Security",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASB",
-      "AUB"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "YMED5010",
-    "course_id": "YMED5010Postgraduate",
-    "course_name": "GIS and Analysis",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Population Health",
-    "terms": [
-      "ASB"
     ],
     "uoc": 6
   },
