@@ -8,6 +8,7 @@ version = "0.1.0"
 [dependencies]
 anyhow = "1.0.98"
 chrono = "0.4.39"
+clap = { version = "4.5.35", features = ["derive"] }
 dotenv = "0.15.0"
 env_logger = "0.11.6"
 futures = "0.3.31"
