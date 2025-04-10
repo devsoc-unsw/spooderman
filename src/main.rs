@@ -1,3 +1,4 @@
+use anyhow::Context;
 use chrono::Datelike;
 use clap::{Parser, Subcommand};
 use dotenv::dotenv;
@@ -19,19 +20,21 @@ use std::vec;
 use log::LevelFilter;
 use log::warn;
 
-async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<SchoolAreaScraper> {
+async fn run_all_school_offered_courses_scraper_job(
+    curr_year: i32,
+) -> anyhow::Result<SchoolAreaScraper> {
+    // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             let url_to_scrape =
                 mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
             let mut scraper = SchoolAreaScraper::new(url_to_scrape);
             let _ = scraper.scrape().await;
-            Some(scraper)
+            Ok(scraper)
         }
-        Err(e) => {
-            warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-            None
-        }
+        Err(e) => Err(anyhow::anyhow!(
+            "Timetable URL could NOT been parsed properly from env file and error report: {e}"
+        )),
     }
 }
 
@@ -210,14 +213,15 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_classes
 }
 
-async fn handle_scrape(course_vec: &mut Vec<Course>, year: i32) -> Result<(), Box<dyn Error>> {
-    // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-    println!("Handling scrape for year: {year}");
-    let mut all_school_offered_courses_scraper =
-        run_all_school_offered_courses_scraper_job(year).await;
-    if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-        run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-        let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> anyhow::Result<()> {
+    for year in &[2025] {
+        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+        println!("Handling scrape for year: {year}");
+        let mut all_school_offered_courses_scraper =
+            run_all_school_offered_courses_scraper_job(*year).await?;
+        run_school_courses_page_scraper_job(&mut all_school_offered_courses_scraper).await;
+        let course =
+            run_course_classes_page_scraper_job(&mut all_school_offered_courses_scraper).await;
         course_vec.extend(course);
     }
 
@@ -228,7 +232,7 @@ async fn handle_scrape_write_to_file() -> anyhow::Result<()> {
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
         .await
-        .expect("Something went wrong with scraping!");
+        .context("Something went wrong with scraping!")?;
     println!("Writing to disk!");
     let json_classes = convert_classes_to_json(&course_vec);
     let json_courses = convert_courses_to_json(&course_vec);
@@ -271,7 +275,7 @@ async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
         .await
-        .expect("Something went wrong with scraping!");
+        .context("Something went wrong with scraping!")?;
     let json_classes = convert_classes_to_json(&course_vec);
     let json_courses = convert_courses_to_json(&course_vec);
     let json_times = convert_classes_times_to_json(&course_vec);
