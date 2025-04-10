@@ -16,9 +16,6 @@ use std::path::Path;
 use std::sync::Arc;
 use std::vec;
 
-extern crate env_logger;
-extern crate log;
-
 use log::LevelFilter;
 use log::warn;
 
