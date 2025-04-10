@@ -1,4 +1,6 @@
+use anyhow::Context;
 use chrono::Datelike;
+use clap::{Parser, Subcommand};
 use dotenv::dotenv;
 use futures::future::join_all;
 use serde_json::{json, to_writer_pretty};
@@ -13,25 +15,28 @@ use std::io::ErrorKind;
 use std::path::Path;
 use std::sync::Arc;
 use std::vec;
+
 extern crate env_logger;
 extern crate log;
 
 use log::LevelFilter;
 use log::warn;
 
-async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<SchoolAreaScraper> {
+async fn run_all_school_offered_courses_scraper_job(
+    curr_year: i32,
+) -> anyhow::Result<SchoolAreaScraper> {
+    // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             let url_to_scrape =
                 mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
             let mut scraper = SchoolAreaScraper::new(url_to_scrape);
             let _ = scraper.scrape().await;
-            Some(scraper)
+            Ok(scraper)
         }
-        Err(e) => {
-            warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-            None
-        }
+        Err(e) => Err(anyhow::anyhow!(
+            "Timetable URL could NOT been parsed properly from env file and error report: {e}"
+        )),
     }
 }
 
@@ -188,31 +193,26 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_classes
 }
 
-async fn handle_scrape(
-    course_vec: &mut Vec<Course>,
-    start_year: i32,
-) -> Result<(), Box<dyn Error>> {
+async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> anyhow::Result<()> {
     for year in &[2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         println!("Handling scrape for year: {year}");
         let mut all_school_offered_courses_scraper =
-            run_all_school_offered_courses_scraper_job(*year).await;
-        if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-            run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-            let course =
-                run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-            course_vec.extend(course);
-        }
+            run_all_school_offered_courses_scraper_job(*year).await?;
+        run_school_courses_page_scraper_job(&mut all_school_offered_courses_scraper).await;
+        let course =
+            run_course_classes_page_scraper_job(&mut all_school_offered_courses_scraper).await;
+        course_vec.extend(course);
     }
 
     Ok(())
 }
-async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
+async fn handle_scrape_write_to_file() -> anyhow::Result<()> {
     let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
         .await
-        .expect("Something went wrong with scraping!");
+        .context("Something went wrong with scraping!")?;
     println!("Writing to disk!");
     let json_classes = convert_classes_to_json(&course_vec);
     let json_courses = convert_courses_to_json(&course_vec);
@@ -227,38 +227,35 @@ async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
+async fn handle_batch_insert() -> anyhow::Result<()> {
     println!("Handling batch insert...");
     if !Path::new("courses.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "courses.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "courses.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
     if !Path::new("classes.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "classes.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "classes.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
     if !Path::new("times.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "times.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "times.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
 
     let _ = send_batch_data(&ReadFromFile).await;
     Ok(())
 }
 
-async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
+async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
     println!("Handling scrape and batch insert...");
     let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
         .await
-        .expect("Something went wrong with scraping!");
+        .context("Something went wrong with scraping!")?;
     let json_classes = convert_classes_to_json(&course_vec);
     let json_courses = convert_courses_to_json(&course_vec);
     let json_times = convert_classes_times_to_json(&course_vec);
@@ -271,42 +268,48 @@ async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn print_help() {
-    println!("Usage:");
-    println!("  scrape                - Perform scraping. Creates a json file to store the data.");
-    println!(
-        "  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data."
-    );
-    println!("  batch_insert          - Perform batch insert on json files created by scrape.");
-    println!("  help                  - Show this help message");
+/// Scrape UNSW class data.
+#[derive(Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Command,
+}
+
+#[derive(Subcommand)]
+enum Command {
+    /// Perform scraping. Creates a JSON file to store the data.
+    #[command(name = "scrape")]
+    Scrape,
+
+    /// Perform batch insert on JSON files created by `scrape`.
+    #[command(name = "batch_insert")]
+    BatchInsert,
+
+    /// Perform scraping and batch insert. Does not create a JSON file to store the data.
+    #[command(name = "scrape_n_batch_insert")]
+    ScrapeAndBatchInsert,
+}
+
+impl Command {
+    async fn exec(self) -> anyhow::Result<()> {
+        match self {
+            Command::Scrape => handle_scrape_write_to_file().await?,
+            Command::BatchInsert => handle_batch_insert().await?,
+            Command::ScrapeAndBatchInsert => handle_scrape_n_batch_insert().await?,
+        };
+        Ok(())
+    }
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> anyhow::Result<()> {
     dotenv().ok();
     env_logger::Builder::new()
         .filter_level(LevelFilter::Error)
         .init();
 
-    let args: Vec<String> = env::args().collect();
-
-    if args.len() < 2 {
-        eprintln!("Usage: {} <command> [options]", args[0]);
-        std::process::exit(1);
-    }
-
-    let command = &args[1];
-    match command.as_str() {
-        "scrape" => handle_scrape_write_to_file().await?,
-        "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
-        "batch_insert" => handle_batch_insert().await?,
-        "help" => print_help(),
-        _ => {
-            eprintln!("Unknown command: '{}'", command);
-            print_help();
-            std::process::exit(1);
-        }
-    }
+    let cli = Cli::parse();
+    cli.command.exec().await?;
 
     Ok(())
 }
