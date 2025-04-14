@@ -2464,7 +2464,8 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -11534,22 +11535,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "BEIL6010",
-    "course_id": "BEIL6010Undergraduate",
-    "course_name": "Sydney Urban Lab",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "BEIL6011",
     "course_id": "BEIL6011Undergraduate",
     "course_name": "Street Life Studies: Cambodia",
@@ -11673,22 +11658,6 @@
     "school": "School of Built Environment",
     "terms": [
       "T3C"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "BEIL6010",
-    "course_id": "BEIL6010Postgraduate",
-    "course_name": "Sydney Urban Lab",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -11844,12 +11813,10 @@
     "course_id": "BENV2112Undergraduate",
     "course_name": "Landscape Design for Social Sustainability",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School of Built Environment",
     "terms": [
-      "T2"
+      "T3"
     ],
     "uoc": 6
   },
@@ -15720,22 +15687,6 @@
     "school": "School of Chemistry",
     "terms": [
       "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "CHEM2901",
-    "course_id": "CHEM2901Undergraduate",
-    "course_name": "Environmental Chemistry and Sustainability",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Chemistry",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -20583,7 +20534,8 @@
     "course_name": "Criminological Aspects of Cyber Security",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -20723,7 +20675,8 @@
     "course_name": "Engineering Construction",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -23871,7 +23824,8 @@
     "school": "UNSW College Diplomas",
     "terms": [
       "GD1",
-      "GD2"
+      "GD2",
+      "GD3"
     ],
     "uoc": 6
   },
@@ -24102,7 +24056,8 @@
     "course_name": "Introduction to Engineering Design and Innovation",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -24193,7 +24148,8 @@
     "faculty": "UNSW College",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -38281,6 +38237,7 @@
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "T1",
+      "T2",
       "T3"
     ],
     "uoc": 6
@@ -39460,22 +39417,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "JURD7481",
-    "course_id": "JURD7481Postgraduate",
-    "course_name": "Public International Law",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "JURD7484",
     "course_id": "JURD7484Postgraduate",
     "course_name": "International Trade Law: The Law and Policy of the WTO",
@@ -40491,8 +40432,7 @@
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "T1",
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -41235,7 +41175,8 @@
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T1"
+      "T1",
+      "T2"
     ],
     "uoc": 6
   },
@@ -42312,8 +42253,7 @@
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "T1",
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -42493,22 +42433,6 @@
     "terms": [
       "U1",
       "T2C"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "LAWS3381",
-    "course_id": "LAWS3381Undergraduate",
-    "course_name": "Public International Law",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "T2"
     ],
     "uoc": 6
   },
@@ -46729,20 +46653,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "MATH3191",
-    "course_id": "MATH3191Undergraduate",
-    "course_name": "Mathematical Optimization for Data Science",
-    "faculty": "Faculty of Science",
-    "modes": [],
-    "school": "Sch Mathematics & Statistics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "MATH3201",
     "course_id": "MATH3201Undergraduate",
     "course_name": "Dynamical Systems and Chaos",
@@ -46954,6 +46864,22 @@
       "T1",
       "T2",
       "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
+    "course_code": "MATH3611",
+    "course_id": "MATH3611Undergraduate",
+    "course_name": "Higher Analysis",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch Mathematics & Statistics",
+    "terms": [
+      "T2"
     ],
     "uoc": 6
   },
@@ -47305,20 +47231,6 @@
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "MATH5191",
-    "course_id": "MATH5191Postgraduate",
-    "course_name": "Mathematical Optimization for Data Science",
-    "faculty": "Faculty of Science",
-    "modes": [],
-    "school": "Sch Mathematics & Statistics",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -50185,7 +50097,8 @@
     "course_name": "Celebrity, Media and Culture",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -50350,7 +50263,8 @@
     "course_name": "Communication Strategies",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -51505,6 +51419,7 @@
     "course_name": "Introductory Clinical and Communication Skills",
     "faculty": "Faculty of Medicine and Health",
     "modes": [
+      "In Person",
       "Multimodal"
     ],
     "school": "Faculty of Medicine and Health",
@@ -57877,20 +57792,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "PHCM9628",
-    "course_id": "PHCM9628Postgraduate",
-    "course_name": "Health Impact Assessment",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [],
-    "school": "School of Population Health",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "PHCM9630",
     "course_id": "PHCM9630Postgraduate",
     "course_name": "Public Health Perspectives of Indigenous Health",
@@ -61643,9 +61544,7 @@
     "course_id": "PSYC5203Postgraduate",
     "course_name": "Application of Psychological Practice",
     "faculty": "Faculty of Science",
-    "modes": [
-      "Online"
-    ],
+    "modes": [],
     "school": "School of Psychology",
     "terms": [
       "KN"
@@ -63142,6 +63041,20 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "SCIF3010",
+    "course_id": "SCIF3010Undergraduate",
+    "course_name": "Graduation Portfolio",
+    "faculty": "Faculty of Science",
+    "modes": [],
+    "school": "Faculty of Science",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 0
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "SCIF3041",
     "course_id": "SCIF3041Undergraduate",
     "course_name": "Research Internship B",
@@ -63203,7 +63116,8 @@
     ],
     "school": "Faculty of Science",
     "terms": [
-      "T1"
+      "T1",
+      "T3"
     ],
     "uoc": 0
   },
@@ -67644,7 +67558,7 @@
     "career": "Postgraduate (Online)",
     "course_code": "ZZBU6513",
     "course_id": "ZZBU6513Postgraduate (Online)",
-    "course_name": "Social Media & Digital Analytics",
+    "course_name": "Social Media and Digital Analytics",
     "faculty": "UNSW Business School",
     "modes": [
       "Online"
@@ -68267,8 +68181,7 @@
     "school": "Sch Mathematics & Statistics",
     "terms": [
       "KF",
-      "KR",
-      "KV"
+      "KR"
     ],
     "uoc": 6
   },
@@ -69867,7 +69780,8 @@
     ],
     "school": "School of Art & Design",
     "terms": [
-      "T1"
+      "T1",
+      "T1C"
     ],
     "uoc": 6
   },
@@ -70291,8 +70205,7 @@
     "school": "School of Art & Design",
     "terms": [
       "T1",
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -70893,7 +70806,8 @@
     "course_name": "Creativity and Entrepreneurship",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -72285,22 +72199,6 @@
     "course_code": "ZBUS3104",
     "course_id": "ZBUS3104Undergraduate",
     "course_name": "Business Capstone",
-    "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "In Person"
-    ],
-    "school": "UC School of Business",
-    "terms": [
-      "Z2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "UNSW Canberra at ADFA",
-    "career": "Undergraduate",
-    "course_code": "ZBUS3107",
-    "course_id": "ZBUS3107Undergraduate",
-    "course_name": "Illicit Business in the Modern World",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
       "In Person"
