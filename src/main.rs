@@ -214,7 +214,7 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> anyhow::Result<()> {
     for year in &[2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-        println!("Handling scrape for year: {year}");
+        log::info!("Handling scrape for year: {year}");
         let mut all_school_offered_courses_scraper =
             run_all_school_offered_courses_scraper_job(*year).await?;
         run_school_courses_page_scraper_job(&mut all_school_offered_courses_scraper).await;
@@ -231,7 +231,7 @@ async fn handle_scrape_write_to_file() -> anyhow::Result<()> {
     handle_scrape(&mut course_vec, current_year)
         .await
         .context("Something went wrong with scraping!")?;
-    println!("Writing to disk!");
+    log::info!("Writing scraped data to disk!");
     let json_classes = convert_classes_to_json(&course_vec);
     let json_courses = convert_courses_to_json(&course_vec);
     let json_times = convert_classes_times_to_json(&course_vec);
@@ -246,7 +246,7 @@ async fn handle_scrape_write_to_file() -> anyhow::Result<()> {
 }
 
 async fn handle_batch_insert() -> anyhow::Result<()> {
-    println!("Handling batch insert...");
+    log::info!("Handling batch insert...");
     if !Path::new("courses.json").is_file() {
         return Err(anyhow::anyhow!(
             "courses.json doesn't exist, please run cargo r -- scrape"
@@ -268,7 +268,7 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
 }
 
 async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
-    println!("Handling scrape and batch insert...");
+    log::info!("Handling scrape and batch insert...");
     let mut course_vec: Vec<Course> = Vec::<Course>::new();
     let current_year = chrono::Utc::now().year();
     handle_scrape(&mut course_vec, current_year)
@@ -296,6 +296,10 @@ trait Exec {
 struct Cli {
     #[argh(subcommand)]
     command: Command,
+
+    /// enable debug logging
+    #[argh(switch, short = 'v')]
+    verbose: bool,
 }
 
 #[derive(FromArgs)]
@@ -343,11 +347,21 @@ impl Exec for ScrapeAndBatchInsert {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     dotenv().ok();
-    env_logger::Builder::new()
-        .filter_level(LevelFilter::Error)
-        .init();
 
     let cli: Cli = argh::from_env();
+
+    let lvl = if cli.verbose {
+        // TODO: we don't currently have any Debug logs, but useful for when we do, or we can config differently.
+        LevelFilter::Debug
+    } else {
+        LevelFilter::Info
+    };
+    env_logger::Builder::new()
+        .filter_level(lvl)
+        // Only show error logs from html5ever dependency, since it logs many unnecessary warnings.
+        .filter_module("html5ever", LevelFilter::Error)
+        .init();
+
     cli.command.exec().await?;
 
     Ok(())

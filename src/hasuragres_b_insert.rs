@@ -80,7 +80,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
     let hasuragres_url = env::var("HASURAGRES_URL")?;
     let api_key = env::var("HASURAGRES_API_KEY")?;
     let client = Client::new();
-    println!("Starting to insert into Hasuragres!");
+    log::info!("Starting to insert into Hasuragres!");
     let requests = vec![
         BatchInsertRequest {
             metadata: Metadata {
@@ -173,25 +173,25 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn 
 
                 match error_body {
                     Ok(json) => {
-                        println!("Error occurred: {:?}", json);
+                        log::error!("Error occurred: {:?}", json);
                         if let Some(error_message) = json.get("error") {
-                            println!("Error message: {}", error_message);
+                            log::error!("Error message: {}", error_message);
                         }
                     }
                     Err(err) => {
-                        eprintln!("Failed to parse error body: {:?}", err);
+                        log::error!("Failed to parse error body: {:?}", err);
                     }
                 }
             } else {
                 let text = res.text().await.unwrap();
                 let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
                 match data {
-                    Ok(_) => println!("Successfully inserted into Hasuragres"),
-                    Err(err) => eprintln!("Failed to parse response body: {:?}", err),
+                    Ok(_) => log::info!("Successfully inserted into Hasuragres"),
+                    Err(err) => log::error!("Failed to parse response body: {:?}", err),
                 }
             }
         }
-        Err(e) => eprintln!("Failed to insert batch data: {:?}", e),
+        Err(e) => log::error!("Failed to insert batch data: {:?}", e),
     }
     Ok(())
 }

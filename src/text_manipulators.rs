@@ -11,7 +11,7 @@ pub fn extract_year(url: &str) -> Option<u32> {
         caps.get(1)
             .and_then(|year_match| year_match.as_str().parse::<u32>().ok())
     } else {
-        println!("This url caused an error {url}");
+        log::error!("This url caused an error {url}");
         None
     }
 }

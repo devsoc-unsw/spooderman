@@ -64,7 +64,8 @@ pub struct ClassScraper {
 
 impl ClassScraper {
     pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
-        println!("Currently working on {:?}", self.course_code);
+        log::info!("Scarping course {}", self.course_code);
+
         let html = fetch_url(&self.url)
             .await
             .unwrap_or_else(|_| panic!("Something was wrong with the URL: {}", self.url));
@@ -184,6 +185,7 @@ impl ClassScraper {
         })
     }
 }
+
 fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) -> Class {
     let mut map = HashMap::new();
     let mut i = 0;
