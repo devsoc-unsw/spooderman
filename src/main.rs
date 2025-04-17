@@ -24,8 +24,7 @@ async fn run_all_school_offered_courses_scraper_job(
     // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
-            let url_to_scrape =
-                mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
+            let url_to_scrape = mutate_string_to_include_curr_year(&url, curr_year.to_string());
             Ok(SchoolAreaScraper::scrape(url_to_scrape).await?)
         }
         Err(e) => Err(anyhow::anyhow!(
@@ -62,12 +61,12 @@ impl Data {
 }
 
 async fn run_school_courses_page_scraper_job(
-    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
+    all_school_offered_courses_scraper: &SchoolAreaScraper,
 ) {
     // Iterate over the pages and create tasks for each scrape operation
     let tasks: Vec<_> = all_school_offered_courses_scraper
         .pages
-        .iter_mut()
+        .iter()
         .map(|school_area_scrapers| {
             let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
             tokio::spawn(async move {
@@ -87,13 +86,13 @@ use tokio::sync::Semaphore;
 use tokio::time::{Duration, sleep};
 
 async fn run_course_classes_page_scraper_job(
-    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
+    all_school_offered_courses_scraper: &SchoolAreaScraper,
 ) -> Vec<Course> {
     let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
     let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
     let mut tasks = vec![];
-    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
+    for school_area_scrapers in &all_school_offered_courses_scraper.pages {
         let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
 
         // Lock the mutex to access the underlying data
@@ -217,9 +216,9 @@ async fn handle_scrape(course_vec: &mut Vec<Course>, start_year: i32) -> anyhow:
         let mut all_school_offered_courses_scraper =
             run_all_school_offered_courses_scraper_job(*year).await?;
         run_school_courses_page_scraper_job(&mut all_school_offered_courses_scraper).await;
-        let course =
+        let courses =
             run_course_classes_page_scraper_job(&mut all_school_offered_courses_scraper).await;
-        course_vec.extend(course);
+        course_vec.extend(courses);
     }
 
     Ok(())

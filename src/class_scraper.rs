@@ -63,7 +63,7 @@ pub struct ClassScraper {
 }
 
 impl ClassScraper {
-    pub async fn scrape(&mut self) -> Result<Course, Box<ScrapeError>> {
+    pub async fn scrape(&self) -> Result<Course, Box<ScrapeError>> {
         log::info!("Scarping course {}", self.course_code);
 
         let html = fetch_url(&self.url)
