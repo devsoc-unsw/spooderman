@@ -51,7 +51,6 @@ impl SchoolAreaScraper {
 
         let pages = document
             .select(&row_selector)
-            .into_iter()
             .map(|row_node| {
                 // Extract data from each row
                 let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
