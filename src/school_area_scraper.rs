@@ -37,7 +37,8 @@ impl SchoolAreaScraper {
     pub async fn scrape(&mut self) -> Result<(), Box<ScrapeError>> {
         match &self.url {
             Some(url) => {
-                println!("School Area for: {}", url);
+                log::info!("Scraping School Area for: {}", url);
+
                 let html = fetch_url(url)
                     .await
                     .expect("There has been something wrong with the URL.");
