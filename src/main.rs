@@ -26,9 +26,7 @@ async fn run_all_school_offered_courses_scraper_job(
         Ok(url) => {
             let url_to_scrape =
                 mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
-            let mut scraper = SchoolAreaScraper::new(url_to_scrape);
-            let _ = scraper.scrape().await;
-            Ok(scraper)
+            Ok(SchoolAreaScraper::scrape(url_to_scrape).await?)
         }
         Err(e) => Err(anyhow::anyhow!(
             "Timetable URL could NOT been parsed properly from env file and error report: {e}"
@@ -66,17 +64,18 @@ impl Data {
 async fn run_school_courses_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
 ) {
-    let mut tasks = vec![];
-
     // Iterate over the pages and create tasks for each scrape operation
-    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
-        let task = tokio::spawn(async move {
-            let mut scraper = scraper.lock().await;
-            let _ = scraper.scrape().await;
-        });
-        tasks.push(task);
-    }
+    let tasks: Vec<_> = all_school_offered_courses_scraper
+        .pages
+        .iter_mut()
+        .map(|school_area_scrapers| {
+            let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
+            tokio::spawn(async move {
+                let mut scraper = scraper.lock().await;
+                let _ = scraper.scrape().await;
+            })
+        })
+        .collect();
 
     // Wait for all tasks to complete
     for task in tasks {
@@ -90,10 +89,10 @@ use tokio::time::{Duration, sleep};
 async fn run_course_classes_page_scraper_job(
     all_school_offered_courses_scraper: &mut SchoolAreaScraper,
 ) -> Vec<Course> {
-    let mut tasks = vec![];
     let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
     let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
+    let mut tasks = vec![];
     for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
         let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
 
