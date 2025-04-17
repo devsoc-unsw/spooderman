@@ -23,7 +23,7 @@ impl SubjectAreaScraper {
                 let html = fetch_url(url)
                     .await
                     .expect("There was something wrong with the URL");
-                println!("Scraping Subject Area for: {}", url);
+                log::info!("Scraping Subject Area for: {}", url);
                 let career_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
