@@ -1,7 +1,8 @@
 use anyhow::Context;
+use argh::FromArgs;
 use chrono::Datelike;
-use clap::{Parser, Subcommand};
 use dotenv::dotenv;
+use enum_dispatch::enum_dispatch;
 use futures::future::join_all;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
@@ -9,16 +10,13 @@ use spooderman::{
     Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
-use std::env;
 use std::error::Error;
 use std::fs::File;
-use std::io::ErrorKind;
 use std::path::Path;
 use std::sync::Arc;
 use std::vec;
 
 use log::LevelFilter;
-use log::warn;
 
 async fn run_all_school_offered_courses_scraper_job(
     curr_year: i32,
@@ -288,36 +286,57 @@ async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Scrape UNSW class data.
-#[derive(Parser)]
+#[enum_dispatch]
+trait Exec {
+    async fn exec(&self) -> anyhow::Result<()>;
+}
+
+/// A tool for scraping UNSW course and class data.
+#[derive(FromArgs)]
 struct Cli {
-    #[command(subcommand)]
+    #[argh(subcommand)]
     command: Command,
 }
 
-#[derive(Subcommand)]
+#[derive(FromArgs)]
+#[argh(subcommand)]
+#[enum_dispatch(Exec)]
 enum Command {
-    /// Perform scraping. Creates a JSON file to store the data.
-    #[command(name = "scrape")]
-    Scrape,
-
-    /// Perform batch insert on JSON files created by `scrape`.
-    #[command(name = "batch_insert")]
-    BatchInsert,
-
-    /// Perform scraping and batch insert. Does not create a JSON file to store the data.
-    #[command(name = "scrape_n_batch_insert")]
-    ScrapeAndBatchInsert,
+    Scrape(Scrape),
+    BatchInsert(BatchInsert),
+    ScrapeAndBatchInsert(ScrapeAndBatchInsert),
 }
 
-impl Command {
-    async fn exec(self) -> anyhow::Result<()> {
-        match self {
-            Command::Scrape => handle_scrape_write_to_file().await?,
-            Command::BatchInsert => handle_batch_insert().await?,
-            Command::ScrapeAndBatchInsert => handle_scrape_n_batch_insert().await?,
-        };
-        Ok(())
+/// Perform scraping. Creates a JSON file to store the data.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "scrape")]
+struct Scrape {}
+
+impl Exec for Scrape {
+    async fn exec(&self) -> anyhow::Result<()> {
+        handle_scrape_write_to_file().await
+    }
+}
+
+/// Perform batch insert on JSON files created by `scrape`.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "batch_insert")]
+struct BatchInsert {}
+
+impl Exec for BatchInsert {
+    async fn exec(&self) -> anyhow::Result<()> {
+        handle_batch_insert().await
+    }
+}
+
+/// Perform scraping and batch insert. Does not create a JSON file to store the data.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "scrape_n_batch_insert")]
+struct ScrapeAndBatchInsert {}
+
+impl Exec for ScrapeAndBatchInsert {
+    async fn exec(&self) -> anyhow::Result<()> {
+        handle_scrape_n_batch_insert().await
     }
 }
 
@@ -328,7 +347,7 @@ async fn main() -> anyhow::Result<()> {
         .filter_level(LevelFilter::Error)
         .init();
 
-    let cli = Cli::parse();
+    let cli: Cli = argh::from_env();
     cli.command.exec().await?;
 
     Ok(())
