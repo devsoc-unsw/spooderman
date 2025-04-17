@@ -2,7 +2,7 @@ use reqwest::ClientBuilder;
 
 pub trait Scraper {
     fn scrape(
-        &mut self,
+        &self,
     ) -> impl std::future::Future<Output = Result<(), Box<dyn std::error::Error>>> + Send;
 }
 
