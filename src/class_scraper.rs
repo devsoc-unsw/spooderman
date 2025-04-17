@@ -3,9 +3,7 @@ use scraper::Selector;
 use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 
-use crate::{
-    school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
-};
+use crate::{scraper::fetch_url, text_manipulators::extract_text};
 
 #[derive(Debug, Serialize)]
 pub struct Course {
@@ -62,12 +60,10 @@ pub struct ClassScraper {
 }
 
 impl ClassScraper {
-    pub async fn scrape(&self) -> Result<Course, Box<ScrapeError>> {
+    pub async fn scrape(&self) -> anyhow::Result<Course> {
         log::info!("Scarping course {}", self.course_code);
 
-        let html = fetch_url(&self.url)
-            .await
-            .unwrap_or_else(|_| panic!("Something was wrong with the URL: {}", self.url));
+        let html = fetch_url(&self.url).await?;
         let document = scraper::Html::parse_document(&html);
 
         // Selectors
@@ -169,11 +165,10 @@ impl ClassScraper {
                 )
             })
             .collect();
-        let _ = course_info
-            .classes
-            .iter_mut()
-            .map(|c| course_info.modes.insert(c.mode.to_string()))
-            .collect::<Vec<_>>();
+        course_info.classes.iter_mut().for_each(|c| {
+            // TODO: do we care about the return bool value?
+            course_info.modes.insert(c.mode.to_string());
+        });
         Ok(course_info)
     }
 }
