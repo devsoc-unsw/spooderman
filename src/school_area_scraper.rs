@@ -4,7 +4,7 @@ use crate::{
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
 use scraper::Selector;
-use std::{error::Error, sync::Arc};
+use std::sync::Arc;
 use tokio::sync::Mutex;
 
 #[derive(Debug)]
@@ -21,20 +21,8 @@ pub struct SchoolAreaScraper {
     pub pages: Vec<SchoolAreaPage>,
 }
 
-#[derive(Debug)]
-pub struct ScrapeError {
-    details: String,
-}
-
-impl std::fmt::Display for ScrapeError {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "ScrapeError: {}", self.details)
-    }
-}
-impl Error for ScrapeError {}
-
 impl SchoolAreaScraper {
-    pub async fn scrape(url: String) -> Result<Self, Box<ScrapeError>> {
+    pub async fn scrape(url: String) -> anyhow::Result<Self> {
         log::info!("Scraping School Area for: {}", url);
 
         let html = fetch_url(&url)

@@ -19,12 +19,12 @@ use std::vec;
 use log::LevelFilter;
 
 async fn run_all_school_offered_courses_scraper_job(
-    curr_year: i32,
+    year: i32,
 ) -> anyhow::Result<SchoolAreaScraper> {
     // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
-            let url_to_scrape = mutate_string_to_include_curr_year(&url, curr_year.to_string());
+            let url_to_scrape = mutate_string_to_include_curr_year(&url, year.to_string());
             Ok(SchoolAreaScraper::scrape(url_to_scrape).await?)
         }
         Err(e) => Err(anyhow::anyhow!(
@@ -62,7 +62,7 @@ impl Data {
 
 async fn run_school_courses_page_scraper_job(
     all_school_offered_courses_scraper: &SchoolAreaScraper,
-) {
+) -> anyhow::Result<()> {
     // Iterate over the pages and create tasks for each scrape operation
     let tasks: Vec<_> = all_school_offered_courses_scraper
         .pages
@@ -70,16 +70,18 @@ async fn run_school_courses_page_scraper_job(
         .map(|school_area_scrapers| {
             let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
             tokio::spawn(async move {
+                // TODO: does this mean only one scraper runs at a time? if so, that's preventing parallelism
                 let mut scraper = scraper.lock().await;
-                let _ = scraper.scrape().await;
+                scraper.scrape().await
             })
         })
         .collect();
 
     // Wait for all tasks to complete
     for task in tasks {
-        let _ = task.await;
+        task.await.expect("expected task join to succeed")?;
     }
+    Ok(())
 }
 
 use tokio::sync::Semaphore;
@@ -87,7 +89,7 @@ use tokio::time::{Duration, sleep};
 
 async fn run_course_classes_page_scraper_job(
     all_school_offered_courses_scraper: &SchoolAreaScraper,
-) -> Vec<Course> {
+) -> anyhow::Result<Vec<Course>> {
     let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
     let rate_limit_delay = Duration::from_millis(1); // delay between tasks
 
@@ -112,29 +114,21 @@ async fn run_course_classes_page_scraper_job(
                 sleep(rate_limit_delay).await;
 
                 // Perform the scraping task
-                class_area_scraper
-                    .lock()
-                    .await
-                    .scrape()
-                    .await
-                    .map_err(|e| Box::new(e) as Box<dyn Error + Send>)
+                class_area_scraper.lock().await.scrape().await
             });
 
             tasks.push(task);
         }
     }
 
-    // Wait for all tasks to complete and collect results
-    let results: Vec<Result<Course, Box<dyn Error + Send>>> = join_all(tasks)
+    // Wait for all tasks to complete and collect results. Return an error if any task failed.
+    let courses: Vec<Course> = join_all(tasks)
         .await
         .into_iter()
-        .map(|result| result.unwrap_or_else(|e| Err(Box::new(e) as Box<dyn Error + Send>))) // Handle errors
-        .collect();
+        .map(|res| res.expect("expected tokio thread to join properly"))
+        .collect::<anyhow::Result<_>>()?;
 
-    // Filter out errors and collect successful results
-    let courses_vec: Vec<Course> = results.into_iter().filter_map(Result::ok).collect();
-
-    courses_vec
+    Ok(courses)
 }
 
 fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
@@ -211,14 +205,14 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 
 async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
     let mut all_courses = vec![];
-    for year in &[2025] {
+    for year in [2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         log::info!("Handling scrape for year: {year}");
         let all_school_offered_courses_scraper =
-            run_all_school_offered_courses_scraper_job(*year).await?;
+            run_all_school_offered_courses_scraper_job(year).await?;
         run_school_courses_page_scraper_job(&all_school_offered_courses_scraper).await;
         let courses =
-            run_course_classes_page_scraper_job(&all_school_offered_courses_scraper).await;
+            run_course_classes_page_scraper_job(&all_school_offered_courses_scraper).await?;
         all_courses.extend(courses);
     }
 
@@ -263,7 +257,7 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
         ));
     }
 
-    let _ = send_batch_data(&ReadFromFile).await;
+    send_batch_data(&ReadFromFile).await?;
     Ok(())
 }
 
@@ -282,7 +276,7 @@ async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
         classes_vec: json_classes,
         times_vec: json_times,
     };
-    let _ = send_batch_data(&rfm).await;
+    send_batch_data(&rfm).await?;
     Ok(())
 }
 

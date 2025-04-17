@@ -23,12 +23,14 @@ impl SubjectAreaScraper {
         }
     }
 
-    pub async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error + Send>> {
+    // TODO: remove the &mut and the arc mutexes here
+    pub async fn scrape(&mut self) -> anyhow::Result<()> {
         let url = &self.url;
+        log::info!("Scraping Subject Area for: {}", url);
         let html = fetch_url(url)
             .await
             .expect("There was something wrong with the URL");
-        log::info!("Scraping Subject Area for: {}", url);
+
         let career_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
         let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
         let code_selector = Selector::parse("td.data").unwrap();

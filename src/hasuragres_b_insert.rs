@@ -75,7 +75,7 @@ impl HasuragresData for ReadFromMemory {
     }
 }
 
-pub async fn send_batch_data(hdata: &impl HasuragresData) -> Result<(), Box<dyn Error>> {
+pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> {
     dotenv::dotenv().ok();
     let hasuragres_url = env::var("HASURAGRES_URL")?;
     let api_key = env::var("HASURAGRES_API_KEY")?;
