@@ -7,7 +7,7 @@ use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Class, Course, RequestClient, SchoolArea, Time, mutate_string_to_include_curr_year,
-    send_batch_data,
+    send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -36,14 +36,6 @@ async fn run_all_school_offered_courses_scraper_job(
 #[derive(Debug, Serialize)]
 struct Data {
     all_courses: Vec<Course>,
-}
-
-pub fn sort_by_key_ref<T, B, F>(slice: &mut [T], mut f: F)
-where
-    F: FnMut(&T) -> &B,
-    B: Ord,
-{
-    slice.sort_by(|a, b| f(a).cmp(f(b)))
 }
 
 impl Data {
@@ -79,12 +71,14 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 
     json_courses
 }
+
 fn generate_time_id(class: &Class, time: &Time) -> String {
     format!(
         "{}{}{}{}{}",
         &class.class_id, &time.day, &time.location, &time.time, &time.weeks
     )
 }
+
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut times_json = Vec::<serde_json::Value>::new();
     for course in courses.iter() {
@@ -108,6 +102,7 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 
     times_json
 }
+
 fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut json_classes = Vec::new();
     for course in courses.iter() {
@@ -145,6 +140,8 @@ async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
         let school_area = run_all_school_offered_courses_scraper_job(year, &request_client).await?;
         all_courses.extend(school_area.get_all_courses());
     }
+
+    sort_by_key_ref(&mut all_courses, |course| &course.course_id);
 
     Ok(all_courses)
 }
