@@ -22,6 +22,7 @@ pub fn mutate_string_to_include_curr_year(curr_base_url: &str, year_str: String)
 }
 
 pub fn get_html_link_to_page(year: i32, html_fragment: &str) -> String {
+    // TODO: horrible for perf, we're checking the env var again every time! share global state that contains this in an Arc (can also contain the request client).
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             mutate_string_to_include_curr_year(&url.to_string(), year.to_string()) + html_fragment
