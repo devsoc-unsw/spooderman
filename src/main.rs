@@ -3,14 +3,13 @@ use argh::FromArgs;
 use chrono::Datelike;
 use dotenv::dotenv;
 use enum_dispatch::enum_dispatch;
-use futures::future::join_all;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
+    Class, Course, RequestClient, SchoolArea, Time, mutate_string_to_include_curr_year,
+    send_batch_data,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
-use std::error::Error;
 use std::fs::File;
 use std::path::Path;
 use std::sync::Arc;
@@ -20,12 +19,13 @@ use log::LevelFilter;
 
 async fn run_all_school_offered_courses_scraper_job(
     year: i32,
-) -> anyhow::Result<SchoolAreaScraper> {
+    request_client: &Arc<RequestClient>,
+) -> anyhow::Result<SchoolArea> {
     // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
     match std::env::var("TIMETABLE_API_URL") {
         Ok(url) => {
             let url_to_scrape = mutate_string_to_include_curr_year(&url, year.to_string());
-            Ok(SchoolAreaScraper::scrape(url_to_scrape).await?)
+            Ok(SchoolArea::scrape(url_to_scrape, request_client).await?)
         }
         Err(e) => Err(anyhow::anyhow!(
             "Timetable URL could NOT been parsed properly from env file and error report: {e}"
@@ -58,77 +58,6 @@ impl Data {
         to_writer_pretty(file, &self)?;
         Ok(())
     }
-}
-
-async fn run_school_courses_page_scraper_job(
-    all_school_offered_courses_scraper: &SchoolAreaScraper,
-) -> anyhow::Result<()> {
-    // Iterate over the pages and create tasks for each scrape operation
-    let tasks: Vec<_> = all_school_offered_courses_scraper
-        .pages
-        .iter()
-        .map(|school_area_scrapers| {
-            let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
-            tokio::spawn(async move {
-                // TODO: does this mean only one scraper runs at a time? if so, that's preventing parallelism
-                let mut scraper = scraper.lock().await;
-                scraper.scrape().await
-            })
-        })
-        .collect();
-
-    // Wait for all tasks to complete
-    for task in tasks {
-        task.await.expect("expected task join to succeed")?;
-    }
-    Ok(())
-}
-
-use tokio::sync::Semaphore;
-use tokio::time::{Duration, sleep};
-
-async fn run_course_classes_page_scraper_job(
-    all_school_offered_courses_scraper: &SchoolAreaScraper,
-) -> anyhow::Result<Vec<Course>> {
-    let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
-    let rate_limit_delay = Duration::from_millis(1); // delay between tasks
-
-    let mut tasks = vec![];
-    for school_area_scrapers in &all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
-
-        // Lock the mutex to access the underlying data
-        let class_scrapers = {
-            let scraper = scraper.lock().await;
-            scraper.class_scrapers.clone()
-        };
-
-        for class_area_scraper in class_scrapers {
-            let class_area_scraper = Arc::clone(&class_area_scraper); // Clone the Arc
-            let semaphore = Arc::clone(&semaphore); // Clone the semaphore
-
-            let task = tokio::spawn(async move {
-                let _permit = semaphore.acquire().await.unwrap(); // Acquire a permit before starting a task
-
-                // Rate limiting: wait for a bit before starting the task
-                sleep(rate_limit_delay).await;
-
-                // Perform the scraping task
-                class_area_scraper.lock().await.scrape().await
-            });
-
-            tasks.push(task);
-        }
-    }
-
-    // Wait for all tasks to complete and collect results. Return an error if any task failed.
-    let courses: Vec<Course> = join_all(tasks)
-        .await
-        .into_iter()
-        .map(|res| res.expect("expected tokio thread to join properly"))
-        .collect::<anyhow::Result<_>>()?;
-
-    Ok(courses)
 }
 
 fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
@@ -204,16 +133,14 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 }
 
 async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
+    let request_client = Arc::new(RequestClient::new()?);
+
     let mut all_courses = vec![];
     for year in [2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         log::info!("Handling scrape for year: {year}");
-        let all_school_offered_courses_scraper =
-            run_all_school_offered_courses_scraper_job(year).await?;
-        run_school_courses_page_scraper_job(&all_school_offered_courses_scraper).await;
-        let courses =
-            run_course_classes_page_scraper_job(&all_school_offered_courses_scraper).await?;
-        all_courses.extend(courses);
+        let school_area = run_all_school_offered_courses_scraper_job(year, &request_client).await?;
+        all_courses.extend(school_area.get_all_courses());
     }
 
     Ok(all_courses)

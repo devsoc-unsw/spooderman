@@ -1,35 +1,24 @@
 use std::{collections::HashSet, sync::Arc};
 
 use scraper::{ElementRef, Selector};
-use tokio::sync::Mutex;
 
 use crate::{
-    class_scraper::ClassScraper,
-    scraper::fetch_url,
+    Course, RequestClient,
+    class_scraper::CourseScraper,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
 
 #[derive(Debug)]
-pub struct SubjectAreaScraper {
-    pub url: String,
-    pub class_scrapers: Vec<Arc<Mutex<ClassScraper>>>,
+pub struct SubjectArea {
+    pub courses: Vec<Course>,
 }
 
-impl SubjectAreaScraper {
-    pub fn new(url: String) -> Self {
-        Self {
-            url,
-            class_scrapers: vec![],
-        }
-    }
-
-    // TODO: remove the &mut and the arc mutexes here
-    pub async fn scrape(&mut self) -> anyhow::Result<()> {
-        let url = &self.url;
+impl SubjectArea {
+    pub async fn scrape(url: String, request_client: &Arc<RequestClient>) -> anyhow::Result<Self> {
         log::info!("Scraping Subject Area for: {}", url);
-        let html = fetch_url(url)
-            .await
-            .expect("There was something wrong with the URL");
+
+        let html = request_client.fetch_url(&url).await?;
+        let document = scraper::Html::parse_document(&html);
 
         let career_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
         let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
@@ -37,8 +26,9 @@ impl SubjectAreaScraper {
         let name_selector = Selector::parse("td.data a").unwrap();
         let link_selector = Selector::parse("td.data a").unwrap();
         let uoc_selector = Selector::parse("td.data:nth-child(3)").unwrap();
-        let document = scraper::Html::parse_document(&html);
         let mut course_code_career_set = HashSet::<String>::new();
+
+        let mut courses = vec![];
         for career_elem_ref in document.select(&career_selector) {
             let career = extract_text(career_elem_ref);
             if career.is_empty() {
@@ -63,7 +53,7 @@ impl SubjectAreaScraper {
                 if course_code_career_set.contains(&name_hash) {
                     continue;
                 }
-                let year_to_scrape = extract_year(url).unwrap();
+                let year_to_scrape = extract_year(&url).unwrap();
                 let url_to_scrape_further = get_html_link_to_page(
                     year_to_scrape as i32,
                     row_node
@@ -74,17 +64,21 @@ impl SubjectAreaScraper {
                 let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
                     .parse()
                     .expect("Could not parse UOC!");
-                self.class_scrapers.push(Arc::new(Mutex::new(ClassScraper {
-                    course_code: course_code.clone(),
+
+                let course_scraper = CourseScraper::new(
+                    course_code,
                     course_name,
-                    career: career.trim().to_string(),
+                    career.trim().to_string(),
                     uoc,
-                    url: url_to_scrape_further,
-                })));
+                    url_to_scrape_further,
+                );
+                let course = course_scraper.scrape(request_client).await?;
+
+                courses.push(course);
                 course_code_career_set.insert(name_hash);
             }
         }
 
-        Ok(())
+        Ok(SubjectArea { courses })
     }
 }

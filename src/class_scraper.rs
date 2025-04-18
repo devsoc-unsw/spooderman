@@ -1,9 +1,13 @@
+use derive_new::new;
 use rayon::prelude::*;
 use scraper::Selector;
 use serde::Serialize;
-use std::collections::{HashMap, HashSet};
+use std::{
+    collections::{HashMap, HashSet},
+    sync::Arc,
+};
 
-use crate::{scraper::fetch_url, text_manipulators::extract_text};
+use crate::{RequestClient, text_manipulators::extract_text};
 
 #[derive(Debug, Serialize)]
 pub struct Course {
@@ -51,8 +55,8 @@ pub struct Time {
     pub instructor: Option<String>,
 }
 
-#[derive(Debug)]
-pub struct ClassScraper {
+#[derive(Debug, new)]
+pub struct CourseScraper {
     pub course_code: String,
     pub course_name: String,
     pub career: String,
@@ -60,11 +64,11 @@ pub struct ClassScraper {
     pub url: String,
 }
 
-impl ClassScraper {
-    pub async fn scrape(&self) -> anyhow::Result<Course> {
-        log::info!("Scarping course {}", self.course_code);
+impl CourseScraper {
+    pub async fn scrape(&self, request_client: &Arc<RequestClient>) -> anyhow::Result<Course> {
+        log::info!("Scraping course {}", self.course_code);
 
-        let html = fetch_url(&self.url).await?;
+        let html = request_client.fetch_url(&self.url).await?;
         let document = scraper::Html::parse_document(&html);
 
         // Selectors
