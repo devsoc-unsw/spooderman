@@ -1,37 +1,42 @@
 use std::{collections::HashSet, sync::Arc};
 
 use scraper::{ElementRef, Selector};
-use tokio::sync::Mutex;
+use tokio::sync::mpsc;
 
 use crate::{
-    UrlInvalidError,
-    class_scraper::ClassScraper,
-    scraper::fetch_url,
+    Course, RequestClient,
+    course_scraper::PartialCourse,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
 
 #[derive(Debug)]
-pub struct SubjectAreaScraper {
-    pub url: Option<String>,
-    pub class_scrapers: Vec<Arc<Mutex<ClassScraper>>>,
+pub struct SubjectArea {
+    pub courses: Vec<Course>,
 }
 
-impl SubjectAreaScraper {
-    pub async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error + Send>> {
-        match &self.url {
-            Some(url) => {
-                let html = fetch_url(url)
-                    .await
-                    .expect("There was something wrong with the URL");
-                println!("Scraping Subject Area for: {}", url);
+impl SubjectArea {
+    pub async fn scrape(url: String, request_client: &Arc<RequestClient>) -> anyhow::Result<Self> {
+        log::info!("Started scraping Subject Area for: {}", url);
+
+        let html = request_client.fetch_url(&url).await?;
+
+        // We use a channel so we can start completing a partial course
+        // immediately once it's scraped, so we don't have to wait until all
+        // partial courses have been scraped.
+        let (tx, mut rx) = mpsc::unbounded_channel();
+
+        let producer = async move || {
+            let cpu_bound = move || {
+                let document = scraper::Html::parse_document(&html);
+
                 let career_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
                 let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
                 let code_selector = Selector::parse("td.data").unwrap();
                 let name_selector = Selector::parse("td.data a").unwrap();
                 let link_selector = Selector::parse("td.data a").unwrap();
                 let uoc_selector = Selector::parse("td.data:nth-child(3)").unwrap();
-                let document = scraper::Html::parse_document(&html);
-                let mut course_code_career_set = HashSet::<String>::new();
+                let mut visited_courses = HashSet::<String>::new();
+
                 for career_elem_ref in document.select(&career_selector) {
                     let career = extract_text(career_elem_ref);
                     if career.is_empty() {
@@ -54,11 +59,12 @@ impl SubjectAreaScraper {
                             extract_text(row_node.select(&code_selector).next().unwrap());
                         let course_name =
                             extract_text(row_node.select(&name_selector).nth(1).unwrap());
-                        let name_hash = course_code.to_string() + &career;
-                        if course_code_career_set.contains(&name_hash) {
+                        let name_hash = format!("{}{}", &course_code, &career);
+                        if visited_courses.contains(&name_hash) {
                             continue;
                         }
-                        let year_to_scrape = extract_year(url).unwrap();
+                        visited_courses.insert(name_hash);
+                        let year_to_scrape = extract_year(&url).unwrap();
                         let url_to_scrape_further = get_html_link_to_page(
                             year_to_scrape as i32,
                             row_node
@@ -69,29 +75,39 @@ impl SubjectAreaScraper {
                         let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
                             .parse()
                             .expect("Could not parse UOC!");
-                        self.class_scrapers.push(Arc::new(Mutex::new(ClassScraper {
-                            course_code: course_code.clone(),
+
+                        let course_scraper = PartialCourse::new(
+                            course_code,
                             course_name,
-                            career: career.trim().to_string(),
+                            career.trim().to_string(),
                             uoc,
-                            url: url_to_scrape_further,
-                        })));
-                        course_code_career_set.insert(name_hash);
+                            url_to_scrape_further,
+                        );
+                        tx.send(course_scraper).unwrap();
                     }
                 }
+            };
+            // TODO: tokio is, by default, not designed for long running cpu bound tasks to be spawned, since it's designed for doing blocking IO asyncronously. current bottleneck: we're doing heavy cpu bound work on 42 OS threads, which creates some scheduling overhead -> either limit to num cpus OS threads, since we don't use spawn_blocking for blocking io anyways, or look for different tokio API.
+            tokio::task::spawn_blocking(cpu_bound).await
+        };
 
-                Ok(())
+        let mut consumer = async move || {
+            let mut tasks = tokio::task::JoinSet::new();
+
+            // Spawn partial-page-completion tasks as soon as we receive partial pages.
+            while let Some(partial_course) = rx.recv().await {
+                let request_client = Arc::clone(request_client);
+                tasks.spawn(async move { partial_course.complete(&request_client).await });
             }
-            None => Err(Box::new(UrlInvalidError)),
-        }
-    }
-}
 
-impl SubjectAreaScraper {
-    pub fn new(url: String) -> Self {
-        Self {
-            url: Some(url),
-            class_scrapers: vec![],
-        }
+            // Wait for all partial-page-completion tasks to complete.
+            tasks.join_all().await
+        };
+
+        // Wait on producer and consumer.
+        let (_, result_courses) = tokio::join!(producer(), consumer());
+        let courses: Vec<Course> = result_courses.into_iter().collect::<anyhow::Result<_>>()?;
+
+        Ok(Self { courses })
     }
 }
