@@ -14,9 +14,10 @@ pub struct Course {
     pub course_code: String,
     pub course_name: String,
     pub uoc: i32,
+    // TODO: try making non-optional.
     pub faculty: Option<String>,
     pub school: Option<String>,
-    pub career: Option<String>,
+    pub career: String,
     // TODO: has non-deterministic output order, change to vec (in output)
     pub modes: HashSet<String>, // For Notangles.
     pub campus: Option<String>,
@@ -81,15 +82,15 @@ impl PartialCourse {
 
             let mut course_info = Course {
                 // TODO: can remove all of these clones, since we own it
-                course_id: self.course_code.clone() + &self.career.clone(),
-                course_code: self.course_code.clone(),
-                course_name: self.course_name.clone(),
+                course_id: format!("{}{}", &self.course_code, &self.career),
+                course_code: self.course_code,
+                course_name: self.course_name,
                 uoc: self.uoc,
                 faculty: None,
                 school: None,
                 campus: None,
-                career: Some(self.career.clone()),
-                modes: HashSet::<String>::new(),
+                career: self.career,
+                modes: HashSet::new(),
                 terms: vec![],
                 classes: vec![],
             };
@@ -109,13 +110,13 @@ impl PartialCourse {
                             .select(&data_selector)
                             .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
                             .collect();
-                        for (label, data) in labels.iter().zip(data.iter()) {
+                        for (label, data) in labels.iter().zip(data.into_iter()) {
                             match label.trim().to_lowercase().as_str() {
-                                "faculty" => course_info.faculty = Some(data.clone()),
-                                "school" => course_info.school = Some(data.clone()),
-                                "campus" => course_info.campus = Some(data.clone()),
+                                "faculty" => course_info.faculty = Some(data),
+                                "school" => course_info.school = Some(data),
+                                "campus" => course_info.campus = Some(data),
                                 "career" => {
-                                    if course_info.career != Some(data.clone()) {
+                                    if course_info.career != data {
                                         skip_this_info_box = true;
                                         break;
                                     } else {
@@ -160,16 +161,12 @@ impl PartialCourse {
                 }
             }
 
-            course_info.terms = terms.clone();
+            course_info.terms = terms;
 
             course_info.classes = class_activity_information
                 .into_par_iter()
                 .map(|class_data| {
-                    parse_class_info(
-                        class_data,
-                        self.course_code.clone() + &self.career.clone(),
-                        self.career.clone(),
-                    )
+                    parse_class_info(class_data, &course_info.course_id, &course_info.career)
                 })
                 .collect();
             course_info.classes.iter_mut().for_each(|c| {
@@ -184,85 +181,70 @@ impl PartialCourse {
     }
 }
 
-fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) -> Class {
-    let mut map = HashMap::new();
+fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> Class {
+    let mut map: HashMap<&str, &str> = HashMap::new();
     let mut i = 0;
     let mut times_parsed = Vec::<Time>::new();
 
     while i < class_data.len() {
-        let key = class_data[i].clone();
+        let key = &class_data[i];
         if key == "Meeting Information" {
             let mut j = i + 1;
             while j < class_data.len() && class_data[j] != "Class Notes" {
                 j += 1;
             }
-            times_parsed = parse_meeting_info(&class_data[i + 1..j], career.clone());
+            times_parsed = parse_meeting_info(&class_data[i + 1..j], career);
             i = j + 1;
             continue;
         }
 
         let value = if i + 1 < class_data.len() {
-            class_data[i + 1].clone()
+            &class_data[i + 1]
         } else {
-            "".to_string()
+            ""
         };
         map.insert(key, value);
         i += 2;
     }
-    let offering_period_str = map
-        .get("Offering Period")
-        .unwrap_or(&"".to_string())
-        .to_string();
+    let offering_period_str = map.get("Offering Period").unwrap_or(&"").to_string();
     let mut split_offering_period_str = offering_period_str.split(" - ");
     let date = split_offering_period_str.next().unwrap();
     let year = date.split("/").nth(2).unwrap();
     Class {
-        course_id: course_id.clone(),
+        course_id: course_id.to_string(),
         class_id: format!(
             "{}-{}-{}-{}",
             course_id,
-            map.get("Class Nbr").unwrap_or(&String::new()),
+            map.get("Class Nbr").unwrap_or(&""),
             map.get("Teaching Period")
-                .unwrap_or(&"".to_string())
+                .unwrap_or(&"")
                 .split(" - ")
                 .next()
                 .expect("Could not split teaching periods properly!"),
             year,
         ),
-        section: map.get("Section").unwrap_or(&"".to_string()).to_string(),
+        section: map.get("Section").unwrap_or(&"").to_string(),
         term: map
             .get("Teaching Period")
-            .unwrap_or(&"".to_string())
+            .unwrap_or(&"")
             .split(" - ")
             .next()
             .expect("Could not split teaching periods properly!")
             .to_string(),
         year: year.to_string(),
-        activity: map.get("Activity").unwrap_or(&"".to_string()).to_string(),
-        status: map.get("Status").unwrap_or(&"".to_string()).to_string(),
+        activity: map.get("Activity").unwrap_or(&"").to_string(),
+        status: map.get("Status").unwrap_or(&"").to_string(),
         course_enrolment: map
             .get("Enrols/Capacity")
-            .unwrap_or(&"".to_string())
+            .unwrap_or(&"")
             .replace("*", "")
             .to_string(),
-        offering_period: map
-            .get("Offering Period")
-            .unwrap_or(&"".to_string())
-            .to_string(),
-        meeting_dates: map
-            .get("Meeting Dates")
-            .unwrap_or(&"".to_string())
-            .to_string(),
-        census_date: map
-            .get("Census Date")
-            .unwrap_or(&"".to_string())
-            .to_string(),
-        mode: map
-            .get("Mode of Delivery")
-            .unwrap_or(&"".to_string())
-            .to_string(),
-        consent: map.get("Consent").unwrap_or(&"".to_string()).to_string(),
-        career,
+        offering_period: map.get("Offering Period").unwrap_or(&"").to_string(),
+        meeting_dates: map.get("Meeting Dates").unwrap_or(&"").to_string(),
+        census_date: map.get("Census Date").unwrap_or(&"").to_string(),
+        mode: map.get("Mode of Delivery").unwrap_or(&"").to_string(),
+        consent: map.get("Consent").unwrap_or(&"").to_string(),
+        career: career.to_string(),
         times: if times_parsed.is_empty() {
             None
         } else {
@@ -270,12 +252,12 @@ fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) 
         },
         class_notes: map
             .get("Class Notes")
-            .map(|s| s.to_string())
-            .filter(|s| !s.is_empty()),
+            .filter(|s| !s.is_empty())
+            .map(|s| s.to_string()),
     }
 }
 
-fn parse_meeting_info(vec: &[String], career: String) -> Vec<Time> {
+fn parse_meeting_info(vec: &[String], career: &str) -> Vec<Time> {
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let mut meetings = Vec::new();
     let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
@@ -304,7 +286,7 @@ fn parse_meeting_info(vec: &[String], career: String) -> Vec<Time> {
                     iter = Box::new(std::iter::once(instructor).chain(iter));
                 }
             }
-            timeslot.career = career.clone();
+            timeslot.career = career.to_string();
             meetings.push(timeslot);
         }
     }
