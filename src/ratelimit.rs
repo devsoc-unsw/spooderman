@@ -11,7 +11,7 @@ use std::{num::NonZeroU32, time::Duration};
 // The higher, the faster.
 const REQ_PER_SEC: NonZeroU32 = nonzero!(80u32);
 // The lower, the faster.
-const MS_BETWEEN_REQ: Duration = Duration::from_millis(10);
+const MS_BETWEEN_REQ: Duration = Duration::from_millis(1);
 
 type SpecificGovernorRateLimiter =
     GovernorRateLimiter<NotKeyed, InMemoryState, QuantaClock, NoOpMiddleware<QuantaInstant>>;
