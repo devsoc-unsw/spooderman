@@ -17,6 +17,7 @@ pub struct Course {
     pub faculty: Option<String>,
     pub school: Option<String>,
     pub career: Option<String>,
+    // TODO: has non-deterministic output order, change to vec (in output)
     pub modes: HashSet<String>, // For Notangles.
     pub campus: Option<String>,
     pub terms: Vec<String>,
@@ -54,7 +55,7 @@ pub struct Time {
 }
 
 #[derive(Debug, new)]
-pub struct CourseScraper {
+pub struct PartialCourse {
     pub course_code: String,
     pub course_name: String,
     pub career: String,
@@ -62,117 +63,124 @@ pub struct CourseScraper {
     pub url: String,
 }
 
-impl CourseScraper {
-    pub async fn scrape(&self, request_client: &Arc<RequestClient>) -> anyhow::Result<Course> {
-        log::info!("Scraping course {}", self.course_code);
-
+impl PartialCourse {
+    pub async fn complete(self, request_client: &Arc<RequestClient>) -> anyhow::Result<Course> {
         let html = request_client.fetch_url(&self.url).await?;
-        let document = scraper::Html::parse_document(&html);
+        let course_code = self.course_code.clone();
 
-        // Selectors
-        let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
-        let term_selector = Selector::parse("table table:nth-of-type(3)").unwrap();
-        let table_selector = Selector::parse("table table").unwrap();
-        let label_selector = Selector::parse("td.label").unwrap();
-        let data_selector = Selector::parse("td.data").unwrap();
-        let information_body = document.select(&form_bodies);
+        let cpu_bound = move || {
+            let document = scraper::Html::parse_document(&html);
 
-        let mut course_info = Course {
-            course_id: self.course_code.clone() + &self.career.clone(),
-            course_code: self.course_code.clone(),
-            course_name: self.course_name.clone(),
-            uoc: self.uoc,
-            faculty: None,
-            school: None,
-            campus: None,
-            career: Some(self.career.clone()),
-            modes: HashSet::<String>::new(),
-            terms: vec![],
-            classes: vec![],
-        };
-        let mut skip_this_info_box = false;
-        let mut terms: Vec<String> = vec![];
-        let mut class_activity_information: Vec<Vec<String>> = vec![];
-        for info_box in information_body {
-            if let Some(label_info) = info_box.select(&label_selector).next() {
-                // Check if it is a form body with course information
-                if extract_text(label_info).trim() == "Faculty" {
-                    let labels: Vec<_> = info_box
-                        .select(&label_selector)
-                        .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
-                        .collect();
+            // Selectors
+            let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
+            let term_selector = Selector::parse("table table:nth-of-type(3)").unwrap();
+            let table_selector = Selector::parse("table table").unwrap();
+            let label_selector = Selector::parse("td.label").unwrap();
+            let data_selector = Selector::parse("td.data").unwrap();
+            let information_body = document.select(&form_bodies);
 
-                    let data: Vec<_> = info_box
-                        .select(&data_selector)
-                        .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
-                        .collect();
-                    for (label, data) in labels.iter().zip(data.iter()) {
-                        match label.trim().to_lowercase().as_str() {
-                            "faculty" => course_info.faculty = Some(data.clone()),
-                            "school" => course_info.school = Some(data.clone()),
-                            "campus" => course_info.campus = Some(data.clone()),
-                            "career" => {
-                                if course_info.career != Some(data.clone()) {
-                                    skip_this_info_box = true;
-                                    break;
-                                } else {
-                                    skip_this_info_box = false;
+            let mut course_info = Course {
+                // TODO: can remove all of these clones, since we own it
+                course_id: self.course_code.clone() + &self.career.clone(),
+                course_code: self.course_code.clone(),
+                course_name: self.course_name.clone(),
+                uoc: self.uoc,
+                faculty: None,
+                school: None,
+                campus: None,
+                career: Some(self.career.clone()),
+                modes: HashSet::<String>::new(),
+                terms: vec![],
+                classes: vec![],
+            };
+            let mut skip_this_info_box = false;
+            let mut terms: Vec<String> = vec![];
+            let mut class_activity_information: Vec<Vec<String>> = vec![];
+            for info_box in information_body {
+                if let Some(label_info) = info_box.select(&label_selector).next() {
+                    // Check if it is a form body with course information
+                    if extract_text(label_info).trim() == "Faculty" {
+                        let labels: Vec<_> = info_box
+                            .select(&label_selector)
+                            .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
+                            .collect();
+
+                        let data: Vec<_> = info_box
+                            .select(&data_selector)
+                            .map(|el| extract_text(el).trim().replace("\u{a0}", ""))
+                            .collect();
+                        for (label, data) in labels.iter().zip(data.iter()) {
+                            match label.trim().to_lowercase().as_str() {
+                                "faculty" => course_info.faculty = Some(data.clone()),
+                                "school" => course_info.school = Some(data.clone()),
+                                "campus" => course_info.campus = Some(data.clone()),
+                                "career" => {
+                                    if course_info.career != Some(data.clone()) {
+                                        skip_this_info_box = true;
+                                        break;
+                                    } else {
+                                        skip_this_info_box = false;
+                                    }
+                                }
+                                _ => {}
+                            }
+                        }
+                        if skip_this_info_box {
+                            continue;
+                        }
+                        if let Some(terms_info_table) = info_box.select(&term_selector).next() {
+                            for terms_table in terms_info_table.select(&table_selector) {
+                                let curr_terms_row = terms_table
+                                    .text()
+                                    .map(|e| e.trim().to_string())
+                                    .filter(|s| !s.is_empty())
+                                    .collect::<Vec<_>>();
+                                if !curr_terms_row.is_empty() {
+                                    terms.extend(curr_terms_row);
                                 }
                             }
-                            _ => {}
                         }
-                    }
-                    if skip_this_info_box {
-                        continue;
-                    }
-                    if let Some(terms_info_table) = info_box.select(&term_selector).next() {
-                        for terms_table in terms_info_table.select(&table_selector) {
-                            let curr_terms_row = terms_table
-                                .text()
-                                .map(|e| e.trim().to_string())
-                                .filter(|s| !s.is_empty())
-                                .collect::<Vec<_>>();
-                            if !curr_terms_row.is_empty() {
-                                terms.extend(curr_terms_row);
-                            }
+                    } else if extract_text(label_info).trim() == "Class Nbr" && !skip_this_info_box
+                    {
+                        // Extract class.
+                        let info_map = info_box
+                            .select(&Selector::parse("td.label, td.data").unwrap())
+                            .map(|cell| {
+                                cell.text()
+                                    .collect::<String>()
+                                    .trim()
+                                    .replace("\u{a0}", "")
+                                    .to_string()
+                            })
+                            .collect::<Vec<_>>();
+                        if !info_map.is_empty() {
+                            class_activity_information.push(info_map);
                         }
-                    }
-                } else if extract_text(label_info).trim() == "Class Nbr" && !skip_this_info_box {
-                    // Extract class.
-                    let info_map = info_box
-                        .select(&Selector::parse("td.label, td.data").unwrap())
-                        .map(|cell| {
-                            cell.text()
-                                .collect::<String>()
-                                .trim()
-                                .replace("\u{a0}", "")
-                                .to_string()
-                        })
-                        .collect::<Vec<_>>();
-                    if !info_map.is_empty() {
-                        class_activity_information.push(info_map);
                     }
                 }
             }
-        }
 
-        course_info.terms = terms.clone();
+            course_info.terms = terms.clone();
 
-        course_info.classes = class_activity_information
-            .into_par_iter()
-            .map(|class_data| {
-                parse_class_info(
-                    class_data,
-                    self.course_code.clone() + &self.career.clone(),
-                    self.career.clone(),
-                )
-            })
-            .collect();
-        course_info.classes.iter_mut().for_each(|c| {
-            // TODO: do we care about the return bool value?
-            course_info.modes.insert(c.mode.to_string());
-        });
-        Ok(course_info)
+            course_info.classes = class_activity_information
+                .into_par_iter()
+                .map(|class_data| {
+                    parse_class_info(
+                        class_data,
+                        self.course_code.clone() + &self.career.clone(),
+                        self.career.clone(),
+                    )
+                })
+                .collect();
+            course_info.classes.iter_mut().for_each(|c| {
+                // TODO: do we care about the return bool value?
+                course_info.modes.insert(c.mode.to_string());
+            });
+            Ok(course_info)
+        };
+        let course = tokio::task::spawn_blocking(cpu_bound).await?;
+        log::info!("Finished scraping course {}", course_code);
+        course
     }
 }
 

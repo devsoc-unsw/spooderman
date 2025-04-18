@@ -7,14 +7,7 @@ use crate::{
 use derive_new::new;
 use scraper::Selector;
 use std::sync::Arc;
-
-#[derive(Debug, new)]
-pub struct SchoolAreaPage {
-    pub course_code: String,
-    pub course_name: String,
-    pub school: String,
-    pub subject_area: SubjectArea,
-}
+use tokio::sync::mpsc;
 
 #[derive(Debug)]
 pub struct SchoolArea {
@@ -24,36 +17,67 @@ pub struct SchoolArea {
 
 impl SchoolArea {
     pub async fn scrape(url: String, request_client: &Arc<RequestClient>) -> anyhow::Result<Self> {
-        log::info!("Scraping School Area for: {}", url);
+        log::info!("Started scraping School Area for: {}", url);
 
         let html = request_client.fetch_url(&url).await?;
-        let document = scraper::Html::parse_document(&html);
 
-        let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
-        let code_selector = Selector::parse("td.data").unwrap();
-        let name_selector = Selector::parse("td.data a").unwrap();
-        let link_selector = Selector::parse("td.data a").unwrap();
-        let school_selector = Selector::parse("td.data:nth-child(3)").unwrap();
+        // We use a channel so we can start completing a partial page
+        // immediately once it's scraped, so we don't have to wait until all
+        // partial pages have been scraped.
+        let (tx, mut rx) = mpsc::unbounded_channel();
 
-        let mut pages = vec![];
-        for row_node in document.select(&row_selector) {
-            // Extract data from each row
-            let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
-            let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
-            let url_to_scrape_further = get_html_link_to_page(
-                extract_year(&url).unwrap() as i32,
-                row_node
-                    .select(&link_selector)
-                    .next()
-                    .map_or("", |node| node.value().attr("href").unwrap_or("")),
-            );
-            let school = extract_text(row_node.select(&school_selector).next().unwrap());
+        let producer = async || {
+            let url = url.clone();
+            let cpu_bound = move || {
+                let document = scraper::Html::parse_document(&html);
 
-            let subject_area = SubjectArea::scrape(url_to_scrape_further, request_client).await?;
-            let subject_area_page =
-                SchoolAreaPage::new(course_code, course_name, school, subject_area);
-            pages.push(subject_area_page);
-        }
+                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
+                let code_selector = Selector::parse("td.data").unwrap();
+                let name_selector = Selector::parse("td.data a").unwrap();
+                let link_selector = Selector::parse("td.data a").unwrap();
+                let school_selector = Selector::parse("td.data:nth-child(3)").unwrap();
+
+                for row_node in document.select(&row_selector) {
+                    // Extract data from each row
+                    let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
+                    let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
+                    let url_to_scrape_further = get_html_link_to_page(
+                        extract_year(&url).unwrap() as i32,
+                        row_node
+                            .select(&link_selector)
+                            .next()
+                            .map_or("", |node| node.value().attr("href").unwrap_or("")),
+                    );
+                    let school = extract_text(row_node.select(&school_selector).next().unwrap());
+                    let partial_page = PartialSchoolAreaPage::new(
+                        course_code,
+                        course_name,
+                        school,
+                        url_to_scrape_further,
+                    );
+                    tx.send(partial_page).unwrap();
+                }
+            };
+            tokio::task::spawn_blocking(cpu_bound).await
+        };
+
+        let mut consumer = async move || {
+            let mut tasks = tokio::task::JoinSet::new();
+
+            // Spawn partial-page-completion tasks as soon as we receive partial pages.
+            while let Some(partial_page) = rx.recv().await {
+                let request_client = Arc::clone(request_client);
+                tasks.spawn(async move { partial_page.complete(&request_client).await });
+            }
+
+            // Wait for all partial-page-completion tasks to complete.
+            tasks.join_all().await
+        };
+
+        // Wait on producer and consumer.
+        let (_, result_pages) = tokio::join!(producer(), consumer());
+        let pages: Vec<SchoolAreaPage> = result_pages.into_iter().collect::<anyhow::Result<_>>()?;
+
         Ok(Self { url, pages })
     }
 
@@ -62,5 +86,33 @@ impl SchoolArea {
             .into_iter()
             .map(|school_area_page| school_area_page.subject_area.courses)
             .flatten()
+    }
+}
+
+#[derive(Debug, new)]
+pub struct SchoolAreaPage {
+    pub course_code: String,
+    pub course_name: String,
+    pub school: String,
+    pub subject_area: SubjectArea,
+}
+
+#[derive(Debug, new)]
+struct PartialSchoolAreaPage {
+    course_code: String,
+    course_name: String,
+    school: String,
+    subject_area_url: String,
+}
+
+impl PartialSchoolAreaPage {
+    async fn complete(self, request_client: &Arc<RequestClient>) -> anyhow::Result<SchoolAreaPage> {
+        let subject_area = SubjectArea::scrape(self.subject_area_url, request_client).await?;
+        Ok(SchoolAreaPage::new(
+            self.course_code,
+            self.course_name,
+            self.school,
+            subject_area,
+        ))
     }
 }
