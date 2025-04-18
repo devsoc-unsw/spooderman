@@ -8,6 +8,6 @@ fi
 branch="$1"
 file="$2"
 
-git diff --no-index \
+git diff --unified=16 --no-index \
   <(git show "$branch:$file" | jq -S 'sort_by(.course_id)') \
   <(jq -S 'sort_by(.course_id)' "$file")
