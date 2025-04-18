@@ -80,7 +80,10 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_courses
 }
 fn generate_time_id(class: &Class, time: &Time) -> String {
-    class.class_id.to_string() + &time.day + &time.location + &time.time + &time.weeks
+    format!(
+        "{}{}{}{}{}",
+        &class.class_id, &time.day, &time.location, &time.time, &time.weeks
+    )
 }
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut times_json = Vec::<serde_json::Value>::new();

@@ -59,7 +59,7 @@ impl SubjectArea {
                             extract_text(row_node.select(&code_selector).next().unwrap());
                         let course_name =
                             extract_text(row_node.select(&name_selector).nth(1).unwrap());
-                        let name_hash = course_code.to_string() + &career;
+                        let name_hash = format!("{}{}", &course_code, &career);
                         if visited_courses.contains(&name_hash) {
                             continue;
                         }
