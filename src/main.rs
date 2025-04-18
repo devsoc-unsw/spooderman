@@ -138,7 +138,7 @@ async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
     let mut all_courses = vec![];
     for year in [2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-        log::info!("Handling scrape for year: {year}");
+        log::info!("Starting scrape for year: {year}");
         let school_area = run_all_school_offered_courses_scraper_job(year, &request_client).await?;
         all_courses.extend(school_area.get_all_courses());
     }

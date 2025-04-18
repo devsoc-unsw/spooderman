@@ -1,6 +1,6 @@
 mod url_invalid_error;
 
-mod class_scraper;
+mod course_scraper;
 mod hasuragres_b_insert;
 mod ratelimit;
 mod requests;
@@ -8,7 +8,7 @@ mod school_area_scraper;
 mod subject_area_scraper;
 mod text_manipulators;
 
-pub use class_scraper::{Class, Course, CourseScraper, Time};
+pub use course_scraper::{Class, Course, PartialCourse, Time};
 pub use hasuragres_b_insert::{ReadFromFile, ReadFromMemory, send_batch_data};
 pub use requests::RequestClient;
 pub use school_area_scraper::SchoolArea;
