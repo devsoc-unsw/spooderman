@@ -3378,8 +3378,7 @@
     ],
     "school": "School of the Arts & Media",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -3692,7 +3691,8 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School Humanities & Languages",
     "terms": [
@@ -5610,7 +5610,7 @@
     ],
     "school": "School of Social Sciences",
     "terms": [
-      "T3"
+      "T3C"
     ],
     "uoc": 6
   },
@@ -7440,9 +7440,7 @@
     "course_id": "ARTS3822Undergraduate",
     "course_name": "Thinking Like a Social Scientist",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School of Social Sciences",
     "terms": [
       "T2"
@@ -9124,7 +9122,7 @@
     "course_name": "Aboriginal Sydney",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Multimodal"
+      "In Person"
     ],
     "school": "Nura Gili Indigenous Programs",
     "terms": [
@@ -9157,7 +9155,7 @@
     "course_name": "Indigenous Political Thought in 20th Century Australia",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Multimodal"
+      "In Person"
     ],
     "school": "Nura Gili Indigenous Programs",
     "terms": [
@@ -11388,40 +11386,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "BEIL0008",
-    "course_id": "BEIL0008Undergraduate",
-    "course_name": "Design Project Management - Vision to Reality",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person",
-      "Multimodal",
-      "Online"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "BEIL0009",
-    "course_id": "BEIL0009Undergraduate",
-    "course_name": "Exhibition Design: Transforming Temporary Space",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "BEIL0010",
     "course_id": "BEIL0010Undergraduate",
     "course_name": "Creating Value for Built Environment Clients",
@@ -11813,7 +11777,9 @@
     "course_id": "BENV2112Undergraduate",
     "course_name": "Landscape Design for Social Sustainability",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "School of Built Environment",
     "terms": [
       "T3"
@@ -16963,22 +16929,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "COMM3303",
-    "course_id": "COMM3303Undergraduate",
-    "course_name": "Industry-Research Integrated Learning",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "Multimodal"
-    ],
-    "school": "UNSW Business School",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "COMM3501",
     "course_id": "COMM3501Undergraduate",
     "course_name": "Quantitative Business Analytics",
@@ -21910,7 +21860,8 @@
     "course_name": "Masters Practice Project B",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Civil & Env Eng",
     "terms": [
@@ -23505,7 +23456,8 @@
     "course_name": "Architectural Composition and Modelling",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23746,7 +23698,8 @@
     "course_name": "Introduction to Film Studies",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -24038,7 +23991,8 @@
     "course_name": "Design in Application of Materials in Science and Engineering",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -25009,22 +24963,6 @@
   },
   {
     "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "ECON4350",
-    "course_id": "ECON4350Undergraduate",
-    "course_name": "Special Topics in Economics",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
     "career": "Postgraduate",
     "course_code": "ECON5101",
     "course_id": "ECON5101Postgraduate",
@@ -25640,22 +25578,6 @@
     "course_code": "ECON7309",
     "course_id": "ECON7309Postgraduate",
     "course_name": "Economic Measurement",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "ECON7350",
-    "course_id": "ECON7350Postgraduate",
-    "course_name": "Special Topics in Economics",
     "faculty": "UNSW Business School",
     "modes": [
       "In Person"
@@ -28241,6 +28163,7 @@
     "course_name": "Twice-Exceptionality in Education",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "In Person",
       "Multimodal"
     ],
     "school": "School of Education",
@@ -28257,7 +28180,6 @@
     "course_name": "Capstone Professional Inquiry Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "Online",
       "Research"
     ],
     "school": "School of Education",
@@ -38318,7 +38240,7 @@
     "course_name": "State Crime, the Law and Civil Society",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -39411,6 +39333,22 @@
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "T2B"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "JURD7482",
+    "course_id": "JURD7482Postgraduate",
+    "course_name": "Conflict of Laws",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
+      "T3"
     ],
     "uoc": 6
   },
@@ -42439,6 +42377,22 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "LAWS3382",
+    "course_id": "LAWS3382Undergraduate",
+    "course_name": "Conflict of Laws",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch of Global & Public Law",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "LAWS3391",
     "course_id": "LAWS3391Undergraduate",
     "course_name": "Family Law",
@@ -43568,6 +43522,22 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "LAWS8117",
+    "course_id": "LAWS8117Postgraduate",
+    "course_name": "Critical Issues in Restorative Justice",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [
+      "In Person"
+    ],
+    "school": "Sch Law, Society & Criminology",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "LAWS8135",
     "course_id": "LAWS8135Postgraduate",
     "course_name": "Chinese Legal System (SJTU)",
@@ -43838,7 +43808,7 @@
     "course_name": "State Crime, the Law and Civil Society",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -44311,7 +44281,6 @@
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
-      "T2B",
       "T3A"
     ],
     "uoc": 6
@@ -46195,7 +46164,8 @@
     "course_name": "Mathematics 2B",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46228,7 +46198,8 @@
     "course_name": "Theory and Applications of Differential Equations",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -46360,7 +46331,8 @@
     "course_name": "Higher Linear Algebra",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -48003,7 +47975,9 @@
     "course_id": "MATS2005Undergraduate",
     "course_name": "Introduction to Fluid Flow and Heat Transfer",
     "faculty": "Faculty of Science",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "School of Materials Sci & Eng",
     "terms": [
       "T3"
@@ -48386,7 +48360,9 @@
     "course_id": "MATS6007Undergraduate",
     "course_name": "Sustainable Materials Engineering",
     "faculty": "Faculty of Science",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "School of Materials Sci & Eng",
     "terms": [
       "T3"
@@ -48438,8 +48414,7 @@
     ],
     "school": "School of Materials Sci & Eng",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -48514,7 +48489,9 @@
     "course_id": "MATS6009Postgraduate",
     "course_name": "Advanced Alloys",
     "faculty": "Faculty of Science",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "School of Materials Sci & Eng",
     "terms": [
       "T3"
@@ -50346,7 +50323,8 @@
     "course_name": "Research in Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -62479,7 +62457,8 @@
     "faculty": "DVC (A) Board of Studies",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "Std Acad & Career Success",
     "terms": [
@@ -63045,7 +63024,9 @@
     "course_id": "SCIF3010Undergraduate",
     "course_name": "Graduation Portfolio",
     "faculty": "Faculty of Science",
-    "modes": [],
+    "modes": [
+      "Online"
+    ],
     "school": "Faculty of Science",
     "terms": [
       "T3"
@@ -63117,6 +63098,7 @@
     "school": "Faculty of Science",
     "terms": [
       "T1",
+      "T2",
       "T3"
     ],
     "uoc": 0
@@ -66720,22 +66702,6 @@
       "T2"
     ],
     "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "UDES0011",
-    "course_id": "UDES0011Postgraduate",
-    "course_name": "Urban Design Research Project",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Built Environment",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 12
   },
   {
     "campus": "Sydney",
@@ -71725,22 +71691,6 @@
   {
     "campus": "UNSW Canberra City",
     "career": "Postgraduate",
-    "course_code": "ZSPS8101",
-    "course_id": "ZSPS8101Postgraduate",
-    "course_name": "Adaptive Leadership",
-    "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "Online"
-    ],
-    "school": "Canberra Sch of Prof Studies",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "UNSW Canberra City",
-    "career": "Postgraduate",
     "course_code": "ZSPS9000",
     "course_id": "ZSPS9000Postgraduate",
     "course_name": "Foundations of Organisational Cyber Security",
@@ -74218,7 +74168,8 @@
     "course_name": "Computing and Cyber Security Honours Research 2",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch of Systems and Computing",
     "terms": [
@@ -74983,6 +74934,7 @@
     "course_name": "Wireless, Mobile and Internet of Things Security",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
+      "In Person",
       "Online"
     ],
     "school": "Sch of Systems and Computing",
@@ -75029,22 +74981,6 @@
     "course_code": "ZEIT8026",
     "course_id": "ZEIT8026Postgraduate",
     "course_name": "Cyber Defence: Network Security Operations",
-    "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "Online"
-    ],
-    "school": "Sch of Systems and Computing",
-    "terms": [
-      "Z2"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "UNSW Canberra at ADFA",
-    "career": "Postgraduate",
-    "course_code": "ZEIT8027",
-    "course_id": "ZEIT8027Postgraduate",
-    "course_name": "Critical Infrastructure and Control System Security",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
       "Online"
@@ -75207,6 +75143,7 @@
     "course_name": "Introduction to Exploit Development",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
+      "In Person",
       "Online"
     ],
     "school": "Sch of Systems and Computing",
@@ -75670,7 +75607,9 @@
     "course_id": "ZEIT8307Postgraduate",
     "course_name": "System Dynamics Modelling",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [],
+    "modes": [
+      "Online"
+    ],
     "school": "Sch of Systems and Computing",
     "terms": [
       "Z2"
@@ -75717,6 +75656,7 @@
     "course_name": "Capability Option Analysis",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
+      "In Person",
       "Online"
     ],
     "school": "Sch of Systems and Computing",
