@@ -2458,6 +2458,22 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "AGSM9583",
+    "course_id": "AGSM9583Postgraduate",
+    "course_name": "Sustainability Study Tour",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "In Person"
+    ],
+    "school": "AGSM MBA Programs",
+    "terms": [
+      "T2C"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "AGSM9712",
     "course_id": "AGSM9712Postgraduate",
     "course_name": "Negotiation Skills",
@@ -6379,8 +6395,7 @@
     "course_name": "Arts and Health",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -23398,7 +23413,8 @@
     "course_name": "Communication in the Built Environment",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23698,8 +23714,7 @@
     "course_name": "Introduction to Film Studies",
     "faculty": "UNSW College",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -23754,7 +23769,8 @@
     "course_name": "Working with Data",
     "faculty": "UNSW College",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "UNSW College Diplomas",
     "terms": [
@@ -26596,7 +26612,6 @@
     "course_name": "Aboriginal Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "School of Education",
@@ -28763,7 +28778,6 @@
     "course_name": "Aboriginal Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "School of Education",
@@ -31404,7 +31418,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -31579,6 +31594,7 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
+      "T2C",
       "T3"
     ],
     "uoc": 6
@@ -34881,7 +34897,6 @@
     "course_name": "Professional Development for Emerging Engineering Educators",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "Multimodal",
       "Online"
     ],
     "school": "Faculty of Engineering",
@@ -38240,11 +38255,11 @@
     "course_name": "State Crime, the Law and Civil Society",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "Online"
+      "In Person"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T2"
+      "T2B"
     ],
     "uoc": 6
   },
@@ -43779,8 +43794,7 @@
     ],
     "school": "Sch of Global & Public Law",
     "terms": [
-      "T1",
-      "T2"
+      "T1"
     ],
     "uoc": 6
   },
@@ -43808,11 +43822,11 @@
     "course_name": "State Crime, the Law and Civil Society",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "Online"
+      "In Person"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
-      "T2"
+      "T2B"
     ],
     "uoc": 6
   },
@@ -47314,7 +47328,8 @@
     "course_name": "Computational Mathematics for Finance",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -51437,6 +51452,8 @@
       "MS1",
       "M1A",
       "M1B",
+      "MT2",
+      "M2A",
       "M3A"
     ],
     "uoc": 0
@@ -63007,12 +63024,10 @@
     "course_name": "Science Industry Project",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person",
       "Multimodal"
     ],
     "school": "Faculty of Science",
     "terms": [
-      "T2",
       "T3"
     ],
     "uoc": 6
@@ -64530,22 +64545,6 @@
     "school": "School of Biomedical Sciences",
     "terms": [
       "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "SOMS2002",
-    "course_id": "SOMS2002Undergraduate",
-    "course_name": "Biomedical Science Research Skills",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Biomedical Sciences",
-    "terms": [
-      "T2"
     ],
     "uoc": 6
   },
@@ -68130,7 +68129,8 @@
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
-      "KB"
+      "KB",
+      "KN"
     ],
     "uoc": 6
   },
@@ -70337,7 +70337,8 @@
     "course_name": "Design Professional Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
