@@ -1,5 +1,5 @@
 use crate::{
-    ScrapingContext, Course,
+    Course, ScrapingContext,
     subject_area_scraper::SubjectArea,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
