@@ -4,7 +4,7 @@ use scraper::{ElementRef, Selector};
 use tokio::sync::mpsc;
 
 use crate::{
-    Course, RequestClient,
+    ScrapingContext, Course,
     course_scraper::PartialCourse,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
@@ -15,10 +15,10 @@ pub struct SubjectArea {
 }
 
 impl SubjectArea {
-    pub async fn scrape(url: String, request_client: &Arc<RequestClient>) -> anyhow::Result<Self> {
+    pub async fn scrape(url: String, ctx: &Arc<ScrapingContext>) -> anyhow::Result<Self> {
         log::info!("Started scraping Subject Area for: {}", url);
 
-        let html = request_client.fetch_url(&url).await?;
+        let html = ctx.request_client.fetch_url(&url).await?;
 
         // We use a channel so we can start completing a partial course
         // immediately once it's scraped, so we don't have to wait until all
@@ -26,6 +26,7 @@ impl SubjectArea {
         let (tx, mut rx) = mpsc::unbounded_channel();
 
         let producer = async move || {
+            let ctx = Arc::clone(ctx);
             let cpu_bound = move || {
                 let document = scraper::Html::parse_document(&html);
 
@@ -71,6 +72,7 @@ impl SubjectArea {
                                 .select(&link_selector)
                                 .next()
                                 .map_or("", |node| node.value().attr("href").unwrap_or("")),
+                            &ctx,
                         );
                         let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
                             .parse()
@@ -96,8 +98,8 @@ impl SubjectArea {
 
             // Spawn partial-page-completion tasks as soon as we receive partial pages.
             while let Some(partial_course) = rx.recv().await {
-                let request_client = Arc::clone(request_client);
-                tasks.spawn(async move { partial_course.complete(&request_client).await });
+                let ctx = Arc::clone(ctx);
+                tasks.spawn(async move { partial_course.complete(&ctx).await });
             }
 
             // Wait for all partial-page-completion tasks to complete.
