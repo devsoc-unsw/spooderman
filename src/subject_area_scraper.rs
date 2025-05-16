@@ -4,7 +4,7 @@ use scraper::{ElementRef, Selector};
 use tokio::sync::mpsc;
 
 use crate::{
-    ScrapingContext, Course,
+    Course, ScrapingContext,
     course_scraper::PartialCourse,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
