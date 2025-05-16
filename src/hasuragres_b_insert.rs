@@ -1,11 +1,12 @@
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::env;
-use std::error::Error;
 use std::fs::File;
 use std::io::Read;
 use std::vec;
+
+use crate::UploadingConfig;
+use crate::config::FromEnvFile;
 
 #[derive(Serialize, Deserialize)]
 struct Metadata {
@@ -76,9 +77,7 @@ impl HasuragresData for ReadFromMemory {
 }
 
 pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> {
-    dotenv::dotenv().ok();
-    let hasuragres_url = env::var("HASURAGRES_URL")?;
-    let api_key = env::var("HASURAGRES_API_KEY")?;
+    let uploading_config = UploadingConfig::parse_from_envfile()?;
     let client = Client::new();
     log::info!("Starting to insert into Hasuragres!");
     let requests = vec![
@@ -160,8 +159,8 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
     ];
 
     let response = client
-        .post(format!("{}/batch_insert", hasuragres_url))
-        .header("X-API-Key", api_key)
+        .post(format!("{}/batch_insert", uploading_config.hasuragres_url))
+        .header("X-API-Key", uploading_config.hasuragres_api_key.clone())
         .json(&requests)
         .send()
         .await;

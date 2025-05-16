@@ -1,12 +1,11 @@
-use anyhow::Context;
+use anyhow::Context as _;
 use argh::FromArgs;
 use chrono::Datelike;
-use dotenv::dotenv;
 use enum_dispatch::enum_dispatch;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, RequestClient, SchoolArea, Time, mutate_string_to_include_curr_year,
+    Class, Course, SchoolArea, ScrapingContext, Time, mutate_string_to_include_curr_year,
     send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
@@ -19,18 +18,12 @@ use log::LevelFilter;
 
 async fn run_all_school_offered_courses_scraper_job(
     year: i32,
-    request_client: &Arc<RequestClient>,
+    ctx: &Arc<ScrapingContext>,
 ) -> anyhow::Result<SchoolArea> {
-    // TODO: parse all of required env vars into a Config struct initially, and the timetable url shouldn't be optional while the hasuragres ones obviously should be.
-    match std::env::var("TIMETABLE_API_URL") {
-        Ok(url) => {
-            let url_to_scrape = mutate_string_to_include_curr_year(&url, year.to_string());
-            Ok(SchoolArea::scrape(url_to_scrape, request_client).await?)
-        }
-        Err(e) => Err(anyhow::anyhow!(
-            "Timetable URL could NOT been parsed properly from env file and error report: {e}"
-        )),
-    }
+    let url_to_scrape =
+        mutate_string_to_include_curr_year(&ctx.scraping_config.timetable_api_url, year)
+            .to_string();
+    SchoolArea::scrape(url_to_scrape, ctx).await
 }
 
 #[derive(Debug, Serialize)]
@@ -131,13 +124,12 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 }
 
 async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
-    let request_client = Arc::new(RequestClient::new()?);
-
+    let ctx = Arc::new(ScrapingContext::new()?);
     let mut all_courses = vec![];
     for year in [2025] {
         // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
         log::info!("Starting scrape for year: {year}");
-        let school_area = run_all_school_offered_courses_scraper_job(year, &request_client).await?;
+        let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
         all_courses.extend(school_area.get_all_courses());
     }
 
@@ -267,12 +259,10 @@ impl Exec for ScrapeAndBatchInsert {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    dotenv().ok();
-
     let cli: Cli = argh::from_env();
 
     let lvl = if cli.verbose {
-        // TODO: we don't currently have any Debug logs, but useful for when we do, or we can config differently.
+        // NOTE: we don't currently have any Debug logs, but useful for when we do, or we can config differently.
         LevelFilter::Debug
     } else {
         LevelFilter::Info
