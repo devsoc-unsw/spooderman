@@ -1,6 +1,5 @@
 use crate::{
-    Course,
-    requests::RequestClient,
+    ScrapingContext, Course,
     subject_area_scraper::SubjectArea,
     text_manipulators::{extract_text, extract_year, get_html_link_to_page},
 };
@@ -16,10 +15,10 @@ pub struct SchoolArea {
 }
 
 impl SchoolArea {
-    pub async fn scrape(url: String, request_client: &Arc<RequestClient>) -> anyhow::Result<Self> {
+    pub async fn scrape(url: String, ctx: &Arc<ScrapingContext>) -> anyhow::Result<Self> {
         log::info!("Started scraping School Area for: {}", url);
 
-        let html = request_client.fetch_url(&url).await?;
+        let html = ctx.request_client.fetch_url(&url).await?;
 
         // We use a channel so we can start completing a partial page
         // immediately once it's scraped, so we don't have to wait until all
@@ -27,6 +26,7 @@ impl SchoolArea {
         let (tx, mut rx) = mpsc::unbounded_channel();
 
         let producer = async || {
+            let ctx = Arc::clone(ctx);
             let url = url.clone();
             let cpu_bound = move || {
                 let document = scraper::Html::parse_document(&html);
@@ -47,6 +47,7 @@ impl SchoolArea {
                             .select(&link_selector)
                             .next()
                             .map_or("", |node| node.value().attr("href").unwrap_or("")),
+                        &ctx,
                     );
                     let school = extract_text(row_node.select(&school_selector).next().unwrap());
                     let partial_page = PartialSchoolAreaPage::new(
@@ -66,8 +67,8 @@ impl SchoolArea {
 
             // Spawn partial-page-completion tasks as soon as we receive partial pages.
             while let Some(partial_page) = rx.recv().await {
-                let request_client = Arc::clone(request_client);
-                tasks.spawn(async move { partial_page.complete(&request_client).await });
+                let ctx = Arc::clone(ctx);
+                tasks.spawn(async move { partial_page.complete(&ctx).await });
             }
 
             // Wait for all partial-page-completion tasks to complete.
@@ -84,8 +85,7 @@ impl SchoolArea {
     pub fn get_all_courses(self) -> impl Iterator<Item = Course> {
         self.pages
             .into_iter()
-            .map(|school_area_page| school_area_page.subject_area.courses)
-            .flatten()
+            .flat_map(|school_area_page| school_area_page.subject_area.courses)
     }
 }
 
@@ -106,8 +106,8 @@ struct PartialSchoolAreaPage {
 }
 
 impl PartialSchoolAreaPage {
-    async fn complete(self, request_client: &Arc<RequestClient>) -> anyhow::Result<SchoolAreaPage> {
-        let subject_area = SubjectArea::scrape(self.subject_area_url, request_client).await?;
+    async fn complete(self, ctx: &Arc<ScrapingContext>) -> anyhow::Result<SchoolAreaPage> {
+        let subject_area = SubjectArea::scrape(self.subject_area_url, ctx).await?;
         Ok(SchoolAreaPage::new(
             self.course_code,
             self.course_name,

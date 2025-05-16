@@ -1,12 +1,9 @@
 use derive_new::new;
 use rayon::prelude::*;
 use scraper::Selector;
-use std::{
-    collections::{HashMap, HashSet},
-    sync::Arc,
-};
+use std::collections::{HashMap, HashSet};
 
-use crate::{RequestClient, text_manipulators::extract_text};
+use crate::{ScrapingContext, text_manipulators::extract_text};
 
 #[derive(Debug)]
 pub struct Course {
@@ -65,8 +62,8 @@ pub struct PartialCourse {
 }
 
 impl PartialCourse {
-    pub async fn complete(self, request_client: &Arc<RequestClient>) -> anyhow::Result<Course> {
-        let html = request_client.fetch_url(&self.url).await?;
+    pub async fn complete(self, ctx: &ScrapingContext) -> anyhow::Result<Course> {
+        let html = ctx.request_client.fetch_url(&self.url).await?;
         let course_code = self.course_code.clone();
 
         let cpu_bound = move || {
@@ -81,7 +78,6 @@ impl PartialCourse {
             let information_body = document.select(&form_bodies);
 
             let mut course_info = Course {
-                // TODO: can remove all of these clones, since we own it
                 course_id: format!("{}{}", &self.course_code, &self.career),
                 course_code: self.course_code,
                 course_name: self.course_name,
