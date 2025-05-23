@@ -18,7 +18,7 @@ impl SchoolArea {
     pub async fn scrape(url: String, ctx: &Arc<ScrapingContext>) -> anyhow::Result<Self> {
         log::info!("Started scraping School Area for: {}", url);
 
-        let html = ctx.request_client.fetch_url(&url).await?;
+        let html = ctx.request_client.fetch_url_body(&url).await?;
 
         // We use a channel so we can start completing a partial page
         // immediately once it's scraped, so we don't have to wait until all

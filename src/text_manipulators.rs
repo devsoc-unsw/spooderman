@@ -19,6 +19,7 @@ pub fn extract_year(url: &str) -> Option<u32> {
     }
 }
 
+// TODO: we're compiling a new regex everytime -> slow; also, regex isn't needed here, just append year.
 pub fn mutate_string_to_include_curr_year(curr_base_url: &str, year: i32) -> Cow<str> {
     let pattern = Regex::new("year").unwrap();
     let year_str = year.to_string();

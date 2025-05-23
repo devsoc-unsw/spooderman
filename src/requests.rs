@@ -1,4 +1,4 @@
-use reqwest::{Client, ClientBuilder};
+use reqwest::{Client, ClientBuilder, Response};
 
 use crate::ratelimit::RateLimiter;
 
@@ -19,12 +19,17 @@ impl RequestClient {
         })
     }
 
-    pub async fn fetch_url(&self, url: &str) -> anyhow::Result<String> {
+    pub async fn fetch_url_response(&self, url: &str) -> anyhow::Result<Response> {
         // Wait (non-blocking) until we're allowed to make a request according
         // to our self-imposed rate-limiting policy.
         self.rate_limiter.wait_until_ready().await;
 
         let response = self.client.get(url).send().await?;
+        Ok(response)
+    }
+
+    pub async fn fetch_url_body(&self, url: &str) -> anyhow::Result<String> {
+        let response = self.fetch_url_response(url).await?;
         let body = response.text().await?;
         Ok(body)
     }

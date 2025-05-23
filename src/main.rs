@@ -2,6 +2,7 @@ use anyhow::Context as _;
 use argh::FromArgs;
 use chrono::Datelike;
 use enum_dispatch::enum_dispatch;
+use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
@@ -15,6 +16,8 @@ use std::sync::Arc;
 use std::vec;
 
 use log::LevelFilter;
+
+type Year = i32;
 
 async fn run_all_school_offered_courses_scraper_job(
     year: i32,
@@ -123,24 +126,21 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_classes
 }
 
-async fn handle_scrape(start_year: i32) -> anyhow::Result<Vec<Course>> {
+async fn handle_scrape(year_to_scrape: &YearToScrape) -> anyhow::Result<Vec<Course>> {
     let ctx = Arc::new(ScrapingContext::new()?);
-    let mut all_courses = vec![];
-    for year in [2025] {
-        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-        log::info!("Starting scrape for year: {year}");
-        let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
-        all_courses.extend(school_area.get_all_courses());
-    }
+    // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+    let year = year_to_scrape.into_year(&ctx).await?;
+    log::info!("Starting scrape for year: {year}");
+    let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
 
+    let mut all_courses = school_area.get_all_courses().collect::<Vec<_>>();
     sort_by_key_ref(&mut all_courses, |course| &course.course_id);
 
     Ok(all_courses)
 }
 
-async fn handle_scrape_write_to_file() -> anyhow::Result<()> {
-    let current_year = chrono::Utc::now().year();
-    let courses = handle_scrape(current_year)
+async fn handle_scrape_write_to_file(year_to_scrape: &YearToScrape) -> anyhow::Result<()> {
+    let courses = handle_scrape(year_to_scrape)
         .await
         .context("Something went wrong with scraping!")?;
 
@@ -180,10 +180,9 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn handle_scrape_n_batch_insert() -> anyhow::Result<()> {
+async fn handle_scrape_n_batch_insert(year_to_scrape: &YearToScrape) -> anyhow::Result<()> {
     log::info!("Handling scrape and batch insert...");
-    let current_year = chrono::Utc::now().year();
-    let courses = handle_scrape(current_year)
+    let courses = handle_scrape(year_to_scrape)
         .await
         .context("Something went wrong with scraping!")?;
 
@@ -215,6 +214,78 @@ struct Cli {
     verbose: bool,
 }
 
+#[derive(Debug, FromStr)]
+enum YearToScrape {
+    #[display("latest-with-data")]
+    LatestYearWithDataAvailable,
+
+    #[display("{0}")]
+    Year(Year),
+}
+
+fn get_current_year() -> Year {
+    chrono::Utc::now().year()
+}
+
+async fn year_has_data(year: i32, ctx: &ScrapingContext) -> anyhow::Result<bool> {
+    let year_url = mutate_string_to_include_curr_year(&ctx.scraping_config.timetable_api_url, year);
+    let response = ctx.request_client.fetch_url_response(&year_url).await?;
+    // UNSW servers will return a 404 if the data for a year isn't available.
+    match response.status().as_u16() {
+        200 => Ok(true),
+        404 => Ok(false),
+        other => Err(anyhow::anyhow!(
+            "UNSW servers returned an unexpected status code '{}' for a GET request to '{}'",
+            other,
+            year_url
+        )),
+    }
+}
+
+impl YearToScrape {
+    async fn into_year(&self, ctx: &ScrapingContext) -> anyhow::Result<Year> {
+        match self {
+            YearToScrape::Year(year) => Ok(*year),
+            YearToScrape::LatestYearWithDataAvailable => {
+                // try to find the latest year in the future, the the latest in the past.
+                let curr_year = get_current_year();
+
+                // go as far as possible into future.
+                let mut latest_in_future = None;
+                for year in curr_year.. {
+                    if year_has_data(year, ctx).await? {
+                        latest_in_future = Some(year);
+                    } else {
+                        break;
+                    }
+                }
+
+                match latest_in_future {
+                    Some(year) => Ok(year),
+                    None => {
+                        // go as far as necessary into past.
+                        let mut latest_in_past = None;
+                        // we've already checked the current year.
+                        for year in (0..curr_year).rev() {
+                            if year_has_data(year, ctx).await? {
+                                latest_in_past = Some(year);
+                            } else {
+                                break;
+                            }
+                        }
+                        match latest_in_past {
+                            Some(year) => Ok(year),
+                            None => Err(anyhow::anyhow!(
+                                "no year (neither in the future nor in the past relative to current year) has data"
+                            )),
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 #[derive(FromArgs)]
 #[argh(subcommand)]
 #[enum_dispatch(Exec)]
@@ -227,11 +298,15 @@ enum Command {
 /// Perform scraping. Creates a JSON file to store the data.
 #[derive(FromArgs)]
 #[argh(subcommand, name = "scrape")]
-struct Scrape {}
+struct Scrape {
+    /// the year for which data should be scraped, or the latest year with data available.
+    #[argh(option, long = "year", short = 'y')]
+    year_to_scrape: YearToScrape,
+}
 
 impl Exec for Scrape {
     async fn exec(&self) -> anyhow::Result<()> {
-        handle_scrape_write_to_file().await
+        handle_scrape_write_to_file(&self.year_to_scrape).await
     }
 }
 
@@ -249,11 +324,15 @@ impl Exec for BatchInsert {
 /// Perform scraping and batch insert. Does not create a JSON file to store the data.
 #[derive(FromArgs)]
 #[argh(subcommand, name = "scrape_n_batch_insert")]
-struct ScrapeAndBatchInsert {}
+struct ScrapeAndBatchInsert {
+    /// the year for which data should be scraped, or the latest year with data available.
+    #[argh(option, long = "year", short = 'y')]
+    year_to_scrape: YearToScrape,
+}
 
 impl Exec for ScrapeAndBatchInsert {
     async fn exec(&self) -> anyhow::Result<()> {
-        handle_scrape_n_batch_insert().await
+        handle_scrape_n_batch_insert(&self.year_to_scrape).await
     }
 }
 
