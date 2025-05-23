@@ -64,7 +64,7 @@ pub struct PartialCourse {
 
 impl PartialCourse {
     pub async fn complete(self, ctx: &ScrapingContext) -> anyhow::Result<Course> {
-        let html = ctx.request_client.fetch_url(&self.url).await?;
+        let html = ctx.request_client.fetch_url_body(&self.url).await?;
         let course_code = self.course_code.clone();
 
         let cpu_bound = move || {

@@ -20,6 +20,7 @@ html5ever = "0.29.0"
 log = "0.4.22"
 logger = "0.4.0"
 nonzero_ext = "0.3.0"
+parse-display = "0.10.0"
 rayon = "1.10.0"
 regex = "1.11.1"
 reqwest = { version = "0.12.11", features = ["json"] }
