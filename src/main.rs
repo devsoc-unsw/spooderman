@@ -299,7 +299,7 @@ enum Command {
 #[derive(FromArgs)]
 #[argh(subcommand, name = "scrape")]
 struct Scrape {
-    /// the year for which data should be scraped, or the latest year with data available.
+    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.
     #[argh(option, long = "year", short = 'y')]
     year_to_scrape: YearToScrape,
 }
@@ -325,7 +325,7 @@ impl Exec for BatchInsert {
 #[derive(FromArgs)]
 #[argh(subcommand, name = "scrape_n_batch_insert")]
 struct ScrapeAndBatchInsert {
-    /// the year for which data should be scraped, or the latest year with data available.
+    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.
     #[argh(option, long = "year", short = 'y')]
     year_to_scrape: YearToScrape,
 }
