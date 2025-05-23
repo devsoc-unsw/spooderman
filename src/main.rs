@@ -248,39 +248,37 @@ impl YearToScrape {
             YearToScrape::Year(year) => Ok(*year),
             YearToScrape::LatestYearWithDataAvailable => {
                 // try to find the latest year in the future, the the latest in the past.
+
+                // How far we potentially look into the future and past.
+                const MAX_FUTURE_YEARS: i32 = 20;
+                const MAX_PAST_YEARS: i32 = 20;
+
                 let curr_year = get_current_year();
 
                 // go as far as possible into future.
                 let mut latest_in_future = None;
-                for year in curr_year.. {
+                for year in curr_year..curr_year + MAX_FUTURE_YEARS {
                     if year_has_data(year, ctx).await? {
                         latest_in_future = Some(year);
                     } else {
                         break;
                     }
                 }
+                if let Some(year) = latest_in_future {
+                    return Ok(year);
+                }
 
-                match latest_in_future {
-                    Some(year) => Ok(year),
-                    None => {
-                        // go as far as necessary into past.
-                        let mut latest_in_past = None;
-                        // we've already checked the current year.
-                        for year in (0..curr_year).rev() {
-                            if year_has_data(year, ctx).await? {
-                                latest_in_past = Some(year);
-                            } else {
-                                break;
-                            }
-                        }
-                        match latest_in_past {
-                            Some(year) => Ok(year),
-                            None => Err(anyhow::anyhow!(
-                                "no year (neither in the future nor in the past relative to current year) has data"
-                            )),
-                        }
+                // go until first possible in the past.
+                // we've already checked the current year.
+                for year in (curr_year - MAX_PAST_YEARS..curr_year).rev() {
+                    if year_has_data(year, ctx).await? {
+                        return Ok(year);
                     }
                 }
+
+                Err(anyhow::anyhow!(
+                    "no year (neither in the future nor in the past relative to current year) has data"
+                ))
             }
         }
     }
