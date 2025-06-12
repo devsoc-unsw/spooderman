@@ -1,9 +1,7 @@
-use anyhow::Context as _;
 use argh::FromArgs;
 use chrono::Datelike;
 use enum_dispatch::enum_dispatch;
 use parse_display::FromStr;
-use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Class, Course, SchoolArea, ScrapingContext, Time, mutate_string_to_include_curr_year,
@@ -27,25 +25,6 @@ async fn run_all_school_offered_courses_scraper_job(
         mutate_string_to_include_curr_year(&ctx.scraping_config.timetable_api_url, year)
             .to_string();
     SchoolArea::scrape(url_to_scrape, ctx).await
-}
-
-#[derive(Debug, Serialize)]
-struct Data {
-    all_courses: Vec<Course>,
-}
-
-impl Data {
-    fn new(mut all_courses: Vec<Course>) -> Self {
-        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
-        Self { all_courses }
-    }
-
-    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
-        log::info!("Writing scraped data to {}!", json_file_path);
-        let file = File::create(json_file_path)?;
-        to_writer_pretty(file, &self)?;
-        Ok(())
-    }
 }
 
 fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
@@ -76,11 +55,12 @@ fn generate_time_id(class: &Class, time: &Time) -> String {
 }
 
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
+    // TODO: refactor to use collect::<Vec<Value>>()
     let mut times_json = Vec::<serde_json::Value>::new();
     for course in courses.iter() {
         for class in course.classes.iter() {
-            if class.times.is_some() {
-                for time in class.times.as_ref().unwrap().iter() {
+            if let Some(times) = &class.times {
+                for time in times.iter() {
                     times_json.push(json!({
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
@@ -95,11 +75,11 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             }
         }
     }
-
     times_json
 }
 
 fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
+    // TODO: refactor to use collect::<Vec<Value>>()
     let mut json_classes = Vec::new();
     for course in courses.iter() {
         for class in course.classes.iter() {
@@ -122,40 +102,54 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             }));
         }
     }
-
     json_classes
 }
 
-async fn handle_scrape(year_to_scrape: &YearToScrape) -> anyhow::Result<Vec<Course>> {
-    let ctx = Arc::new(ScrapingContext::new()?);
-    // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-    let year = year_to_scrape.into_year(&ctx).await?;
-    log::info!("Starting scrape for year: {year}");
-    let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
-
-    let mut all_courses = school_area.get_all_courses().collect::<Vec<_>>();
-    sort_by_key_ref(&mut all_courses, |course| &course.course_id);
-
-    Ok(all_courses)
+struct Data {
+    all_courses: Vec<Course>,
 }
 
-async fn handle_scrape_write_to_file(year_to_scrape: &YearToScrape) -> anyhow::Result<()> {
-    let courses = handle_scrape(year_to_scrape)
-        .await
-        .context("Something went wrong with scraping!")?;
+impl Data {
+    async fn scrape(year_to_scrape: &YearToScrape) -> anyhow::Result<Data> {
+        let ctx = Arc::new(ScrapingContext::new()?);
+        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+        let year = year_to_scrape.into_year(&ctx).await?;
+        log::info!("Starting scrape for year: {year}");
+        let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
 
-    log::info!("Writing scraped data to disk!");
-    let json_classes = convert_classes_to_json(&courses);
-    let json_courses = convert_courses_to_json(&courses);
-    let json_times = convert_classes_times_to_json(&courses);
+        let mut all_courses = school_area.get_all_courses().collect::<Vec<_>>();
+        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
 
-    let file_classes = File::create("classes.json")?;
-    let file_courses = File::create("courses.json")?;
-    let file_times = File::create("times.json")?;
-    to_writer_pretty(file_classes, &json_classes)?;
-    to_writer_pretty(file_courses, &json_courses)?;
-    to_writer_pretty(file_times, &json_times)?;
-    Ok(())
+        Ok(Data { all_courses })
+    }
+
+    async fn write_to_files(&self) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to disk!");
+        let json_classes = convert_classes_to_json(&self.all_courses);
+        let json_courses = convert_courses_to_json(&self.all_courses);
+        let json_times = convert_classes_times_to_json(&self.all_courses);
+
+        let file_classes = File::create("classes.json")?;
+        let file_courses = File::create("courses.json")?;
+        let file_times = File::create("times.json")?;
+        to_writer_pretty(file_classes, &json_classes)?;
+        to_writer_pretty(file_courses, &json_courses)?;
+        to_writer_pretty(file_times, &json_times)?;
+        Ok(())
+    }
+
+    async fn handle_batch_insert(&self) -> anyhow::Result<()> {
+        let json_classes = convert_classes_to_json(&self.all_courses);
+        let json_courses = convert_courses_to_json(&self.all_courses);
+        let json_times = convert_classes_times_to_json(&self.all_courses);
+        let rfm = ReadFromMemory {
+            courses_vec: json_courses,
+            classes_vec: json_classes,
+            times_vec: json_times,
+        };
+        send_batch_data(&rfm).await?;
+        Ok(())
+    }
 }
 
 async fn handle_batch_insert() -> anyhow::Result<()> {
@@ -177,24 +171,6 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
     }
 
     send_batch_data(&ReadFromFile).await?;
-    Ok(())
-}
-
-async fn handle_scrape_n_batch_insert(year_to_scrape: &YearToScrape) -> anyhow::Result<()> {
-    log::info!("Handling scrape and batch insert...");
-    let courses = handle_scrape(year_to_scrape)
-        .await
-        .context("Something went wrong with scraping!")?;
-
-    let json_classes = convert_classes_to_json(&courses);
-    let json_courses = convert_courses_to_json(&courses);
-    let json_times = convert_classes_times_to_json(&courses);
-    let rfm = ReadFromMemory {
-        courses_vec: json_courses,
-        classes_vec: json_classes,
-        times_vec: json_times,
-    };
-    send_batch_data(&rfm).await?;
     Ok(())
 }
 
@@ -304,7 +280,10 @@ struct Scrape {
 
 impl Exec for Scrape {
     async fn exec(&self) -> anyhow::Result<()> {
-        handle_scrape_write_to_file(&self.year_to_scrape).await
+        log::info!("Handling scrape...");
+        let data = Data::scrape(&self.year_to_scrape).await?;
+        data.write_to_files().await?;
+        Ok(())
     }
 }
 
@@ -315,7 +294,9 @@ struct BatchInsert {}
 
 impl Exec for BatchInsert {
     async fn exec(&self) -> anyhow::Result<()> {
-        handle_batch_insert().await
+        log::info!("Handling batch insert...");
+        handle_batch_insert().await?;
+        Ok(())
     }
 }
 
@@ -330,7 +311,11 @@ struct ScrapeAndBatchInsert {
 
 impl Exec for ScrapeAndBatchInsert {
     async fn exec(&self) -> anyhow::Result<()> {
-        handle_scrape_n_batch_insert(&self.year_to_scrape).await
+        log::info!("Handling scrape and batch insert...");
+        let data = Data::scrape(&self.year_to_scrape).await?;
+        data.write_to_files().await?;
+        data.handle_batch_insert().await?;
+        Ok(())
     }
 }
 
