@@ -2,6 +2,7 @@ use argh::FromArgs;
 use chrono::Datelike;
 use enum_dispatch::enum_dispatch;
 use parse_display::FromStr;
+use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Class, Course, SchoolArea, ScrapingContext, Time, mutate_string_to_include_curr_year,
@@ -105,6 +106,7 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_classes
 }
 
+#[derive(Debug, Serialize)]
 struct Data {
     all_courses: Vec<Course>,
 }
@@ -121,6 +123,13 @@ impl Data {
         sort_by_key_ref(&mut all_courses, |course| &course.course_id);
 
         Ok(Data { all_courses })
+    }
+
+    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to {}!", json_file_path);
+        let file = File::create(json_file_path)?;
+        to_writer_pretty(file, &self)?;
+        Ok(())
     }
 
     async fn write_to_files(&self) -> anyhow::Result<()> {
@@ -273,16 +282,23 @@ enum Command {
 #[derive(FromArgs)]
 #[argh(subcommand, name = "scrape")]
 struct Scrape {
-    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.
+    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`
     #[argh(option, long = "year", short = 'y')]
     year_to_scrape: YearToScrape,
+
+    /// write to a single JSON file instead
+    #[argh(option, long = "to-file")]
+    write_to_json_file: Option<String>,
 }
 
 impl Exec for Scrape {
     async fn exec(&self) -> anyhow::Result<()> {
         log::info!("Handling scrape...");
         let data = Data::scrape(&self.year_to_scrape).await?;
-        data.write_to_files().await?;
+        match &self.write_to_json_file {
+            Some(json_file_path) => data.write_to_single_json(&json_file_path).await?,
+            None => data.write_to_files().await?,
+        }
         Ok(())
     }
 }
