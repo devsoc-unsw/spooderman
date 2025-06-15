@@ -34,6 +34,9 @@ jobs:
           file: Dockerfile
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            HASURAGRES_API_KEY=${{ secrets.HASURAGRES_API_KEY }}
+            HASURAGRES_URL=${{ secrets.HASURAGRES_URL }}
           tags: |
             ghcr.io/devsoc-unsw/spooderman:${{ github.sha }}
             ghcr.io/devsoc-unsw/spooderman:latest
