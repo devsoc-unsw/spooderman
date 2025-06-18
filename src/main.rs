@@ -1,6 +1,7 @@
 use chrono::Datelike;
 use dotenv::dotenv;
 use futures::future::join_all;
+use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
@@ -32,6 +33,33 @@ async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<Sc
             warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
             None
         }
+    }
+}
+
+#[derive(Debug, Serialize)]
+struct Data {
+    all_courses: Vec<Course>,
+}
+
+pub fn sort_by_key_ref<T, B, F>(slice: &mut [T], mut f: F)
+where
+    F: FnMut(&T) -> &B,
+    B: Ord,
+{
+    slice.sort_by(|a, b| f(a).cmp(f(b)))
+}
+
+impl Data {
+    fn new(mut all_courses: Vec<Course>) -> Self {
+        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
+        Self { all_courses }
+    }
+
+    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to {}!", json_file_path);
+        let file = File::create(json_file_path)?;
+        to_writer_pretty(file, &self)?;
+        Ok(())
     }
 }
 
@@ -188,21 +216,15 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_classes
 }
 
-async fn handle_scrape(
-    course_vec: &mut Vec<Course>,
-    start_year: i32,
-) -> Result<(), Box<dyn Error>> {
-    for year in &[2025] {
-        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-        println!("Handling scrape for year: {year}");
-        let mut all_school_offered_courses_scraper =
-            run_all_school_offered_courses_scraper_job(*year).await;
-        if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-            run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-            let course =
-                run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-            course_vec.extend(course);
-        }
+async fn handle_scrape(course_vec: &mut Vec<Course>, year: i32) -> Result<(), Box<dyn Error>> {
+    // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+    println!("Handling scrape for year: {year}");
+    let mut all_school_offered_courses_scraper =
+        run_all_school_offered_courses_scraper_job(year).await;
+    if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
+        run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
+        let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
+        course_vec.extend(course);
     }
 
     Ok(())
@@ -278,6 +300,9 @@ fn print_help() {
         "  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data."
     );
     println!("  batch_insert          - Perform batch insert on json files created by scrape.");
+    println!(
+        "  scrape_n_serialize [json-file-path] [year]   - Perform scraping of data for given year, and save to a single output json file."
+    );
     println!("  help                  - Show this help message");
 }
 
@@ -300,6 +325,18 @@ async fn main() -> Result<(), Box<dyn Error>> {
         "scrape" => handle_scrape_write_to_file().await?,
         "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
         "batch_insert" => handle_batch_insert().await?,
+        "scrape_n_serialize" => {
+            let json_file_path = &args[2];
+            let year: i32 = args[3].parse()?;
+
+            let mut course_vec: Vec<Course> = Vec::<Course>::new();
+            handle_scrape(&mut course_vec, year)
+                .await
+                .expect("Something went wrong with scraping!");
+
+            let data = Data::new(course_vec);
+            data.write_to_single_json(&json_file_path).await?;
+        }
         "help" => print_help(),
         _ => {
             eprintln!("Unknown command: '{}'", command);
