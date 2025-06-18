@@ -41,8 +41,17 @@ struct Data {
     all_courses: Vec<Course>,
 }
 
+pub fn sort_by_key_ref<T, B, F>(slice: &mut [T], mut f: F)
+where
+    F: FnMut(&T) -> &B,
+    B: Ord,
+{
+    slice.sort_by(|a, b| f(a).cmp(f(b)))
+}
+
 impl Data {
-    fn new(all_courses: Vec<Course>) -> Self {
+    fn new(mut all_courses: Vec<Course>) -> Self {
+        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
         Self { all_courses }
     }
 
