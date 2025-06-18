@@ -7324,7 +7324,7 @@
     "career": "Undergraduate",
     "course_code": "ARTS3810",
     "course_id": "ARTS3810Undergraduate",
-    "course_name": "Politics & International Relations: Theory and Practice",
+    "course_name": "Politics and International Relations: Theory and Practice",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
@@ -9733,22 +9733,6 @@
     "school": "School of Aviation",
     "terms": [
       "T1"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "AVIA2610",
-    "course_id": "AVIA2610Undergraduate",
-    "course_name": "Quantitative and Qualitative Research Methods in Aviation",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Aviation",
-    "terms": [
-      "T2"
     ],
     "uoc": 6
   },
@@ -14787,7 +14771,8 @@
     "course_name": "Data-driven Decision Making in Chemical Engineering and Food Science",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemical Engineering",
     "terms": [
@@ -15034,7 +15019,8 @@
     "course_name": "Data-driven Decision Making in Chemical Engineering and Food Science",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemical Engineering",
     "terms": [
@@ -16873,6 +16859,7 @@
     "terms": [
       "T1",
       "T2",
+      "T2C",
       "T3"
     ],
     "uoc": 6
@@ -16892,6 +16879,7 @@
     "terms": [
       "T1",
       "T2",
+      "T2C",
       "T3"
     ],
     "uoc": 6
@@ -17210,8 +17198,7 @@
     "course_name": "Interdisciplinary Applications of Analytics Techniques",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "In Person"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -17684,7 +17671,7 @@
     "career": "Undergraduate",
     "course_code": "COMP2511",
     "course_id": "COMP2511Undergraduate",
-    "course_name": "Object-Oriented Design & Programming",
+    "course_name": "Object-Oriented Design and Programming",
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
@@ -18372,7 +18359,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -18556,7 +18544,8 @@
     "course_name": "Extended Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19004,7 +18993,8 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -19188,7 +19178,8 @@
     "course_name": "Extended Security Engineering and Cyber Security",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Computer Sci & Eng",
     "terms": [
@@ -26396,6 +26387,7 @@
     "course_name": "Chinese Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26414,6 +26406,7 @@
     "course_name": "Drama Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26432,6 +26425,7 @@
     "course_name": "English Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26450,6 +26444,7 @@
     "course_name": "English as an Additional Language or Dialect Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26468,6 +26463,7 @@
     "course_name": "French Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26486,6 +26482,7 @@
     "course_name": "Geography Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26504,6 +26501,7 @@
     "course_name": "Japanese Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26522,6 +26520,7 @@
     "course_name": "Spanish Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26540,6 +26539,7 @@
     "course_name": "Business Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26558,6 +26558,7 @@
     "course_name": "Economics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26593,6 +26594,7 @@
     "course_name": "Korean Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26611,6 +26613,7 @@
     "course_name": "Legal Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -26629,7 +26632,9 @@
     "course_name": "Society and Culture Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26646,7 +26651,9 @@
     "course_name": "Extension English Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26663,7 +26670,9 @@
     "course_name": "Mathematics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26680,7 +26689,9 @@
     "course_name": "Extension Mathematics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26697,7 +26708,9 @@
     "course_name": "Music Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26714,7 +26727,9 @@
     "course_name": "Extension Music Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26785,7 +26800,9 @@
     "course_name": "Graphics and Multimedia Technology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26821,7 +26838,9 @@
     "course_name": "Visual Arts Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -26857,7 +26876,9 @@
     "course_name": "Extension Visual Arts Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27042,7 +27063,9 @@
     "course_name": "Ancient History Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27059,7 +27082,9 @@
     "course_name": "Modern History Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27076,7 +27101,9 @@
     "course_name": "Science Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27093,7 +27120,9 @@
     "course_name": "Physics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27110,7 +27139,9 @@
     "course_name": "Earth and Environmental Science Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27127,7 +27158,9 @@
     "course_name": "Chemistry Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27144,7 +27177,9 @@
     "course_name": "Biology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27161,7 +27196,9 @@
     "course_name": "Chemistry/Biology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -27178,7 +27215,9 @@
     "course_name": "Investigating Science Method",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28577,6 +28616,7 @@
     "course_name": "Chinese Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28595,6 +28635,7 @@
     "course_name": "Drama Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28613,6 +28654,7 @@
     "course_name": "English Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28631,6 +28673,7 @@
     "course_name": "English as an Additional Language or Dialect Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28649,6 +28692,7 @@
     "course_name": "French Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28667,6 +28711,7 @@
     "course_name": "Geography Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28685,6 +28730,7 @@
     "course_name": "Japanese Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28703,6 +28749,7 @@
     "course_name": "Spanish Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28721,6 +28768,7 @@
     "course_name": "Business Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28739,6 +28787,7 @@
     "course_name": "Economics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28774,6 +28823,7 @@
     "course_name": "Korean Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28792,6 +28842,7 @@
     "course_name": "Legal Studies Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -28810,7 +28861,9 @@
     "course_name": "Society and Culture Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28827,7 +28880,9 @@
     "course_name": "Extension English Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28844,7 +28899,9 @@
     "course_name": "Mathematics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28861,7 +28918,9 @@
     "course_name": "Extension Mathematics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28878,7 +28937,9 @@
     "course_name": "Music Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28895,7 +28956,9 @@
     "course_name": "Extension Music Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -28966,7 +29029,9 @@
     "course_name": "Graphics and Multimedia Technology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29002,7 +29067,9 @@
     "course_name": "Visual Arts Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29038,7 +29105,9 @@
     "course_name": "Extension Visual Arts Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29346,7 +29415,9 @@
     "course_name": "Ancient History Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29363,7 +29434,9 @@
     "course_name": "Modern History Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29380,7 +29453,9 @@
     "course_name": "Science Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29397,7 +29472,9 @@
     "course_name": "Physics Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29414,7 +29491,9 @@
     "course_name": "Earth and Environmental Science Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29431,7 +29510,9 @@
     "course_name": "Chemistry Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29448,7 +29529,9 @@
     "course_name": "Biology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29465,7 +29548,9 @@
     "course_name": "Chemistry/Biology Method 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -29482,7 +29567,9 @@
     "course_name": "Investigating Science Method",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Education",
@@ -32602,6 +32689,22 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "FINS4774",
+    "course_id": "FINS4774Undergraduate",
+    "course_name": "Empirical Asset Pricing",
+    "faculty": "UNSW Business School",
+    "modes": [
+      "In Person"
+    ],
+    "school": "School of Banking & Finance",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "FINS4777",
     "course_id": "FINS4777Undergraduate",
     "course_name": "Empirical Corporate Finance",
@@ -33824,20 +33927,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "GENM0295",
-    "course_id": "GENM0295Undergraduate",
-    "course_name": "Personalised Medicine",
-    "faculty": "Faculty of Medicine and Health",
-    "modes": [],
-    "school": "Faculty of Medicine and Health",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "GENM1501",
     "course_id": "GENM1501Undergraduate",
     "course_name": "Inside the Criminal Mind",
@@ -34954,8 +35043,7 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "T1",
-      "T3"
+      "T1"
     ],
     "uoc": 6
   },
@@ -36724,7 +36812,7 @@
     "career": "Undergraduate",
     "course_code": "INFS2608",
     "course_id": "INFS2608Undergraduate",
-    "course_name": "Database Management & Big Data Infrastructures",
+    "course_name": "Database Management and Big Data Infrastructures",
     "faculty": "UNSW Business School",
     "modes": [
       "In Person"
@@ -39563,6 +39651,20 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "JURD7520",
+    "course_id": "JURD7520Postgraduate",
+    "course_name": "International Financial Law",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [],
+    "school": "Sch of Private& Commercial Law",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "JURD7522",
     "course_id": "JURD7522Postgraduate",
     "course_name": "Competition Law",
@@ -40411,7 +40513,9 @@
     "course_id": "JURD7853Postgraduate",
     "course_name": "Special Topics in Global Law",
     "faculty": "Faculty of Law and Justice",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Sch of Global & Public Law",
     "terms": [
       "T3A"
@@ -42906,7 +43010,9 @@
     "course_id": "LAWS3853Undergraduate",
     "course_name": "Special Topics in Global Law",
     "faculty": "Faculty of Law and Justice",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Sch of Global & Public Law",
     "terms": [
       "T3A"
@@ -43985,6 +44091,20 @@
     "modes": [
       "In Person"
     ],
+    "school": "Sch of Private& Commercial Law",
+    "terms": [
+      "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "LAWS8220",
+    "course_id": "LAWS8220Postgraduate",
+    "course_name": "International Financial Law",
+    "faculty": "Faculty of Law and Justice",
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3"
@@ -45294,6 +45414,7 @@
     "course_name": "Digital Marketing and Web Analytics",
     "faculty": "UNSW Business School",
     "modes": [
+      "Hybrid",
       "In Person"
     ],
     "school": "School of Marketing",
@@ -49433,7 +49554,8 @@
     "course_name": "Features Journalism",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -49788,7 +49910,8 @@
     "course_name": "Collaborative Client Project",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -50472,8 +50595,7 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -50687,8 +50809,7 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "T2",
-      "T3"
+      "T2"
     ],
     "uoc": 6
   },
@@ -53394,7 +53515,8 @@
     ],
     "school": "Minerals Energy Resources Eng",
     "terms": [
-      "T1"
+      "T1",
+      "T3"
     ],
     "uoc": 6
   },
@@ -60771,9 +60893,7 @@
     "course_id": "PSYC1028Undergraduate",
     "course_name": "Psychology of Human Centred Design",
     "faculty": "Faculty of Science",
-    "modes": [
-      "Online"
-    ],
+    "modes": [],
     "school": "School of Psychology",
     "terms": [
       "T3"
@@ -64870,7 +64990,8 @@
     "course_name": "Evidence for Policy Making",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -68194,7 +68315,6 @@
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
-      "KR",
       "KV"
     ],
     "uoc": 6
@@ -69928,7 +70048,8 @@
     ],
     "school": "School of Art & Design",
     "terms": [
-      "T2"
+      "T2",
+      "T3"
     ],
     "uoc": 6
   },
@@ -71607,7 +71728,9 @@
     "course_id": "ZSPS1110Undergraduate",
     "course_name": "Cyber Crime and Ethics",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -71653,7 +71776,9 @@
     "course_id": "ZSPS1113Undergraduate",
     "course_name": "Computer Architecture and Operating Systems",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -71683,7 +71808,9 @@
     "course_id": "ZSPS2115Undergraduate",
     "course_name": "Computational Mathematics and Cryptography",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Canberra Sch of Prof Studies",
     "terms": [
       "T3"
@@ -78274,7 +78401,7 @@
     "course_name": "Environment, Safety and the Regulatory Framework",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "In Person"
+      "Online"
     ],
     "school": "UC Science",
     "terms": [
