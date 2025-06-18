@@ -1,6 +1,7 @@
 use chrono::Datelike;
 use dotenv::dotenv;
 use futures::future::join_all;
+use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
@@ -32,6 +33,24 @@ async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<Sc
             warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
             None
         }
+    }
+}
+
+#[derive(Debug, Serialize)]
+struct Data {
+    all_courses: Vec<Course>,
+}
+
+impl Data {
+    fn new(all_courses: Vec<Course>) -> Self {
+        Self { all_courses }
+    }
+
+    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to {}!", json_file_path);
+        let file = File::create(json_file_path)?;
+        to_writer_pretty(file, &self)?;
+        Ok(())
     }
 }
 
@@ -278,6 +297,9 @@ fn print_help() {
         "  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data."
     );
     println!("  batch_insert          - Perform batch insert on json files created by scrape.");
+    println!(
+        "  scrape_n_serialize [json-file-path] [year]   - Perform scraping of data for given year, and save to a single output json file."
+    );
     println!("  help                  - Show this help message");
 }
 
@@ -300,6 +322,18 @@ async fn main() -> Result<(), Box<dyn Error>> {
         "scrape" => handle_scrape_write_to_file().await?,
         "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
         "batch_insert" => handle_batch_insert().await?,
+        "scrape_n_serialize" => {
+            let json_file_path = &args[2];
+            let year: i32 = args[3].parse()?;
+
+            let mut course_vec: Vec<Course> = Vec::<Course>::new();
+            handle_scrape(&mut course_vec, year)
+                .await
+                .expect("Something went wrong with scraping!");
+
+            let data = Data::new(course_vec);
+            data.write_to_single_json(&json_file_path).await?;
+        }
         "help" => print_help(),
         _ => {
             eprintln!("Unknown command: '{}'", command);

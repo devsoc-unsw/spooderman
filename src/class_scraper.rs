@@ -1,12 +1,13 @@
 use rayon::prelude::*;
 use scraper::Selector;
+use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 
 use crate::{
     school_area_scraper::ScrapeError, scraper::fetch_url, text_manipulators::extract_text,
 };
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Course {
     pub course_id: String,
     pub course_code: String,
@@ -21,7 +22,7 @@ pub struct Course {
     pub classes: Vec<Class>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Class {
     pub course_id: String,
     pub career: String,
@@ -41,7 +42,7 @@ pub struct Class {
     pub class_notes: Option<String>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Time {
     pub career: String,
     pub day: String,
