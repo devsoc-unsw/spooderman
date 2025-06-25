@@ -6,7 +6,7 @@ use tokio::sync::mpsc;
 use crate::{
     Course, ScrapingContext,
     course_scraper::PartialCourse,
-    text_manipulators::{extract_text, extract_year, get_html_link_to_page},
+    text_manipulators::{extract_text, get_html_link_to_page},
 };
 
 #[derive(Debug)]
@@ -65,9 +65,10 @@ impl SubjectArea {
                             continue;
                         }
                         visited_courses.insert(name_hash);
-                        let year_to_scrape = extract_year(&url).unwrap();
+                        let year_to_scrape =
+                            ctx.timetable_url_year_extractor.extract_year(&url).unwrap();
                         let url_to_scrape_further = get_html_link_to_page(
-                            year_to_scrape as i32,
+                            year_to_scrape,
                             row_node
                                 .select(&link_selector)
                                 .next()
@@ -89,7 +90,7 @@ impl SubjectArea {
                     }
                 }
             };
-            // TODO: tokio is, by default, not designed for long running cpu bound tasks to be spawned, since it's designed for doing blocking IO asyncronously. current bottleneck: we're doing heavy cpu bound work on 42 OS threads, which creates some scheduling overhead -> either limit to num cpus OS threads, since we don't use spawn_blocking for blocking io anyways, or look for different tokio API.
+            // NOTE: tokio is, by default, not designed for long running cpu bound tasks to be spawned, since it's designed for doing blocking IO asyncronously. current bottleneck: we're doing heavy cpu bound work on 42 OS threads, which creates some scheduling overhead -> either limit to num cpus OS threads, since we don't use spawn_blocking for blocking io anyways, or look for different tokio API.
             tokio::task::spawn_blocking(cpu_bound).await
         };
 

@@ -5,8 +5,7 @@ use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolArea, ScrapingContext, Time, mutate_string_to_include_curr_year,
-    send_batch_data, sort_by_key_ref,
+    Class, Course, SchoolArea, ScrapingContext, Time, Year, send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -16,15 +15,11 @@ use std::vec;
 
 use log::LevelFilter;
 
-type Year = i32;
-
 async fn run_all_school_offered_courses_scraper_job(
-    year: i32,
+    year: Year,
     ctx: &Arc<ScrapingContext>,
 ) -> anyhow::Result<SchoolArea> {
-    let url_to_scrape =
-        mutate_string_to_include_curr_year(&ctx.scraping_config.timetable_api_url, year)
-            .to_string();
+    let url_to_scrape = ctx.scraping_config.get_timetable_api_url_for_year(year);
     SchoolArea::scrape(url_to_scrape, ctx).await
 }
 
@@ -56,7 +51,6 @@ fn generate_time_id(class: &Class, time: &Time) -> String {
 }
 
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
-    // TODO: refactor to use collect::<Vec<Value>>()
     let mut times_json = Vec::<serde_json::Value>::new();
     for course in courses.iter() {
         for class in course.classes.iter() {
@@ -80,7 +74,6 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 }
 
 fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
-    // TODO: refactor to use collect::<Vec<Value>>()
     let mut json_classes = Vec::new();
     for course in courses.iter() {
         for class in course.classes.iter() {
@@ -212,8 +205,8 @@ fn get_current_year() -> Year {
     chrono::Utc::now().year()
 }
 
-async fn year_has_data(year: i32, ctx: &ScrapingContext) -> anyhow::Result<bool> {
-    let year_url = mutate_string_to_include_curr_year(&ctx.scraping_config.timetable_api_url, year);
+async fn year_has_data(year: Year, ctx: &ScrapingContext) -> anyhow::Result<bool> {
+    let year_url = ctx.scraping_config.get_timetable_api_url_for_year(year);
     let response = ctx.request_client.fetch_url_response(&year_url).await?;
     // UNSW servers will return a 404 if the data for a year isn't available.
     match response.status().as_u16() {
