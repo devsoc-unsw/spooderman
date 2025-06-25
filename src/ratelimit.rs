@@ -7,11 +7,11 @@ use governor::{
 use nonzero_ext::nonzero;
 use std::{num::NonZeroU32, time::Duration};
 
-// TODO: write script (python?) to find optimal values.
+// NOTE: need to experiment manually with values for which UNSW doesn't rate-limit us.
 // The higher, the faster.
-const REQ_PER_SEC: NonZeroU32 = nonzero!(80u32);
+const REQ_PER_SEC: NonZeroU32 = nonzero!(150u32);
 // The lower, the faster.
-const MS_BETWEEN_REQ: Duration = Duration::from_millis(1);
+const MS_BETWEEN_REQ: Duration = Duration::from_millis(2);
 
 type SpecificGovernorRateLimiter =
     GovernorRateLimiter<NotKeyed, InMemoryState, QuantaClock, NoOpMiddleware<QuantaInstant>>;
