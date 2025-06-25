@@ -1,7 +1,7 @@
 use crate::{
     Course, ScrapingContext,
     subject_area_scraper::SubjectArea,
-    text_manipulators::{extract_text, extract_year, get_html_link_to_page},
+    text_manipulators::{extract_text, get_html_link_to_page},
 };
 use derive_new::new;
 use scraper::Selector;
@@ -25,6 +25,7 @@ impl SchoolArea {
         // partial pages have been scraped.
         let (tx, mut rx) = mpsc::unbounded_channel();
 
+        // TODO: remove all unwraps in producer and return Result instead (possible, i've just been lazy)
         let producer = async || {
             let ctx = Arc::clone(ctx);
             let url = url.clone();
@@ -41,8 +42,10 @@ impl SchoolArea {
                     // Extract data from each row
                     let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
                     let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
+                    let year_to_scrape =
+                        ctx.timetable_url_year_extractor.extract_year(&url).unwrap();
                     let url_to_scrape_further = get_html_link_to_page(
-                        extract_year(&url).unwrap() as i32,
+                        year_to_scrape,
                         row_node
                             .select(&link_selector)
                             .next()
