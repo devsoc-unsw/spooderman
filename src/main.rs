@@ -289,7 +289,7 @@ impl Exec for Scrape {
         log::info!("Handling scrape...");
         let data = Data::scrape(&self.year_to_scrape).await?;
         match &self.write_to_json_file {
-            Some(json_file_path) => data.write_to_single_json(&json_file_path).await?,
+            Some(json_file_path) => data.write_to_single_json(json_file_path).await?,
             None => data.write_to_files().await?,
         }
         Ok(())
