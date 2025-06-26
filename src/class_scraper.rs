@@ -16,7 +16,8 @@ pub struct Course {
     pub faculty: Option<String>,
     pub school: Option<String>,
     pub career: Option<String>,
-    pub modes: HashSet<String>, // For Notangles.
+    // Sorted ascendingly.
+    pub modes: Vec<String>, // For Notangles.
     pub campus: Option<String>,
     pub terms: Vec<String>,
     pub classes: Vec<Class>,
@@ -77,19 +78,15 @@ impl ClassScraper {
         let data_selector = Selector::parse("td.data").unwrap();
         let information_body = document.select(&form_bodies);
 
-        let mut course_info = Course {
-            course_id: self.course_code.clone() + &self.career.clone(),
-            course_code: self.course_code.clone(),
-            course_name: self.course_name.clone(),
-            uoc: self.uoc,
-            faculty: None,
-            school: None,
-            campus: None,
-            career: Some(self.career.clone()),
-            modes: HashSet::<String>::new(),
-            terms: vec![],
-            classes: vec![],
-        };
+        let course_id = self.course_code.clone() + &self.career.clone();
+        let course_code = self.course_code.clone();
+        let course_name = self.course_name.clone();
+        let uoc = self.uoc;
+        let mut faculty = None;
+        let mut school = None;
+        let mut campus = None;
+        let career = Some(self.career.clone());
+
         let mut skip_this_info_box = false;
         let mut terms: Vec<String> = vec![];
         let mut class_activity_information: Vec<Vec<String>> = vec![];
@@ -108,11 +105,11 @@ impl ClassScraper {
                         .collect();
                     for (label, data) in labels.iter().zip(data.iter()) {
                         match label.trim().to_lowercase().as_str() {
-                            "faculty" => course_info.faculty = Some(data.clone()),
-                            "school" => course_info.school = Some(data.clone()),
-                            "campus" => course_info.campus = Some(data.clone()),
+                            "faculty" => faculty = Some(data.clone()),
+                            "school" => school = Some(data.clone()),
+                            "campus" => campus = Some(data.clone()),
                             "career" => {
-                                if course_info.career != Some(data.clone()) {
+                                if career != Some(data.clone()) {
                                     skip_this_info_box = true;
                                     break;
                                 } else {
@@ -156,9 +153,7 @@ impl ClassScraper {
             }
         }
 
-        course_info.terms = terms.clone();
-
-        course_info.classes = class_activity_information
+        let classes: Vec<Class> = class_activity_information
             .into_par_iter()
             .map(|class_data| {
                 parse_class_info(
@@ -168,12 +163,25 @@ impl ClassScraper {
                 )
             })
             .collect();
-        let _ = course_info
-            .classes
-            .iter_mut()
-            .map(|c| course_info.modes.insert(c.mode.to_string()))
-            .collect::<Vec<_>>();
-        Ok(course_info)
+
+        let unique_modes: HashSet<&String> = classes.iter().map(|class| &class.mode).collect();
+        let mut modes: Vec<String> = unique_modes.iter().map(|mode| mode.to_string()).collect();
+        // Guarantee unique order by sorting, which Hashset doesn't.
+        modes.sort();
+
+        Ok(Course {
+            course_id,
+            course_code,
+            course_name,
+            uoc,
+            faculty,
+            school,
+            campus,
+            career,
+            modes,
+            terms,
+            classes,
+        })
     }
 }
 fn parse_class_info(class_data: Vec<String>, course_id: String, career: String) -> Class {

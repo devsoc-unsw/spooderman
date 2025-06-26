@@ -142,11 +142,6 @@ async fn run_course_classes_page_scraper_job(
 fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut json_courses = Vec::new();
     for course in courses.iter() {
-        // Modes come from HashSet, so order is non-deterministic
-        // This is annoying for our json diff, so quickly sort first
-        let mut modes = course.modes.iter().collect::<Vec<_>>();
-        modes.sort_unstable();
-
         json_courses.push(json!({
             "course_id": course.course_id,
             "course_code": course.course_code,
@@ -157,7 +152,7 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             "campus": course.campus,
             "career": course.career,
             "terms": json![course.terms],
-            "modes": modes,
+            "modes": course.modes,
         }));
     }
 
