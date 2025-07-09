@@ -2263,7 +2263,6 @@
     "course_name": "Managing with Digital Technology",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
       "Multimodal",
       "Online"
     ],
@@ -2401,8 +2400,8 @@
     "course_name": "Sustainable Value Chains and Business Models",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Multimodal"
+      "Multimodal",
+      "Online"
     ],
     "school": "AGSM MBA Programs",
     "terms": [
@@ -13514,8 +13513,7 @@
     "course_name": "Assembling the Tree of Life",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "Sch Biol, Earth & Environ Sci",
     "terms": [
@@ -15743,7 +15741,8 @@
     "course_name": "Quantum Nature of Molecules",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -15844,7 +15843,8 @@
     "course_name": "The Chemistry of Catalysis, Systems and Biology",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Chemistry",
     "terms": [
@@ -16295,8 +16295,7 @@
     "course_name": "Building Information Modelling",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of Built Environment",
     "terms": [
@@ -17168,8 +17167,7 @@
     "course_name": "Social Entrepreneurship Practicum",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "UNSW Business School",
     "terms": [
@@ -25244,6 +25242,8 @@
     "course_name": "Markets and Frictions",
     "faculty": "UNSW Business School",
     "modes": [
+      "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Economics",
@@ -25351,8 +25351,7 @@
     "faculty": "UNSW Business School",
     "modes": [
       "In Person",
-      "Multimodal",
-      "Online"
+      "Multimodal"
     ],
     "school": "School of Economics",
     "terms": [
@@ -25386,8 +25385,7 @@
     "course_name": "Environmental Economics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal",
-      "Online"
+      "Multimodal"
     ],
     "school": "School of Economics",
     "terms": [
@@ -39579,7 +39577,8 @@
     "course_name": "Mediation in Practice",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -40416,9 +40415,7 @@
     "course_id": "JURD7645Postgraduate",
     "course_name": "CIBEL Elective (Tsinghua)",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3A"
@@ -42582,9 +42579,7 @@
     "course_id": "LAWS3345Undergraduate",
     "course_name": "CIBEL Elective (Tsinghua)",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3A"
@@ -43678,7 +43673,8 @@
     "course_name": "Mediation in Practice",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -44423,9 +44419,7 @@
     "course_id": "LAWS8345Postgraduate",
     "course_name": "CIBEL Elective (Tsinghua)",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3A"
@@ -50454,8 +50448,7 @@
     "course_name": "Social Media Campaigning",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
