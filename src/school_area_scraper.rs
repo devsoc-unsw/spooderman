@@ -94,19 +94,21 @@ impl SchoolArea {
         let mut consumer = async move || -> anyhow::Result<Vec<SchoolAreaPage>> {
             let mut tasks = tokio::task::JoinSet::new();
 
-            // Spawn partial-page-completion tasks as soon as we receive partial pages.
+            // Spawn partial-X-completion tasks as soon as we receive them.
             while let Some(partial_page) = rx.recv().await {
                 let ctx = Arc::clone(ctx);
                 tasks.spawn(async move { partial_page.complete(&ctx).await });
             }
 
-            // Wait for all partial-page-completion tasks to complete.
-            // If any of the scrapes returned an error, return the first encountered error.
-            let pages: Vec<SchoolAreaPage> = tasks
-                .join_all()
-                .await
-                .into_iter()
-                .collect::<anyhow::Result<_>>()?;
+            // Wait for all partial-X-completion tasks to complete.
+            // If any of the tasks returns an error, return that error
+            // immediately (without waiting for all other tasks to finish).
+            let mut pages = Vec::new();
+            while let Some(result) = tasks.join_next().await {
+                let course = result??;
+                pages.push(course);
+            }
+
             Ok(pages)
         };
 
@@ -141,13 +143,6 @@ struct PartialSchoolAreaPage {
 
 impl PartialSchoolAreaPage {
     async fn complete(self, ctx: &Arc<ScrapingContext>) -> anyhow::Result<SchoolAreaPage> {
-        // if self.subject_code == "COMP" {
-        //     // log::error!(
-        //     //     "{}, STOOOOOOOOOOOOOOOOOOOOPPPPPPPPPPPPPPPPPP",
-        //     //     &self.subject_code
-        //     // );
-        //     anyhow::bail!("failed");
-        // }
         let subject_area = SubjectArea::scrape(self.subject_area_url, ctx).await?;
         Ok(SchoolAreaPage::new(
             self.subject_code,

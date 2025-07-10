@@ -144,19 +144,21 @@ impl SubjectArea {
         let mut consumer = async move || -> anyhow::Result<Vec<Course>> {
             let mut tasks = tokio::task::JoinSet::new();
 
-            // Spawn partial-page-completion tasks as soon as we receive partial pages.
+            // Spawn partial-X-completion tasks as soon as we receive them.
             while let Some(partial_course) = rx.recv().await {
                 let ctx = Arc::clone(ctx);
                 tasks.spawn(async move { partial_course.complete(&ctx).await });
             }
 
-            // Wait for all partial-course-completion tasks to complete.
-            // If any of the scrapes returned an error, return the first encountered error.
-            let courses: Vec<Course> = tasks
-                .join_all()
-                .await
-                .into_iter()
-                .collect::<anyhow::Result<_>>()?;
+            // Wait for all partial-X-completion tasks to complete.
+            // If any of the tasks returns an error, return that error
+            // immediately (without waiting for all other tasks to finish).
+            let mut courses = Vec::new();
+            while let Some(result) = tasks.join_next().await {
+                let course = result??;
+                courses.push(course);
+            }
+
             Ok(courses)
         };
 
