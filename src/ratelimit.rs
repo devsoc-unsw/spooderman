@@ -27,8 +27,9 @@ impl RateLimiter {
         let req_per_sec = GovernorRateLimiter::direct(Quota::per_second(REQ_PER_SEC));
 
         // Limit to Y req/ms (i.e. no two requests closer than Y ms).
-        let ms_between_req =
-            GovernorRateLimiter::direct(Quota::with_period(MS_BETWEEN_REQ).unwrap());
+        let ms_between_req = GovernorRateLimiter::direct(
+            Quota::with_period(MS_BETWEEN_REQ).expect("hardcoded MS_BETWEEN_REQ is larger than 0"),
+        );
 
         RateLimiter {
             req_per_sec,

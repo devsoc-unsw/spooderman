@@ -182,7 +182,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                     }
                 }
             } else {
-                let text = res.text().await.unwrap();
+                let text = res.text().await?;
                 let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
                 match data {
                     Ok(_) => log::info!("Successfully inserted into Hasuragres"),

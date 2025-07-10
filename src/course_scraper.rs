@@ -67,18 +67,27 @@ impl PartialCourse {
         let html = ctx.request_client.fetch_url_body(&self.url).await?;
         let course_code = self.course_code.clone();
 
-        let cpu_bound = move || {
+        let cpu_bound = move || -> anyhow::Result<Course> {
             let document = scraper::Html::parse_document(&html);
 
+            // NOTE: We can't return the error message from `Selector::parse`
+            // because it is not Send and, therefore, not sendable across threads.
+            let error_msg = format!("failed to parse {}", self.url);
+
             // Selectors
-            let form_bodies = Selector::parse("td.formBody td.formBody").unwrap();
-            let term_selector = Selector::parse("table table:nth-of-type(3)").unwrap();
-            let table_selector = Selector::parse("table table").unwrap();
-            let label_selector = Selector::parse("td.label").unwrap();
-            let data_selector = Selector::parse("td.data").unwrap();
+            let form_bodies = Selector::parse("td.formBody td.formBody")
+                .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+            let term_selector = Selector::parse("table table:nth-of-type(3)")
+                .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+            let table_selector =
+                Selector::parse("table table").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+            let label_selector =
+                Selector::parse("td.label").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+            let data_selector =
+                Selector::parse("td.data").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
             let information_body = document.select(&form_bodies);
 
-            let career = Some(self.career);
+            let career = self.career;
             let mut faculty = None;
             let mut school = None;
             let mut campus = None;
@@ -105,7 +114,7 @@ impl PartialCourse {
                                 "school" => school = Some(data),
                                 "campus" => campus = Some(data),
                                 "career" => {
-                                    if career != Some(data) {
+                                    if career != data {
                                         skip_this_info_box = true;
                                         break;
                                     } else {
@@ -134,7 +143,10 @@ impl PartialCourse {
                     {
                         // Extract class.
                         let info_map = info_box
-                            .select(&Selector::parse("td.label, td.data").unwrap())
+                            .select(
+                                &Selector::parse("td.label, td.data")
+                                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?,
+                            )
                             .map(|cell| {
                                 cell.text()
                                     .collect::<String>()
@@ -150,17 +162,15 @@ impl PartialCourse {
                 }
             }
 
-            let course_id = format!("{}{}", &self.course_code, career.as_ref().unwrap());
+            let course_id = format!("{}{}", &self.course_code, career);
             let course_code = self.course_code;
             let course_name = self.course_name;
             let uoc = self.uoc;
 
             let classes: Vec<Class> = class_activity_information
                 .into_par_iter()
-                .map(|class_data| {
-                    parse_class_info(class_data, course_id.as_str(), career.as_ref().unwrap())
-                })
-                .collect();
+                .map(|class_data| parse_class_info(class_data, course_id.as_str(), career.as_ref()))
+                .collect::<anyhow::Result<_>>()?;
 
             let unique_modes: HashSet<&String> = classes.iter().map(|class| &class.mode).collect();
             let mut modes: Vec<String> = unique_modes.iter().map(|mode| mode.to_string()).collect();
@@ -175,7 +185,7 @@ impl PartialCourse {
                 faculty,
                 school,
                 campus,
-                career,
+                career: Some(career),
                 modes,
                 terms,
                 classes,
@@ -187,7 +197,11 @@ impl PartialCourse {
     }
 }
 
-fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> Class {
+fn parse_class_info(
+    class_data: Vec<String>,
+    course_id: &str,
+    career: &str,
+) -> anyhow::Result<Class> {
     let mut map: HashMap<&str, &str> = HashMap::new();
     let mut i = 0;
     let mut times_parsed = Vec::<Time>::new();
@@ -214,9 +228,16 @@ fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> C
     }
     let offering_period_str = map.get("Offering Period").unwrap_or(&"").to_string();
     let mut split_offering_period_str = offering_period_str.split(" - ");
-    let date = split_offering_period_str.next().unwrap();
-    let year = date.split("/").nth(2).unwrap();
-    Class {
+
+    let error_msg = format!("failed to parse a class for course {}", course_id);
+    let date = split_offering_period_str
+        .next()
+        .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?;
+    let year = date
+        .split("/")
+        .nth(2)
+        .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?;
+    Ok(Class {
         course_id: course_id.to_string(),
         class_id: format!(
             "{}-{}-{}-{}",
@@ -226,7 +247,10 @@ fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> C
                 .unwrap_or(&"")
                 .split(" - ")
                 .next()
-                .expect("Could not split teaching periods properly!"),
+                .ok_or_else(|| anyhow::anyhow!(format!(
+                    "{}: {}",
+                    &error_msg, "Could not split teaching periods properly!"
+                )))?,
             year,
         ),
         section: map.get("Section").unwrap_or(&"").to_string(),
@@ -235,7 +259,12 @@ fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> C
             .unwrap_or(&"")
             .split(" - ")
             .next()
-            .expect("Could not split teaching periods properly!")
+            .ok_or_else(|| {
+                anyhow::anyhow!(format!(
+                    "{}: {}",
+                    &error_msg, "Could not split teaching periods properly!"
+                ))
+            })?
             .to_string(),
         year: year.to_string(),
         activity: map.get("Activity").unwrap_or(&"").to_string(),
@@ -260,7 +289,7 @@ fn parse_class_info(class_data: Vec<String>, course_id: &str, career: &str) -> C
             .get("Class Notes")
             .filter(|s| !s.is_empty())
             .map(|s| s.to_string()),
-    }
+    })
 }
 
 fn parse_meeting_info(vec: &[String], career: &str) -> Vec<Time> {

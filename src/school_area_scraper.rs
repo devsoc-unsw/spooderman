@@ -25,25 +25,44 @@ impl SchoolArea {
         // partial pages have been scraped.
         let (tx, mut rx) = mpsc::unbounded_channel();
 
-        // TODO: remove all unwraps in producer and return Result instead (possible, i've just been lazy)
-        let producer = async || {
+        let producer = async || -> anyhow::Result<()> {
             let ctx = Arc::clone(ctx);
             let url = url.clone();
-            let cpu_bound = move || {
+
+            let cpu_bound = move || -> anyhow::Result<()> {
                 let document = scraper::Html::parse_document(&html);
 
-                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
-                let code_selector = Selector::parse("td.data").unwrap();
-                let name_selector = Selector::parse("td.data a").unwrap();
-                let link_selector = Selector::parse("td.data a").unwrap();
-                let school_selector = Selector::parse("td.data:nth-child(3)").unwrap();
+                // NOTE: We can't return the error message from `Selector::parse`
+                // because it is not Send and, therefore, not sendable across threads.
+                let error_msg = format!("failed to parse {}", url);
+
+                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight")
+                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let code_selector =
+                    Selector::parse("td.data").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let name_selector =
+                    Selector::parse("td.data a").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let link_selector =
+                    Selector::parse("td.data a").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let school_selector = Selector::parse("td.data:nth-child(3)")
+                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
 
                 for row_node in document.select(&row_selector) {
                     // Extract data from each row
-                    let course_code = extract_text(row_node.select(&code_selector).next().unwrap());
-                    let course_name = extract_text(row_node.select(&name_selector).next().unwrap());
-                    let year_to_scrape =
-                        ctx.timetable_url_year_extractor.extract_year(&url).unwrap();
+                    let course_code = extract_text(
+                        row_node
+                            .select(&code_selector)
+                            .next()
+                            .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                    );
+                    let course_name = extract_text(
+                        row_node
+                            .select(&name_selector)
+                            .next()
+                            .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                    );
+
+                    let year_to_scrape = ctx.timetable_url_year_extractor.extract_year(&url)?;
                     let url_to_scrape_further = get_html_link_to_page(
                         year_to_scrape,
                         row_node
@@ -52,20 +71,27 @@ impl SchoolArea {
                             .map_or("", |node| node.value().attr("href").unwrap_or("")),
                         &ctx,
                     );
-                    let school = extract_text(row_node.select(&school_selector).next().unwrap());
+                    let school = extract_text(
+                        row_node
+                            .select(&school_selector)
+                            .next()
+                            .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                    );
                     let partial_page = PartialSchoolAreaPage::new(
                         course_code,
                         course_name,
                         school,
                         url_to_scrape_further,
                     );
-                    tx.send(partial_page).unwrap();
+                    tx.send(partial_page)?;
                 }
+                Ok(())
             };
-            tokio::task::spawn_blocking(cpu_bound).await
+            tokio::task::spawn_blocking(cpu_bound).await??;
+            Ok(())
         };
 
-        let mut consumer = async move || {
+        let mut consumer = async move || -> anyhow::Result<Vec<SchoolAreaPage>> {
             let mut tasks = tokio::task::JoinSet::new();
 
             // Spawn partial-page-completion tasks as soon as we receive partial pages.
@@ -75,12 +101,17 @@ impl SchoolArea {
             }
 
             // Wait for all partial-page-completion tasks to complete.
-            tasks.join_all().await
+            // If any of the scrapes returned an error, return the first encountered error.
+            let pages: Vec<SchoolAreaPage> = tasks
+                .join_all()
+                .await
+                .into_iter()
+                .collect::<anyhow::Result<_>>()?;
+            Ok(pages)
         };
 
         // Wait on producer and consumer.
-        let (_, result_pages) = tokio::join!(producer(), consumer());
-        let pages: Vec<SchoolAreaPage> = result_pages.into_iter().collect::<anyhow::Result<_>>()?;
+        let ((), pages) = tokio::try_join!(producer(), consumer())?;
 
         Ok(Self { url, pages })
     }
@@ -94,26 +125,33 @@ impl SchoolArea {
 
 #[derive(Debug, new)]
 pub struct SchoolAreaPage {
-    pub course_code: String,
-    pub course_name: String,
+    pub subject_code: String,
+    pub subject_name: String,
     pub school: String,
     pub subject_area: SubjectArea,
 }
 
 #[derive(Debug, new)]
 struct PartialSchoolAreaPage {
-    course_code: String,
-    course_name: String,
+    subject_code: String,
+    subject_name: String,
     school: String,
     subject_area_url: String,
 }
 
 impl PartialSchoolAreaPage {
     async fn complete(self, ctx: &Arc<ScrapingContext>) -> anyhow::Result<SchoolAreaPage> {
+        // if self.subject_code == "COMP" {
+        //     // log::error!(
+        //     //     "{}, STOOOOOOOOOOOOOOOOOOOOPPPPPPPPPPPPPPPPPP",
+        //     //     &self.subject_code
+        //     // );
+        //     anyhow::bail!("failed");
+        // }
         let subject_area = SubjectArea::scrape(self.subject_area_url, ctx).await?;
         Ok(SchoolAreaPage::new(
-            self.course_code,
-            self.course_name,
+            self.subject_code,
+            self.subject_name,
             self.school,
             subject_area,
         ))
