@@ -11522,6 +11522,20 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
+    "course_code": "BEIL6010",
+    "course_id": "BEIL6010Undergraduate",
+    "course_name": "Sydney Urban Lab",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [],
+    "school": "School of Built Environment",
+    "terms": [
+      "T3C"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Undergraduate",
     "course_code": "BEIL6011",
     "course_id": "BEIL6011Undergraduate",
     "course_name": "Street Life Studies: Cambodia",
@@ -11652,6 +11666,20 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
+    "course_code": "BEIL6010",
+    "course_id": "BEIL6010Postgraduate",
+    "course_name": "Sydney Urban Lab",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [],
+    "school": "School of Built Environment",
+    "terms": [
+      "T3C"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
     "course_code": "BEIL6011",
     "course_id": "BEIL6011Postgraduate",
     "course_name": "Street Life Studies: Cambodia",
@@ -11695,6 +11723,20 @@
     "school": "School of Built Environment",
     "terms": [
       "T3"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate",
+    "course_code": "BEIL6020",
+    "course_id": "BEIL6020Postgraduate",
+    "course_name": "International Construction Study Trip",
+    "faculty": "Faculty of Arts, Design & Arch",
+    "modes": [],
+    "school": "Faculty of Arts, Design & Arch",
+    "terms": [
+      "T3C"
     ],
     "uoc": 6
   },
@@ -16848,9 +16890,7 @@
     "course_id": "COMM3001Undergraduate",
     "course_name": "Leading Change for Sustainability and Social Impact",
     "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "UNSW Business School",
     "terms": [
       "T3"
@@ -37796,29 +37836,12 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "INFS5959",
-    "course_id": "INFS5959Postgraduate",
-    "course_name": "Cybersecurity Analytics",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "Sch Info Sys and Tech Mgmt",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "INFS5978",
     "course_id": "INFS5978Postgraduate",
     "course_name": "Accounting Information Systems",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
@@ -55646,8 +55669,7 @@
     "course_name": "Music Ensemble",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -55664,9 +55686,7 @@
     "course_id": "MUSC2801Undergraduate",
     "course_name": "Music Performance Styles and Interpretation",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School of the Arts & Media",
     "terms": [
       "T3"
@@ -63516,23 +63536,6 @@
       "U1",
       "T1",
       "T2",
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "SCIF3199",
-    "course_id": "SCIF3199Undergraduate",
-    "course_name": "Science Work Placement",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "In Person",
-      "Multimodal"
-    ],
-    "school": "Faculty of Science",
-    "terms": [
       "T3"
     ],
     "uoc": 6
