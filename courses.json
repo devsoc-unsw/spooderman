@@ -11733,7 +11733,9 @@
     "course_id": "BEIL6020Postgraduate",
     "course_name": "International Construction Study Trip",
     "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
+    "modes": [
+      "In Person"
+    ],
     "school": "Faculty of Arts, Design & Arch",
     "terms": [
       "T3C"
@@ -16878,20 +16880,6 @@
       "In Person"
     ],
     "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "COMM3001",
-    "course_id": "COMM3001Undergraduate",
-    "course_name": "Leading Change for Sustainability and Social Impact",
-    "faculty": "UNSW Business School",
-    "modes": [],
-    "school": "UNSW Business School",
     "terms": [
       "T3"
     ],
@@ -54262,7 +54250,6 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "U1",
       "T1",
       "T2",
       "T3"
@@ -54281,7 +54268,6 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "U1",
       "T1",
       "T2",
       "T3"
@@ -54435,7 +54421,6 @@
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
-      "U1",
       "T1",
       "T2",
       "T3"
@@ -76108,9 +76093,7 @@
     "course_id": "ZEIT8307Postgraduate",
     "course_name": "System Dynamics Modelling",
     "faculty": "UNSW Canberra at ADFA",
-    "modes": [
-      "Online"
-    ],
+    "modes": [],
     "school": "Sch of Systems and Computing",
     "terms": [
       "Z2"
