@@ -66203,7 +66203,8 @@
     "course_name": "Introduction to Tax Law",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -75420,7 +75421,6 @@
     "course_name": "Wireless, Mobile and Internet of Things Security",
     "faculty": "UNSW Canberra at ADFA",
     "modes": [
-      "In Person",
       "Online"
     ],
     "school": "Sch of Systems and Computing",
