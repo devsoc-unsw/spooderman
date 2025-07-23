@@ -9244,7 +9244,6 @@
     "course_name": "Indigenous Cultural Heritage and the Environment",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Hybrid",
       "In Person"
     ],
     "school": "Nura Gili Indigenous Programs",
@@ -9278,7 +9277,6 @@
     "course_name": "Indigenous Studies Capstone",
     "faculty": "DVC (A) Board of Studies",
     "modes": [
-      "Hybrid",
       "In Person"
     ],
     "school": "Nura Gili Indigenous Programs",
@@ -20047,6 +20045,7 @@
     "faculty": "Faculty of Engineering",
     "modes": [
       "In Person",
+      "Multimodal",
       "Online"
     ],
     "school": "School of Computer Sci & Eng",
@@ -24997,22 +24996,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "ECON4202",
-    "course_id": "ECON4202Undergraduate",
-    "course_name": "Advanced Econometric Theory and Methods",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "ECON4205",
     "course_id": "ECON4205Undergraduate",
     "course_name": "Microeconometrics",
@@ -25032,22 +25015,6 @@
     "course_code": "ECON4301",
     "course_id": "ECON4301Undergraduate",
     "course_name": "Industrial Organisation",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "ECON4302",
-    "course_id": "ECON4302Undergraduate",
-    "course_name": "International Economics",
     "faculty": "UNSW Business School",
     "modes": [
       "In Person"
@@ -25603,22 +25570,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "ECON7201",
-    "course_id": "ECON7201Postgraduate",
-    "course_name": "Advanced Econometric Theory and Methods",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "ECON7202",
     "course_id": "ECON7202Postgraduate",
     "course_name": "Empirical Methods for Causal Inference",
@@ -25670,22 +25621,6 @@
     "course_code": "ECON7301",
     "course_id": "ECON7301Postgraduate",
     "course_name": "Industrial Organisation",
-    "faculty": "UNSW Business School",
-    "modes": [
-      "In Person"
-    ],
-    "school": "School of Economics",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "ECON7302",
-    "course_id": "ECON7302Postgraduate",
-    "course_name": "International Economics",
     "faculty": "UNSW Business School",
     "modes": [
       "In Person"
@@ -27749,6 +27684,7 @@
     "course_name": "Language, Literacy and Numeracy",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal",
       "Online"
@@ -39586,8 +39522,7 @@
     "course_name": "Mediation in Practice",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -43682,8 +43617,7 @@
     "course_name": "Mediation in Practice",
     "faculty": "Faculty of Law and Justice",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "Sch Law, Society & Criminology",
     "terms": [
@@ -59603,6 +59537,7 @@
     "course_name": "Physics Research Project",
     "faculty": "Faculty of Science",
     "modes": [
+      "Hybrid",
       "In Person",
       "Multimodal"
     ],
@@ -68856,7 +68791,8 @@
     "course_name": "Designing the Experience: Exhibitions and Beyond",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Art & Design",
     "terms": [
@@ -69338,8 +69274,7 @@
     "course_name": "Histories of Contemporary Art: Part 2",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "School of Art & Design",
     "terms": [
