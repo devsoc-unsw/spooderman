@@ -16,7 +16,7 @@ pub struct ScrapingConfig {
 
 impl ScrapingConfig {
     pub fn new() -> anyhow::Result<Self> {
-        let scraping_env = ScrapingEnv::parse_from_envfile()?;
+        let scraping_env = ScrapingEnv::load_from_env()?;
         Ok(Self {
             timetable_api_url: scraping_env.timetable_api_url,
         })
@@ -66,13 +66,14 @@ pub struct UploadingConfig {
 }
 
 // Extension trait.
-pub trait FromEnvFile: DeserializeOwned {
-    fn parse_from_envfile() -> anyhow::Result<Self> {
-        dotenv::dotenv().context("failed to load `.env`")?;
+pub trait LoadFromEnv: DeserializeOwned {
+    fn load_from_env() -> anyhow::Result<Self> {
+        // Don't throw an error if .env file doesn't exist.
+        let _ = dotenv::dotenv();
         let config =
-            envy::from_env::<Self>().context("env file exists, but failed to parse config")?;
+            envy::from_env::<Self>().context("failed to load env variables into config struct")?;
         Ok(config)
     }
 }
 
-impl<T: DeserializeOwned> FromEnvFile for T {}
+impl<T: DeserializeOwned> LoadFromEnv for T {}

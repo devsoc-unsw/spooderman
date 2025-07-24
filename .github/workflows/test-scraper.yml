@@ -2,11 +2,7 @@ name: Ensure the scraper is (probably) correct
 
 on:
   push:
-    # branches: [ main ]
-    branches:
-      - main
-      # TODO: only added here to test from the feature branch itself, remove once it works.
-      - refactor-and-unit-test
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -17,6 +13,10 @@ jobs:
       matrix:
         toolchain:
           - stable
+    env:
+      TIMETABLE_API_URL: https://timetable.unsw.edu.au/year/
+      HASURAGRES_URL: unused
+      HASURAGRES_API_KEY: unused
     steps:
       # Checkout the incoming branch (push or PR).
       - name: Checkout source branch

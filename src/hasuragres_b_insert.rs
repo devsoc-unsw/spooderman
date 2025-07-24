@@ -6,7 +6,7 @@ use std::io::Read;
 use std::vec;
 
 use crate::UploadingConfig;
-use crate::config::FromEnvFile;
+use crate::config::LoadFromEnv;
 
 #[derive(Serialize, Deserialize)]
 struct Metadata {
@@ -77,7 +77,7 @@ impl HasuragresData for ReadFromMemory {
 }
 
 pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> {
-    let uploading_config = UploadingConfig::parse_from_envfile()?;
+    let uploading_config = UploadingConfig::load_from_env()?;
     let client = Client::new();
     log::info!("Starting to insert into Hasuragres!");
     let requests = vec![
