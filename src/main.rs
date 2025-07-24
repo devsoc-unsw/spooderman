@@ -1,142 +1,26 @@
+use argh::FromArgs;
 use chrono::Datelike;
-use dotenv::dotenv;
-use futures::future::join_all;
+use enum_dispatch::enum_dispatch;
+use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolAreaScraper, Time, mutate_string_to_include_curr_year, send_batch_data,
+    Class, Course, SchoolArea, ScrapingContext, Time, Year, send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
-use std::env;
-use std::error::Error;
 use std::fs::File;
-use std::io::ErrorKind;
 use std::path::Path;
 use std::sync::Arc;
 use std::vec;
-extern crate env_logger;
-extern crate log;
 
 use log::LevelFilter;
-use log::warn;
 
-async fn run_all_school_offered_courses_scraper_job(curr_year: i32) -> Option<SchoolAreaScraper> {
-    match std::env::var("TIMETABLE_API_URL") {
-        Ok(url) => {
-            let url_to_scrape =
-                mutate_string_to_include_curr_year(&mut url.to_string(), curr_year.to_string());
-            let mut scraper = SchoolAreaScraper::new(url_to_scrape);
-            let _ = scraper.scrape().await;
-            Some(scraper)
-        }
-        Err(e) => {
-            warn!("Timetable URL has NOT been parsed properly from env file and error report: {e}");
-            None
-        }
-    }
-}
-
-#[derive(Debug, Serialize)]
-struct Data {
-    all_courses: Vec<Course>,
-}
-
-pub fn sort_by_key_ref<T, B, F>(slice: &mut [T], mut f: F)
-where
-    F: FnMut(&T) -> &B,
-    B: Ord,
-{
-    slice.sort_by(|a, b| f(a).cmp(f(b)))
-}
-
-impl Data {
-    fn new(mut all_courses: Vec<Course>) -> Self {
-        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
-        Self { all_courses }
-    }
-
-    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
-        log::info!("Writing scraped data to {}!", json_file_path);
-        let file = File::create(json_file_path)?;
-        to_writer_pretty(file, &self)?;
-        Ok(())
-    }
-}
-
-async fn run_school_courses_page_scraper_job(
-    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
-) {
-    let mut tasks = vec![];
-
-    // Iterate over the pages and create tasks for each scrape operation
-    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
-        let task = tokio::spawn(async move {
-            let mut scraper = scraper.lock().await;
-            let _ = scraper.scrape().await;
-        });
-        tasks.push(task);
-    }
-
-    // Wait for all tasks to complete
-    for task in tasks {
-        let _ = task.await;
-    }
-}
-
-use tokio::sync::Semaphore;
-use tokio::time::{Duration, sleep};
-
-async fn run_course_classes_page_scraper_job(
-    all_school_offered_courses_scraper: &mut SchoolAreaScraper,
-) -> Vec<Course> {
-    let mut tasks = vec![];
-    let semaphore = Arc::new(Semaphore::new(80)); // no of concurrent tasks
-    let rate_limit_delay = Duration::from_millis(1); // delay between tasks
-
-    for school_area_scrapers in &mut all_school_offered_courses_scraper.pages {
-        let scraper = Arc::clone(&school_area_scrapers.subject_area_scraper);
-
-        // Lock the mutex to access the underlying data
-        let class_scrapers = {
-            let scraper = scraper.lock().await;
-            scraper.class_scrapers.clone()
-        };
-
-        for class_area_scraper in class_scrapers {
-            let class_area_scraper = Arc::clone(&class_area_scraper); // Clone the Arc
-            let semaphore = Arc::clone(&semaphore); // Clone the semaphore
-
-            let task = tokio::spawn(async move {
-                let _permit = semaphore.acquire().await.unwrap(); // Acquire a permit before starting a task
-
-                // Rate limiting: wait for a bit before starting the task
-                sleep(rate_limit_delay).await;
-
-                // Perform the scraping task
-                class_area_scraper
-                    .lock()
-                    .await
-                    .scrape()
-                    .await
-                    .map_err(|e| Box::new(e) as Box<dyn Error + Send>)
-            });
-
-            tasks.push(task);
-        }
-    }
-
-    // Wait for all tasks to complete and collect results
-    let results: Vec<Result<Course, Box<dyn Error + Send>>> = join_all(tasks)
-        .await
-        .into_iter()
-        .map(|result| result.unwrap_or_else(|e| Err(Box::new(e) as Box<dyn Error + Send>))) // Handle errors
-        .collect();
-
-    // Filter out errors and collect successful results
-    let courses_vec: Vec<Course> = results.into_iter().filter_map(Result::ok).collect();
-
-    courses_vec
+async fn run_all_school_offered_courses_scraper_job(
+    year: Year,
+    ctx: &Arc<ScrapingContext>,
+) -> anyhow::Result<SchoolArea> {
+    let url_to_scrape = ctx.scraping_config.get_timetable_api_url_for_year(year);
+    SchoolArea::scrape(url_to_scrape, ctx).await
 }
 
 fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
@@ -158,15 +42,20 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
 
     json_courses
 }
+
 fn generate_time_id(class: &Class, time: &Time) -> String {
-    class.class_id.to_string() + &time.day + &time.location + &time.time + &time.weeks
+    format!(
+        "{}{}{}{}{}",
+        &class.class_id, &time.day, &time.location, &time.time, &time.weeks
+    )
 }
+
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut times_json = Vec::<serde_json::Value>::new();
     for course in courses.iter() {
         for class in course.classes.iter() {
-            if class.times.is_some() {
-                for time in class.times.as_ref().unwrap().iter() {
+            if let Some(times) = &class.times {
+                for time in times.iter() {
                     times_json.push(json!({
                         "id": generate_time_id(class, time),
                         "class_id": class.class_id,
@@ -181,9 +70,9 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             }
         }
     }
-
     times_json
 }
+
 fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut json_classes = Vec::new();
     for course in courses.iter() {
@@ -207,138 +96,255 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             }));
         }
     }
-
     json_classes
 }
 
-async fn handle_scrape(course_vec: &mut Vec<Course>, year: i32) -> Result<(), Box<dyn Error>> {
-    // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
-    println!("Handling scrape for year: {year}");
-    let mut all_school_offered_courses_scraper =
-        run_all_school_offered_courses_scraper_job(year).await;
-    if let Some(all_school_offered_courses_scraper) = &mut all_school_offered_courses_scraper {
-        run_school_courses_page_scraper_job(all_school_offered_courses_scraper).await;
-        let course = run_course_classes_page_scraper_job(all_school_offered_courses_scraper).await;
-        course_vec.extend(course);
+#[derive(Debug, Serialize)]
+struct Data {
+    all_courses: Vec<Course>,
+}
+
+impl Data {
+    async fn scrape(year_to_scrape: &YearToScrape) -> anyhow::Result<Data> {
+        let ctx = Arc::new(ScrapingContext::new()?);
+        // TODO: Batch the 2024 and 2025 years out since both too big to insert into hasura
+        let year = year_to_scrape.into_year(&ctx).await?;
+        log::info!("Starting scrape for year: {year}");
+        let school_area = run_all_school_offered_courses_scraper_job(year, &ctx).await?;
+
+        let mut all_courses = school_area.get_all_courses().collect::<Vec<_>>();
+        sort_by_key_ref(&mut all_courses, |course| &course.course_id);
+
+        Ok(Data { all_courses })
     }
 
-    Ok(())
-}
-async fn handle_scrape_write_to_file() -> Result<(), Box<dyn Error>> {
-    let mut course_vec: Vec<Course> = Vec::<Course>::new();
-    let current_year = chrono::Utc::now().year();
-    handle_scrape(&mut course_vec, current_year)
-        .await
-        .expect("Something went wrong with scraping!");
-    println!("Writing to disk!");
-    let json_classes = convert_classes_to_json(&course_vec);
-    let json_courses = convert_courses_to_json(&course_vec);
-    let json_times = convert_classes_times_to_json(&course_vec);
+    async fn write_to_single_json(&self, json_file_path: &str) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to {}!", json_file_path);
+        let file = File::create(json_file_path)?;
+        to_writer_pretty(file, &self)?;
+        Ok(())
+    }
 
-    let file_classes = File::create("classes.json")?;
-    let file_courses = File::create("courses.json")?;
-    let file_times = File::create("times.json")?;
-    to_writer_pretty(file_classes, &json_classes)?;
-    to_writer_pretty(file_courses, &json_courses)?;
-    to_writer_pretty(file_times, &json_times)?;
-    Ok(())
+    async fn write_to_files(&self) -> anyhow::Result<()> {
+        log::info!("Writing scraped data to disk!");
+        let json_classes = convert_classes_to_json(&self.all_courses);
+        let json_courses = convert_courses_to_json(&self.all_courses);
+        let json_times = convert_classes_times_to_json(&self.all_courses);
+
+        let file_classes = File::create("classes.json")?;
+        let file_courses = File::create("courses.json")?;
+        let file_times = File::create("times.json")?;
+        to_writer_pretty(file_classes, &json_classes)?;
+        to_writer_pretty(file_courses, &json_courses)?;
+        to_writer_pretty(file_times, &json_times)?;
+        Ok(())
+    }
+
+    async fn handle_batch_insert(&self) -> anyhow::Result<()> {
+        let json_classes = convert_classes_to_json(&self.all_courses);
+        let json_courses = convert_courses_to_json(&self.all_courses);
+        let json_times = convert_classes_times_to_json(&self.all_courses);
+        let rfm = ReadFromMemory {
+            courses_vec: json_courses,
+            classes_vec: json_classes,
+            times_vec: json_times,
+        };
+        send_batch_data(&rfm).await?;
+        Ok(())
+    }
 }
 
-async fn handle_batch_insert() -> Result<(), Box<dyn Error>> {
-    println!("Handling batch insert...");
+async fn handle_batch_insert() -> anyhow::Result<()> {
+    log::info!("Handling batch insert...");
     if !Path::new("courses.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "courses.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "courses.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
     if !Path::new("classes.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "classes.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "classes.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
     if !Path::new("times.json").is_file() {
-        return Err(Box::new(std::io::Error::new(
-            ErrorKind::NotFound,
-            "times.json doesn't exist, please run cargo r -- scrape".to_string(),
-        )));
+        return Err(anyhow::anyhow!(
+            "times.json doesn't exist, please run cargo r -- scrape"
+        ));
     }
 
-    let _ = send_batch_data(&ReadFromFile).await;
+    send_batch_data(&ReadFromFile).await?;
     Ok(())
 }
 
-async fn handle_scrape_n_batch_insert() -> Result<(), Box<dyn Error>> {
-    println!("Handling scrape and batch insert...");
-    let mut course_vec: Vec<Course> = Vec::<Course>::new();
-    let current_year = chrono::Utc::now().year();
-    handle_scrape(&mut course_vec, current_year)
-        .await
-        .expect("Something went wrong with scraping!");
-    let json_classes = convert_classes_to_json(&course_vec);
-    let json_courses = convert_courses_to_json(&course_vec);
-    let json_times = convert_classes_times_to_json(&course_vec);
-    let rfm = ReadFromMemory {
-        courses_vec: json_courses,
-        classes_vec: json_classes,
-        times_vec: json_times,
-    };
-    let _ = send_batch_data(&rfm).await;
-    Ok(())
+#[enum_dispatch]
+trait Exec {
+    async fn exec(&self) -> anyhow::Result<()>;
 }
 
-fn print_help() {
-    println!("Usage:");
-    println!("  scrape                - Perform scraping. Creates a json file to store the data.");
-    println!(
-        "  scrape_n_batch_insert - Perform scraping and batch insert. Does not create a json file to store the data."
-    );
-    println!("  batch_insert          - Perform batch insert on json files created by scrape.");
-    println!(
-        "  scrape_n_serialize [json-file-path] [year]   - Perform scraping of data for given year, and save to a single output json file."
-    );
-    println!("  help                  - Show this help message");
+/// A tool for scraping UNSW course and class data.
+#[derive(FromArgs)]
+struct Cli {
+    #[argh(subcommand)]
+    command: Command,
+
+    /// enable debug logging
+    #[argh(switch, short = 'v')]
+    verbose: bool,
+}
+
+#[derive(Debug, FromStr)]
+enum YearToScrape {
+    #[display("latest-with-data")]
+    LatestYearWithDataAvailable,
+
+    #[display("{0}")]
+    Year(Year),
+}
+
+fn get_current_year() -> Year {
+    chrono::Utc::now().year()
+}
+
+async fn year_has_data(year: Year, ctx: &ScrapingContext) -> anyhow::Result<bool> {
+    let year_url = ctx.scraping_config.get_timetable_api_url_for_year(year);
+    let response = ctx.request_client.fetch_url_response(&year_url).await?;
+    // UNSW servers will return a 404 if the data for a year isn't available.
+    match response.status().as_u16() {
+        200 => Ok(true),
+        404 => Ok(false),
+        other => Err(anyhow::anyhow!(
+            "UNSW servers returned an unexpected status code '{}' for a GET request to '{}'",
+            other,
+            year_url
+        )),
+    }
+}
+
+impl YearToScrape {
+    async fn into_year(&self, ctx: &ScrapingContext) -> anyhow::Result<Year> {
+        match self {
+            YearToScrape::Year(year) => Ok(*year),
+            YearToScrape::LatestYearWithDataAvailable => {
+                // try to find the latest year in the future, the the latest in the past.
+
+                // How far we potentially look into the future and past.
+                const MAX_FUTURE_YEARS: i32 = 20;
+                const MAX_PAST_YEARS: i32 = 20;
+
+                let curr_year = get_current_year();
+
+                // go as far as possible into future.
+                let mut latest_in_future = None;
+                for year in curr_year..curr_year + MAX_FUTURE_YEARS {
+                    if year_has_data(year, ctx).await? {
+                        latest_in_future = Some(year);
+                    } else {
+                        break;
+                    }
+                }
+                if let Some(year) = latest_in_future {
+                    return Ok(year);
+                }
+
+                // go until first possible in the past.
+                // we've already checked the current year.
+                for year in (curr_year - MAX_PAST_YEARS..curr_year).rev() {
+                    if year_has_data(year, ctx).await? {
+                        return Ok(year);
+                    }
+                }
+
+                Err(anyhow::anyhow!(
+                    "no year (neither in the future nor in the past relative to current year) has data"
+                ))
+            }
+        }
+    }
+}
+
+#[derive(FromArgs)]
+#[argh(subcommand)]
+#[enum_dispatch(Exec)]
+enum Command {
+    Scrape(Scrape),
+    BatchInsert(BatchInsert),
+    ScrapeAndBatchInsert(ScrapeAndBatchInsert),
+}
+
+/// Perform scraping. Creates a JSON file to store the data.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "scrape")]
+struct Scrape {
+    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`
+    #[argh(option, long = "year", short = 'y')]
+    year_to_scrape: YearToScrape,
+
+    /// write to a single JSON file instead
+    #[argh(option, long = "to-file")]
+    write_to_json_file: Option<String>,
+}
+
+impl Exec for Scrape {
+    async fn exec(&self) -> anyhow::Result<()> {
+        log::info!("Handling scrape...");
+        let data = Data::scrape(&self.year_to_scrape).await?;
+        match &self.write_to_json_file {
+            Some(json_file_path) => data.write_to_single_json(json_file_path).await?,
+            None => data.write_to_files().await?,
+        }
+        Ok(())
+    }
+}
+
+/// Perform batch insert on JSON files created by `scrape`.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "batch_insert")]
+struct BatchInsert {}
+
+impl Exec for BatchInsert {
+    async fn exec(&self) -> anyhow::Result<()> {
+        log::info!("Handling batch insert...");
+        handle_batch_insert().await?;
+        Ok(())
+    }
+}
+
+/// Perform scraping and batch insert. Does not create a JSON file to store the data.
+#[derive(FromArgs)]
+#[argh(subcommand, name = "scrape_n_batch_insert")]
+struct ScrapeAndBatchInsert {
+    /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.
+    #[argh(option, long = "year", short = 'y')]
+    year_to_scrape: YearToScrape,
+}
+
+impl Exec for ScrapeAndBatchInsert {
+    async fn exec(&self) -> anyhow::Result<()> {
+        log::info!("Handling scrape and batch insert...");
+        let data = Data::scrape(&self.year_to_scrape).await?;
+        data.write_to_files().await?;
+        data.handle_batch_insert().await?;
+        Ok(())
+    }
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
-    dotenv().ok();
+async fn main() -> anyhow::Result<()> {
+    let cli: Cli = argh::from_env();
+
+    let lvl = if cli.verbose {
+        // NOTE: we don't currently have any Debug logs, but useful for when we do, or we can config differently.
+        LevelFilter::Debug
+    } else {
+        LevelFilter::Info
+    };
     env_logger::Builder::new()
-        .filter_level(LevelFilter::Error)
+        .filter_level(lvl)
+        // Only show error logs from html5ever dependency, since it logs many unnecessary warnings.
+        .filter_module("html5ever", LevelFilter::Error)
         .init();
 
-    let args: Vec<String> = env::args().collect();
-
-    if args.len() < 2 {
-        eprintln!("Usage: {} <command> [options]", args[0]);
-        std::process::exit(1);
-    }
-
-    let command = &args[1];
-    match command.as_str() {
-        "scrape" => handle_scrape_write_to_file().await?,
-        "scrape_n_batch_insert" => handle_scrape_n_batch_insert().await?,
-        "batch_insert" => handle_batch_insert().await?,
-        "scrape_n_serialize" => {
-            let json_file_path = &args[2];
-            let year: i32 = args[3].parse()?;
-
-            let mut course_vec: Vec<Course> = Vec::<Course>::new();
-            handle_scrape(&mut course_vec, year)
-                .await
-                .expect("Something went wrong with scraping!");
-
-            let data = Data::new(course_vec);
-            data.write_to_single_json(&json_file_path).await?;
-        }
-        "help" => print_help(),
-        _ => {
-            eprintln!("Unknown command: '{}'", command);
-            print_help();
-            std::process::exit(1);
-        }
-    }
+    cli.command.exec().await?;
 
     Ok(())
 }

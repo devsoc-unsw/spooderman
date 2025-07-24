@@ -1,0 +1,54 @@
+name: Ensure the scraper is (probably) correct
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  diff_2024_dat:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+    env:
+      TIMETABLE_API_URL: https://timetable.unsw.edu.au/year/
+      HASURAGRES_URL: unused
+      HASURAGRES_API_KEY: unused
+    steps:
+      # Checkout the incoming branch (push or PR).
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # so we can fetch main in the next step
+
+      # Checkout the "main" branch to a separate path.
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: main
+          path: main-ref
+
+      - name: Set up Rust
+        run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+
+      # TODO: add once the rest works.
+      # - name: Load Cache
+      #   uses: Swatinem/rust-cache@v2
+
+      - name: Use incoming scraper to scrape 2024 data
+        run: cargo run --release scrape --year 2024 --to-file "new-scraper-2024-data.json"
+
+      - name: Diff against main's 2024 scraped data
+        run: |
+          if diff -q main-ref/2024-data.json new-scraper-2024-data.json > /dev/null; then
+            echo "New scraper scraped correct 2024 data (same as main branch scraper)"
+            exit 0
+          else
+            echo "New scraper scrapes incorrect data for 2024, diff:" 
+            diff main-ref/2024-data.json new-scraper-2024-data.json
+            exit 1
+          fi

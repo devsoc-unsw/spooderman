@@ -1,37 +1,55 @@
 use std::{collections::HashSet, sync::Arc};
 
+use anyhow::Context;
 use scraper::{ElementRef, Selector};
-use tokio::sync::Mutex;
+use tokio::sync::mpsc;
 
 use crate::{
-    UrlInvalidError,
-    class_scraper::ClassScraper,
-    scraper::fetch_url,
-    text_manipulators::{extract_text, extract_year, get_html_link_to_page},
+    Course, ScrapingContext,
+    course_scraper::PartialCourse,
+    text_manipulators::{extract_text, get_html_link_to_page},
 };
 
 #[derive(Debug)]
-pub struct SubjectAreaScraper {
-    pub url: Option<String>,
-    pub class_scrapers: Vec<Arc<Mutex<ClassScraper>>>,
+pub struct SubjectArea {
+    pub courses: Vec<Course>,
 }
 
-impl SubjectAreaScraper {
-    pub async fn scrape(&mut self) -> Result<(), Box<dyn std::error::Error + Send>> {
-        match &self.url {
-            Some(url) => {
-                let html = fetch_url(url)
-                    .await
-                    .expect("There was something wrong with the URL");
-                println!("Scraping Subject Area for: {}", url);
-                let career_selector = Selector::parse("td.classSearchMinorHeading").unwrap();
-                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight").unwrap();
-                let code_selector = Selector::parse("td.data").unwrap();
-                let name_selector = Selector::parse("td.data a").unwrap();
-                let link_selector = Selector::parse("td.data a").unwrap();
-                let uoc_selector = Selector::parse("td.data:nth-child(3)").unwrap();
+impl SubjectArea {
+    pub async fn scrape(url: String, ctx: &Arc<ScrapingContext>) -> anyhow::Result<Self> {
+        log::info!("Started scraping Subject Area for: {}", url);
+
+        let html = ctx.request_client.fetch_url_body(&url).await?;
+
+        // We use a channel so we can start completing a partial course
+        // immediately once it's scraped, so we don't have to wait until all
+        // partial courses have been scraped.
+        let (tx, mut rx) = mpsc::unbounded_channel();
+
+        let producer = async move || -> anyhow::Result<()> {
+            let ctx = Arc::clone(ctx);
+
+            let cpu_bound = move || -> anyhow::Result<()> {
                 let document = scraper::Html::parse_document(&html);
-                let mut course_code_career_set = HashSet::<String>::new();
+
+                // NOTE: We can't return the error message from `Selector::parse`
+                // because it is not Send and, therefore, not sendable across threads.
+                let error_msg = format!("failed to parse {}", url);
+
+                let career_selector = Selector::parse("td.classSearchMinorHeading")
+                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let row_selector = Selector::parse("tr.rowLowlight, tr.rowHighlight")
+                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let code_selector =
+                    Selector::parse("td.data").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let name_selector =
+                    Selector::parse("td.data a").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let link_selector =
+                    Selector::parse("td.data a").map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let uoc_selector = Selector::parse("td.data:nth-child(3)")
+                    .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
+                let mut visited_courses = HashSet::<String>::new();
+
                 for career_elem_ref in document.select(&career_selector) {
                     let career = extract_text(career_elem_ref);
                     if career.is_empty() {
@@ -40,58 +58,113 @@ impl SubjectAreaScraper {
                     for row_node in ElementRef::wrap(
                         career_elem_ref
                             .parent()
-                            .expect("Expected career to be inside td element")
+                            .ok_or_else(|| {
+                                anyhow::anyhow!(format!(
+                                    "{}: {}",
+                                    &error_msg, "Expected career to be inside td element"
+                                ))
+                            })?
                             .next_sibling()
-                            .expect("Expected career classes td element to come after careers")
+                            .ok_or_else(|| {
+                                anyhow::anyhow!(format!(
+                                    "{}: {}",
+                                    &error_msg,
+                                    "Expected career classes td element to come after careers"
+                                ))
+                            })?
                             .next_sibling()
-                            .expect("Expected career classes td element to come after careers"),
+                            .ok_or_else(|| {
+                                anyhow::anyhow!(format!(
+                                    "{}: {}",
+                                    &error_msg,
+                                    "Expected career classes td element to come after careers"
+                                ))
+                            })?,
                     )
-                    .unwrap()
+                    .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?
                     .select(&row_selector)
                     {
                         // Extract data from each row
-                        let course_code =
-                            extract_text(row_node.select(&code_selector).next().unwrap());
-                        let course_name =
-                            extract_text(row_node.select(&name_selector).nth(1).unwrap());
-                        let name_hash = course_code.to_string() + &career;
-                        if course_code_career_set.contains(&name_hash) {
+                        let course_code = extract_text(
+                            row_node
+                                .select(&code_selector)
+                                .next()
+                                .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                        );
+                        let course_name = extract_text(
+                            row_node
+                                .select(&name_selector)
+                                .nth(1)
+                                .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                        );
+                        let name_hash = format!("{}{}", &course_code, &career);
+                        if visited_courses.contains(&name_hash) {
                             continue;
                         }
-                        let year_to_scrape = extract_year(url).unwrap();
+                        visited_courses.insert(name_hash);
+                        let year_to_scrape = ctx
+                            .timetable_url_year_extractor
+                            .extract_year(&url)
+                            .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
                         let url_to_scrape_further = get_html_link_to_page(
-                            year_to_scrape as i32,
+                            year_to_scrape,
                             row_node
                                 .select(&link_selector)
                                 .next()
                                 .map_or("", |node| node.value().attr("href").unwrap_or("")),
+                            &ctx,
                         );
-                        let uoc = extract_text(row_node.select(&uoc_selector).next().unwrap())
-                            .parse()
-                            .expect("Could not parse UOC!");
-                        self.class_scrapers.push(Arc::new(Mutex::new(ClassScraper {
-                            course_code: course_code.clone(),
+                        let uoc = extract_text(
+                            row_node
+                                .select(&uoc_selector)
+                                .next()
+                                .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?,
+                        )
+                        .parse()
+                        .context("Could not parse UOC!")?;
+
+                        let course_scraper = PartialCourse::new(
+                            course_code,
                             course_name,
-                            career: career.trim().to_string(),
+                            career.trim().to_string(),
                             uoc,
-                            url: url_to_scrape_further,
-                        })));
-                        course_code_career_set.insert(name_hash);
+                            url_to_scrape_further,
+                        );
+                        tx.send(course_scraper)?;
                     }
                 }
-
                 Ok(())
-            }
-            None => Err(Box::new(UrlInvalidError)),
-        }
-    }
-}
+            };
 
-impl SubjectAreaScraper {
-    pub fn new(url: String) -> Self {
-        Self {
-            url: Some(url),
-            class_scrapers: vec![],
-        }
+            // NOTE: tokio is, by default, not designed for long running cpu bound tasks to be spawned, since it's designed for doing blocking IO asyncronously. current bottleneck: we're doing heavy cpu bound work on e.g. 42 OS threads (example execution measured once), which creates some scheduling overhead -> either limit to num cpus OS threads, since we don't use spawn_blocking for blocking io anyways, or look for different tokio API.
+            tokio::task::spawn_blocking(cpu_bound).await??;
+            Ok(())
+        };
+
+        let mut consumer = async move || -> anyhow::Result<Vec<Course>> {
+            let mut tasks = tokio::task::JoinSet::new();
+
+            // Spawn partial-X-completion tasks as soon as we receive them.
+            while let Some(partial_course) = rx.recv().await {
+                let ctx = Arc::clone(ctx);
+                tasks.spawn(async move { partial_course.complete(&ctx).await });
+            }
+
+            // Wait for all partial-X-completion tasks to complete.
+            // If any of the tasks returns an error, return that error
+            // immediately (without waiting for all other tasks to finish).
+            let mut courses = Vec::new();
+            while let Some(result) = tasks.join_next().await {
+                let course = result??;
+                courses.push(course);
+            }
+
+            Ok(courses)
+        };
+
+        // Wait on producer and consumer.
+        let ((), courses) = tokio::try_join!(producer(), consumer())?;
+
+        Ok(Self { courses })
     }
 }
