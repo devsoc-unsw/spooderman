@@ -1,4 +1,6 @@
-name: Ensure the scraper is (probably) correct
+name: Scraper correctness check
+
+# Strategy: we assume the `2024-json.data` in the main branch is (forever) correct data for 2024, so we scrape 2024 data with the incoming scraper, and check both are the same.
 
 on:
   push:
@@ -7,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  diff_2024_dat:
+  diff-2024-data:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,7 +24,7 @@ jobs:
       - name: Checkout source branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # so we can fetch main in the next step
+          fetch-depth: 0  # So we can fetch main in the next step.
 
       # Checkout the "main" branch to a separate path.
       - name: Checkout main branch
@@ -35,9 +37,8 @@ jobs:
       - name: Set up Rust
         run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
 
-      # TODO: add once the rest works.
-      # - name: Load Cache
-      #   uses: Swatinem/rust-cache@v2
+      - name: Load Cache
+        uses: Swatinem/rust-cache@v2
 
       - name: Use incoming scraper to scrape 2024 data
         run: cargo run --release scrape --year 2024 --to-file "new-scraper-2024-data.json"
