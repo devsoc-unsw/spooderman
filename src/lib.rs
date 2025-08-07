@@ -17,7 +17,7 @@ pub use requests::RequestClient;
 pub use school_area_scraper::SchoolArea;
 pub use scraping_context::ScrapingContext;
 pub use url_invalid_error::UrlInvalidError;
-pub use utils::sort_by_key_ref;
+pub use utils::{log_execution_time, log_execution_time_async, sort_by_key_ref};
 
 // NOTE: i32 because that is what DateTime<Utc> uses for years.
 pub type Year = i32;

@@ -5,7 +5,8 @@ use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolArea, ScrapingContext, Time, Year, send_batch_data, sort_by_key_ref,
+    Class, Course, SchoolArea, ScrapingContext, Time, Year, log_execution_time,
+    log_execution_time_async, send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -114,7 +115,6 @@ impl Data {
 
         let mut all_courses = school_area.get_all_courses().collect::<Vec<_>>();
         sort_by_key_ref(&mut all_courses, |course| &course.course_id);
-
         Ok(Data { all_courses })
     }
 
@@ -126,18 +126,24 @@ impl Data {
     }
 
     async fn write_to_files(&self) -> anyhow::Result<()> {
-        log::info!("Writing scraped data to disk!");
-        let json_classes = convert_classes_to_json(&self.all_courses);
-        let json_courses = convert_courses_to_json(&self.all_courses);
-        let json_times = convert_classes_times_to_json(&self.all_courses);
+        let (json_classes, json_courses, json_times) =
+            log_execution_time("serialising scraped data to JSON", || {
+                log::info!("Writing scraped data to disk!");
+                let json_classes = convert_classes_to_json(&self.all_courses);
+                let json_courses = convert_courses_to_json(&self.all_courses);
+                let json_times = convert_classes_times_to_json(&self.all_courses);
+                (json_classes, json_courses, json_times)
+            });
 
-        let file_classes = File::create("classes.json")?;
-        let file_courses = File::create("courses.json")?;
-        let file_times = File::create("times.json")?;
-        to_writer_pretty(file_classes, &json_classes)?;
-        to_writer_pretty(file_courses, &json_courses)?;
-        to_writer_pretty(file_times, &json_times)?;
-        Ok(())
+        log_execution_time("writing JSON scraped data to files", || {
+            let file_classes = File::create("classes.json")?;
+            let file_courses = File::create("courses.json")?;
+            let file_times = File::create("times.json")?;
+            to_writer_pretty(file_classes, &json_classes)?;
+            to_writer_pretty(file_courses, &json_courses)?;
+            to_writer_pretty(file_times, &json_times)?;
+            Ok(())
+        })
     }
 
     async fn handle_batch_insert(&self) -> anyhow::Result<()> {
@@ -287,9 +293,19 @@ struct Scrape {
 impl Exec for Scrape {
     async fn exec(&self) -> anyhow::Result<()> {
         log::info!("Handling scrape...");
-        let data = Data::scrape(&self.year_to_scrape).await?;
+
+        let data = log_execution_time_async("scraping", async || {
+            Data::scrape(&self.year_to_scrape).await
+        })
+        .await?;
         match &self.write_to_json_file {
-            Some(json_file_path) => data.write_to_single_json(json_file_path).await?,
+            Some(json_file_path) => {
+                log_execution_time_async(
+                    "serialising data to JSON and writing to file",
+                    async || data.write_to_single_json(json_file_path).await,
+                )
+                .await?;
+            }
             None => data.write_to_files().await?,
         }
         Ok(())
