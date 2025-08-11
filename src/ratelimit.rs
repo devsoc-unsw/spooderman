@@ -6,49 +6,67 @@ use governor::{
 };
 use nonzero_ext::nonzero;
 use std::{
+    cmp::max,
     fmt::{self},
     num::NonZeroU32,
-    time::{Duration, Instant},
+    sync::Arc,
+    time::Duration,
 };
-use tokio::sync::RwLock;
+use tokio::{
+    sync::{RwLock, watch},
+    time::Instant,
+};
+use uuid::Uuid;
 
 use crate::Request;
 
 // The higher, the faster.
-const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(150u32);
+const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(300u32);
 
 // The lower, the faster.
 const DEFAULT_MS_BETWEEN_REQ: Duration = Duration::from_millis(2);
 
-// The higher, the faster the backoff.
+// The lower, the slower the request rate goes to 0.
 const LINEAR_REQUEST_RATE_BACKOFF: NonZeroU32 = nonzero!(30u32);
 
+// The lower, the faster we restart after request rate change.
+const PAUSE_AFTER_REQ_RATE_CHANGE: Duration = Duration::from_secs(5);
+
 #[derive(Debug, Clone, Copy)]
-struct RequestRate {
+pub struct RequestRate {
     req_per_sec: NonZeroU32,
     ms_between_req: Duration,
-    most_recently_updated: Instant,
+    uuid: Uuid,
+}
+
+impl PartialEq for RequestRate {
+    fn eq(&self, other: &Self) -> bool {
+        self.uuid == other.uuid
+    }
 }
 
 impl RequestRate {
-    fn new(
-        req_per_sec: NonZeroU32,
-        ms_between_req: Duration,
-        most_recently_updated: Instant,
-    ) -> Self {
+    fn new(req_per_sec: NonZeroU32, ms_between_req: Duration) -> Self {
+        let uuid = Uuid::new_v4();
         Self {
             req_per_sec,
             ms_between_req,
-            most_recently_updated,
+            uuid,
         }
     }
 }
 
 impl fmt::Display for RequestRate {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{} requests per second", self.req_per_sec)?;
+        write!(f, "{} req/s", self.req_per_sec)?;
         Ok(())
     }
+}
+
+#[derive(Debug, Clone, Copy)]
+enum Gate {
+    Active,
+    PausedUntil(Instant),
 }
 
 type SpecificGovernorRateLimiter =
@@ -79,15 +97,6 @@ impl FixedRateLimiter {
         }
     }
 
-    fn update_request_rate(&mut self, new_request_rate: RequestRate) {
-        log::info!(
-            "updating the request rate from '{}' to '{}'",
-            self.request_rate,
-            new_request_rate
-        );
-        *self = Self::new(new_request_rate);
-    }
-
     pub async fn wait_until_ready(&self) {
         // The order in which we await the rate limiters matters:
 
@@ -109,7 +118,11 @@ impl FixedRateLimiter {
 }
 
 pub struct RateLimiter {
-    fixed_rate_limiter: RwLock<FixedRateLimiter>,
+    // Hot-swappable rate limiter, wrapped in an Arc to avoid holding lock during waits.
+    rate_limiter: RwLock<Arc<FixedRateLimiter>>,
+    // Gate used to allow pausing all requests for a period of time.
+    gate_tx: watch::Sender<Gate>,
+    gate_rx: watch::Receiver<Gate>,
 }
 
 fn sub_nonzero(a: NonZeroU32, b: NonZeroU32) -> Option<NonZeroU32> {
@@ -118,41 +131,126 @@ fn sub_nonzero(a: NonZeroU32, b: NonZeroU32) -> Option<NonZeroU32> {
 
 impl RateLimiter {
     pub fn new() -> Self {
-        let request_rate =
-            RequestRate::new(DEFAULT_REQ_PER_SEC, DEFAULT_MS_BETWEEN_REQ, Instant::now());
-        let fixed_rate_limiter = RwLock::new(FixedRateLimiter::new(request_rate));
-        Self { fixed_rate_limiter }
-    }
+        let request_rate = RequestRate::new(DEFAULT_REQ_PER_SEC, DEFAULT_MS_BETWEEN_REQ);
+        let rate_limiter = RwLock::new(Arc::new(FixedRateLimiter::new(request_rate)));
+        let (gate_tx, gate_rx) = watch::channel(Gate::Active);
 
-    pub async fn wait_until_ready(&self) {
-        let fixed_rate_limiter = self.fixed_rate_limiter.read().await;
-        fixed_rate_limiter.wait_until_ready().await;
-    }
-
-    pub async fn lower_request_rate(&self, failed_request: Request) -> anyhow::Result<()> {
-        let (most_recently_updated, old_request_rate) = {
-            let fixed_rate_limiter = self.fixed_rate_limiter.read().await;
-            (
-                fixed_rate_limiter.request_rate.most_recently_updated,
-                fixed_rate_limiter.request_rate,
-            )
-        };
-
-        // If the failed request (A) was made before the most recent request rate
-        // reduction (which was made due to failed request B), then A failing
-        // shouldn't lower the request rate even further, since we will have
-        // hundreds of failed requests like A, so reducing for all of them would cause
-        // our request rate to go to 0 immediately. Only the next failed request C
-        // after the latest request rate update should cause another request rate
-        // update, since the current request rate clearly isn't low enough at the point
-        // of C either.
-        if failed_request.sent_time <= most_recently_updated {
-            return Ok(());
+        Self {
+            rate_limiter,
+            gate_tx,
+            gate_rx,
         }
+    }
 
+    async fn wait_until_active(&self) {
+        loop {
+            let curr_gate = *self.gate_rx.borrow();
+            match curr_gate {
+                Gate::Active => return,
+                Gate::PausedUntil(_deadline) => {
+                    let mut rx = self.gate_rx.clone();
+                    rx.changed()
+                        .await
+                        .expect("sender can't get dropped, it's part of RateLimiter struct");
+                }
+            }
+        }
+    }
+
+    async fn pause_for(&self, duration: Duration) {
+        log::info!(
+            "Pausing new requests for {}",
+            humantime::Duration::from(duration)
+        );
+
+        let new_deadline = Instant::now() + duration;
+
+        // Start or extend the pause atomically.
+        let _ = self.gate_tx.send_modify(|gate| {
+            *gate = match *gate {
+                Gate::Active => Gate::PausedUntil(new_deadline),
+                Gate::PausedUntil(curr_deadline) => {
+                    let max_deadline = max(curr_deadline, new_deadline);
+                    Gate::PausedUntil(max_deadline)
+                }
+            };
+        });
+
+        // Schedule unpause at deadline.
+        let tx = self.gate_tx.clone();
+        tokio::task::spawn(async move {
+            tokio::time::sleep_until(new_deadline).await;
+            let _ = tx.send_modify(|gate| {
+                *gate = match *gate {
+                    Gate::Active => Gate::Active,
+                    Gate::PausedUntil(curr_deadline) => {
+                        if curr_deadline > new_deadline {
+                            // After setting this new deadline, we set a later deadline,
+                            // so that later deadline should be respected.
+                            Gate::PausedUntil(curr_deadline)
+                        } else if curr_deadline < new_deadline {
+                            // After setting this new deadline, we set another earlier deadline.
+                            // However, in that case, the wake-task for that earlier deadline
+                            // should have set the gate to `Active`, so this should never be reached.
+                            unreachable!("we should never see an earlier deadline on wakeup, as that implies we would have woken up earlier and resolved the earlier deadline");
+                        } else {
+                            // This is the deadline we set. If the same deadline was set twice,
+                            // the second modify would just encounter an `Active`, which it leaves
+                            // untouched.
+                            log::info!("Resuming requests");
+                            Gate::Active
+                        }
+                    }
+                };
+            });
+        });
+    }
+
+    /// Return the request rate that this client used for waiting.
+    async fn wait_until_allowed(&self) -> RequestRate {
+        // Don't hold the read lock while waiting on rate limiter, so writer can quickly get write lock.
+        let rate_limiter = { self.rate_limiter.read().await.clone() };
+        rate_limiter.wait_until_ready().await;
+        rate_limiter.request_rate
+    }
+
+    pub async fn wait_until_ready(&self) -> RequestRate {
+        self.wait_until_active().await;
+        let request_rate_used = self.wait_until_allowed().await;
+        request_rate_used
+    }
+
+    pub async fn lower_request_rate<'a>(&self, failed_request: Request<'a>) -> anyhow::Result<()> {
         {
-            let mut fixed_rate_limiter = self.fixed_rate_limiter.write().await;
+            // Hold the write lock until update is complete: important to ensure there is
+            // only one failed request that wins/comes first.
+            let mut rate_limiter = self.rate_limiter.write().await;
 
+            // let most_recently_updated = rate_limiter.request_rate.most_recently_updated;
+            let curr_request_rate = &rate_limiter.request_rate;
+
+            // If the failed request (A) was made before the most recent request rate
+            // reduction (which was made due to failed request B), then A failing
+            // shouldn't lower the request rate even further, since we will have
+            // hundreds of failed requests like A, so reducing for all of them would cause
+            // our request rate to go to 0 immediately. Only the next failed request C
+            // after the latest request rate update should cause another request rate
+            // update, since the current request rate clearly isn't low enough at the point
+            // of C either.
+            // The few in-flight requests that go through even after setting up the
+            // new rate limiter do so using the old rate limiter (which is possible
+            // because it is shared as an Arc that readers clone, allowing them to drop
+            // the lock before proceding). Therefore, we can filter out any request that
+            // was made using some old request rate (uniquely identified by uuid).
+            if &failed_request.request_rate_used != curr_request_rate {
+                log::info!(
+                    "request to {} failed with old request rate, we'll try the new one before lowering request rate again",
+                    failed_request.url,
+                );
+                return Ok(());
+            }
+
+            let old_request_rate = curr_request_rate;
             let Some(new_req_per_sec) =
                 sub_nonzero(old_request_rate.req_per_sec, LINEAR_REQUEST_RATE_BACKOFF)
             else {
@@ -161,19 +259,27 @@ impl RateLimiter {
                 return Err(anyhow::anyhow!(err_msg));
             };
             let new_ms_beteen_reqs = old_request_rate.ms_between_req;
-            let new_request_rate =
-                RequestRate::new(new_req_per_sec, new_ms_beteen_reqs, Instant::now());
+            let new_request_rate = RequestRate::new(new_req_per_sec, new_ms_beteen_reqs);
 
+            // TODO: maybe try moving out of region where lock is held
             // Before switching to the new request rate, we should back off
-            // completely for a couple of seconds: kill all in-flight requests,
-            // and stop sending new requests for a couple of seconds.
-            // TODO
+            // completely for a while.
+            // NOTE: Killing in-flight requests would lead to a complete stand-still,
+            // but isn't worth the added complexity of supporting cancellable async
+            // requests (for now).
+            self.pause_for(PAUSE_AFTER_REQ_RATE_CHANGE).await;
 
-            fixed_rate_limiter.update_request_rate(new_request_rate);
+            log::info!(
+                "updating the request rate from '{}' to '{}' due to failed request to {}",
+                old_request_rate,
+                new_request_rate,
+                failed_request.url
+            );
+            let new_rate_limiter = Arc::new(FixedRateLimiter::new(new_request_rate));
+            // Any in-flight requests referencing the old rate limiter will still go through.
+            // Once all requests to the old rate limiter have completed, it will be dropped.
+            *rate_limiter = new_rate_limiter;
         }
-
-        // log::info!("pausing requests for 1 second");
-        // tokio::time::sleep(Duration::from_secs(1)).await;
 
         Ok(())
     }
