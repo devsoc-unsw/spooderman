@@ -4763,7 +4763,8 @@
     "course_name": "Screen Production II",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -64239,7 +64240,8 @@
     "course_name": "Assessment, Personality and Psychopathology",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Psychology",
     "terms": [
