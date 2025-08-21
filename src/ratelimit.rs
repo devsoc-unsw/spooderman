@@ -16,12 +16,13 @@ use tokio::{
     sync::{RwLock, watch},
     time::Instant,
 };
+use tokio_util::sync::CancellationToken;
 use uuid::Uuid;
 
 use crate::Request;
 
 // The higher, the faster.
-const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(300u32);
+const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(150u32);
 
 // The lower, the faster.
 const DEFAULT_MS_BETWEEN_REQ: Duration = Duration::from_millis(2);
@@ -32,7 +33,7 @@ const LINEAR_REQUEST_RATE_BACKOFF: NonZeroU32 = nonzero!(30u32);
 // The lower, the faster we restart after request rate change.
 const PAUSE_AFTER_REQ_RATE_CHANGE: Duration = Duration::from_secs(5);
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Clone, Copy)]
 pub struct RequestRate {
     req_per_sec: NonZeroU32,
     ms_between_req: Duration,
@@ -56,9 +57,9 @@ impl RequestRate {
     }
 }
 
-impl fmt::Display for RequestRate {
+impl fmt::Debug for RequestRate {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{} req/s", self.req_per_sec)?;
+        write!(f, "uuid='{}' ({} req/s)", self.uuid, self.req_per_sec)?;
         Ok(())
     }
 }
@@ -117,9 +118,32 @@ impl FixedRateLimiter {
     }
 }
 
+impl Drop for FixedRateLimiter {
+    fn drop(&mut self) {
+        log::info!(
+            "rate limiter with request rate {:?} is now no longer referenced and, therefore, dropped",
+            self.request_rate
+        )
+    }
+}
+
+struct RateLimiterGeneration {
+    rate_limiter: FixedRateLimiter,
+    cancel_token: CancellationToken,
+}
+
+impl RateLimiterGeneration {
+    fn new(fixed_rate_limiter: FixedRateLimiter) -> Self {
+        Self {
+            rate_limiter: fixed_rate_limiter,
+            cancel_token: CancellationToken::new(),
+        }
+    }
+}
+
 pub struct RateLimiter {
     // Hot-swappable rate limiter, wrapped in an Arc to avoid holding lock during waits.
-    rate_limiter: RwLock<Arc<FixedRateLimiter>>,
+    rate_limiter_generation: RwLock<Arc<RateLimiterGeneration>>,
     // Gate used to allow pausing all requests for a period of time.
     gate_tx: watch::Sender<Gate>,
     gate_rx: watch::Receiver<Gate>,
@@ -132,11 +156,13 @@ fn sub_nonzero(a: NonZeroU32, b: NonZeroU32) -> Option<NonZeroU32> {
 impl RateLimiter {
     pub fn new() -> Self {
         let request_rate = RequestRate::new(DEFAULT_REQ_PER_SEC, DEFAULT_MS_BETWEEN_REQ);
-        let rate_limiter = RwLock::new(Arc::new(FixedRateLimiter::new(request_rate)));
+        let fixed_rate_limiter = FixedRateLimiter::new(request_rate);
+        let rate_limiter_generation =
+            RwLock::new(Arc::new(RateLimiterGeneration::new(fixed_rate_limiter)));
         let (gate_tx, gate_rx) = watch::channel(Gate::Active);
 
         Self {
-            rate_limiter,
+            rate_limiter_generation,
             gate_tx,
             gate_rx,
         }
@@ -205,29 +231,43 @@ impl RateLimiter {
             });
         });
     }
+}
 
-    /// Return the request rate that this client used for waiting.
-    async fn wait_until_allowed(&self) -> RequestRate {
+pub enum PermitResult {
+    /// The thread has finished waiting and has now been granted passage, and
+    /// receives the request rate that was used while waiting.
+    Granted { request_rate_used: RequestRate },
+    /// The operation the thread is waiting to be allowed to perform was cancelled.
+    Cancelled,
+}
+
+impl RateLimiter {
+    pub async fn wait_until_ready(&self) -> PermitResult {
         // Don't hold the read lock while waiting on rate limiter, so writer can quickly get write lock.
-        let rate_limiter = { self.rate_limiter.read().await.clone() };
-        rate_limiter.wait_until_ready().await;
-        rate_limiter.request_rate
-    }
+        let generation = { Arc::clone(&*self.rate_limiter_generation.read().await) };
 
-    pub async fn wait_until_ready(&self) -> RequestRate {
-        self.wait_until_active().await;
-        let request_rate_used = self.wait_until_allowed().await;
-        request_rate_used
+        let wait_until_active_and_allowed = async {
+            self.wait_until_active().await;
+            generation.rate_limiter.wait_until_ready().await
+        };
+
+        tokio::select! {
+            _ = wait_until_active_and_allowed => {
+                PermitResult::Granted { request_rate_used: generation.rate_limiter.request_rate }
+            },
+            _ = generation.cancel_token.cancelled() => {
+                PermitResult::Cancelled
+            }
+        }
     }
 
     pub async fn lower_request_rate<'a>(&self, failed_request: Request<'a>) -> anyhow::Result<()> {
         {
             // Hold the write lock until update is complete: important to ensure there is
             // only one failed request that wins/comes first.
-            let mut rate_limiter = self.rate_limiter.write().await;
+            let mut generation = self.rate_limiter_generation.write().await;
 
-            // let most_recently_updated = rate_limiter.request_rate.most_recently_updated;
-            let curr_request_rate = &rate_limiter.request_rate;
+            let curr_request_rate = &generation.rate_limiter.request_rate;
 
             // If the failed request (A) was made before the most recent request rate
             // reduction (which was made due to failed request B), then A failing
@@ -244,8 +284,9 @@ impl RateLimiter {
             // was made using some old request rate (uniquely identified by uuid).
             if &failed_request.request_rate_used != curr_request_rate {
                 log::info!(
-                    "request to {} failed with old request rate, we'll try the new one before lowering request rate again",
+                    "request to {} failed with old request rate {:?}, we'll try the new one before lowering request rate again",
                     failed_request.url,
+                    failed_request.request_rate_used,
                 );
                 return Ok(());
             }
@@ -261,24 +302,34 @@ impl RateLimiter {
             let new_ms_beteen_reqs = old_request_rate.ms_between_req;
             let new_request_rate = RequestRate::new(new_req_per_sec, new_ms_beteen_reqs);
 
-            // TODO: maybe try moving out of region where lock is held
-            // Before switching to the new request rate, we should back off
-            // completely for a while.
-            // NOTE: Killing in-flight requests would lead to a complete stand-still,
-            // but isn't worth the added complexity of supporting cancellable async
-            // requests (for now).
-            self.pause_for(PAUSE_AFTER_REQ_RATE_CHANGE).await;
-
             log::info!(
-                "updating the request rate from '{}' to '{}' due to failed request to {}",
+                "updating the request rate from '{:?}' to '{:?}' due to failed request to {}",
                 old_request_rate,
                 new_request_rate,
                 failed_request.url
             );
-            let new_rate_limiter = Arc::new(FixedRateLimiter::new(new_request_rate));
-            // Any in-flight requests referencing the old rate limiter will still go through.
+
+            // Before switching to the new request rate, we should back off
+            // completely for a while.
+            self.pause_for(PAUSE_AFTER_REQ_RATE_CHANGE).await;
+
+            // Kill all spawned requests that are currently waiting on the old
+            // rate limiter.
+            // It is important for the tasks to be cancelled after the rate limiter
+            // is paused, otherwise tasks will race to the next loop iteration and
+            // might read the old rate limiter active status before it is set to paused.
+            generation.cancel_token.cancel();
+
+            // All in-flight requests (those that have made it past our old rate limiter)
+            // will be allowed to complete, and they will most likely also be rate-limited
+            // by UNSW servers. We allow these requests to progress in order to encapsulate
+            // the cancellation logic in this struct rather than requiring the caller to
+            // setup the cancellation logic themselves.
             // Once all requests to the old rate limiter have completed, it will be dropped.
-            *rate_limiter = new_rate_limiter;
+
+            let new_rate_limiter = FixedRateLimiter::new(new_request_rate);
+            let new_generation = Arc::new(RateLimiterGeneration::new(new_rate_limiter));
+            *generation = new_generation;
         }
 
         Ok(())

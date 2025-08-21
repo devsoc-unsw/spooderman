@@ -1,9 +1,12 @@
 use std::time::Duration;
 
 use derive_new::new;
-use reqwest::{Client, ClientBuilder, Response};
+use reqwest::{Client, ClientBuilder, StatusCode};
 
-use crate::ratelimit::{RateLimiter, RequestRate};
+use crate::ratelimit::{PermitResult, RateLimiter, RequestRate};
+
+const GET_REQUEST_TIMEOUT: Duration = Duration::from_secs(3);
+const RESPONSE_BODY_TIMEOUT: Duration = Duration::from_secs(3);
 
 pub struct RequestClient {
     client: Client,
@@ -31,47 +34,83 @@ impl RequestClient {
         })
     }
 
-    pub async fn fetch_url_response(&self, url: &str) -> anyhow::Result<Response> {
+    async fn fetch_url_response_and_body(&self, url: &str) -> anyhow::Result<(StatusCode, String)> {
         loop {
             // Wait (non-blocking) until we're allowed to make a request according
             // to our self-imposed rate-limiting policy.
-            let request_rate_used = self.rate_limiter.wait_until_ready().await;
+            match self.rate_limiter.wait_until_ready().await {
+                PermitResult::Granted { request_rate_used } => {
+                    let request = Request::new(url, request_rate_used);
+                    let failed_request = {
+                        match tokio::time::timeout(GET_REQUEST_TIMEOUT, self.client.get(url).send())
+                            .await
+                        {
+                            Ok(Ok(response)) => {
+                                // The server might still rate-limit us by sending the response body very slowly.
+                                let status = response.status().clone();
+                                match tokio::time::timeout(RESPONSE_BODY_TIMEOUT, response.text())
+                                    .await
+                                {
+                                    Ok(Ok(body)) => return Ok((status, body)),
+                                    Ok(Err(e)) => {
+                                        log::warn!(
+                                            "fetching body from response to url {} failed ({}) for request rate {:?}, maybe reduce request rate",
+                                            url,
+                                            e,
+                                            request_rate_used
+                                        );
+                                        request
+                                    }
+                                    Err(_) => {
+                                        log::warn!(
+                                            "fetching body from response to url {} timed out for request rate {:?} (maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error), maybe reduce request rate",
+                                            url,
+                                            request_rate_used
+                                        );
+                                        request
+                                    }
+                                }
+                            }
+                            Ok(Err(e)) => {
+                                log::warn!(
+                                    "get-request to url {} failed ({}) for request rate {:?}, maybe reduce request rate",
+                                    url,
+                                    e,
+                                    request_rate_used
+                                );
+                                request
+                            }
+                            Err(_) => {
+                                log::warn!(
+                                    "get-request to url {} timed out for request rate {:?} (maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error), maybe reduce request rate",
+                                    url,
+                                    request_rate_used
+                                );
+                                request
+                            }
+                        }
+                    };
 
-            log::info!("allowed access to start making request to {} now", url);
-            let request = Request::new(url, request_rate_used);
-            let failed_request = {
-                match tokio::time::timeout(Duration::from_secs(3), self.client.get(url).send())
-                    .await
-                {
-                    Ok(Ok(response)) => return Ok(response),
-                    Ok(Err(e)) => {
-                        log::warn!(
-                            "get-request to url {} failed ({}), maybe reduce request rate",
-                            url,
-                            e
-                        );
-                        request
-                    }
-                    Err(_) => {
-                        log::warn!(
-                            "get-request to url {} timed out (maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error), maybe reduce request rate",
-                            url,
-                        );
-                        request
-                    }
+                    // If we got rate-limited by UNSW servers, we are probably making too
+                    // many requests, so we should send requests at a lower rate (i.e.
+                    // rate-limit ourselves more).
+                    self.rate_limiter.lower_request_rate(failed_request).await?;
                 }
-            };
-
-            // If we got rate-limited by UNSW servers, we are probably making too
-            // many requests, so we should send requests at a lower rate (i.e.
-            // rate-limit ourselves more).
-            self.rate_limiter.lower_request_rate(failed_request).await?;
+                PermitResult::Cancelled => {
+                    // If this rate-limit-wait was cancelled, try again.
+                    continue;
+                }
+            }
         }
     }
 
+    pub async fn fetch_url_status(&self, url: &str) -> anyhow::Result<StatusCode> {
+        let (status, _body) = self.fetch_url_response_and_body(url).await?;
+        Ok(status)
+    }
+
     pub async fn fetch_url_body(&self, url: &str) -> anyhow::Result<String> {
-        let response = self.fetch_url_response(url).await?;
-        let body = response.text().await?;
+        let (_response, body) = self.fetch_url_response_and_body(url).await?;
         Ok(body)
     }
 }

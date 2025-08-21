@@ -34,4 +34,5 @@ sqlx = { version = "0.8.2", features = [
     "runtime-tokio-native-tls",
 ] }
 tokio = { version = "1.42.0", features = ["full"] }
+tokio-util = "0.7.16"
 uuid = { version = "1.18.0", features = ["v4"] }
