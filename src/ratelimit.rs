@@ -5,6 +5,7 @@ use governor::{
     state::{InMemoryState, NotKeyed},
 };
 use nonzero_ext::nonzero;
+use num_traits::ToPrimitive;
 use std::{
     cmp::max,
     fmt::{self},
@@ -22,13 +23,13 @@ use uuid::Uuid;
 use crate::Request;
 
 // The higher, the faster.
-const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(150u32);
+const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(120u32);
 
 // The lower, the faster.
 const DEFAULT_MS_BETWEEN_REQ: Duration = Duration::from_millis(2);
 
-// The lower, the slower the request rate goes to 0.
-const LINEAR_REQUEST_RATE_BACKOFF: NonZeroU32 = nonzero!(30u32);
+// The closer to 1, the slower the request rate goes to 0.
+const EXPONENTIAL_REQUEST_RATE_BACKOFF: f64 = 2.0 / 3.0;
 
 // The lower, the faster we restart after request rate change.
 const PAUSE_AFTER_REQ_RATE_CHANGE: Duration = Duration::from_secs(5);
@@ -147,10 +148,6 @@ pub struct RateLimiter {
     // Gate used to allow pausing all requests for a period of time.
     gate_tx: watch::Sender<Gate>,
     gate_rx: watch::Receiver<Gate>,
-}
-
-fn sub_nonzero(a: NonZeroU32, b: NonZeroU32) -> Option<NonZeroU32> {
-    a.get().checked_sub(b.get()).and_then(NonZeroU32::new)
 }
 
 impl RateLimiter {
@@ -292,13 +289,17 @@ impl RateLimiter {
             }
 
             let old_request_rate = curr_request_rate;
-            let Some(new_req_per_sec) =
-                sub_nonzero(old_request_rate.req_per_sec, LINEAR_REQUEST_RATE_BACKOFF)
-            else {
+            let new_req_per_sec_maybe_zero = f64::floor(
+                f64::from(old_request_rate.req_per_sec.get()) * EXPONENTIAL_REQUEST_RATE_BACKOFF,
+            )
+            .to_u32()
+            .expect("request rate will never be negative or too large to represent in a u32");
+            let Ok(new_req_per_sec) = NonZeroU32::try_from(new_req_per_sec_maybe_zero) else {
                 let err_msg = "the request rate has been lowered to 0 req/sec so we can't lower it any further";
                 log::error!("{}", err_msg);
                 return Err(anyhow::anyhow!(err_msg));
             };
+
             let new_ms_beteen_reqs = old_request_rate.ms_between_req;
             let new_request_rate = RequestRate::new(new_req_per_sec, new_ms_beteen_reqs);
 

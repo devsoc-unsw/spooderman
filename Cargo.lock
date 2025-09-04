@@ -2632,6 +2632,7 @@ dependencies = [
  "log 0.4.27",
  "logger",
  "nonzero_ext",
+ "num-traits",
  "parse-display",
  "rayon",
  "regex",
