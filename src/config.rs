@@ -27,34 +27,98 @@ impl ScrapingConfig {
     }
 }
 
-pub struct TimetableUrlYearExtractor {
-    // Regex that can be used to extract the year from a a UNSW timetable url.
-    year_extraction_regex: Regex,
+/// Regexes that can be used to extract the year and course code from a UNSW
+/// timetable url.
+pub struct TimetableUrlRegex {
+    year_only_regex: Regex,
+    course_url_regex: Regex,
 }
 
-impl TimetableUrlYearExtractor {
+const YEAR: &str = "YEAR";
+const COURSE_CODE: &str = "CODE";
+
+impl TimetableUrlRegex {
     pub fn new() -> anyhow::Result<Self> {
-        let year_extraction_regex = Regex::new(r"/(\d{4})/")?;
+        let year_only_regex = Regex::new(&format!(
+            r"^https?://timetable\.unsw\.edu\.au/(?P<{YEAR}>\d{{4}})"
+        ))?;
+        let course_url_regex = Regex::new(&format!(
+            r"^https?://timetable\.unsw\.edu\.au/(?P<{YEAR}>\d{{4}})/(?P<{COURSE_CODE}>[A-Z]{{4}}\d{{4}})\.html$"
+        ))?;
         Ok(Self {
-            year_extraction_regex,
+            year_only_regex,
+            course_url_regex,
         })
     }
 
+    fn extract_year_and_course_code<'a>(
+        &self,
+        timetable_url: &'a str,
+    ) -> anyhow::Result<(Year, &'a str)> {
+        let Some(caps) = self.course_url_regex.captures(timetable_url) else {
+            return Err(anyhow::anyhow!(
+                "failed to apply course url regex to url: {}",
+                timetable_url
+            ));
+        };
+        let year: Year = caps
+            .name(YEAR)
+            .ok_or_else(|| anyhow::anyhow!("missing capture group YEAR"))?
+            .as_str()
+            .parse()?;
+        let code = caps
+            .name(COURSE_CODE)
+            .ok_or_else(|| anyhow::anyhow!("missing capture group COURSE_CODE"))?
+            .as_str();
+        Ok((year, code))
+    }
+
     pub fn extract_year(&self, timetable_url: &str) -> anyhow::Result<Year> {
-        let Some(caps) = self.year_extraction_regex.captures(timetable_url) else {
+        let Some(caps) = self.year_only_regex.captures(timetable_url) else {
             return Err(anyhow::anyhow!(
-                "couldn't find year in provided url: {}",
+                "failed to apply year only regex to url: {}",
                 timetable_url
             ));
         };
-        let Some(match_) = caps.get(1) else {
-            return Err(anyhow::anyhow!(
-                "couldn't find year in provided url: {}",
-                timetable_url
-            ));
-        };
-        let year = match_.as_str().parse::<Year>()?;
+        let year: Year = caps
+            .name(YEAR)
+            .ok_or_else(|| anyhow::anyhow!("missing capture group YEAR"))?
+            .as_str()
+            .parse()?;
         Ok(year)
+    }
+
+    pub fn extract_course_code<'a>(&self, timetable_url: &'a str) -> anyhow::Result<&'a str> {
+        let (_year, code) = self.extract_year_and_course_code(timetable_url)?;
+        Ok(code)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_timetable_url_regex() {
+        let timetable_url_regex = TimetableUrlRegex::new().unwrap();
+        assert_eq!(
+            2024,
+            timetable_url_regex
+                .extract_year("https://timetable.unsw.edu.au/2024")
+                .unwrap()
+        );
+        assert_eq!(
+            2024,
+            timetable_url_regex
+                .extract_year("https://timetable.unsw.edu.au/2024/COMP1511.html")
+                .unwrap()
+        );
+        assert_eq!(
+            "COMP1511",
+            timetable_url_regex
+                .extract_course_code("https://timetable.unsw.edu.au/2024/COMP1511.html")
+                .unwrap()
+        );
     }
 }
 

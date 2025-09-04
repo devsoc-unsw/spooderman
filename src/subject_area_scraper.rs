@@ -19,7 +19,7 @@ impl SubjectArea {
     pub async fn scrape(url: String, ctx: &Arc<ScrapingContext>) -> anyhow::Result<Self> {
         log::info!("Started scraping Subject Area for: {}", url);
 
-        let html = ctx.request_client.fetch_url_body(&url).await?;
+        let html = ctx.request_client.fetch_url_body(&url, ctx).await?;
 
         // We use a channel so we can start completing a partial course
         // immediately once it's scraped, so we don't have to wait until all
@@ -103,7 +103,7 @@ impl SubjectArea {
                         }
                         visited_courses.insert(name_hash);
                         let year_to_scrape = ctx
-                            .timetable_url_year_extractor
+                            .timetable_url_regex
                             .extract_year(&url)
                             .map_err(|_| anyhow::anyhow!(error_msg.clone()))?;
                         let url_to_scrape_further = get_html_link_to_page(

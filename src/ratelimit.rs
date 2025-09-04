@@ -23,7 +23,7 @@ use uuid::Uuid;
 use crate::Request;
 
 // The higher, the faster.
-const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(120u32);
+const DEFAULT_REQ_PER_SEC: NonZeroU32 = nonzero!(100u32);
 
 // The lower, the faster.
 const DEFAULT_MS_BETWEEN_REQ: Duration = Duration::from_millis(2);
@@ -58,9 +58,11 @@ impl RequestRate {
     }
 }
 
-impl fmt::Debug for RequestRate {
+impl fmt::Display for RequestRate {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "uuid='{}' ({} req/s)", self.uuid, self.req_per_sec)?;
+        // NOTE: This isn't a unique repr of this request rate, but not printing
+        // UUID for reduced verbosity.
+        write!(f, "{} req/s", self.req_per_sec)?;
         Ok(())
     }
 }
@@ -122,7 +124,7 @@ impl FixedRateLimiter {
 impl Drop for FixedRateLimiter {
     fn drop(&mut self) {
         log::info!(
-            "rate limiter with request rate {:?} is now no longer referenced and, therefore, dropped",
+            "rate limiter with request rate {} is no longer referenced",
             self.request_rate
         )
     }
@@ -258,7 +260,10 @@ impl RateLimiter {
         }
     }
 
-    pub async fn lower_request_rate<'a>(&self, failed_request: Request<'a>) -> anyhow::Result<()> {
+    pub async fn lower_request_rate<'a, 'b>(
+        &self,
+        failed_request: Request<'a, 'b>,
+    ) -> anyhow::Result<()> {
         {
             // Hold the write lock until update is complete: important to ensure there is
             // only one failed request that wins/comes first.
@@ -281,8 +286,8 @@ impl RateLimiter {
             // was made using some old request rate (uniquely identified by uuid).
             if &failed_request.request_rate_used != curr_request_rate {
                 log::info!(
-                    "request to {} failed with old request rate {:?}, we'll try the new one before lowering request rate again",
-                    failed_request.url,
+                    "request to {} failed with old request rate {}, so ignore failure",
+                    failed_request,
                     failed_request.request_rate_used,
                 );
                 return Ok(());
@@ -295,7 +300,7 @@ impl RateLimiter {
             .to_u32()
             .expect("request rate will never be negative or too large to represent in a u32");
             let Ok(new_req_per_sec) = NonZeroU32::try_from(new_req_per_sec_maybe_zero) else {
-                let err_msg = "the request rate has been lowered to 0 req/sec so we can't lower it any further";
+                let err_msg = "request rate is 0 req/sec, can't be lowered further";
                 log::error!("{}", err_msg);
                 return Err(anyhow::anyhow!(err_msg));
             };
@@ -304,10 +309,10 @@ impl RateLimiter {
             let new_request_rate = RequestRate::new(new_req_per_sec, new_ms_beteen_reqs);
 
             log::info!(
-                "updating the request rate from '{:?}' to '{:?}' due to failed request to {}",
+                "updating request rate from '{}' to '{}' due to failed request to {}",
                 old_request_rate,
                 new_request_rate,
-                failed_request.url
+                failed_request
             );
 
             // Before switching to the new request rate, we should back off

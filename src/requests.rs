@@ -1,9 +1,12 @@
-use std::time::Duration;
+use std::{fmt, time::Duration};
 
 use derive_new::new;
 use reqwest::{Client, ClientBuilder, StatusCode};
 
-use crate::ratelimit::{PermitResult, RateLimiter, RequestRate};
+use crate::{
+    ScrapingContext,
+    ratelimit::{PermitResult, RateLimiter, RequestRate},
+};
 
 const GET_REQUEST_TIMEOUT: Duration = Duration::from_secs(3);
 const RESPONSE_BODY_TIMEOUT: Duration = Duration::from_secs(3);
@@ -13,13 +16,20 @@ pub struct RequestClient {
     rate_limiter: RateLimiter,
 }
 
-#[derive(Debug, new)]
-pub struct Request<'a> {
-    /// The timestamp at which the client sent this request, regardless of when
-    /// the server responded and whether the server responded at all.
-    // pub sent_time: Instant,
-    pub url: &'a str,
+#[derive(new)]
+pub struct Request<'a, 'b> {
+    url: &'a str,
     pub request_rate_used: RequestRate,
+    /// Most of the requests sent using the RequestClient are to course pages,
+    /// so extract the course code for shorter logs.
+    maybe_course_code: &'b Option<&'a str>,
+}
+
+impl<'a, 'b> fmt::Display for Request<'a, 'b> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.maybe_course_code.unwrap_or(self.url))?;
+        Ok(())
+    }
 }
 
 impl RequestClient {
@@ -34,13 +44,18 @@ impl RequestClient {
         })
     }
 
-    async fn fetch_url_response_and_body(&self, url: &str) -> anyhow::Result<(StatusCode, String)> {
+    async fn fetch_url_response_and_body(
+        &self,
+        url: &str,
+        ctx: &ScrapingContext,
+    ) -> anyhow::Result<(StatusCode, String)> {
+        let maybe_course_code = ctx.timetable_url_regex.extract_course_code(url).ok();
         loop {
             // Wait (non-blocking) until we're allowed to make a request according
             // to our self-imposed rate-limiting policy.
             match self.rate_limiter.wait_until_ready().await {
                 PermitResult::Granted { request_rate_used } => {
-                    let request = Request::new(url, request_rate_used);
+                    let request = Request::new(url, request_rate_used, &maybe_course_code);
                     let failed_request = {
                         match tokio::time::timeout(GET_REQUEST_TIMEOUT, self.client.get(url).send())
                             .await
@@ -54,17 +69,18 @@ impl RequestClient {
                                     Ok(Ok(body)) => return Ok((status, body)),
                                     Ok(Err(e)) => {
                                         log::warn!(
-                                            "fetching body from response to url {} failed ({}) for request rate {:?}, maybe reduce request rate",
-                                            url,
+                                            "fetching body for {} failed ({}) using {}, maybe reduce request rate",
+                                            request,
                                             e,
                                             request_rate_used
                                         );
                                         request
                                     }
                                     Err(_) => {
+                                        // Maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error.
                                         log::warn!(
-                                            "fetching body from response to url {} timed out for request rate {:?} (maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error), maybe reduce request rate",
-                                            url,
+                                            "fetching body for {} timed out using {}, maybe reduce request rate",
+                                            request,
                                             request_rate_used
                                         );
                                         request
@@ -73,8 +89,8 @@ impl RequestClient {
                             }
                             Ok(Err(e)) => {
                                 log::warn!(
-                                    "get-request to url {} failed ({}) for request rate {:?}, maybe reduce request rate",
-                                    url,
+                                    "get {} failed ({}) using {}, maybe reduce request rate",
+                                    request,
                                     e,
                                     request_rate_used
                                 );
@@ -82,8 +98,8 @@ impl RequestClient {
                             }
                             Err(_) => {
                                 log::warn!(
-                                    "get-request to url {} timed out for request rate {:?} (maybe UNSW servers are rate-limiting us by responding very slowly instead of returning an error), maybe reduce request rate",
-                                    url,
+                                    "get {} timed out using {}, maybe reduce request rate",
+                                    request,
                                     request_rate_used
                                 );
                                 request
@@ -104,13 +120,17 @@ impl RequestClient {
         }
     }
 
-    pub async fn fetch_url_status(&self, url: &str) -> anyhow::Result<StatusCode> {
-        let (status, _body) = self.fetch_url_response_and_body(url).await?;
+    pub async fn fetch_url_status(
+        &self,
+        url: &str,
+        ctx: &ScrapingContext,
+    ) -> anyhow::Result<StatusCode> {
+        let (status, _body) = self.fetch_url_response_and_body(url, ctx).await?;
         Ok(status)
     }
 
-    pub async fn fetch_url_body(&self, url: &str) -> anyhow::Result<String> {
-        let (_response, body) = self.fetch_url_response_and_body(url).await?;
+    pub async fn fetch_url_body(&self, url: &str, ctx: &ScrapingContext) -> anyhow::Result<String> {
+        let (_response, body) = self.fetch_url_response_and_body(url, ctx).await?;
         Ok(body)
     }
 }
