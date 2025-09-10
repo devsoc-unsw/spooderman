@@ -226,69 +226,77 @@ fn parse_class_info(
         map.insert(key, value);
         i += 2;
     }
-    let offering_period_str = map.get("Offering Period").unwrap_or(&"").to_string();
+
+    let missing_field_error = |missing_field_name: &str| {
+        anyhow::anyhow!(format!(
+            "{} for course {} is missing",
+            missing_field_name, course_id
+        ))
+    };
+    let get_expected_field = |field_name: &str| {
+        map.get(field_name)
+            .ok_or_else(|| missing_field_error(field_name))
+    };
+
+    let offering_period_str = get_expected_field("Offering Period")?;
     let mut split_offering_period_str = offering_period_str.split(" - ");
 
-    let error_msg = format!("failed to parse a class for course {}", course_id);
+    let section = get_expected_field("Section")?;
+
     let date = split_offering_period_str
         .next()
-        .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?;
+        .ok_or_else(|| missing_field_error("date"))?;
     let year = date
         .split("/")
         .nth(2)
-        .ok_or_else(|| anyhow::anyhow!(error_msg.clone()))?;
+        .ok_or_else(|| missing_field_error("year"))?;
+    let class_nr = get_expected_field("Class Nbr")?;
+    let term = get_expected_field("Teaching Period")?
+        .split(" - ")
+        .next()
+        .ok_or_else(|| {
+            anyhow::anyhow!(format!(
+                "failed to parse term from teaching period for course {}",
+                course_id
+            ))
+        })?;
+
+    let class_id = format!("{}-{}-{}-{}", course_id, class_nr, term, year);
+    let activity = get_expected_field("Activity")?;
+    let status = get_expected_field("Status")?;
+    let course_enrolment = get_expected_field("Enrols/Capacity")?.replace("*", "");
+    let offering_period = get_expected_field("Offering Period")?;
+    let meeting_dates = get_expected_field("Meeting Dates")?;
+    let census_date = get_expected_field("Census Date")?;
+    let mode = get_expected_field("Mode of Delivery")?;
+    let consent = get_expected_field("Consent")?;
+    let times = if !times_parsed.is_empty() {
+        Some(times_parsed)
+    } else {
+        None
+    };
+    let class_notes = map
+        .get("Class Notes")
+        .filter(|s| !s.is_empty())
+        .map(|s| s.to_string());
+
     Ok(Class {
         course_id: course_id.to_string(),
-        class_id: format!(
-            "{}-{}-{}-{}",
-            course_id,
-            map.get("Class Nbr").unwrap_or(&""),
-            map.get("Teaching Period")
-                .unwrap_or(&"")
-                .split(" - ")
-                .next()
-                .ok_or_else(|| anyhow::anyhow!(format!(
-                    "{}: {}",
-                    &error_msg, "Could not split teaching periods properly!"
-                )))?,
-            year,
-        ),
-        section: map.get("Section").unwrap_or(&"").to_string(),
-        term: map
-            .get("Teaching Period")
-            .unwrap_or(&"")
-            .split(" - ")
-            .next()
-            .ok_or_else(|| {
-                anyhow::anyhow!(format!(
-                    "{}: {}",
-                    &error_msg, "Could not split teaching periods properly!"
-                ))
-            })?
-            .to_string(),
+        class_id,
+        section: section.to_string(),
+        term: term.to_string(),
         year: year.to_string(),
-        activity: map.get("Activity").unwrap_or(&"").to_string(),
-        status: map.get("Status").unwrap_or(&"").to_string(),
-        course_enrolment: map
-            .get("Enrols/Capacity")
-            .unwrap_or(&"")
-            .replace("*", "")
-            .to_string(),
-        offering_period: map.get("Offering Period").unwrap_or(&"").to_string(),
-        meeting_dates: map.get("Meeting Dates").unwrap_or(&"").to_string(),
-        census_date: map.get("Census Date").unwrap_or(&"").to_string(),
-        mode: map.get("Mode of Delivery").unwrap_or(&"").to_string(),
-        consent: map.get("Consent").unwrap_or(&"").to_string(),
+        activity: activity.to_string(),
+        status: status.to_string(),
+        course_enrolment,
+        offering_period: offering_period.to_string(),
+        meeting_dates: meeting_dates.to_string(),
+        census_date: census_date.to_string(),
+        mode: mode.to_string(),
+        consent: consent.to_string(),
         career: career.to_string(),
-        times: if times_parsed.is_empty() {
-            None
-        } else {
-            Some(times_parsed)
-        },
-        class_notes: map
-            .get("Class Notes")
-            .filter(|s| !s.is_empty())
-            .map(|s| s.to_string()),
+        times,
+        class_notes,
     })
 }
 
