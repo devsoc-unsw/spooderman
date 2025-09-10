@@ -21,6 +21,7 @@ humantime = "2.2.0"
 log = "0.4.22"
 logger = "0.4.0"
 nonzero_ext = "0.3.0"
+num-traits = "0.2.19"
 parse-display = "0.10.0"
 rayon = "1.10.0"
 regex = "1.11.1"
@@ -34,3 +35,5 @@ sqlx = { version = "0.8.2", features = [
     "runtime-tokio-native-tls",
 ] }
 tokio = { version = "1.42.0", features = ["full"] }
+tokio-util = "0.7.16"
+uuid = { version = "1.18.0", features = ["v4"] }

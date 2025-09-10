@@ -213,9 +213,9 @@ fn get_current_year() -> Year {
 
 async fn year_has_data(year: Year, ctx: &ScrapingContext) -> anyhow::Result<bool> {
     let year_url = ctx.scraping_config.get_timetable_api_url_for_year(year);
-    let response = ctx.request_client.fetch_url_response(&year_url).await?;
+    let status = ctx.request_client.fetch_url_status(&year_url, ctx).await?;
     // UNSW servers will return a 404 if the data for a year isn't available.
-    match response.status().as_u16() {
+    match status.as_u16() {
         200 => Ok(true),
         404 => Ok(false),
         other => Err(anyhow::anyhow!(
@@ -358,6 +358,7 @@ async fn main() -> anyhow::Result<()> {
         .filter_level(lvl)
         // Only show error logs from html5ever dependency, since it logs many unnecessary warnings.
         .filter_module("html5ever", LevelFilter::Error)
+        .format_timestamp_millis()
         .init();
 
     cli.command.exec().await?;

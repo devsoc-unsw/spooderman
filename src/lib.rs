@@ -13,7 +13,7 @@ mod utils;
 pub use config::{ScrapingEnv, UploadingConfig};
 pub use course_scraper::{Class, Course, PartialCourse, Time};
 pub use hasuragres_b_insert::{ReadFromFile, ReadFromMemory, send_batch_data};
-pub use requests::RequestClient;
+pub use requests::{Request, RequestClient};
 pub use school_area_scraper::SchoolArea;
 pub use scraping_context::ScrapingContext;
 pub use url_invalid_error::UrlInvalidError;
