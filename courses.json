@@ -40,7 +40,8 @@
     "course_name": "Management Accounting for Decision Analysis",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
@@ -20153,9 +20154,7 @@
     "course_id": "COMP9447Undergraduate",
     "course_name": "Security Engineering Workshop",
     "faculty": "Faculty of Engineering",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "School of Computer Sci & Eng",
     "terms": [
       "T3"
@@ -28328,7 +28327,9 @@
     "course_name": "Environmental Economics",
     "faculty": "UNSW Business School",
     "modes": [
-      "Multimodal"
+      "In Person",
+      "Multimodal",
+      "Online"
     ],
     "school": "School of Economics",
     "terms": [
@@ -40143,7 +40144,7 @@
     "career": "Undergraduate",
     "course_code": "INFS3605",
     "course_id": "INFS3605Undergraduate",
-    "course_name": "Information Systems Innovation & Transformation",
+    "course_name": "Information Systems Innovation and Transformation",
     "faculty": "UNSW Business School",
     "modes": [
       "In Person"
@@ -40763,7 +40764,8 @@
     "course_name": "Accounting Information Systems",
     "faculty": "UNSW Business School",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Info Sys and Tech Mgmt",
     "terms": [
@@ -42088,9 +42090,7 @@
     "course_id": "JURD7399Postgraduate",
     "course_name": "Funds Management, Superannuation and Insurance",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3"
@@ -42452,22 +42452,6 @@
       "In Person"
     ],
     "school": "Sch Law, Society & Criminology",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "JURD7476",
-    "course_id": "JURD7476Postgraduate",
-    "course_name": "Sir Anthony Mason Research Project in Constitutional Law",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "Online"
-    ],
-    "school": "Sch of Global & Public Law",
     "terms": [
       "T3"
     ],
@@ -45342,22 +45326,6 @@
   {
     "campus": "Sydney",
     "career": "Undergraduate",
-    "course_code": "LAWS3276",
-    "course_id": "LAWS3276Undergraduate",
-    "course_name": "Sir Anthony Mason Research Project in Constitutional Law",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "Online"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
     "course_code": "LAWS3281",
     "course_id": "LAWS3281Undergraduate",
     "course_name": "Advanced Statutory Interpretation",
@@ -46802,9 +46770,7 @@
     "course_id": "LAWS8099Postgraduate",
     "course_name": "Funds Management, Superannuation and Insurance",
     "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person"
-    ],
+    "modes": [],
     "school": "Sch of Private& Commercial Law",
     "terms": [
       "T3"
@@ -49948,8 +49914,7 @@
     "course_name": "Dynamical Systems and Chaos",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person",
-      "Online"
+      "In Person"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -57166,7 +57131,8 @@
     "course_name": "Engineering Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -57182,7 +57148,8 @@
     "course_name": "Engineering Management",
     "faculty": "Faculty of Engineering",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of Mech & Manf. Eng",
     "terms": [
@@ -58565,20 +58532,6 @@
     "terms": [
       "T1",
       "T2",
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Undergraduate",
-    "course_code": "MUSC2801",
-    "course_id": "MUSC2801Undergraduate",
-    "course_name": "Music Performance Styles and Interpretation",
-    "faculty": "Faculty of Arts, Design & Arch",
-    "modes": [],
-    "school": "School of the Arts & Media",
-    "terms": [
       "T3"
     ],
     "uoc": 6
@@ -63288,7 +63241,7 @@
     "terms": [
       "T1A",
       "T1B",
-      "T3B"
+      "T3C"
     ],
     "uoc": 6
   },
@@ -63306,7 +63259,7 @@
     "terms": [
       "T1A",
       "T1C",
-      "T3C"
+      "T3B"
     ],
     "uoc": 6
   },
@@ -67361,8 +67314,7 @@
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
       "In Person",
-      "Multimodal",
-      "Online"
+      "Multimodal"
     ],
     "school": "School of Social Sciences",
     "terms": [
@@ -77857,8 +77809,7 @@
     ],
     "school": "School of Acctng, Audit & Tax",
     "terms": [
-      "KJ",
-      "KV"
+      "KJ"
     ],
     "uoc": 6
   },
@@ -78641,6 +78592,150 @@
     "school": "Sch Law, Society & Criminology",
     "terms": [
       "KN"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5002",
+    "course_id": "ZZPS5002Postgraduate (Online)",
+    "course_name": "Introduction to Psychology 2",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5003",
+    "course_id": "ZZPS5003Postgraduate (Online)",
+    "course_name": "Data Analysis and Methods of Psychological Inquiry",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5004",
+    "course_id": "ZZPS5004Postgraduate (Online)",
+    "course_name": "Advanced Data Analysis and Methods of Psychological Inquiry",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5005",
+    "course_id": "ZZPS5005Postgraduate (Online)",
+    "course_name": "Behavioural Neuroscience",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5006",
+    "course_id": "ZZPS5006Postgraduate (Online)",
+    "course_name": "Psychology Across the Lifespan",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5007",
+    "course_id": "ZZPS5007Postgraduate (Online)",
+    "course_name": "The Individual, Culture and Society",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5008",
+    "course_id": "ZZPS5008Postgraduate (Online)",
+    "course_name": "Perception and Cognition",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5009",
+    "course_id": "ZZPS5009Postgraduate (Online)",
+    "course_name": "Abnormal Psychology",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
+    ],
+    "uoc": 6
+  },
+  {
+    "campus": "Sydney",
+    "career": "Postgraduate (Online)",
+    "course_code": "ZZPS5010",
+    "course_id": "ZZPS5010Postgraduate (Online)",
+    "course_name": "Psychological Assessment, Ethics, and Professional Skills",
+    "faculty": "Faculty of Science",
+    "modes": [
+      "Online"
+    ],
+    "school": "School of Psychology",
+    "terms": [
+      "KV"
     ],
     "uoc": 6
   },
