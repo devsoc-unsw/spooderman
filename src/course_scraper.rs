@@ -4,18 +4,18 @@ use scraper::Selector;
 use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 
-use crate::{ScrapingContext, text_manipulators::extract_text};
+use crate::{ScrapingContext, Year, text_manipulators::extract_text};
 
 #[derive(Debug, Serialize)]
 pub struct Course {
     pub course_id: String,
     pub course_code: String,
+    pub year: Year,
     pub course_name: String,
     pub uoc: i32,
-    // TODO: try making non-optional.
     pub faculty: Option<String>,
     pub school: Option<String>,
-    pub career: Option<String>,
+    pub career: String,
     // Sorted ascendingly.
     pub modes: Vec<String>, // For Notangles.
     pub campus: Option<String>,
@@ -28,6 +28,7 @@ pub struct Class {
     pub course_id: String,
     pub career: String,
     pub class_id: String,
+    pub class_nr: String,
     pub section: String,
     pub term: String,
     pub year: String,
@@ -45,10 +46,20 @@ pub struct Class {
 
 #[derive(Debug, Serialize)]
 pub struct Time {
+    pub time_id: String,
     pub career: String,
+    pub location: String,
     pub day: String,
     pub time: String,
+    pub weeks: String,
+    pub instructor: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct PartialTime {
     pub location: String,
+    pub day: String,
+    pub time: String,
     pub weeks: String,
     pub instructor: Option<String>,
 }
@@ -60,6 +71,7 @@ pub struct PartialCourse {
     pub career: String,
     pub uoc: i32,
     pub url: String,
+    pub year: Year,
 }
 
 impl PartialCourse {
@@ -162,14 +174,18 @@ impl PartialCourse {
                 }
             }
 
-            let course_id = format!("{}{}", &self.course_code, career);
+            // The reason we aren't including the term in the course id is that the handbook only
+            // contains one page per course per year, which contains data for the course that year.
+            // We use the same format to reduce duplicated data.
+            let course_id = format!("{}-{}-{}", self.course_code, career, self.year);
+
             let course_code = self.course_code;
             let course_name = self.course_name;
             let uoc = self.uoc;
 
             let classes: Vec<Class> = class_activity_information
                 .into_par_iter()
-                .map(|class_data| parse_class_info(class_data, course_id.as_str(), career.as_ref()))
+                .map(|class_data| parse_class_info(class_data, &course_id, &course_code, &career))
                 .collect::<anyhow::Result<_>>()?;
 
             let unique_modes: HashSet<&String> = classes.iter().map(|class| &class.mode).collect();
@@ -180,12 +196,13 @@ impl PartialCourse {
             Ok(Course {
                 course_id,
                 course_code,
+                year: self.year,
                 course_name,
                 uoc,
                 faculty,
                 school,
                 campus,
-                career: Some(career),
+                career,
                 modes,
                 terms,
                 classes,
@@ -200,11 +217,12 @@ impl PartialCourse {
 fn parse_class_info(
     class_data: Vec<String>,
     course_id: &str,
-    career: &str,
+    course_code: &str,
+    course_career: &str,
 ) -> anyhow::Result<Class> {
     let mut map: HashMap<&str, &str> = HashMap::new();
     let mut i = 0;
-    let mut times_parsed = Vec::<Time>::new();
+    let mut partial_times_parsed = Vec::new();
 
     while i < class_data.len() {
         let key = &class_data[i];
@@ -213,7 +231,7 @@ fn parse_class_info(
             while j < class_data.len() && class_data[j] != "Class Notes" {
                 j += 1;
             }
-            times_parsed = parse_meeting_info(&class_data[i + 1..j], career);
+            partial_times_parsed = parse_meeting_info(&class_data[i + 1..j])?;
             i = j + 1;
             continue;
         }
@@ -229,8 +247,8 @@ fn parse_class_info(
 
     let missing_field_error = |missing_field_name: &str| {
         anyhow::anyhow!(format!(
-            "{} for course {} is missing",
-            missing_field_name, course_id
+            "{} field for course {} was missing while parsing a class",
+            missing_field_name, course_code
         ))
     };
     let get_expected_field = |field_name: &str| {
@@ -257,11 +275,14 @@ fn parse_class_info(
         .ok_or_else(|| {
             anyhow::anyhow!(format!(
                 "failed to parse term from teaching period for course {}",
-                course_id
+                course_code
             ))
         })?;
 
-    let class_id = format!("{}-{}-{}-{}", course_id, class_nr, term, year);
+    let class_id = format!(
+        "{}-{}-{}-{}-{}",
+        course_code, course_career, year, term, class_nr
+    );
     let activity = get_expected_field("Activity")?;
     let status = get_expected_field("Status")?;
     let course_enrolment = get_expected_field("Enrols/Capacity")?.replace("*", "");
@@ -270,8 +291,15 @@ fn parse_class_info(
     let census_date = get_expected_field("Census Date")?;
     let mode = get_expected_field("Mode of Delivery")?;
     let consent = get_expected_field("Consent")?;
-    let times = if !times_parsed.is_empty() {
-        Some(times_parsed)
+    let times = if !partial_times_parsed.is_empty() {
+        Some(
+            partial_times_parsed
+                .into_iter()
+                .map(|partial_time| {
+                    partial_time.complete(course_code, course_career, year, term, class_nr)
+                })
+                .collect(),
+        )
     } else {
         None
     };
@@ -283,6 +311,7 @@ fn parse_class_info(
     Ok(Class {
         course_id: course_id.to_string(),
         class_id,
+        class_nr: class_nr.to_string(),
         section: section.to_string(),
         term: term.to_string(),
         year: year.to_string(),
@@ -294,56 +323,78 @@ fn parse_class_info(
         census_date: census_date.to_string(),
         mode: mode.to_string(),
         consent: consent.to_string(),
-        career: career.to_string(),
+        career: course_career.to_string(),
         times,
         class_notes,
     })
 }
 
-fn parse_meeting_info(vec: &[String], career: &str) -> Vec<Time> {
+fn parse_meeting_info(vec: &[String]) -> anyhow::Result<Vec<PartialTime>> {
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let mut meetings = Vec::new();
     let mut iter: Box<dyn Iterator<Item = &String>> = Box::new(vec.iter());
 
     while let Some(day) = iter.next() {
         if days.contains(&day.as_str()) {
-            let mut timeslot = get_blank_time_struct();
-            timeslot.day = day.clone();
-
-            // Safely unwrap time, location, and weeks
-            if let (Some(time), Some(location), Some(weeks)) =
-                (iter.next(), iter.next(), iter.next())
-            {
-                timeslot.time = time.clone();
-                timeslot.location = location.clone();
-                timeslot.weeks = weeks.clone();
-            } else {
+            let (Some(time), Some(location), Some(weeks)) = (iter.next(), iter.next(), iter.next())
+            else {
                 break;
-            }
+            };
 
             // Optional instructor parsing
-            if let Some(instructor) = iter.next() {
-                if !days.contains(&instructor.as_str()) {
-                    timeslot.instructor = Some(instructor.clone());
+            let mut instructor: Option<String> = None;
+            if let Some(some_instructor) = iter.next() {
+                if !days.contains(&some_instructor.as_str()) {
+                    instructor = Some(some_instructor.clone());
                 } else {
-                    iter = Box::new(std::iter::once(instructor).chain(iter));
+                    iter = Box::new(std::iter::once(some_instructor).chain(iter));
                 }
             }
-            timeslot.career = career.to_string();
+
+            let timeslot = PartialTime {
+                day: day.to_string(),
+                time: time.to_string(),
+                location: location.to_string(),
+                weeks: weeks.to_string(),
+                instructor,
+            };
+
             meetings.push(timeslot);
         }
     }
 
-    meetings
+    Ok(meetings)
 }
 
-fn get_blank_time_struct() -> Time {
-    Time {
-        career: "".to_string(),
-        day: "".to_string(),
-        time: "".to_string(),
-        location: "".to_string(),
-        weeks: "".to_string(),
-        instructor: None,
+impl PartialTime {
+    fn complete(
+        self,
+        course_code: &str,
+        course_career: &str,
+        year: &str,
+        term: &str,
+        class_nr: &str,
+    ) -> Time {
+        let time_id = format!(
+            "{}_{}_{}_{}_{}_{}_{}_{}_{}",
+            course_code,
+            course_career,
+            year,
+            term,
+            class_nr,
+            self.location,
+            self.day,
+            self.time,
+            self.weeks
+        );
+        Time {
+            time_id,
+            career: course_career.to_string(),
+            location: self.location,
+            day: self.day,
+            time: self.time,
+            weeks: self.weeks,
+            instructor: self.instructor,
+        }
     }
 }
