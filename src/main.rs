@@ -30,17 +30,17 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
         json_courses.push(json!({
             "course_id": course.course_id,
             "course_code": course.course_code,
+            "year": course.year,
             "course_name": course.course_name,
             "uoc": course.uoc,
             "faculty": course.faculty,
             "school": course.school,
             "campus": course.campus,
             "career": course.career,
-            "terms": json![course.terms],
+            "terms": course.terms,
             "modes": course.modes,
         }));
     }
-
     json_courses
 }
 
@@ -58,7 +58,7 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             if let Some(times) = &class.times {
                 for time in times.iter() {
                     times_json.push(json!({
-                        "id": generate_time_id(class, time),
+                        "time_id": generate_time_id(class, time),
                         "class_id": class.class_id,
                         "day": time.day,
                         "career": time.career,

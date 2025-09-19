@@ -31,7 +31,7 @@ pub struct Class {
     pub class_nr: String,
     pub section: String,
     pub term: String,
-    pub year: String,
+    pub year: Year,
     pub activity: String,
     pub status: String,
     pub course_enrolment: String,
@@ -185,7 +185,9 @@ impl PartialCourse {
 
             let classes: Vec<Class> = class_activity_information
                 .into_par_iter()
-                .map(|class_data| parse_class_info(class_data, &course_id, &course_code, &career))
+                .map(|class_data| {
+                    parse_class_info(class_data, &course_id, &course_code, &career, self.year)
+                })
                 .collect::<anyhow::Result<_>>()?;
 
             let unique_modes: HashSet<&String> = classes.iter().map(|class| &class.mode).collect();
@@ -219,6 +221,7 @@ fn parse_class_info(
     course_id: &str,
     course_code: &str,
     course_career: &str,
+    course_year: Year,
 ) -> anyhow::Result<Class> {
     let mut map: HashMap<&str, &str> = HashMap::new();
     let mut i = 0;
@@ -264,10 +267,16 @@ fn parse_class_info(
     let date = split_offering_period_str
         .next()
         .ok_or_else(|| missing_field_error("date"))?;
-    let year = date
+
+    let class_year: Year = date
         .split("/")
         .nth(2)
-        .ok_or_else(|| missing_field_error("year"))?;
+        .ok_or_else(|| missing_field_error("year"))?
+        .parse()?;
+    assert!(class_year == course_year || class_year == (course_year - 1));
+    // If the course is in the summer term, the offering period might start in the previous year, so we use the course year.
+    let year = course_year;
+
     let class_nr = get_expected_field("Class Nbr")?;
     let term = get_expected_field("Teaching Period")?
         .split(" - ")
@@ -314,7 +323,7 @@ fn parse_class_info(
         class_nr: class_nr.to_string(),
         section: section.to_string(),
         term: term.to_string(),
-        year: year.to_string(),
+        year,
         activity: activity.to_string(),
         status: status.to_string(),
         course_enrolment,
@@ -371,7 +380,7 @@ impl PartialTime {
         self,
         course_code: &str,
         course_career: &str,
-        year: &str,
+        year: Year,
         term: &str,
         class_nr: &str,
     ) -> Time {
