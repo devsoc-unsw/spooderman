@@ -10695,22 +10695,6 @@
   {
     "campus": "Sydney",
     "career": "Postgraduate",
-    "course_code": "AVIA5031",
-    "course_id": "AVIA5031Postgraduate",
-    "course_name": "Sustainable and Advanced Aviation",
-    "faculty": "Faculty of Science",
-    "modes": [
-      "Online"
-    ],
-    "school": "School of Aviation",
-    "terms": [
-      "T3"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
     "course_code": "AVIA5032",
     "course_id": "AVIA5032Postgraduate",
     "course_name": "Quantitative Analysis in Aviation Economics",
@@ -47143,7 +47127,7 @@
     "career": "Postgraduate",
     "course_code": "LAWS8198",
     "course_id": "LAWS8198Postgraduate",
-    "course_name": "Legal Project Management: Business Strategy, Practice Systems, Innovation & Change",
+    "course_name": "Legal Project Management: Business Strategy, Practice Systems, Innovation and Change",
     "faculty": "Faculty of Law and Justice",
     "modes": [
       "In Person"
@@ -47556,23 +47540,6 @@
     "terms": [
       "T2B",
       "T3B"
-    ],
-    "uoc": 6
-  },
-  {
-    "campus": "Sydney",
-    "career": "Postgraduate",
-    "course_code": "LAWS8852",
-    "course_id": "LAWS8852Postgraduate",
-    "course_name": "Contemporary Issues in Public Law",
-    "faculty": "Faculty of Law and Justice",
-    "modes": [
-      "In Person",
-      "Online"
-    ],
-    "school": "Sch of Global & Public Law",
-    "terms": [
-      "T3"
     ],
     "uoc": 6
   },
@@ -48004,7 +47971,8 @@
     ],
     "school": "School Humanities & Languages",
     "terms": [
-      "T2"
+      "T2",
+      "T3"
     ],
     "uoc": 6
   },
@@ -50958,7 +50926,8 @@
     "course_name": "Multivariate Analysis",
     "faculty": "Faculty of Science",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "Sch Mathematics & Statistics",
     "terms": [
@@ -53145,7 +53114,8 @@
     "course_name": "Media Futures",
     "faculty": "Faculty of Arts, Design & Arch",
     "modes": [
-      "In Person"
+      "In Person",
+      "Online"
     ],
     "school": "School of the Arts & Media",
     "terms": [
@@ -69149,9 +69119,7 @@
     "course_id": "SWCH9009Postgraduate",
     "course_name": "Ethics and Law In Reproductive Medicine",
     "faculty": "Faculty of Medicine and Health",
-    "modes": [
-      "Online"
-    ],
+    "modes": [],
     "school": "School of Clinical Medicine",
     "terms": [
       "T3"
