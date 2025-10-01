@@ -5,8 +5,8 @@ use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolArea, ScrapingContext, Time, Year, log_execution_time,
-    log_execution_time_async, send_batch_data, sort_by_key_ref,
+    Course, SchoolArea, ScrapingContext, Year, log_execution_time, log_execution_time_async,
+    send_batch_data, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -44,13 +44,6 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     json_courses
 }
 
-fn generate_time_id(class: &Class, time: &Time) -> String {
-    format!(
-        "{}{}{}{}{}",
-        &class.class_id, &time.day, &time.location, &time.time, &time.weeks
-    )
-}
-
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
     let mut times_json = Vec::<serde_json::Value>::new();
     for course in courses.iter() {
@@ -58,7 +51,7 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             if let Some(times) = &class.times {
                 for time in times.iter() {
                     times_json.push(json!({
-                        "time_id": generate_time_id(class, time),
+                        "time_id": time.time_id,
                         "class_id": class.class_id,
                         "day": time.day,
                         "career": time.career,
@@ -81,6 +74,7 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             json_classes.push(json!({
                 "course_id": class.course_id,
                 "class_id": class.class_id,
+                "class_nr": class.class_nr,
                 "section": class.section,
                 "term": class.term,
                 "career": class.career,
@@ -188,7 +182,7 @@ trait Exec {
 }
 
 /// A tool for scraping UNSW course and class data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 struct Cli {
     #[argh(subcommand)]
     command: Command,
@@ -268,7 +262,7 @@ impl YearToScrape {
     }
 }
 
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand)]
 #[enum_dispatch(Exec)]
 enum Command {
@@ -278,7 +272,7 @@ enum Command {
 }
 
 /// Perform scraping. Creates a JSON file to store the data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "scrape")]
 struct Scrape {
     /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`
@@ -313,7 +307,7 @@ impl Exec for Scrape {
 }
 
 /// Perform batch insert on JSON files created by `scrape`.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "batch_insert")]
 struct BatchInsert {}
 
@@ -326,7 +320,7 @@ impl Exec for BatchInsert {
 }
 
 /// Perform scraping and batch insert. Does not create a JSON file to store the data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "scrape_n_batch_insert")]
 struct ScrapeAndBatchInsert {
     /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.

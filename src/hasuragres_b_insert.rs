@@ -95,6 +95,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                     "career".to_string(),
                     "terms".to_string(),
                     "modes".to_string(),
+                    "year".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Courses/up.sql")?,
                 sql_down: read_sql_file("sql/Courses/down.sql")?,
@@ -110,6 +111,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                 table_name: "classes".to_string(),
                 columns: vec![
                     "class_id".to_string(),
+                    "class_nr".to_string(),
                     "career".to_string(),
                     "course_id".to_string(),
                     "section".to_string(),
@@ -138,7 +140,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
             metadata: Metadata {
                 table_name: "times".to_string(),
                 columns: vec![
-                    "id".to_string(),
+                    "time_id".to_string(),
                     "class_id".to_string(),
                     "career".to_string(),
                     "day".to_string(),
@@ -158,8 +160,12 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
         },
     ];
 
+    let url = format!(
+        "{}/batch_insert",
+        uploading_config.hasuragres_url.trim_end_matches('/')
+    );
     let response = client
-        .post(format!("{}/batch_insert", uploading_config.hasuragres_url))
+        .post(&url)
         .header("X-API-Key", uploading_config.hasuragres_api_key.clone())
         .json(&requests)
         .send()
@@ -167,6 +173,11 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
 
     match response {
         Ok(res) => {
+            log::info!(
+                "call to {} returned status code {}",
+                url,
+                res.status().as_u16()
+            );
             if res.status().as_u16() == 400 {
                 let error_body: Result<Value, reqwest::Error> = res.json().await;
 
@@ -183,6 +194,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                 }
             } else {
                 let text = res.text().await?;
+                log::info!("hasuragres returned text: {}", text);
                 let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
                 match data {
                     Ok(_) => log::info!("Successfully inserted into Hasuragres"),

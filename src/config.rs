@@ -10,6 +10,7 @@ pub struct ScrapingEnv {
     timetable_api_url: String,
 }
 
+#[derive(Debug)]
 pub struct ScrapingConfig {
     timetable_api_url: String,
 }
@@ -29,6 +30,7 @@ impl ScrapingConfig {
 
 /// Regexes that can be used to extract the year and course code from a UNSW
 /// timetable url.
+#[derive(Debug)]
 pub struct TimetableUrlRegex {
     year_only_regex: Regex,
     course_url_regex: Regex,

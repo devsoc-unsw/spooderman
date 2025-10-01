@@ -3,7 +3,7 @@ CREATE TABLE Classes (
     "class_id"                        VARCHAR(255) PRIMARY KEY,
     "career"                          VARCHAR(255) NOT NULL,
     "course_id"                       VARCHAR(255) NOT NULL,
-    "course_nr"                       VARCHAR(255) NOT NULL,
+    "class_nr"                        VARCHAR(255) NOT NULL,
     "section"                         VARCHAR(255) NOT NULL,
     "term"                            VARCHAR(50)  NOT NULL,
     "year"                            INT          NOT NULL,
