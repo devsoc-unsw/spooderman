@@ -1,5 +1,6 @@
 CREATE TABLE Times (
     "time_id"                         VARCHAR(511) PRIMARY KEY,
+    "year"                            INT          NOT NULL,
     "class_id"                        VARCHAR(255) NOT NULL,
     "day"                             VARCHAR(255) NOT NULL,
     "instructor"                      VARCHAR(255),

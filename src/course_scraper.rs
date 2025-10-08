@@ -47,6 +47,7 @@ pub struct Class {
 #[derive(Debug, Serialize)]
 pub struct Time {
     pub time_id: String,
+    pub year: Year,
     pub career: String,
     pub location: String,
     pub day: String,
@@ -398,6 +399,7 @@ impl PartialTime {
         );
         Time {
             time_id,
+            year,
             career: course_career.to_string(),
             location: self.location,
             day: self.day,

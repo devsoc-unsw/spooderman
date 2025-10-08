@@ -12,7 +12,9 @@ mod utils;
 
 pub use config::{ScrapingEnv, UploadingConfig};
 pub use course_scraper::{Class, Course, PartialCourse, Time};
-pub use hasuragres_b_insert::{ReadFromFile, ReadFromMemory, send_batch_data};
+pub use hasuragres_b_insert::{
+    ReadFromFile, ReadFromMemory, send_batch_data, send_batch_data_for_year,
+};
 pub use requests::{Request, RequestClient};
 pub use school_area_scraper::SchoolArea;
 pub use scraping_context::ScrapingContext;

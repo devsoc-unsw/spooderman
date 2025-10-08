@@ -6,7 +6,7 @@ use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
     Course, SchoolArea, ScrapingContext, Year, log_execution_time, log_execution_time_async,
-    send_batch_data, sort_by_key_ref,
+    send_batch_data, send_batch_data_for_year, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -52,6 +52,7 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
                 for time in times.iter() {
                     times_json.push(json!({
                         "time_id": time.time_id,
+                        "year": time.year,
                         "class_id": class.class_id,
                         "day": time.day,
                         "career": time.career,
@@ -176,6 +177,28 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
     Ok(())
 }
 
+async fn handle_batch_insert_for_year(year: Year) -> anyhow::Result<()> {
+    log::info!("Handling batch insert...");
+    if !Path::new("courses.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "courses.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+    if !Path::new("classes.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "classes.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+    if !Path::new("times.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "times.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+
+    send_batch_data_for_year(&ReadFromFile, year).await?;
+    Ok(())
+}
+
 #[enum_dispatch]
 trait Exec {
     async fn exec(&self) -> anyhow::Result<()>;
@@ -268,6 +291,7 @@ impl YearToScrape {
 enum Command {
     Scrape(Scrape),
     BatchInsert(BatchInsert),
+    BatchInsertForYear(BatchInsertForYear),
     ScrapeAndBatchInsert(ScrapeAndBatchInsert),
 }
 
@@ -315,6 +339,23 @@ impl Exec for BatchInsert {
     async fn exec(&self) -> anyhow::Result<()> {
         log::info!("Handling batch insert...");
         handle_batch_insert().await?;
+        Ok(())
+    }
+}
+
+/// Perform batch insert for a given year on JSON files created by `scrape`.
+#[derive(Debug, FromArgs)]
+#[argh(subcommand, name = "batch_insert_for_year")]
+struct BatchInsertForYear {
+    /// the year for which data should be batch inserted, e.g. `2025`.
+    #[argh(option, long = "year", short = 'y')]
+    year: Year,
+}
+
+impl Exec for BatchInsertForYear {
+    async fn exec(&self) -> anyhow::Result<()> {
+        log::info!("Handling batch insert...");
+        handle_batch_insert_for_year(self.year).await?;
         Ok(())
     }
 }
