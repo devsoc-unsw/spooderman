@@ -34,7 +34,7 @@ const EXPONENTIAL_REQUEST_RATE_BACKOFF: f64 = 2.0 / 3.0;
 // The lower, the faster we restart after request rate change.
 const PAUSE_AFTER_REQ_RATE_CHANGE: Duration = Duration::from_secs(5);
 
-#[derive(Clone, Copy)]
+#[derive(Debug, Clone, Copy)]
 pub struct RequestRate {
     req_per_sec: NonZeroU32,
     ms_between_req: Duration,
@@ -76,6 +76,7 @@ enum Gate {
 type SpecificGovernorRateLimiter =
     GovernorRateLimiter<NotKeyed, InMemoryState, QuantaClock, NoOpMiddleware<QuantaInstant>>;
 
+#[derive(Debug)]
 struct FixedRateLimiter {
     request_rate: RequestRate,
     req_per_sec_rate_limiter: SpecificGovernorRateLimiter,
@@ -130,6 +131,7 @@ impl Drop for FixedRateLimiter {
     }
 }
 
+#[derive(Debug)]
 struct RateLimiterGeneration {
     rate_limiter: FixedRateLimiter,
     cancel_token: CancellationToken,
@@ -144,6 +146,7 @@ impl RateLimiterGeneration {
     }
 }
 
+#[derive(Debug)]
 pub struct RateLimiter {
     // Hot-swappable rate limiter, wrapped in an Arc to avoid holding lock during waits.
     rate_limiter_generation: RwLock<Arc<RateLimiterGeneration>>,
