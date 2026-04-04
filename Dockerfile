@@ -7,4 +7,5 @@ ARG HASURAGRES_API_KEY
 
 ENV TIMETABLE_API_URL=https://timetable.unsw.edu.au/year/
 
-RUN cargo run --release -- scrape_n_batch_insert --year latest-with-data
+RUN cargo r -- scrape_n_batch_insert -release
+
