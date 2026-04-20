@@ -5,8 +5,8 @@ use parse_display::FromStr;
 use serde::Serialize;
 use serde_json::{json, to_writer_pretty};
 use spooderman::{
-    Class, Course, SchoolArea, ScrapingContext, Time, Year, log_execution_time,
-    log_execution_time_async, send_batch_data, sort_by_key_ref,
+    Course, SchoolArea, ScrapingContext, Year, log_execution_time, log_execution_time_async,
+    send_batch_data, send_batch_data_for_year, sort_by_key_ref,
 };
 use spooderman::{ReadFromFile, ReadFromMemory};
 use std::fs::File;
@@ -30,25 +30,18 @@ fn convert_courses_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
         json_courses.push(json!({
             "course_id": course.course_id,
             "course_code": course.course_code,
+            "year": course.year,
             "course_name": course.course_name,
             "uoc": course.uoc,
             "faculty": course.faculty,
             "school": course.school,
             "campus": course.campus,
             "career": course.career,
-            "terms": json![course.terms],
+            "terms": course.terms,
             "modes": course.modes,
         }));
     }
-
     json_courses
-}
-
-fn generate_time_id(class: &Class, time: &Time) -> String {
-    format!(
-        "{}{}{}{}{}",
-        &class.class_id, &time.day, &time.location, &time.time, &time.weeks
-    )
 }
 
 fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
@@ -58,7 +51,8 @@ fn convert_classes_times_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             if let Some(times) = &class.times {
                 for time in times.iter() {
                     times_json.push(json!({
-                        "id": generate_time_id(class, time),
+                        "time_id": time.time_id,
+                        "year": time.year,
                         "class_id": class.class_id,
                         "day": time.day,
                         "career": time.career,
@@ -81,6 +75,7 @@ fn convert_classes_to_json(courses: &[Course]) -> Vec<serde_json::Value> {
             json_classes.push(json!({
                 "course_id": class.course_id,
                 "class_id": class.class_id,
+                "class_nr": class.class_nr,
                 "section": class.section,
                 "term": class.term,
                 "career": class.career,
@@ -182,13 +177,35 @@ async fn handle_batch_insert() -> anyhow::Result<()> {
     Ok(())
 }
 
+async fn handle_batch_insert_for_year(year: Year) -> anyhow::Result<()> {
+    log::info!("Handling batch insert...");
+    if !Path::new("courses.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "courses.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+    if !Path::new("classes.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "classes.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+    if !Path::new("times.json").is_file() {
+        return Err(anyhow::anyhow!(
+            "times.json doesn't exist, please run cargo r -- scrape"
+        ));
+    }
+
+    send_batch_data_for_year(&ReadFromFile, year).await?;
+    Ok(())
+}
+
 #[enum_dispatch]
 trait Exec {
     async fn exec(&self) -> anyhow::Result<()>;
 }
 
 /// A tool for scraping UNSW course and class data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 struct Cli {
     #[argh(subcommand)]
     command: Command,
@@ -268,17 +285,18 @@ impl YearToScrape {
     }
 }
 
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand)]
 #[enum_dispatch(Exec)]
 enum Command {
     Scrape(Scrape),
     BatchInsert(BatchInsert),
+    BatchInsertForYear(BatchInsertForYear),
     ScrapeAndBatchInsert(ScrapeAndBatchInsert),
 }
 
 /// Perform scraping. Creates a JSON file to store the data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "scrape")]
 struct Scrape {
     /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`
@@ -313,7 +331,7 @@ impl Exec for Scrape {
 }
 
 /// Perform batch insert on JSON files created by `scrape`.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "batch_insert")]
 struct BatchInsert {}
 
@@ -325,8 +343,25 @@ impl Exec for BatchInsert {
     }
 }
 
+/// Perform batch insert for a given year on JSON files created by `scrape`.
+#[derive(Debug, FromArgs)]
+#[argh(subcommand, name = "batch_insert_for_year")]
+struct BatchInsertForYear {
+    /// the year for which data should be batch inserted, e.g. `2025`.
+    #[argh(option, long = "year", short = 'y')]
+    year: Year,
+}
+
+impl Exec for BatchInsertForYear {
+    async fn exec(&self) -> anyhow::Result<()> {
+        log::info!("Handling batch insert...");
+        handle_batch_insert_for_year(self.year).await?;
+        Ok(())
+    }
+}
+
 /// Perform scraping and batch insert. Does not create a JSON file to store the data.
-#[derive(FromArgs)]
+#[derive(Debug, FromArgs)]
 #[argh(subcommand, name = "scrape_n_batch_insert")]
 struct ScrapeAndBatchInsert {
     /// the year for which data should be scraped: `latest-with-data` (the latest year with data available), or a calendar year, e.g. `2025`.

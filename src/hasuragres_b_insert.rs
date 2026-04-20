@@ -5,8 +5,8 @@ use std::fs::File;
 use std::io::Read;
 use std::vec;
 
-use crate::UploadingConfig;
 use crate::config::LoadFromEnv;
+use crate::{UploadingConfig, Year};
 
 #[derive(Serialize, Deserialize)]
 struct Metadata {
@@ -95,6 +95,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                     "career".to_string(),
                     "terms".to_string(),
                     "modes".to_string(),
+                    "year".to_string(),
                 ],
                 sql_up: read_sql_file("sql/Courses/up.sql")?,
                 sql_down: read_sql_file("sql/Courses/down.sql")?,
@@ -110,6 +111,7 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                 table_name: "classes".to_string(),
                 columns: vec![
                     "class_id".to_string(),
+                    "class_nr".to_string(),
                     "career".to_string(),
                     "course_id".to_string(),
                     "section".to_string(),
@@ -138,7 +140,8 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
             metadata: Metadata {
                 table_name: "times".to_string(),
                 columns: vec![
-                    "id".to_string(),
+                    "time_id".to_string(),
+                    "year".to_string(),
                     "class_id".to_string(),
                     "career".to_string(),
                     "day".to_string(),
@@ -158,8 +161,12 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
         },
     ];
 
+    let url = format!(
+        "{}/batch_insert",
+        uploading_config.hasuragres_url.trim_end_matches('/')
+    );
     let response = client
-        .post(format!("{}/batch_insert", uploading_config.hasuragres_url))
+        .post(&url)
         .header("X-API-Key", uploading_config.hasuragres_api_key.clone())
         .json(&requests)
         .send()
@@ -167,6 +174,11 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
 
     match response {
         Ok(res) => {
+            log::info!(
+                "call to {} returned status code {}",
+                url,
+                res.status().as_u16()
+            );
             if res.status().as_u16() == 400 {
                 let error_body: Result<Value, reqwest::Error> = res.json().await;
 
@@ -183,6 +195,149 @@ pub async fn send_batch_data(hdata: &impl HasuragresData) -> anyhow::Result<()> 
                 }
             } else {
                 let text = res.text().await?;
+                log::info!("hasuragres returned text: {}", text);
+                let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
+                match data {
+                    Ok(_) => log::info!("Successfully inserted into Hasuragres"),
+                    Err(err) => log::error!("Failed to parse response body: {:?}", err),
+                }
+            }
+        }
+        Err(e) => log::error!("Failed to insert batch data: {:?}", e),
+    }
+    Ok(())
+}
+
+pub async fn send_batch_data_for_year(
+    hdata: &impl HasuragresData,
+    year: Year,
+) -> anyhow::Result<()> {
+    // This should only be run if the schema hasn't changed since the last
+    // upload, otherwise all data should be removed (with `send_batch_data`) and
+    // re-uploaded (for every year we want data for, unfortunately).
+
+    let uploading_config = UploadingConfig::load_from_env()?;
+    let client = Client::new();
+    log::info!("Starting insert for year {} into Hasuragres!", year);
+    let requests = vec![
+        BatchInsertRequest {
+            metadata: Metadata {
+                table_name: "courses".to_string(),
+                columns: vec![
+                    "course_id".to_string(),
+                    "course_code".to_string(),
+                    "course_name".to_string(),
+                    "uoc".to_string(),
+                    "faculty".to_string(),
+                    "school".to_string(),
+                    "campus".to_string(),
+                    "career".to_string(),
+                    "terms".to_string(),
+                    "modes".to_string(),
+                    "year".to_string(),
+                ],
+                sql_up: read_sql_file("sql/Courses/up_just_year.sql")?,
+                sql_down: read_sql_file("sql/Courses/down_just_year.sql")?
+                    .replace("{year}", &year.to_string()),
+                write_mode: Some("overwrite".to_string()),
+                sql_before: None,
+                sql_after: None,
+                dryrun: Some(true),
+            },
+            payload: hdata.get_courses(),
+        },
+        BatchInsertRequest {
+            metadata: Metadata {
+                table_name: "classes".to_string(),
+                columns: vec![
+                    "class_id".to_string(),
+                    "class_nr".to_string(),
+                    "career".to_string(),
+                    "course_id".to_string(),
+                    "section".to_string(),
+                    "term".to_string(),
+                    "activity".to_string(),
+                    "year".to_string(),
+                    "status".to_string(),
+                    "course_enrolment".to_string(),
+                    "offering_period".to_string(),
+                    "meeting_dates".to_string(),
+                    "census_date".to_string(),
+                    "consent".to_string(),
+                    "mode".to_string(),
+                    "class_notes".to_string(),
+                ],
+                sql_up: read_sql_file("sql/Classes/up_just_year.sql")?,
+                sql_down: read_sql_file("sql/Classes/down_just_year.sql")?
+                    .replace("{year}", &year.to_string()),
+                write_mode: Some("overwrite".to_string()),
+                sql_before: None,
+                sql_after: None,
+                dryrun: Some(true),
+            },
+            payload: hdata.get_classes(),
+        },
+        BatchInsertRequest {
+            metadata: Metadata {
+                table_name: "times".to_string(),
+                columns: vec![
+                    "time_id".to_string(),
+                    "year".to_string(),
+                    "class_id".to_string(),
+                    "career".to_string(),
+                    "day".to_string(),
+                    "instructor".to_string(),
+                    "location".to_string(),
+                    "time".to_string(),
+                    "weeks".to_string(),
+                ],
+                sql_up: read_sql_file("sql/Times/up_just_year.sql")?,
+                sql_down: read_sql_file("sql/Times/down_just_year.sql")?
+                    .replace("{year}", &year.to_string()),
+                write_mode: Some("overwrite".to_string()),
+                sql_before: None,
+                sql_after: None,
+                dryrun: Some(true),
+            },
+            payload: hdata.get_times(),
+        },
+    ];
+
+    let url = format!(
+        "{}/batch_insert",
+        uploading_config.hasuragres_url.trim_end_matches('/')
+    );
+    let response = client
+        .post(&url)
+        .header("X-API-Key", uploading_config.hasuragres_api_key.clone())
+        .json(&requests)
+        .send()
+        .await;
+
+    match response {
+        Ok(res) => {
+            log::info!(
+                "call to {} returned status code {}",
+                url,
+                res.status().as_u16()
+            );
+            if res.status().as_u16() == 400 {
+                let error_body: Result<Value, reqwest::Error> = res.json().await;
+
+                match error_body {
+                    Ok(json) => {
+                        log::error!("Error occurred: {:?}", json);
+                        if let Some(error_message) = json.get("error") {
+                            log::error!("Error message: {}", error_message);
+                        }
+                    }
+                    Err(err) => {
+                        log::error!("Failed to parse error body: {:?}", err);
+                    }
+                }
+            } else {
+                let text = res.text().await?;
+                log::info!("hasuragres returned text: {}", text);
                 let data: Result<Value, serde_json::Error> = serde_json::from_str(&text);
                 match data {
                     Ok(_) => log::info!("Successfully inserted into Hasuragres"),

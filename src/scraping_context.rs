@@ -3,6 +3,7 @@ use crate::{
     requests::RequestClient,
 };
 
+#[derive(Debug)]
 pub struct ScrapingContext {
     pub scraping_config: ScrapingConfig,
     pub timetable_url_regex: TimetableUrlRegex,

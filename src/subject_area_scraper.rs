@@ -129,6 +129,7 @@ impl SubjectArea {
                             career.trim().to_string(),
                             uoc,
                             url_to_scrape_further,
+                            year_to_scrape,
                         );
                         tx.send(course_scraper)?;
                     }

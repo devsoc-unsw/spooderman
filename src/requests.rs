@@ -11,6 +11,7 @@ use crate::{
 const GET_REQUEST_TIMEOUT: Duration = Duration::from_secs(3);
 const RESPONSE_BODY_TIMEOUT: Duration = Duration::from_secs(3);
 
+#[derive(Debug)]
 pub struct RequestClient {
     client: Client,
     rate_limiter: RateLimiter,
