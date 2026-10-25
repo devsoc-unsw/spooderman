@@ -8,6 +8,10 @@ on:
     #   - main
   workflow_dispatch:
 
+concurrency:
+  group: spooderman-scrape
+  cancel-in-progress: false
+
 permissions:
   contents: read
 
@@ -15,7 +19,7 @@ jobs:
   scrape:
     name: 'scrape'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     env:
       HASURAGRES_API_KEY=${{ secrets.HASURAGRES_API_KEY }}
       HASURAGRES_URL=${{ secrets.HASURAGRES_URL }}
@@ -34,6 +38,23 @@ jobs:
         run: cargo build --release
 
       - name: Run scraper
+        run: cargo run --release -- scrape
+
+      - name: Validate scraped data
+        run: |
+          f=path/to/output.json
+          test -s "$f" || { echo: "No data scraped"; exit 1; }
+      
+      - name: Upload and persist scraped json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: timetable-${{github.run_id}}
+          path: path/to/output.json
+
+      - name: Batch insert
+        run: cargo run --release -- batch_insert
+
 
 #     - name: Set up QEMU
 #       uses: docker/setup-qemu-action@v3
