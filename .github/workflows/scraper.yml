@@ -1,5 +1,5 @@
 # docker.yml for automated scraper
-name: Docker
+name: Scraper
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -7,6 +7,15 @@ on:
     # branches:
     #   - main
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'scrape only, skip the database insert'
+        type: boolean
+        default: true
+      year:
+        description: 'Timetable year (blank = current Sydney year)'
+        type: string
+        required: false
 
 concurrency:
   group: spooderman-scrape
@@ -17,15 +26,12 @@ permissions:
 
 jobs:
   scrape:
-    name: 'scrape'
+    name: scrape
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      HASURAGRES_API_KEY=${{ secrets.HASURAGRES_API_KEY }}
-      HASURAGRES_URL=${{ secrets.HASURAGRES_URL }}
-#   permissions:
-#     contents: read
-#     packages: write
+      HASURAGRES_API_KEY: ${{ secrets.HASURAGRES_API_KEY }}
+      HASURAGRES_URL: ${{ secrets.HASURAGRES_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,24 +42,40 @@ jobs:
 
       - name: Build
         run: cargo build --release
+      
+      - name: Work out year
+        id: year
+        run: |
+          YEAR="${{ inputs.year }}"
+          YEAR="${YEAR:-$(TZ=Australia/Sydney date +%Y)}"
+          echo "Using year $YEAR"
+          echo "value=$YEAR" >> "$GITHUB_OUTPUT"
 
       - name: Run scraper
-        run: cargo run --release -- scrape
+        run: cargo run --release -- --year "${{ steps.year.outputs.value }}" scrape
 
       - name: Validate scraped data
         run: |
-          f=path/to/output.json
-          test -s "$f" || { echo: "No data scraped"; exit 1; }
+          for f in courses.json classes.json times.json; do
+            test -s "$f" || { echo "No data scraped: $f"; exit 1; }
+            n=$(jq 'length' "$f")
+            echo "$f: $n entries"
+          done
       
       - name: Upload and persist scraped json
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: timetable-${{github.run_id}}
-          path: path/to/output.json
+          path: |
+            courses.json
+            classes.json
+            times.json
+          retention-days: 14
 
       - name: Batch insert
-        run: cargo run --release -- batch_insert
+        if: "${{ !inputs.dry_run }}"
+        run: cargo run --release -- --year "${{ steps.year.outputs.value }}" batch_insert
 
 
 #     - name: Set up QEMU
