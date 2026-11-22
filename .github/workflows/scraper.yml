@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
+      TIMETABLE_API_URL: ${{ https://timetable.unsw.edu.au/year/ }}
       HASURAGRES_API_KEY: ${{ secrets.HASURAGRES_API_KEY }}
       HASURAGRES_URL: ${{ secrets.HASURAGRES_URL }}
     steps:
