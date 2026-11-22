@@ -55,7 +55,7 @@ jobs:
           echo "value=$YEAR" >> "$GITHUB_OUTPUT"
 
       - name: Run scraper
-        run: cargo run --release -- --year "${{ steps.year.outputs.value }}" scrape
+        run: cargo run --release -- scrape --year "${{ steps.year.outputs.value }}"
 
       - name: Validate scraped data
         run: |
