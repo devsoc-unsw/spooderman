@@ -16,9 +16,9 @@ on:
         description: 'Timetable year (blank = current Sydney year)'
         type: string
         required: false
-  push:
-    branches:
-      - automated-docker
+  # push: # This is solely for pushing and testing Docker images and GitHub actions on specific remote branches, should not be active (or left commented) when merged into main
+  #   branches:
+  #     - automated-docker
 
 concurrency:
   group: spooderman-scrape
